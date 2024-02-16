@@ -1,0 +1,3 @@
+dependency_overrides:
+  general:
+    path: ../general 

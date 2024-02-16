@@ -1,0 +1,5 @@
+dependency_overrides:
+  general:
+    path: ../general
+  general_dart:
+    path: ../general_dart
