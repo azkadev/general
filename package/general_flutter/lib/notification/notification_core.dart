@@ -26,7 +26,7 @@ class GeneralLibraryNotificationBaseFlutter implements GeneralLibraryNotificatio
         actionType: ActionType.Default,
         title: 'Hello World!',
         body: 'This is my first notification!',
-      ),
+      ), 
     );
   }
 
