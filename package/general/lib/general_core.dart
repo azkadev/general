@@ -2,6 +2,7 @@
 
 import 'package:general/app_background/app_background_core.dart';
 import 'package:general/battery/battery.dart';
+import 'package:general/pemission/pemission.dart';
 
 class GeneralLibraryBase {
   GeneralLibraryBase();
@@ -12,6 +13,10 @@ class GeneralLibraryBase {
 
   GeneralLibraryBatteryBase get battery {
     return GeneralLibraryBatteryBase();
+  }
+
+  GeneralLibraryPermissionBase get permission {
+    return GeneralLibraryPermissionBase();
   }
 
   void test() {

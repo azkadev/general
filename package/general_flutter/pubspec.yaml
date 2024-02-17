@@ -27,13 +27,14 @@ environment:
   flutter: ">=1.17.0"
 
 dependencies:
-  battery_plus: ^5.0.3
+  file_picker: ^6.1.1
   flutter:
     sdk: flutter
   flutter_background: ^1.2.0
   general: ^0.0.0
   general_dart: ^0.0.0
   general_lib: ^0.0.26
+  permission_handler: ^11.3.0
   
 # dependency_overrides: 
 

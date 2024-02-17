@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:general_flutter/general_flutter.dart';
 import 'package:general_flutter/general_flutter_core.dart';
 
 void main() {
@@ -69,7 +70,6 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   void initState() {
-    
     super.initState();
     WidgetsBinding.instance.addPostFrameCallback((timeStamp) async {
       task();
@@ -78,11 +78,13 @@ class _MyHomePageState extends State<MyHomePage> {
 
   task() {
     Future(() async {
+      await widget.generalFlutter.permission.flutter_auto_request_all();
+
+      await widget.generalFlutter.app_background.has_permissions;
       await widget.generalFlutter.app_background.initialize(
         notificationTitle: "General Flutter",
         notificationMessage: "Berjalan",
       );
-      await widget.generalFlutter.app_background.has_permissions;
       await widget.generalFlutter.app_background.enable_background;
     });
   }
