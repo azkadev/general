@@ -79,7 +79,7 @@ class _MyHomePageState extends State<MyHomePage> {
   task() {
     Future(() async {
       await widget.generalFlutter.permission.flutter_auto_request_all();
-
+      await widget.generalFlutter.notification.initialize(notificationTitle: "", notificationMessage: "");
       await widget.generalFlutter.app_background.has_permissions;
       await widget.generalFlutter.app_background.initialize(
         notificationTitle: "General Flutter",
@@ -90,6 +90,9 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   void _incrementCounter() {
+    Future(() async {
+      await widget.generalFlutter.notification.has_permissions;
+    });
     setState(() {
       // This call to setState tells the Flutter framework that something has
       // changed in this State, which causes it to rerun the build method below

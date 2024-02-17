@@ -4,6 +4,7 @@ import 'package:flutter/foundation.dart';
 import 'package:general/app_background/app_background_core.dart';
 import "package:general_dart/general_dart.dart";
 import 'package:general_flutter/app_background/app_background_core.dart';
+import 'package:general_flutter/notification/notification_core.dart';
 import 'package:general_flutter/permission/permission.dart';
 // import 'package:general_flutter/battery/battery_core.dart';
 
@@ -23,13 +24,12 @@ class GeneralFlutter extends GeneralDart {
   }
 
   @override
-  
   GeneralLibraryPermissionBaseFlutter get permission {
     return GeneralLibraryPermissionBaseFlutter();
   }
 
-  // @override
-  // GeneralLibraryBatteryBaseFlutter get battery {
-  //   return GeneralLibraryBatteryBaseFlutter();
-  // }
+  @override
+  GeneralLibraryNotificationBaseFlutter get notification {
+    return GeneralLibraryNotificationBaseFlutter();
+  } 
 }

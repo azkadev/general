@@ -3,6 +3,7 @@
 import 'package:general/app_background/app_background_core.dart';
 import 'package:general/battery/battery_core.dart';
 import 'package:general/general_core.dart';
+import 'package:general/notification/notification_core.dart';
 import 'package:general/pemission/pemission_core.dart';
 
 class GeneralDart implements GeneralLibraryBase {
@@ -24,8 +25,13 @@ class GeneralDart implements GeneralLibraryBase {
   }
 
   @override
-  
   GeneralLibraryPermissionBase get permission {
     return GeneralLibraryPermissionBase();
+  }
+
+  @override
+  // TODO: implement notification
+  GeneralLibraryNotificationBase get notification {
+    return GeneralLibraryNotificationBase();
   }
 }
