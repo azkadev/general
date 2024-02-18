@@ -10,6 +10,7 @@ class GeneralLibraryBatteryBase {
   Future<bool> get is_save_mode async {
     return false;
   }
+
   Future<int> get level async {
     return 0;
   }

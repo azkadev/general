@@ -86,13 +86,17 @@ class _MyHomePageState extends State<MyHomePage> {
         notificationMessage: "Berjalan",
       );
       await widget.generalFlutter.app_background.enable_background;
+      widget.generalFlutter.gamepad.events.listen(onGamePad);
+      await widget.generalFlutter.text_to_speech.initialized();
     });
   }
 
+  void onGamePad(GamePadControllerEventData gamePadControllerEventData) {
+    _incrementCounter();
+  }
+
   void _incrementCounter() {
-    Future(() async {
-      await widget.generalFlutter.notification.has_permissions;
-    });
+    widget.generalFlutter.text_to_speech.speak(text: "Hallo Gais");
     setState(() {
       // This call to setState tells the Flutter framework that something has
       // changed in this State, which causes it to rerun the build method below

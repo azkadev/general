@@ -1,6 +1,6 @@
 name: general_dart
 description: A Library Full Package Template
-version: 0.0.1
+version: 0.0.3
 homepage: https://github.com/azkadev/general
 repository: https://github.com/azkadev/general
 issue_tracker: https://github.com/azkadev/general/issues 
@@ -29,4 +29,5 @@ dev_dependencies:
   lints: ^2.1.0
   test: ^1.24.0
 dependencies:
-  general: ^0.0.0
+  desktop_notifications: ^0.6.3
+  general: ^0.0.1

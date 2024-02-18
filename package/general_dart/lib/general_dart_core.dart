@@ -2,9 +2,11 @@
 
 import 'package:general/app_background/app_background_core.dart';
 import 'package:general/battery/battery_core.dart';
+import 'package:general/gamepad/gamepad_core.dart';
 import 'package:general/general_core.dart';
 import 'package:general/notification/notification_core.dart';
 import 'package:general/pemission/pemission_core.dart';
+import 'package:general/text_to_speech/text_to_speech_core.dart';
 
 class GeneralDart implements GeneralLibraryBase {
   GeneralDart();
@@ -30,8 +32,18 @@ class GeneralDart implements GeneralLibraryBase {
   }
 
   @override
-  // TODO: implement notification
   GeneralLibraryNotificationBase get notification {
     return GeneralLibraryNotificationBase();
+  }
+
+  @override
+  GeneralLibraryGamePadBase get gamepad {
+    return GeneralLibraryGamePadBase();
+  }
+
+  @override
+  // TODO: implement text_to_speech
+  GeneralLibraryTextToSpeechBase get text_to_speech {
+    return GeneralLibraryTextToSpeechBase();
   }
 }
