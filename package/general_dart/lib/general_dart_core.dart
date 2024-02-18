@@ -6,6 +6,7 @@ import 'package:general/gamepad/gamepad_core.dart';
 import 'package:general/general_core.dart';
 import 'package:general/notification/notification_core.dart';
 import 'package:general/pemission/pemission_core.dart';
+import 'package:general/speech_to_text/speech_to_text_core.dart';
 import 'package:general/text_to_speech/text_to_speech_core.dart';
 
 class GeneralDart implements GeneralLibraryBase {
@@ -42,8 +43,12 @@ class GeneralDart implements GeneralLibraryBase {
   }
 
   @override
-  // TODO: implement text_to_speech
   GeneralLibraryTextToSpeechBase get text_to_speech {
     return GeneralLibraryTextToSpeechBase();
+  }
+
+  @override
+  GeneralLibrarySpeechToTextBase get speech_to_text {
+    return GeneralLibrarySpeechToTextBase();
   }
 }

@@ -7,6 +7,7 @@ import 'package:general/battery/battery.dart';
 import 'package:general/gamepad/gamepad_core.dart';
 import 'package:general/notification/notification_core.dart';
 import 'package:general/pemission/pemission.dart';
+import 'package:general/speech_to_text/speech_to_text_core.dart';
 import 'package:general/text_to_speech/text_to_speech_core.dart';
 
 class GeneralLibraryBase {
@@ -35,6 +36,12 @@ class GeneralLibraryBase {
 
   GeneralLibraryTextToSpeechBase get text_to_speech {
     return GeneralLibraryTextToSpeechBase();
+  }
+
+
+
+  GeneralLibrarySpeechToTextBase get speech_to_text {
+    return GeneralLibrarySpeechToTextBase();
   }
   void test() {
     print("oke");
