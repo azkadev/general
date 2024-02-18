@@ -121,4 +121,19 @@ class GeneralLibrarySpeechToTextBaseFlutter implements GeneralLibrarySpeechToTex
     }
     return false;
   }
+
+  @override
+  Future<String> speech_to_text_word({
+    String? localeId,
+    Function(double p1)? onSoundLevelChange,
+    cancelOnError = false,
+    partialResults = true,
+    onDevice = false,
+    ListenModeType listenModeType = ListenModeType.confirmation,
+  }) async {
+    String text = "";
+ 
+
+    return text;
+  }
 }

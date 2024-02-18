@@ -1,5 +1,7 @@
 // ignore_for_file: non_constant_identifier_names
 
+import 'dart:async';
+
 import 'package:general/speech_to_text/speech_to_text.dart';
 
 class GeneralLibrarySpeechToTextBase {
@@ -11,19 +13,19 @@ class GeneralLibrarySpeechToTextBase {
     return false;
   }
 
-  bool get has_recognized { 
+  bool get has_recognized {
     return false;
   }
 
-
-  bool get is_available { 
+  bool get is_available {
     return false;
   }
 
-  bool get is_listening { 
+  bool get is_listening {
     return false;
   }
-  bool get is_not_listening { 
+
+  bool get is_not_listening {
     return false;
   }
 
@@ -32,7 +34,6 @@ class GeneralLibrarySpeechToTextBase {
   Future<void> stop() async {}
 
   Future<void> realtime_speech_to_text_word({
-
     required void Function(String result) onResult,
     String? localeId,
     dynamic Function(double)? onSoundLevelChange,
@@ -41,4 +42,26 @@ class GeneralLibrarySpeechToTextBase {
     dynamic onDevice = false,
     ListenModeType listenModeType = ListenModeType.confirmation,
   }) async {}
+
+  Future<String> speech_to_text_word({
+    String? localeId,
+    dynamic Function(double)? onSoundLevelChange,
+    dynamic cancelOnError = false,
+    dynamic partialResults = true,
+    dynamic onDevice = false,
+    ListenModeType listenModeType = ListenModeType.confirmation,
+  }) async {
+    String text = "";
+    await realtime_speech_to_text_word(
+      onResult: (result) {
+        text = result;
+      },
+      onSoundLevelChange: onSoundLevelChange,
+      cancelOnError: cancelOnError,
+      partialResults: partialResults,
+      onDevice: onDevice,
+      listenModeType: listenModeType,
+    );
+    return text;
+  }
 }
