@@ -1,6 +1,6 @@
 name: general_client
 description: A Library Full Package Template
-version: 0.0.4
+version: 0.0.5
 homepage: https://github.com/azkadev/general
 repository: https://github.com/azkadev/general
 issue_tracker: https://github.com/azkadev/general/issues 
