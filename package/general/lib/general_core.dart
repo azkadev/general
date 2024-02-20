@@ -4,6 +4,7 @@
 
 import 'package:general/app_background/app_background_core.dart';
 import 'package:general/battery/battery.dart';
+import 'package:general/device/device.dart';
 import 'package:general/gamepad/gamepad_core.dart';
 import 'package:general/notification/notification_core.dart';
 import 'package:general/pemission/pemission.dart';
@@ -40,9 +41,13 @@ class GeneralLibraryBase {
 
 
 
+  GeneralLibraryDeviceBase get device {
+    return GeneralLibraryDeviceBase();
+  }
   GeneralLibrarySpeechToTextBase get speech_to_text {
     return GeneralLibrarySpeechToTextBase();
   }
+
   void test() {
     print("oke");
   }

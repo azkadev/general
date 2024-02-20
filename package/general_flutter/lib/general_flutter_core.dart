@@ -5,6 +5,7 @@ import 'package:general/app_background/app_background_core.dart';
 import 'package:general/battery/battery_core.dart';
 import "package:general_dart/general_dart.dart";
 import 'package:general_flutter/app_background/app_background_core.dart';
+import 'package:general_flutter/device/device.dart';
 import 'package:general_flutter/notification/notification_core.dart';
 import 'package:general_flutter/permission/permission.dart';
 import 'package:general_flutter/speech_to_text/speech_to_text.dart';
@@ -46,6 +47,11 @@ class GeneralFlutter extends GeneralDart {
   }
 
   @override
+  GeneralLibraryDeviceBaseFlutter get device {
+    return GeneralLibraryDeviceBaseFlutter();
+  }
+
+  @override
   GeneralLibraryGamePadBase get gamepad {
     return GeneralLibraryGamePadBase();
   }
@@ -54,4 +60,5 @@ class GeneralFlutter extends GeneralDart {
   GeneralLibrarySpeechToTextBaseFlutter get speech_to_text {
     return GeneralLibrarySpeechToTextBaseFlutter();
   }
+
 }

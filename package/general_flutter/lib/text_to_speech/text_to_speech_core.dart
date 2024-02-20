@@ -47,6 +47,7 @@ class GeneralLibraryTextToSpeechBaseFlutter implements GeneralLibraryTextToSpeec
   }) async {
     if (text.trim().isNotEmpty) {
       if (flutter_is_support_flutter_tts) {
+
         await flutterTts.setVolume(1.0);
         await flutterTts.setSpeechRate(rate);
         await flutterTts.setPitch(pitch);

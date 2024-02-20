@@ -64,7 +64,7 @@ class GeneralLibrarySpeechToTextBaseFlutter implements GeneralLibrarySpeechToTex
   }) async {
     // StreamController<String> streamController = StreamController<String>();
 
-    if (flutter_is_support_flutter_stt) {
+    if (flutter_is_support_flutter_stt) { 
       await SpeechToText().listen(
         onResult: (result) {
           onResult(result.recognizedWords);
@@ -132,7 +132,6 @@ class GeneralLibrarySpeechToTextBaseFlutter implements GeneralLibrarySpeechToTex
     ListenModeType listenModeType = ListenModeType.confirmation,
   }) async {
     String text = "";
- 
 
     return text;
   }

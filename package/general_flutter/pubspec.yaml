@@ -38,6 +38,7 @@ dependencies:
   general_lib: ^0.0.26
   path: ^1.8.3
   permission_handler: ^11.3.0
+  safe_device: ^1.1.4
   speech_to_text: ^6.6.0
   universal_io: ^2.2.2
   

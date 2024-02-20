@@ -9,3 +9,7 @@ permission_handler_android=/home/galaxeus/.pub-cache/hosted/pub.dev/permission_h
 permission_handler_apple=/home/galaxeus/.pub-cache/hosted/pub.dev/permission_handler_apple-9.4.0/
 permission_handler_html=/home/galaxeus/.pub-cache/hosted/pub.dev/permission_handler_html-0.1.1/
 permission_handler_windows=/home/galaxeus/.pub-cache/hosted/pub.dev/permission_handler_windows-0.2.1/
+safe_device=/home/galaxeus/.pub-cache/hosted/pub.dev/safe_device-1.1.4/
+speech_to_text=/home/galaxeus/.pub-cache/hosted/pub.dev/speech_to_text-6.6.0/
+speech_to_text_macos=/home/galaxeus/.pub-cache/hosted/pub.dev/speech_to_text_macos-1.1.0/
+trust_location=/home/galaxeus/.pub-cache/hosted/pub.dev/trust_location-2.0.13/
