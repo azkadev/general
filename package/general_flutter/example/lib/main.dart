@@ -111,7 +111,7 @@ class _HomePageState extends State<HomePage> {
           Future(() async {
             for (var element in (await general_library.sms.getAllThreads())) {
               // for (var element_msg in element.messages) {
-              // print("MSG: ${element.messages.last.body}");
+              print("MSG: ${element.messages.last.body}");
               // }
             }
           });
