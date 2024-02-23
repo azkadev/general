@@ -4,7 +4,7 @@ General Adalah library DART & Flutter yang memungkinkan kamu bisa mengakses bany
 
 ## Pembuat & Kenapa Library ini di buat
 
-[AZKADEV](https://github.com/azkadev) adalah pembuat asli library ini, library ini di buat agar dia bisa mempercepat development di berbagai platform & cli sekaligus dengan mudah, pasalnya saya Terkadang membuat bot / userbot / server yang memungkinkan deploy di LOCAL DEVICE / HP Sehingga library ini di buat agar bisa mengakses fitur yang ada di masing device seperti (camera, fingerprint, sms, mms)
+[AZKADEV](https://github.com/azkadev) **adalah pembuat asli library ini**, **library** ini di buat agar dia bisa **mempercepat development** di **berbagai platform & cli** sekaligus dengan mudah, pasalnya saya Terkadang membuat **bot / userbot / server** yang memungkinkan **deploy di LOCAL DEVICE / HP** Sehingga **library** ini di buat agar bisa **mengakses fitur** yang ada di masing **device** seperti **(camera, fingerprint, sms, mms)**
 
 ## Fitur
 
@@ -66,8 +66,9 @@ Library ini hanya di buat untuk bahasa dart, bahasa code lain saya belum ada ren
 // ignore_for_file: non_constant_identifier_names, unnecessary_brace_in_string_interps
 import "package:general_dart/general_dart.dart";
 void main(List<String> args) async {
-  GeneralDart general_library = GeneralDart();
 
+  GeneralDart general_library = GeneralDart();
+  
   // app background initialized
   await general_library.app_background.has_permissions;
   await general_library.app_background.initialize(
