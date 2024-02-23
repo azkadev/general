@@ -41,6 +41,9 @@ dependencies:
   safe_device: ^1.1.4
   speech_to_text: ^6.6.0
   universal_io: ^2.2.2
+
+  sim_card_info: ^1.0.1
+  sms_flutter: ^0.0.0
   
 # dependency_overrides: 
 
