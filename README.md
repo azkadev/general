@@ -26,7 +26,7 @@ Library ini hanya di buat untuk bahasa dart, bahasa code lain saya belum ada ren
     ```bash
     dart pub add general_dart
     ```
-  - DART
+  - IMPORT LIBRARY
     ```dart
     import "package:general_dart/general_dart.dart";
     ```
@@ -37,7 +37,7 @@ Library ini hanya di buat untuk bahasa dart, bahasa code lain saya belum ada ren
     ```bash
     flutter pub add general_flutter
     ```
-  - DART
+  - IMPORT LIBRARY
     ```dart
     import "package:general_flutter/general_flutter.dart";
     ```
