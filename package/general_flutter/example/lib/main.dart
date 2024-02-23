@@ -1,50 +1,123 @@
-import 'package:flutter/material.dart';
-import 'dart:async';
-import 'package:ussd_phone_call_sms/ussd_phone_call_sms.dart';
+// ignore_for_file: non_constant_identifier_names, empty_catches
 
-void main() {
+import 'package:flutter/material.dart';
+import 'package:general_flutter/general_flutter.dart';
+
+void main(List<String> args) {
+  WidgetsFlutterBinding.ensureInitialized();
+
   runApp(const MyApp());
 }
 
-class MyApp extends StatefulWidget {
-  const MyApp({Key? key}) : super(key: key);
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
 
   @override
-  State<MyApp> createState() => _MyAppState();
+  Widget build(BuildContext context) {
+    return const MaterialApp(
+      home: HomePage(),
+    );
+  }
 }
 
-class _MyAppState extends State<MyApp> {
-  final _ussdPhoneCallSmsPlugin = UssdPhoneCallSms();
-  String result = "";
+class HomePage extends StatefulWidget {
+  const HomePage({super.key});
+
+  @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+  GeneralFlutter general_library = GeneralFlutter();
   @override
   void initState() {
     super.initState();
+    WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
+      task();
+    });
+    // task();
   }
 
-  // Platform messages are asynchronous, so we initialize in an async method.
-  Future<void> phoneCall() async {
-    // Platform messages may fail, so we use a try/catch PlatformException.
-    // We also handle the message potentially returning null.
-    try {
-      result = await _ussdPhoneCallSmsPlugin.phoneCall(phoneNumber: '*123#') ?? 'Unknown platform version'; // phone number
-    } catch (e) {
-      print(e);
-    }
+  task() {
+    Future(() async {
+      await general_library.permission.flutter_auto_request_all();
+
+      await general_library.sim_card.getSimcards();
+    });
   }
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-        appBar: AppBar(
-          title: const Text('Plugin example app'),
-        ),
-        body: Center(child: Text("result: ${result}")),
-        floatingActionButton: FloatingActionButton(
-          onPressed: () {
-            phoneCall();
-          },
-          child: Icon(Icons.abc),
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text("app"),
+      ),
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.start,
+        children: [
+          FutureBuilder(
+            future: general_library.sms.getAllThreads(),
+            builder: (context, snapshot) {
+              List<SmsThreadInfoData> threads = (snapshot.data ?? []);
+              return MediaQuery.removePadding(
+                context: context,
+                removeBottom: true,
+                removeTop: true,
+                removeLeft: true,
+                removeRight: true,
+                child: ListView.builder(
+                  itemCount: threads.length,
+                  physics: const NeverScrollableScrollPhysics(),
+                  shrinkWrap: true,
+                  itemBuilder: (BuildContext context, int index) {
+                    return Column(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        ListTile(
+                          minVerticalPadding: 8,
+                          minLeadingWidth: 4,
+                          leading: CircleAvatar(
+                            child: () {
+                              try { 
+                              } catch (e) {}
+                              return const Icon(Icons.people);
+                            }(),
+                          ),
+                          title: Text(
+                            threads[index].contact.address,
+                            style: const TextStyle(
+                              fontWeight: FontWeight.w800,
+                              // color: Colors.black,
+                            ),
+                          ),
+                          subtitle: Text(
+                            threads[index].messages.last.body,
+                            overflow: TextOverflow.ellipsis,
+                          ),
+                        ),
+                        const Divider()
+                      ],
+                    );
+                  },
+                ),
+              );
+            },
+          )
+//
+        ],
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          Future(() async {
+            for (var element in (await general_library.sms.getAllThreads())) {
+              // for (var element_msg in element.messages) {
+              // print("MSG: ${element.messages.last.body}");
+              // }
+            }
+          });
+        },
+        child: const Icon(
+          Icons.add,
         ),
       ),
     );

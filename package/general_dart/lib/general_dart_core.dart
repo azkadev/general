@@ -7,6 +7,8 @@ import 'package:general/gamepad/gamepad_core.dart';
 import 'package:general/general_core.dart';
 import 'package:general/notification/notification_core.dart';
 import 'package:general/pemission/pemission_core.dart';
+import 'package:general/sim_card/sim_card_core.dart';
+import 'package:general/sms/sms_core.dart';
 import 'package:general/speech_to_text/speech_to_text_core.dart';
 import 'package:general/text_to_speech/text_to_speech_core.dart';
 
@@ -56,5 +58,15 @@ class GeneralDart implements GeneralLibraryBase {
   @override
   GeneralLibraryDeviceBase get device {
     return GeneralLibraryDeviceBase();
+  }
+
+  @override
+  GeneralLibrarySimCardBase get sim_card {
+    return GeneralLibrarySimCardBase();
+  }
+
+  @override
+  GeneralLibrarySmsBase get sms {
+    return GeneralLibrarySmsBase();
   }
 }

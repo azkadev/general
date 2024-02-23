@@ -8,6 +8,8 @@ import 'package:general/device/device.dart';
 import 'package:general/gamepad/gamepad_core.dart';
 import 'package:general/notification/notification_core.dart';
 import 'package:general/pemission/pemission.dart';
+import 'package:general/sim_card/sim_card_core.dart';
+import 'package:general/sms/sms.dart';
 import 'package:general/speech_to_text/speech_to_text_core.dart';
 import 'package:general/text_to_speech/text_to_speech_core.dart';
 
@@ -48,6 +50,13 @@ class GeneralLibraryBase {
     return GeneralLibrarySpeechToTextBase();
   }
 
+  GeneralLibrarySimCardBase get sim_card {
+    return GeneralLibrarySimCardBase();
+  }
+
+  GeneralLibrarySmsBase get sms {
+    return GeneralLibrarySmsBase();
+  }
   void test() {
     print("oke");
   }

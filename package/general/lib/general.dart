@@ -5,3 +5,5 @@ export "notification/notification.dart";
 export "pemission/pemission.dart";
 export "app_background/app_background.dart";
 export "speech_to_text/speech_to_text.dart";
+export "sim_card/sim_card.dart";
+export "sms/sms.dart";

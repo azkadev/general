@@ -8,8 +8,10 @@ import 'package:general_flutter/app_background/app_background_core.dart';
 import 'package:general_flutter/device/device.dart';
 import 'package:general_flutter/notification/notification_core.dart';
 import 'package:general_flutter/permission/permission.dart';
+import 'package:general_flutter/sim_card/sim_card_core.dart';
+import 'package:general_flutter/sms/sms.dart';
 import 'package:general_flutter/speech_to_text/speech_to_text.dart';
-import 'package:general_flutter/text_to_speech/text_to_speech_core.dart'; 
+import 'package:general_flutter/text_to_speech/text_to_speech_core.dart';
 
 class GeneralFlutter extends GeneralDart {
   GeneralFlutter();
@@ -60,5 +62,18 @@ class GeneralFlutter extends GeneralDart {
   GeneralLibrarySpeechToTextBaseFlutter get speech_to_text {
     return GeneralLibrarySpeechToTextBaseFlutter();
   }
+
+  @override
+  GeneralLibrarySimCardBaseFlutter get sim_card {
+    return GeneralLibrarySimCardBaseFlutter();
+  }
+
+
+  @override
+  GeneralLibrarySmsBaseFlutter get sms {
+    return GeneralLibrarySmsBaseFlutter();
+  }
+
+
 
 }
