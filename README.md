@@ -30,6 +30,15 @@ Library ini hanya di buat untuk bahasa dart, bahasa code lain saya belum ada ren
     ```dart
     import "package:general_dart/general_dart.dart";
     ```
+  - SCRIPT
+    ```dart
+    // ignore_for_file: non_constant_identifier_names
+    import "package:general_dart/general_dart.dart";
+    void main(List<String> args) async {
+      GeneralDart general_library = GeneralDart();
+      general_library.app_background;
+    }
+    ```
 
 - Flutter
   untuk menggunakan di flutter kamu perlu typing
@@ -40,4 +49,13 @@ Library ini hanya di buat untuk bahasa dart, bahasa code lain saya belum ada ren
   - IMPORT LIBRARY
     ```dart
     import "package:general_flutter/general_flutter.dart";
+    ```
+  - SCRIPT
+    ```dart
+    // ignore_for_file: non_constant_identifier_names
+    import "package:general_flutter/general_flutter.dart";
+    void main(List<String> args) async {
+      GeneralFlutter general_library = GeneralFlutter();
+      general_library.app_background;
+    }
     ```
