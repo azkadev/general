@@ -23,4 +23,6 @@ Library ini hanya di buat untuk bahasa dart, bahasa code lain saya belum ada ren
 - Dart
   untuk menggunakan di dart kamu perlu typing
   - CLI
+    ```bash
     dart pub add general_dart
+    ```
