@@ -26,3 +26,18 @@ Library ini hanya di buat untuk bahasa dart, bahasa code lain saya belum ada ren
     ```bash
     dart pub add general_dart
     ```
+  - DART
+    ```dart
+    import "package:general_dart/general_dart.dart";
+    ```
+
+- Flutter
+  untuk menggunakan di flutter kamu perlu typing
+  - CLI
+    ```bash
+    flutter pub add general_flutter
+    ```
+  - DART
+    ```dart
+    import "package:general_flutter/general_flutter.dart";
+    ```
