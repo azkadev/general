@@ -50,15 +50,20 @@ General Adalah library DART & Flutter yang memungkinkan kamu bisa mengakses bany
 
 ---
 
+## 🔗️ Links
+
+
+#### Docs / Tutorial / Example
+
+1. [GITHUB DOCS](/docs/)
+2. [Youtube](https://youtube.com/@azkadev)
+
+
 ## Fitur
 
 1. Cross Platform Notifikasi
 2. Cross Platform Putar / Main Media (Video & Audio)
 3. Cross Platform Menggunakan Fitur SMS / MMS
-4. 
-
-## Contoh
-
 
 ## Cara Penggunaan
 
@@ -105,7 +110,9 @@ Library ini hanya di buat untuk bahasa dart, bahasa code lain saya belum ada ren
     ```
 
 ## ⚠️ Penting
-  Walaupun kebanyakan contoh menggunakan flutter / GeneralFlutter sebagai class, library ini bisa di timpa / di pakai di manapun (cli, web, app) jadi misal anda membuat program cli namun mencoba deploy di lokal app anda bisa menggunakan yang ada di flutter
+
+-  Walaupun kebanyakan contoh menggunakan flutter / GeneralFlutter sebagai class, library ini bisa di timpa / di pakai di manapun (cli, web, app) jadi misal anda membuat program cli namun mencoba deploy di lokal app anda bisa menggunakan yang ada di flutter
+- Tolong bantu library ini terus berkembang dengan cara stars / follow akun social media saya  / Donate / Sponsor (ini yang paling ngaruh)
 
 
 ## Contoh Cepat Awal
@@ -139,3 +146,25 @@ void main(List<String> args) async {
   );
 }
 ```
+
+## ❔️ FAQS
+
+- Q: Kenapa Harus pakai library ini?
+- A: Kami tidak memaksa anda memakai libary ini namun jika library ini dipakai anda akan mudah dalam development karena selain library ini gampang di baca dan di atur anda bisa mengcustom sesuka hati
+  
+- Q: Apa ada contoh penting yang wajib memakai library ini
+- A: Jika anda membuat server / program bot ini wajib karena anda anda deploy di app maka anda akan kesulitan membuat log, dengan library ini kamu bisa mengakses berbagai fitur yang ada di app, contoh program kamu ada error kamu bisa memanfatkan fitur text to speech, / contoh kamu ingin mengakses kamera jarak jauh anda bisa mengcustom sendiri namun perlu skills coding sedikit mumpuni tapi anda tidak perlu belajar native hanya belajar dart di library ini
+
+- Q: Saya membuat pogram generator image namun saat ini saya tidak tahu deploy flutter di server bisakah menggunakan ini di hp?
+- A: Tentu kamu bisa melakukan banyak hal menggunakan library ini dengan cukup simple
+
+- Q: Saya ingin mendapatkan pesan sms di hp namun wajib di kirim setiap saat di telegram apakah bisa?
+- A: Ya anda bisa menggunakan library ini
+  
+## Contoh
+
+| NO | Screenshot / Demo | Descripction                                                                                                                                  | LINK | Open Source |
+|----|-------------------|-----------------------------------------------------------------------------------------------------------------------------------------------|------|-------------|
+| 1  |                   | Sebuah Applikasi untuk menjalankan berbagai bot / userbot / ai dengan banyak fitur + bisa menjadi assistant pribadi + teman                   |      | TIDAK       |
+| 2. |                   | Sebuah Applikasi Telegram Pihak 3 Dengan banyak fitur menarik                                                                                 |      | TIDAK       |
+| 3. |                   | Sebuah applikasi dengan banyak fitur yang memungkinkan anda bisa berbisnis / bersenang senang / membeli jasa dengan mudah di 1 app / platform |      | TIDAK       |
