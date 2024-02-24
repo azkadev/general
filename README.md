@@ -173,20 +173,20 @@ void main(List<String> args) async {
 
 ## 📑️ Features
 
-| NO  | Nama           | Deskripsi | ANDROID | IOS | LINUX | MACOS | WINDOWS | CLI | WEB | FUCHSIA |
-|-----|----------------|-----------|---------|-----|-------|-------|---------|-----|-----|---------|
-| 1.  | APP            |           |         |     |       |       |         |     |     |         |
-| 2.  | APP Background |           |         |     |       |       |         |     |     |         |
-| 3.  | Battery        |           |         |     |       |       |         |     |     |         |
-| 4.  | Device         |           |         |     |       |       |         |     |     |         |
-| 5.  | Gamepad        |           |         |     |       |       |         |     |     |         |
-| 6.  | Notification   |           |         |     |       |       |         |     |     |         |
-| 7   | Player         |           |         |     |       |       |         |     |     |         |
-| 8.  | Permisssion    |           |         |     |       |       |         |     |     |         |
-| 9.  | Sim Card       |           |         |     |       |       |         |     |     |         |
-| 10. | Sms            |           |         |     |       |       |         |     |     |         |
-| 12. | Speech To Text |           |         |     |       |       |         |     |     |         |
-| 13. | Text To Speech |           |         |     |       |       |         |     |     |         |
+| NO  | Nama           | Deskripsi                                                       | ANDROID | IOS | LINUX | MACOS | WINDOWS | CLI | WEB | FUCHSIA |
+|-----|----------------|-----------------------------------------------------------------|---------|-----|-------|-------|---------|-----|-----|---------|
+| 1.  | APP            | Mengakses Banyak Hal Agar App Kamu semakin kompleks             |         |     |       |       |         |     |     |         |
+| 2.  | APP Background | Minta Ijin background dengan mudah                              |         |     |       |       |         |     |     |         |
+| 3.  | Battery        | Check battery kamu apakah sedang mengisi daya / tidak / level   |         |     |       |       |         |     |     |         |
+| 4.  | Device         | Check device kamu apakah jailbreak / root / emulator            |         |     |       |       |         |     |     |         |
+| 5.  | Gamepad        | Gunakan Gamepad Agar Kamu app kamu bisa lebih bagus             |         |     |       |       |         |     |     |         |
+| 6.  | Notification   | Kirim Notifikasi Lokal Dengan Mudah                             |         |     |       |       |         |     |     |         |
+| 7   | Player         | Putar Audi & Video Secara Mudah                                 |         |     |       |       |         |     |     |         |
+| 8.  | Permisssion    | Minta Ijin App Secara mudah                                     |         |     |       |       |         |     |     |         |
+| 9.  | Sim Card       | Baca Detail Sim Card                                            |         |     |       |       |         |     |     |         |
+| 10. | Sms            | Baca, Kirim, Edit contact, Dan Mendapatkan Contact Dengan Mudah |         |     |       |       |         |     |     |         |
+| 12. | Speech To Text | Hasilkan Text Dari Suara File / Live                            |         |     |       |       |         |     |     |         |
+| 13. | Text To Speech | Hasilkan Suara Dari Text                                        |         |     |       |       |         |     |     |         |
 
 ## Contoh
 
