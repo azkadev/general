@@ -172,6 +172,7 @@ void main(List<String> args) async {
   
 
 ## 📑️ Features
+ Saya bisa membuat fitur lebih dari bawah, anda hanya perlu donate / sponsor di github saya
 
 | NO  | Nama           | Deskripsi                                                       | ANDROID | IOS | LINUX | MACOS | WINDOWS | CLI | WEB | FUCHSIA |
 |-----|----------------|-----------------------------------------------------------------|---------|-----|-------|-------|---------|-----|-----|---------|
