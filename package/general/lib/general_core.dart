@@ -2,6 +2,7 @@
 
 // import 'dart:html';
 
+import 'package:general/app/sim_card.dart';
 import 'package:general/app_background/app_background_core.dart';
 import 'package:general/battery/battery.dart';
 import 'package:general/device/device.dart';
@@ -36,16 +37,14 @@ class GeneralLibraryBase {
     return GeneralLibraryGamePadBase();
   }
 
-
   GeneralLibraryTextToSpeechBase get text_to_speech {
     return GeneralLibraryTextToSpeechBase();
   }
 
-
-
   GeneralLibraryDeviceBase get device {
     return GeneralLibraryDeviceBase();
   }
+
   GeneralLibrarySpeechToTextBase get speech_to_text {
     return GeneralLibrarySpeechToTextBase();
   }
@@ -57,6 +56,11 @@ class GeneralLibraryBase {
   GeneralLibrarySmsBase get sms {
     return GeneralLibrarySmsBase();
   }
+
+  GeneralLibraryAppBase get app {
+    return GeneralLibraryAppBase();
+  }
+
   void test() {
     print("oke");
   }

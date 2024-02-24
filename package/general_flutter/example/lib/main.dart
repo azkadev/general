@@ -1,6 +1,7 @@
 // ignore_for_file: non_constant_identifier_names, empty_catches
 
 import 'package:flutter/material.dart';
+
 import 'package:general_flutter/general_flutter.dart';
 
 void main(List<String> args) {
@@ -14,8 +15,11 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: HomePage(),
+    return MaterialApp(
+      home: RepaintBoundary(
+        key: GeneralLibraryAppBaseFlutter.flutter_navigator_key,
+        child: const HomePage(),
+      ),
     );
   }
 }
@@ -29,6 +33,7 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   GeneralFlutter general_library = GeneralFlutter();
+  
   @override
   void initState() {
     super.initState();
@@ -78,8 +83,7 @@ class _HomePageState extends State<HomePage> {
                           minLeadingWidth: 4,
                           leading: CircleAvatar(
                             child: () {
-                              try { 
-                              } catch (e) {}
+                              try {} catch (e) {}
                               return const Icon(Icons.people);
                             }(),
                           ),
@@ -109,11 +113,13 @@ class _HomePageState extends State<HomePage> {
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           Future(() async {
-            for (var element in (await general_library.sms.getAllThreads())) {
-              // for (var element_msg in element.messages) {
-              print("MSG: ${element.messages.last.body}");
-              // }
-            }
+            var res = await general_library.app.screenshot_current_widget();
+            print(res);
+            //   for (var element in (await general_library.sms.getAllThreads())) {
+            //     // for (var element_msg in element.messages) {
+            //     print("MSG: ${element.messages.last.body}");
+            //     // }
+            //   }
           });
         },
         child: const Icon(

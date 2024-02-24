@@ -36,7 +36,7 @@ class GeneralLibraryNotificationBaseFlutter implements GeneralLibraryNotificatio
       return false;
     }
     if (dart.isMobile) {
-      AwesomeNotifications().initialize(
+      return await AwesomeNotifications().initialize(
         null,
         [
           NotificationChannel(

@@ -1,5 +1,6 @@
 // ignore_for_file: non_constant_identifier_names
 
+import 'package:general/app/sim_card_core.dart';
 import 'package:general/app_background/app_background_core.dart';
 import 'package:general/battery/battery_core.dart';
 import 'package:general/device/device_core.dart';
@@ -69,4 +70,8 @@ class GeneralDart implements GeneralLibraryBase {
   GeneralLibrarySmsBase get sms {
     return GeneralLibrarySmsBase();
   }
+
+  @override
+  // TODO: implement app
+  GeneralLibraryAppBase get app => throw UnimplementedError();
 }

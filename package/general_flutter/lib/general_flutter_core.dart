@@ -4,6 +4,7 @@ import 'package:flutter/foundation.dart';
 import 'package:general/app_background/app_background_core.dart';
 import 'package:general/battery/battery_core.dart';
 import "package:general_dart/general_dart.dart";
+import 'package:general_flutter/app/app.dart';
 import 'package:general_flutter/app_background/app_background_core.dart';
 import 'package:general_flutter/device/device.dart';
 import 'package:general_flutter/notification/notification_core.dart';
@@ -68,12 +69,13 @@ class GeneralFlutter extends GeneralDart {
     return GeneralLibrarySimCardBaseFlutter();
   }
 
-
   @override
   GeneralLibrarySmsBaseFlutter get sms {
     return GeneralLibrarySmsBaseFlutter();
   }
 
-
-
+  @override
+  GeneralLibraryAppBaseFlutter get app {
+    return GeneralLibraryAppBaseFlutter();
+  }
 }

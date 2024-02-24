@@ -1,6 +1,6 @@
 name: general_flutter
 description: A Library Full Package Template
-version: 0.0.6
+version: 0.0.10
 homepage: https://github.com/azkadev/general
 repository: https://github.com/azkadev/general
 issue_tracker: https://github.com/azkadev/general/issues 
@@ -35,7 +35,7 @@ dependencies:
   flutter_tts: ^3.8.5
   general: ^0.0.1
   general_dart: ^0.0.1
-  general_lib: ^0.0.26
+  general_lib: ^0.0.27
   path: ^1.8.3
   permission_handler: ^11.3.0
   safe_device: ^1.1.4
@@ -44,6 +44,7 @@ dependencies:
 
   sim_card_info: ^1.0.1
   sms_flutter: ^0.0.0
+  general_lib_flutter: ^0.0.15
   
 # dependency_overrides: 
 
