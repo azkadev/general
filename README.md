@@ -59,7 +59,7 @@ General Adalah library DART & Flutter yang memungkinkan kamu bisa mengakses bany
 2. [Youtube](https://youtube.com/@azkadev)
 
 
-## Fitur
+## 🌟️ Hal Yang Menarik
 
 1. Cross Platform Notifikasi
 2. Cross Platform Putar / Main Media (Video & Audio)
@@ -161,6 +161,24 @@ void main(List<String> args) async {
 - Q: Saya ingin mendapatkan pesan sms di hp namun wajib di kirim setiap saat di telegram apakah bisa?
 - A: Ya anda bisa menggunakan library ini
   
+
+## 📑️ Features
+
+| NO  | Nama           | Deskripsi | ANDROID | IOS | LINUX | MACOS | WINDOWS | CLI | WEB | FUCHSIA |
+|-----|----------------|-----------|---------|-----|-------|-------|---------|-----|-----|---------|
+| 1.  | APP            |           |         |     |       |       |         |     |     |         |
+| 2.  | APP Background |           |         |     |       |       |         |     |     |         |
+| 3.  | Battery        |           |         |     |       |       |         |     |     |         |
+| 4.  | Device         |           |         |     |       |       |         |     |     |         |
+| 5.  | Gamepad        |           |         |     |       |       |         |     |     |         |
+| 6.  | Notification   |           |         |     |       |       |         |     |     |         |
+| 7   | Player         |           |         |     |       |       |         |     |     |         |
+| 8.  | Permisssion    |           |         |     |       |       |         |     |     |         |
+| 9.  | Sim Card       |           |         |     |       |       |         |     |     |         |
+| 10. | Sms            |           |         |     |       |       |         |     |     |         |
+| 12. | Speech To Text |           |         |     |       |       |         |     |     |         |
+| 13. | Text To Speech |           |         |     |       |       |         |     |     |         |
+
 ## Contoh
 
 | NO | Screenshot / Demo | Descripction                                                                                                                                  | LINK | Open Source |
