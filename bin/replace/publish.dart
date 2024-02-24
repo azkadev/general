@@ -1,4 +1,4 @@
-// ignore_for_file: non_constant_identifier_names
+// ignore_for_file: non_constant_identifier_names, unnecessary_brace_in_string_interps
 
 import 'package:universal_io/io.dart';
 import "package:path/path.dart" as path;
