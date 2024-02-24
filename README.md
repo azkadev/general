@@ -63,7 +63,9 @@ General Adalah library DART & Flutter yang memungkinkan kamu bisa mengakses bany
 
 1. Cross Platform Notifikasi
 2. Cross Platform Putar / Main Media (Video & Audio)
-3. Cross Platform Menggunakan Fitur SMS / MMS
+3. Cross Platform Menggunakan Fitur SMS / MMS / CONTACTS
+4. Cross Platform Camera
+5. Cross Platform Security (Fingerprint, Face Id)
 
 ## Cara Penggunaan
 
@@ -108,6 +110,13 @@ Library ini hanya di buat untuk bahasa dart, bahasa code lain saya belum ada ren
       general_library.app_background;
     }
     ```
+
+### Full Install Flutter
+
+
+```bash
+flutter pub add general_flutter
+```
 
 ## ⚠️ Penting
 
