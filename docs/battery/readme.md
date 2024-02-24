@@ -1,6 +1,6 @@
-# Speech To Text
+# Battery
 
-Speech To Text
+Memungkinkan Anda Untuk mendapatkan detail informasi baterai
 
 ## Contoh Code
 

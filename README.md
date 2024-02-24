@@ -104,6 +104,10 @@ Library ini hanya di buat untuk bahasa dart, bahasa code lain saya belum ada ren
     }
     ```
 
+## ⚠️ Penting
+  Walaupun kebanyakan contoh menggunakan flutter / GeneralFlutter sebagai class, library ini bisa di timpa / di pakai di manapun (cli, web, app) jadi misal anda membuat program cli namun mencoba deploy di lokal app anda bisa menggunakan yang ada di flutter
+
+
 ## Contoh Cepat Awal
 
 ```dart
