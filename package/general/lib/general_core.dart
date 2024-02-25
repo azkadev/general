@@ -9,6 +9,7 @@ import 'package:general/device/device.dart';
 import 'package:general/gamepad/gamepad_core.dart';
 import 'package:general/notification/notification_core.dart';
 import 'package:general/pemission/pemission.dart';
+import 'package:general/player/player_core.dart';
 import 'package:general/sim_card/sim_card_core.dart';
 import 'package:general/sms/sms.dart';
 import 'package:general/speech_to_text/speech_to_text_core.dart';
@@ -59,6 +60,10 @@ class GeneralLibraryBase {
 
   GeneralLibraryAppBase get app {
     return GeneralLibraryAppBase();
+  }
+
+  GeneralLibraryPlayerBase get player {
+    return GeneralLibraryPlayerBase();
   }
 
   void test() {
