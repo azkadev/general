@@ -7,6 +7,10 @@ class GeneralLibraryPlayerBase {
 
   GeneralLibraryPlayerBase();
 
+  static void staticEnsureInitialized({
+    String? libmpv,
+  }) {}
+
   void ensureInitialized({
     String? libmpv,
   }) {}
@@ -18,6 +22,17 @@ class GeneralLibraryPlayerBase {
       player_id: player_id,
     );
     players.add(generalLibraryPlayerControllerBase);
+
+    return generalLibraryPlayerControllerBase;
+  }
+
+  GeneralLibraryPlayerControllerBase createPlayerWithoutAdd({
+    required String player_id,
+    
+  }) {
+    GeneralLibraryPlayerControllerBase generalLibraryPlayerControllerBase = GeneralLibraryPlayerControllerBase(
+      player_id: player_id,
+    );
     return generalLibraryPlayerControllerBase;
   }
 

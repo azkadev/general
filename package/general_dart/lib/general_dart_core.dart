@@ -6,6 +6,8 @@ import 'package:general/battery/battery_core.dart';
 import 'package:general/device/device_core.dart';
 import 'package:general/gamepad/gamepad_core.dart';
 import 'package:general/general_core.dart';
+import 'package:general/local_auth/local_auth_core.dart';
+import 'package:general/location/location_core.dart';
 import 'package:general/notification/notification_core.dart';
 import 'package:general/pemission/pemission_core.dart';
 
@@ -81,5 +83,17 @@ class GeneralDart implements GeneralLibraryBase {
   @override
   GeneralLibraryPlayerBaseDart get player {
     return GeneralLibraryPlayerBaseDart();
+  }
+
+  @override
+  // TODO: implement local_auth
+  GeneralLibraryLocalAuthBase get local_auth {
+    return GeneralLibraryLocalAuthBase();
+  }
+
+  @override
+  // TODO: implement location
+  GeneralLibraryLocationBase get location {
+    return GeneralLibraryLocationBase();
   }
 }

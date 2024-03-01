@@ -3,3 +3,4 @@
  export "package:general/general.dart";
  export "app/app.dart";
 //  export "package:sms_flutter/sms_flutter.dart";
+export "player/player.dart";

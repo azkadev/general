@@ -37,6 +37,12 @@ dependencies:
   cupertino_icons: ^1.0.2
   general_flutter:
     path: ../ 
+  media_kit_libs_video: ^1.0.4
+  media_kit_video: ^1.2.4
+  local_auth: ^2.2.0
+  geolocator: ^11.0.0
+  baseflow_plugin_template: ^2.1.2
+  telegram_client: ^0.7.5
    
 dev_dependencies:
   flutter_test:

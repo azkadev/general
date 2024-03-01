@@ -10,6 +10,14 @@ class GeneralLibraryPlayerBaseDart implements GeneralLibraryPlayerBase {
 
   GeneralLibraryPlayerBaseDart();
 
+  static void staticEnsureInitialized({
+    String? libmpv,
+  }) {
+    MediaKit.ensureInitialized(
+      libmpv: libmpv,
+    );
+  }
+
   @override
   void ensureInitialized({
     String? libmpv,
@@ -33,12 +41,20 @@ class GeneralLibraryPlayerBaseDart implements GeneralLibraryPlayerBase {
   }
 
   @override
+  GeneralLibraryPlayerControllerBase createPlayerWithoutAdd({required String player_id}) {
+    GeneralLibraryPlayerControllerBaseDart generalLibraryPlayerControllerBaseDart = GeneralLibraryPlayerControllerBaseDart(
+      player_id: player_id,
+    );
+
+    return generalLibraryPlayerControllerBaseDart;
+  }
+
+  @override
   bool containsPlayer({required String player_id}) {
     try {
       players.singleWhere((element) => element.player_id == player_id);
       return true;
-    } catch (e) { 
-    }
+    } catch (e) {}
     return false;
   }
 
@@ -60,14 +76,11 @@ class GeneralLibraryPlayerBaseDart implements GeneralLibraryPlayerBase {
           try {
             await element.stop();
             await element.dispose();
-          } catch (e) { 
-          }
+          } catch (e) {}
         }
       }
       players.removeWhere((element) => element.player_id == player_id);
-    } catch (e) { 
-    }
+    } catch (e) {}
     return;
   }
-  
 }

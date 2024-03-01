@@ -7,6 +7,7 @@ import 'package:general/app_background/app_background_core.dart';
 import 'package:general/battery/battery.dart';
 import 'package:general/device/device.dart';
 import 'package:general/gamepad/gamepad_core.dart';
+import 'package:general/general.dart';
 import 'package:general/notification/notification_core.dart';
 import 'package:general/pemission/pemission.dart';
 import 'package:general/player/player_core.dart';
@@ -65,6 +66,17 @@ class GeneralLibraryBase {
   GeneralLibraryPlayerBase get player {
     return GeneralLibraryPlayerBase();
   }
+
+
+  GeneralLibraryLocationBase get location {
+    return GeneralLibraryLocationBase();
+  }
+
+  GeneralLibraryLocalAuthBase get local_auth {
+    return GeneralLibraryLocalAuthBase();
+  }
+
+
 
   void test() {
     print("oke");
