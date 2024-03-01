@@ -1,6 +1,6 @@
 name: general_flutter
 description: A Library Full Package Template
-version: 0.0.11
+version: 0.0.12
 homepage: https://github.com/azkadev/general
 repository: https://github.com/azkadev/general
 issue_tracker: https://github.com/azkadev/general/issues 
@@ -33,12 +33,12 @@ dependencies:
     sdk: flutter
   flutter_background: ^1.2.0
   flutter_tts: ^3.8.5
-  general: ^0.0.11
-  general_dart: ^0.0.11
+  general: ^0.0.12
+  general_dart: ^0.0.12
   general_lib: ^0.0.27
   path: ^1.8.3
   permission_handler: ^11.3.0
-  safe_device: ^1.1.4
+  safe_device: ^1.1.6
   speech_to_text: ^6.6.0
   universal_io: ^2.2.2
 

@@ -10,11 +10,7 @@ class GeneralLibraryDeviceBase {
   Future<bool> get is_real_device async {
     return false;
   }
-
-  Future<bool> get can_mock_location async {
-    return false;
-  }
-
+  
   Future<bool> get android_is_on_external_storage async {
     return false;
   }
@@ -29,4 +25,17 @@ class GeneralLibraryDeviceBase {
 
 
   
+
+
+  
+  Future<bool> get usb_debug_check async {
+    return false;
+  }
+
+  
+  Future<bool> get is_mock_location async { 
+    return false;
+  }
+
+
 }

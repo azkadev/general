@@ -23,12 +23,28 @@ class MainActivity: FlutterFragmentActivity() {
 
 
 ```bash
+code android/settings.gradle
+```
+
+```bash
+plugins {
+    # change this
+    id "org.jetbrains.kotlin.android" version "1.9.22" apply false
+}
+```
+
+
+- Change Android Manifest
+
+
+```bash
 code android/app/src/main/AndroidManifest.xml
 ```
 
 ```xml
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
-  
+    <uses-permission android:name="android.permission.USE_BIOMETRIC"/>
+
     <uses-permission android:name="android.permission.READ_SMS"/>
     <uses-permission android:name="android.permission.SEND_SMS"/>
     <uses-permission android:name="android.permission.RECEIVE_SMS"/>

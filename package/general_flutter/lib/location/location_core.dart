@@ -49,4 +49,19 @@ class GeneralLibraryLocationBaseFlutter implements GeneralLibraryLocationBase {
     }
     return null;
   }
+
+  @override
+  double bearingBetween({
+    required double startLatitude,
+    required double startLongitude,
+    required double endLatitude,
+    required double endLongitude,
+  }) {
+    return GeneralLibraryLocationBase().bearingBetween(startLatitude: startLatitude, startLongitude: startLongitude, endLatitude: endLatitude, endLongitude: endLongitude);
+  }
+
+  @override
+  double distanceBetween({required double startLatitude, required double startLongitude, required double endLatitude, required double endLongitude}) {
+    return GeneralLibraryLocationBase().distanceBetween(startLatitude: startLatitude, startLongitude: startLongitude, endLatitude: endLatitude, endLongitude: endLongitude);
+  }
 }

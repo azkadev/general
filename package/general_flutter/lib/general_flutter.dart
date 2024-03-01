@@ -4,3 +4,5 @@
  export "app/app.dart";
 //  export "package:sms_flutter/sms_flutter.dart";
 export "player/player.dart";
+export "local_auth/local_auth.dart";
+export "location/location.dart";

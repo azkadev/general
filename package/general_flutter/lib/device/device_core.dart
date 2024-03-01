@@ -46,15 +46,24 @@ class GeneralLibraryDeviceBaseFlutter implements GeneralLibraryDeviceBase {
 
 
   @override 
-  Future<bool> get can_mock_location async {
+  Future<bool> get usb_debug_check async {
     try {
       if (is_mobile) {
-        return await SafeDevice.canMockLocation;
+        return await SafeDevice.usbDebuggingCheck;
       }
     } catch (e) {}
     return false;
   }
 
+  @override 
+  Future<bool> get is_mock_location async {
+    try {
+      if (is_mobile) {
+        return await SafeDevice.isMockLocation;
+      }
+    } catch (e) {}
+    return false;
+  }
 
   @override 
   Future<bool> get is_jailbroken async {
@@ -87,5 +96,5 @@ class GeneralLibraryDeviceBaseFlutter implements GeneralLibraryDeviceBase {
     } catch (e) {}
     return false;
   }
-
+   
 }

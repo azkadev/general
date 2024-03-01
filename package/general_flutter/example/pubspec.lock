@@ -222,21 +222,21 @@ packages:
       path: "../../general"
       relative: true
     source: path
-    version: "0.0.11"
+    version: "0.0.12"
   general_dart:
     dependency: "direct overridden"
     description:
       path: "../../general_dart"
       relative: true
     source: path
-    version: "0.0.11"
+    version: "0.0.12"
   general_flutter:
     dependency: "direct main"
     description:
       path: ".."
       relative: true
     source: path
-    version: "0.0.11"
+    version: "0.0.12"
   general_lib:
     dependency: transitive
     description:
@@ -665,10 +665,10 @@ packages:
     dependency: transitive
     description:
       name: safe_device
-      sha256: "7a7e49c6cd0a33798ae604657b9876aadfc1678c9be66a829b36a987c8e4bfd1"
+      sha256: "889ba192a7056b4cedf24cf464226217d8f26a5c007a7b8e50a31f6c44b4def4"
       url: "https://pub.dev"
     source: hosted
-    version: "1.1.4"
+    version: "1.1.6"
   safe_local_storage:
     dependency: transitive
     description:
@@ -842,14 +842,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "0.6.1"
-  trust_location:
-    dependency: transitive
-    description:
-      name: trust_location
-      sha256: "2457f4bcd9ef8423fd12d8ae1701040ecef37a488e4a46bfa50bad26d8cf7d80"
-      url: "https://pub.dev"
-    source: hosted
-    version: "2.0.13"
   typed_data:
     dependency: transitive
     description:

@@ -27,7 +27,7 @@ class _DevicePageState extends State<DevicePage> {
     Future(() async {
       await general_library.device.android_is_development_mode_enable; // detek rom is debug
       await general_library.device.android_is_on_external_storage;
-      await general_library.device.can_mock_location; 
+      await general_library.device.is_mock_location; 
       await general_library.device.is_jailbroken; // detek root / or jailbreak
       await general_library.device.is_real_device; // detek emulator or not
       await general_library.device.is_safe_device; // 

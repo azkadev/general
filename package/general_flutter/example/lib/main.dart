@@ -12,6 +12,48 @@ import 'package:telegram_client/telegram_bot_api/telegram_bot_api.dart';
 /// Defines the main theme color.
 final MaterialColor themeMaterialColor = BaseflowPluginExample.createMaterialColor(const Color.fromRGBO(48, 49, 60, 1));
 
+class DistanceSlider extends StatefulWidget {
+  const DistanceSlider({super.key});
+
+  @override
+  State<DistanceSlider> createState() => _DistanceSliderState();
+}
+
+class _DistanceSliderState extends State<DistanceSlider> {
+  double distanceInKm = 0.0;
+
+  @override
+  Widget build(BuildContext context) {
+    print(distanceInKm);
+    distanceInKm = 421786.46369862853;
+    return Center(
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Text('Jarak: ${distanceInKm.toStringAsFixed(2)} km'),
+          Slider(
+            value: distanceInKm,
+            min: 0.0,
+            max: 9900.0,
+            onChanged: (value) {
+              setState(() {
+                distanceInKm = value;
+              });
+            },
+          ),
+          ElevatedButton(
+            onPressed: () {
+              // Gunakan nilai distanceInKm sesuai kebutuhan Anda, misalnya untuk menghitung sesuatu.
+              print('Nilai jarak dalam km: $distanceInKm');
+            },
+            child: Text('Hitung'),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
   runApp(const MyApp());
@@ -43,8 +85,6 @@ class GeolocatorWidget extends StatefulWidget {
 }
 
 class _GeolocatorWidgetState extends State<GeolocatorWidget> {
-  
-
   GeneralFlutter general_library = GeneralFlutter();
   @override
   void initState() {
@@ -79,10 +119,13 @@ class _GeolocatorWidgetState extends State<GeolocatorWidget> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: Text(
-          "UPDATE-DATE: ${dateTime}",
-        ),
+      body: Column(
+        children: [
+          Text(
+            "UPDATE-DATE: ${dateTime}",
+          ),
+          DistanceSlider(),
+        ],
       ),
     );
   }
