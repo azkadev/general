@@ -9,33 +9,23 @@ class GeneralLibraryNotificationBaseFlutter implements GeneralLibraryNotificatio
   GeneralLibraryNotificationBaseFlutter();
 
   @override
-  // TODO: implement disable_background
-  Future<bool> get disable_background => throw UnimplementedError();
-
-  @override
-  // TODO: implement enable_background
-  Future<bool> get enable_background => throw UnimplementedError();
-
-  @override
-  // TODO: implement has_permissions
-  Future<bool> get has_permissions {
-    return AwesomeNotifications().createNotification(
-      content: NotificationContent(
-        id: 10,
-        channelKey: 'basic_channel',
-        actionType: ActionType.Default,
-        title: 'Hello World!',
-        body: 'This is my first notification!',
-      ), 
-    );
-  }
-
-  @override
-  Future<bool> initialize({required String notificationTitle, required String notificationMessage}) async {
+  bool get is_support_awesome_notification {
     if (dart.isWeb) {
       return false;
     }
     if (dart.isMobile) {
+      return true;
+    }
+    return false;
+  }
+
+  @override
+  Future<bool> initialize({
+    required String notificationTitle,
+    required String notificationMessage,
+    
+  }) async {
+    if (is_support_awesome_notification) {
       return await AwesomeNotifications().initialize(
         null,
         [
@@ -62,8 +52,21 @@ class GeneralLibraryNotificationBaseFlutter implements GeneralLibraryNotificatio
   }
 
   @override
-  // TODO: implement is_background
-  bool get is_background {
+  Future<bool> createSimpleNotification({
+    required String title,
+    required String text,
+  }) async {
+    if (is_support_awesome_notification) {
+      return AwesomeNotifications().createNotification(
+        content: NotificationContent(
+          id: 10,
+          channelKey: "basic_channel",
+          actionType: ActionType.Default,
+          title: title,
+          body: text,
+        ),
+      );
+    }
     return false;
   }
 }

@@ -1,28 +1,22 @@
 // ignore_for_file: non_constant_identifier_names
 
 class GeneralLibraryNotificationBase {
-  GeneralLibraryNotificationBase();
 
+  GeneralLibraryNotificationBase();
+  
+  bool get is_support_awesome_notification {
+    return false;
+  }
   Future<bool> initialize({
     required String notificationTitle,
     required String notificationMessage,
   }) async {
     return false;
   }
-
-  Future<bool> get has_permissions async {
-    return false;
-  }
-
-  Future<bool> get enable_background async {
-    return false;
-  }
-
-  bool get is_background {
-    return false;
-  }
-
-  Future<bool> get disable_background async {
+  Future<bool> createSimpleNotification({
+    required String title,
+    required String text,
+  }) async {
     return false;
   }
 }

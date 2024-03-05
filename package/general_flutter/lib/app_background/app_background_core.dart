@@ -23,6 +23,7 @@ class GeneralLibraryAppBackgroundBaseFlutter implements GeneralLibraryAppBackgro
       return false;
     }
     if (dart.isAndroid) {
+      
       return await FlutterBackground.enableBackgroundExecution();
     }
 

@@ -2,19 +2,70 @@
 
 General Adalah library DART & Flutter yang memungkinkan kamu bisa mengakses banyak hal dengan instant
 
+[![Pub Version](https://img.shields.io/pub/v/general?label=pub.dev&labelColor=333940&logo=dart)](https://pub.dev/packages/general)
+
 ## Pembuat & Kenapa Library ini di buat
 
 [AZKADEV](https://github.com/azkadev) **adalah pembuat asli library ini**, **library** ini di buat agar dia bisa **mempercepat development** di **berbagai platform & cli** sekaligus dengan mudah, pasalnya saya Terkadang membuat **bot / userbot / server** yang memungkinkan **deploy di LOCAL DEVICE / HP** Sehingga **library** ini di buat agar bisa **mengakses fitur** yang ada di masing **device** seperti **(camera, fingerprint, sms, mms)**
 
-## Fitur
+<h3 align="center">
+  Pencipta Library
+  <img src="https://media.giphy.com/media/hvRJCLFzcasrR4ia7z/giphy.gif" width="28">
+</h3>
+
+<!-- Typing SVG by azkadev - https://github.com/azkadev/readme-typing-svg -->
+<p align="center">
+<a href="https://github.com/azkadev">
+        <img src="https://telegra.ph/file/e90bdeab8390b8c0d9df2.png" alt="Specta"
+            width="312"
+            height="312">
+    </a>
+</p>
+
+<!-- Social icons section -->
+<p align="center">   
+  <a href="https://youtube.com/@azkadev">
+    <img alt="youtube" title="Follow me on Youtube" src="https://img.shields.io/badge/Youtube-%23E4405F.svg?&style=for-the-badge&logo=youtube&logoColor=white"/>
+    </a>
+  <a href="https://t.me/azkadevbot?star=ref_readme_general_library">
+    <img alt="telegram" title="Follow me on Telegram" src="https://img.shields.io/badge/Telegram-2CA5E0?style=for-the-badge&logo=telegram&logoColor=white)"/>
+    </a> 
+  <a href="https://youtube.com/@azkadev">
+    <img alt="Website" title="Follow me on Web" src="https://img.shields.io/badge/Website-%23E4405F.svg?&style=for-the-badge&logo=firefox&logoColor=white"/>
+    </a>  
+</p>
+
+
+
+<p align="center">
+  <a href="https://www.youtube.com/@azkadev?sub_confirmation=1">
+    <img alt="youtube subscribers" title="Subscribe to my YouTube channel" src="https://custom-icon-badges.demolab.com/youtube/channel/subscribers/UC928-F8HenjZD1zNdMY42vA?color=%23E05D44&label=SUBSCRIBE&logo=video&logoColor=white&style=for-the-badge&labelColor=CE4630"/></a>
+  <a href="https://www.youtube.com/@azkadev">
+    <img alt="youtube views" title="YouTube views" src="https://custom-icon-badges.demolab.com/youtube/channel/views/UC928-F8HenjZD1zNdMY42vA?color=%23E1AD0E&logo=video&logoColor=white&style=for-the-badge&labelColor=C79600"/></a> 
+  <a href="https://github.com/azkadev?tab=repositories&sort=stargazers">
+    <img alt="total stars" title="Total stars on GitHub" src="https://custom-icon-badges.demolab.com/github/stars/azkadev?color=55960c&style=for-the-badge&labelColor=488207&logo=star"/></a>
+  <a href="https://github.com/azkadev?tab=followers">
+    <img alt="followers" title="Follow me on Github" src="https://custom-icon-badges.demolab.com/github/followers/azkadev?color=236ad3&labelColor=1155ba&style=for-the-badge&logo=person-add&label=Follow&logoColor=white"/></a>
+</p>
+
+---
+
+## 🔗️ Links
+
+
+#### Docs / Tutorial / Example
+
+1. [GITHUB DOCS](/docs/)
+2. [Youtube](https://youtube.com/@azkadev)
+
+
+## 🌟️ Hal Yang Menarik
 
 1. Cross Platform Notifikasi
 2. Cross Platform Putar / Main Media (Video & Audio)
-3. Cross Platform Menggunakan Fitur SMS / MMS
-4. 
-
-## Contoh
-
+3. Cross Platform Menggunakan Fitur SMS / MMS / CONTACTS
+4. Cross Platform Camera
+5. Cross Platform Security (Fingerprint, Face Id)
 
 ## Cara Penggunaan
 
@@ -60,15 +111,27 @@ Library ini hanya di buat untuk bahasa dart, bahasa code lain saya belum ada ren
     }
     ```
 
+### Full Install Flutter
+
+
+```bash
+flutter pub add general_flutter
+```
+
+## ⚠️ Penting
+
+-  Walaupun kebanyakan contoh menggunakan flutter / GeneralFlutter sebagai class, library ini bisa di timpa / di pakai di manapun (cli, web, app) jadi misal anda membuat program cli namun mencoba deploy di lokal app anda bisa menggunakan yang ada di flutter
+- Tolong bantu library ini terus berkembang dengan cara stars / follow akun social media saya  / Donate / Sponsor (ini yang paling ngaruh)
+
+
 ## Contoh Cepat Awal
 
 ```dart
 // ignore_for_file: non_constant_identifier_names, unnecessary_brace_in_string_interps
 import "package:general_dart/general_dart.dart";
-void main(List<String> args) async {
 
+void main(List<String> args) async {
   GeneralDart general_library = GeneralDart();
-  
   // app background initialized
   await general_library.app_background.has_permissions;
   await general_library.app_background.initialize(
@@ -91,3 +154,44 @@ void main(List<String> args) async {
   );
 }
 ```
+
+## ❔️ FAQS
+
+- **Q:** Kenapa Harus pakai library ini?
+- **A:** Kami tidak memaksa anda memakai libary ini namun jika library ini dipakai anda akan mudah dalam development karena selain library ini gampang di baca dan di atur anda bisa mengcustom sesuka hati
+  
+- **Q:** Apa ada contoh penting yang wajib memakai library ini
+- **A:** Jika anda membuat server / program bot ini wajib karena anda anda deploy di app maka anda akan kesulitan membuat log, dengan library ini kamu bisa mengakses berbagai fitur yang ada di app, contoh program kamu ada error kamu bisa memanfatkan fitur text to speech, / contoh kamu ingin mengakses kamera jarak jauh anda bisa mengcustom sendiri namun perlu skills coding sedikit mumpuni tapi anda tidak perlu belajar native hanya belajar dart di library ini
+
+- **Q:** Saya membuat pogram generator image namun saat ini saya tidak tahu deploy flutter di server bisakah menggunakan ini di hp?
+- **A:** Tentu kamu bisa melakukan banyak hal menggunakan library ini dengan cukup simple
+
+- **Q:** Saya ingin mendapatkan pesan sms di hp namun wajib di kirim setiap saat di telegram apakah bisa?
+- **A:** Ya anda bisa menggunakan library ini
+  
+
+## 📑️ Features
+ Saya bisa membuat fitur lebih dari bawah, anda hanya perlu donate / sponsor di github saya
+
+| NO  | Nama           | Deskripsi                                                       | ANDROID | IOS | LINUX | MACOS | WINDOWS | CLI | WEB | FUCHSIA |
+|-----|----------------|-----------------------------------------------------------------|---------|-----|-------|-------|---------|-----|-----|---------|
+| 1.  | APP            | Mengakses Banyak Hal Agar App Kamu semakin kompleks             |         |     |       |       |         |     |     |         |
+| 2.  | APP Background | Minta Ijin background dengan mudah                              |         |     |       |       |         |     |     |         |
+| 3.  | Battery        | Check battery kamu apakah sedang mengisi daya / tidak / level   |         |     |       |       |         |     |     |         |
+| 4.  | Device         | Check device kamu apakah jailbreak / root / emulator            |         |     |       |       |         |     |     |         |
+| 5.  | Gamepad        | Gunakan Gamepad Agar Kamu app kamu bisa lebih bagus             |         |     |       |       |         |     |     |         |
+| 6.  | Notification   | Kirim Notifikasi Lokal Dengan Mudah                             |         |     |       |       |         |     |     |         |
+| 7   | Player         | Putar Audi & Video Secara Mudah                                 |         |     |       |       |         |     |     |         |
+| 8.  | Permisssion    | Minta Ijin App Secara mudah                                     |         |     |       |       |         |     |     |         |
+| 9.  | Sim Card       | Baca Detail Sim Card                                            |         |     |       |       |         |     |     |         |
+| 10. | Sms            | Baca, Kirim, Edit contact, Dan Mendapatkan Contact Dengan Mudah |         |     |       |       |         |     |     |         |
+| 12. | Speech To Text | Hasilkan Text Dari Suara File / Live                            |         |     |       |       |         |     |     |         |
+| 13. | Text To Speech | Hasilkan Suara Dari Text                                        |         |     |       |       |         |     |     |         |
+
+## Contoh
+
+| NO | Screenshot / Demo | Descripction                                                                                                                                  | LINK | Open Source |
+|----|-------------------|-----------------------------------------------------------------------------------------------------------------------------------------------|------|-------------|
+| 1  |                   | Sebuah Applikasi untuk menjalankan berbagai bot / userbot / ai dengan banyak fitur + bisa menjadi assistant pribadi + teman                   |      | TIDAK       |
+| 2. |                   | Sebuah Applikasi Telegram Pihak 3 Dengan banyak fitur menarik                                                                                 |      | TIDAK       |
+| 3. |                   | Sebuah applikasi dengan banyak fitur yang memungkinkan anda bisa berbisnis / bersenang senang / membeli jasa dengan mudah di 1 app / platform |      | TIDAK       |

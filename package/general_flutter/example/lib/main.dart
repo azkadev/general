@@ -24,7 +24,7 @@ class _DistanceSliderState extends State<DistanceSlider> {
 
   @override
   Widget build(BuildContext context) {
-    print(distanceInKm);
+    
     distanceInKm = 421786.46369862853;
     return Center(
       child: Column(
