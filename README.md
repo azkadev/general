@@ -8,6 +8,8 @@ General Adalah library DART & Flutter yang memungkinkan kamu bisa mengakses bany
 
 [AZKADEV](https://github.com/azkadev) **adalah pembuat asli library ini**, **library** ini di buat agar dia bisa **mempercepat development** di **berbagai platform & cli** sekaligus dengan mudah, pasalnya saya Terkadang membuat **bot / userbot / server** yang memungkinkan **deploy di LOCAL DEVICE / HP** Sehingga **library** ini di buat agar bisa **mengakses fitur** yang ada di masing **device** seperti **(camera, fingerprint, sms, mms)**
 
+<!-- global first -->
+
 <h3 align="center">
   Pencipta Library
   <img src="https://media.giphy.com/media/hvRJCLFzcasrR4ia7z/giphy.gif" width="28">
@@ -52,12 +54,13 @@ General Adalah library DART & Flutter yang memungkinkan kamu bisa mengakses bany
 
 ## 🔗️ Links
 
-
 #### Docs / Tutorial / Example
 
 1. [GITHUB DOCS](/docs/)
 2. [Youtube](https://youtube.com/@azkadev)
 3. [Telegram Chat Group Support](https://t.me/DEVELOPER_GLOBAL_PUBLIC)
+
+<!-- global finished -->
 
 ## 🌟️ Hal Yang Menarik
 
