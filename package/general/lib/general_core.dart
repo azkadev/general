@@ -2,22 +2,19 @@
 
 // import 'dart:html';
 
-import 'package:general/app/sim_card.dart';
+import 'package:general/app/app.dart';
 import 'package:general/app_background/app_background_core.dart';
 import 'package:general/battery/battery.dart';
 import 'package:general/device/device.dart';
-import 'package:general/gamepad/gamepad_core.dart';
 import 'package:general/general.dart';
 import 'package:general/notification/notification_core.dart';
-import 'package:general/pemission/pemission.dart';
-import 'package:general/player/player_core.dart';
-import 'package:general/sim_card/sim_card_core.dart';
-import 'package:general/sms/sms.dart';
-import 'package:general/speech_to_text/speech_to_text_core.dart';
-import 'package:general/text_to_speech/text_to_speech_core.dart';
 
 class GeneralLibraryBase {
   GeneralLibraryBase();
+  
+  GeneralLibraryAppBase get app {
+    return GeneralLibraryAppBase();
+  }
 
   GeneralLibraryAppBackgroundBase get app_background {
     return GeneralLibraryAppBackgroundBase();
@@ -59,9 +56,6 @@ class GeneralLibraryBase {
     return GeneralLibrarySmsBase();
   }
 
-  GeneralLibraryAppBase get app {
-    return GeneralLibraryAppBase();
-  }
 
   GeneralLibraryPlayerBase get player {
     return GeneralLibraryPlayerBase();

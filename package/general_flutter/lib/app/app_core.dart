@@ -3,13 +3,14 @@
 import 'dart:typed_data';
 
 import 'package:flutter/material.dart';
-import 'package:general/app/sim_card_core.dart';
+import 'package:flutter/services.dart';
+import 'package:general/app/app.dart';
 import 'package:general_lib_flutter/extension/build_context.dart';
 
 class GeneralLibraryAppBaseFlutter implements GeneralLibraryAppBase {
   static GlobalKey<NavigatorState> flutter_navigator_key = GlobalKey<NavigatorState>();
   static GlobalKey flutter_repaint_boundery_key = GlobalKey();
-  
+
   static Widget repaintBoundaryWidget({
     required Widget child,
   }) {
@@ -42,5 +43,43 @@ class GeneralLibraryAppBaseFlutter implements GeneralLibraryAppBase {
         context.showSnackBar(message);
       }
     } catch (e) {}
+  }
+
+  @override
+  Future<void> setFullScreen(bool isFullScreen) async {
+    await static_setFullScreen(isFullScreen);
+  }
+
+  static Future<void> static_setFullScreen(bool isFullScreen) async {
+    if (isFullScreen) {
+      await SystemChrome.setEnabledSystemUIMode(SystemUiMode.immersiveSticky);
+    } else {
+      await SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual, overlays: SystemUiOverlay.values);
+    }
+  }
+
+  @override
+  Future<void> setPreferredOrientations({
+    required List<GeneralLibraryAppDeviceOrientationType> orientations,
+  }) async {
+    static_setPreferredOrientations(orientations: orientations);
+  }
+  static Future<void> static_setPreferredOrientations({
+    required List<GeneralLibraryAppDeviceOrientationType> orientations,
+  }) async {
+    static_flutter_setPreferredOrientations(orientations: orientations.toFlutter());
+  }
+
+  static Future<void> static_flutter_setPreferredOrientations({
+    required List<DeviceOrientation> orientations,
+  }) async {
+    await SystemChrome.setPreferredOrientations(orientations);
+  }
+
+}
+
+extension ExtensionListGeneralAppDeviceOriendaion on List<GeneralLibraryAppDeviceOrientationType> {
+  List<DeviceOrientation> toFlutter() {
+    return map((e) => DeviceOrientation.values.singleWhere((element) => element.name == e.name)).whereType<DeviceOrientation>().toList();
   }
 }

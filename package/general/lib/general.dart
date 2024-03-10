@@ -9,5 +9,5 @@ export "sim_card/sim_card.dart";
 export "sms/sms.dart";
 export"player/player.dart";
 export "local_auth/local_auth.dart";
-
+export "app/app.dart";
 export "location/location.dart";
