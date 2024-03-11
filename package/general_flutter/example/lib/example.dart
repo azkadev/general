@@ -1,6 +1,5 @@
 import 'dart:async';
 
-import 'package:example/joy.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -146,14 +145,6 @@ class _ScreenPageState extends State<ScreenPage> with TickerProviderStateMixin {
         crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Joystick(
-          onChanged: (offset) {
-            print('Joystick position: $offset');
-          },
-          onReleased: () {
-            print('Joystick released');
-          },
-        ),
           Padding(
             padding: EdgeInsets.all(10),
             child: GestureDetector(
@@ -180,7 +171,6 @@ class _ScreenPageState extends State<ScreenPage> with TickerProviderStateMixin {
               ),
             ),
           ),
-
           Padding(
             padding: EdgeInsets.all(10),
             child: GestureDetector(

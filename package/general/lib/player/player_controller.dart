@@ -14,7 +14,10 @@ class GeneralLibraryPlayerControllerBase {
   Future<void> test() async {}
 
   
-  Future<void> open(GeneralLibraryPlayerPlayableBase playable, {bool play= true}) async {
+  Future<void> open(GeneralLibraryPlayerPlayableBase playable, {bool play= true,
+    bool isLoop = false,
+  
+  }) async {
     return;
   }
 

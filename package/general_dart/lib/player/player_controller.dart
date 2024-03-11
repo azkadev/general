@@ -50,6 +50,7 @@ class GeneralLibraryPlayerControllerBaseDart implements GeneralLibraryPlayerCont
   Future<void> open(
     GeneralLibraryPlayerPlayableBase playable, {
     bool play = true,
+    bool isLoop = false,
   }) async {
     if (playable is GeneralLibraryPlayerMediaBase) {
       // GeneralLibraryPlayerMediaBase generalLibraryPlayerMediaBase = (playable);
@@ -63,6 +64,9 @@ class GeneralLibraryPlayerControllerBaseDart implements GeneralLibraryPlayerCont
         playable.toPlayListMediaKit(),
         play: play,
       );
+    }
+    if (isLoop) {
+      await player.setPlaylistMode(PlaylistMode.loop);
     }
     return;
   }
@@ -80,6 +84,7 @@ class GeneralLibraryPlayerControllerBaseDart implements GeneralLibraryPlayerCont
 
   @override
   Future<void> jump(int index) async {
+    
     return await player.jump(index);
   }
 
