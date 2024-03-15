@@ -1,3 +1,3 @@
-## 0.0.13
+## 0.0.15
 
-- update.
+- revisi text to speech.

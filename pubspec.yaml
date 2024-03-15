@@ -1,6 +1,6 @@
 name: general
 description: A sample command-line application.
-version: 0.0.14
+version: 0.0.15
 repository: https://github.com/azkadev/general
 publish_to: none
 
