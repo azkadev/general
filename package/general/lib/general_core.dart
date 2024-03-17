@@ -62,9 +62,9 @@ class GeneralLibraryBase {
   }
 
 
-  GeneralLibraryLocationBase get location {
-    return GeneralLibraryLocationBase();
-  }
+  // GeneralLibraryLocationBase get location {
+  //   return GeneralLibraryLocationBase();
+  // }
 
   GeneralLibraryLocalAuthBase get local_auth {
     return GeneralLibraryLocalAuthBase();

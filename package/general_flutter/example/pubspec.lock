@@ -222,21 +222,21 @@ packages:
       path: "../../general"
       relative: true
     source: path
-    version: "0.0.14"
+    version: "0.0.15"
   general_dart:
     dependency: "direct overridden"
     description:
       path: "../../general_dart"
       relative: true
     source: path
-    version: "0.0.14"
+    version: "0.0.15"
   general_flutter:
     dependency: "direct main"
     description:
       path: ".."
       relative: true
     source: path
-    version: "0.0.14"
+    version: "0.0.15"
   general_lib:
     dependency: transitive
     description:

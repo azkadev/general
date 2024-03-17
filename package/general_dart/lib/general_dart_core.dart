@@ -8,7 +8,7 @@ import 'package:general/device/device_core.dart';
 import 'package:general/gamepad/gamepad_core.dart';
 import 'package:general/general_core.dart';
 import 'package:general/local_auth/local_auth_core.dart';
-import 'package:general/location/location_core.dart';
+// import 'package:general/location/location_core.dart';
 import 'package:general/notification/notification_core.dart';
 import 'package:general/pemission/pemission_core.dart';
 
@@ -92,9 +92,9 @@ class GeneralDart implements GeneralLibraryBase {
     return GeneralLibraryLocalAuthBase();
   }
 
-  @override
-  // TODO: implement location
-  GeneralLibraryLocationBase get location {
-    return GeneralLibraryLocationBase();
-  }
+  // @override
+  // // TODO: implement location
+  // GeneralLibraryLocationBase get location {
+  //   return GeneralLibraryLocationBase();
+  // }
 }

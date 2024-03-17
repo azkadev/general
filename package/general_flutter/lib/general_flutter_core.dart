@@ -8,7 +8,7 @@ import 'package:general_flutter/app/app.dart';
 import 'package:general_flutter/app_background/app_background_core.dart';
 import 'package:general_flutter/device/device.dart';
 import 'package:general_flutter/local_auth/local_auth.dart';
-import 'package:general_flutter/location/location.dart';
+// import 'package:general_flutter/location/location.dart';
 import 'package:general_flutter/notification/notification_core.dart';
 import 'package:general_flutter/permission/permission.dart';
 import 'package:general_flutter/sim_card/sim_card_core.dart';
@@ -87,10 +87,10 @@ class GeneralFlutter extends GeneralDart {
     return GeneralLibraryLocalAuthBaseFlutter();
   }
 
-  @override 
-  GeneralLibraryLocationBaseFlutter get location {
-    return GeneralLibraryLocationBaseFlutter();
-  }
+  // @override 
+  // GeneralLibraryLocationBaseFlutter get location {
+  //   return GeneralLibraryLocationBaseFlutter();
+  // }
 
   @override
   GeneralLibraryPlayerBaseDart get player {
