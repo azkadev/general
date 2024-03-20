@@ -1,51 +1,42 @@
 // ignore_for_file: non_constant_identifier_names
 
+import 'package:http/http.dart';
 import 'package:universal_io/io.dart';
 import "package:path/path.dart" as path;
 
-void main(List<String> args) async {
-  Directory directory = Directory.current;
-  Directory directory_packages = Directory(path.join(directory.path, "package"));
+Future<String> get content_readme async {
+  Response response = await get(Uri.parse("https://raw.githubusercontent.com/globalcorporation/.github/main/profile/readme.md"));
 
-  if (!directory_packages.existsSync()) {
-    print("Directory Packages Not Found: ${directory_packages.path}");
-    exit(1);
-  }
-
-  List<FileSystemEntity> file_system_entity_packages = directory_packages.listSync();
-
-  for (var i = 0; i < file_system_entity_packages.length; i++) {
-    FileSystemEntity fileSystemEntity = file_system_entity_packages[i];
-    if (fileSystemEntity is Directory) {
-      File file_readme = File(path.join(fileSystemEntity.path, "README.md"));
-
-      await file_readme.writeAsString(content_readme);
-    }
-  }
-
-  print("Finished");
-  exit(0);
+  return response.body;
 }
 
-String content_readme = """
-# General
+void main(List<String> args) async {
+  Directory directory = Directory.current;
+  File file_readme = File(path.join(directory.path, "README.md"));
 
+// <!-- START GLOBAL CORPORATION -->
 
----
+// <!-- END GLOBAL CORPORATION -->
+//
+  List<String> datas = (await file_readme.readAsString()).split("\n");
+  int start_index_global_corporation = datas.indexWhere((element) => element == "<!-- START GLOBAL CORPORATION -->");
+  if (start_index_global_corporation < 0) {
+    print("Tolong tambahkan tags: <!-- START GLOBAL CORPORATION -->");
+    exit(0);
+  }
+  int end_index_global_corporation = datas.indexWhere((element) => element == "<!-- END GLOBAL CORPORATION -->");
+if (end_index_global_corporation < 0) {
+    print("Tolong tambahkan tags: <!-- END GLOBAL CORPORATION -->");
+    exit(0);
+  }
+  List<String> lgoba = [
+    "<!-- START GLOBAL CORPORATION -->",
+    ...(await content_readme).split("\n"),
+    "<!-- END GLOBAL CORPORATION -->",
+  ];
+  print(end_index_global_corporation);
+  datas.replaceRange(start_index_global_corporation, end_index_global_corporation, lgoba);
 
-### Demo
-
----
-
-### Install Library
-
-```bash
-dart pub add general
-```
-
-or flutter
-
-```bash
-dart pub add general_flutter
-```
-""";
+  await file_readme.writeAsString(datas.join("\n"));
+  exit(0);
+}
