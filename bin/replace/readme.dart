@@ -24,8 +24,11 @@ void main(List<String> args) async {
     print("Tolong tambahkan tags: <!-- START GLOBAL CORPORATION -->");
     exit(0);
   }
-  int end_index_global_corporation = datas.indexWhere((element) => element == "<!-- END GLOBAL CORPORATION -->");
-if (end_index_global_corporation < 0) {
+  int end_index_global_corporation = datas.indexWhere(
+    (element) => element == "<!-- END GLOBAL CORPORATION -->",
+    // start_index_global_corporation,
+  );
+  if (end_index_global_corporation < 0) {
     print("Tolong tambahkan tags: <!-- END GLOBAL CORPORATION -->");
     exit(0);
   }
@@ -35,7 +38,7 @@ if (end_index_global_corporation < 0) {
     "<!-- END GLOBAL CORPORATION -->",
   ];
   print(end_index_global_corporation);
-  datas.replaceRange(start_index_global_corporation, end_index_global_corporation, lgoba);
+  datas.replaceRange(start_index_global_corporation, end_index_global_corporation + 1, lgoba);
 
   await file_readme.writeAsString(datas.join("\n"));
   exit(0);

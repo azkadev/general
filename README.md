@@ -144,7 +144,7 @@ Dengan tim ahli yang berkomitmen, teknologi canggih, dan pendekatan holistik ter
 
 
 <!-- END GLOBAL CORPORATION -->
-<!-- END GLOBAL CORPORATION -->
+<!-- sasasa -->
 
 ## Cara Penggunaan
 
