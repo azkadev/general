@@ -1,4 +1,4 @@
-# /bin/sh
+#!/bin/sh
 
 cd /home/galaxeus/Documents/fork/general/package/general
 dart pub publish -f
