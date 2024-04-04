@@ -23,6 +23,7 @@ Misal anda beli Beli source code di Slebew CORPORATION anda lapor dahulu di sleb
 import 'package:general/device/device_core.dart';
 import 'package:general_lib/general_lib.dart';
 import 'package:safe_device/safe_device.dart';
+import 'package:wakelock_plus/wakelock_plus.dart';
 
 class GeneralLibraryDeviceBaseFlutter implements GeneralLibraryDeviceBase {
   bool get is_desktop {
@@ -34,6 +35,7 @@ class GeneralLibraryDeviceBaseFlutter implements GeneralLibraryDeviceBase {
     }
     return false;
   }
+
   bool get is_mobile {
     if (dart.isWeb) {
       return false;
@@ -54,7 +56,7 @@ class GeneralLibraryDeviceBaseFlutter implements GeneralLibraryDeviceBase {
     return false;
   }
 
-  @override 
+  @override
   Future<bool> get android_is_on_external_storage async {
     try {
       if (is_mobile) {
@@ -64,8 +66,7 @@ class GeneralLibraryDeviceBaseFlutter implements GeneralLibraryDeviceBase {
     return false;
   }
 
-
-  @override 
+  @override
   Future<bool> get usb_debug_check async {
     try {
       if (is_mobile) {
@@ -75,7 +76,7 @@ class GeneralLibraryDeviceBaseFlutter implements GeneralLibraryDeviceBase {
     return false;
   }
 
-  @override 
+  @override
   Future<bool> get is_mock_location async {
     try {
       if (is_mobile) {
@@ -85,7 +86,7 @@ class GeneralLibraryDeviceBaseFlutter implements GeneralLibraryDeviceBase {
     return false;
   }
 
-  @override 
+  @override
   Future<bool> get is_jailbroken async {
     try {
       if (is_mobile) {
@@ -95,8 +96,7 @@ class GeneralLibraryDeviceBaseFlutter implements GeneralLibraryDeviceBase {
     return false;
   }
 
-
-  @override 
+  @override
   Future<bool> get is_real_device async {
     try {
       if (is_mobile) {
@@ -106,8 +106,7 @@ class GeneralLibraryDeviceBaseFlutter implements GeneralLibraryDeviceBase {
     return false;
   }
 
-
-  @override 
+  @override
   Future<bool> get is_safe_device async {
     try {
       if (is_mobile) {
@@ -116,5 +115,37 @@ class GeneralLibraryDeviceBaseFlutter implements GeneralLibraryDeviceBase {
     } catch (e) {}
     return false;
   }
-   
+
+  static Future<void> wake_lock_initizialized_static() async {
+    await WakelockPlus.enable();
+  }
+
+  @override
+  Future<void> wake_lock_initizialized() async {
+    await wake_lock_initizialized_static();
+  }
+
+  static Future<void> wake_lock_toggle_static({
+    required bool isEnable,
+  }) async {
+    await WakelockPlus.toggle(enable: isEnable);
+  }
+
+  @override
+  Future<void> wake_lock_toggle({
+    required bool isEnable,
+  }) async {
+    await wake_lock_toggle_static(
+      isEnable: isEnable,
+    );
+  }
+
+  static Future<bool> wake_lock_is_enable_static() async {
+    return await WakelockPlus.enabled;
+  }
+
+  @override
+  Future<bool> wake_lock_is_enable() async {
+    return await wake_lock_is_enable_static();
+  }
 }

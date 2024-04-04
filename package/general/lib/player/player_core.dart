@@ -38,7 +38,8 @@ class GeneralLibraryPlayerBase {
   GeneralLibraryPlayerControllerBase createPlayer({
     required String player_id,
   }) {
-    GeneralLibraryPlayerControllerBase generalLibraryPlayerControllerBase = GeneralLibraryPlayerControllerBase(
+    GeneralLibraryPlayerControllerBase generalLibraryPlayerControllerBase =
+        GeneralLibraryPlayerControllerBase(
       player_id: player_id,
     );
     players.add(generalLibraryPlayerControllerBase);
@@ -48,9 +49,9 @@ class GeneralLibraryPlayerBase {
 
   GeneralLibraryPlayerControllerBase createPlayerWithoutAdd({
     required String player_id,
-    
   }) {
-    GeneralLibraryPlayerControllerBase generalLibraryPlayerControllerBase = GeneralLibraryPlayerControllerBase(
+    GeneralLibraryPlayerControllerBase generalLibraryPlayerControllerBase =
+        GeneralLibraryPlayerControllerBase(
       player_id: player_id,
     );
     return generalLibraryPlayerControllerBase;
@@ -70,25 +71,20 @@ class GeneralLibraryPlayerBase {
     }
   }
 
-  
   bool containsPlayer({required String player_id}) {
     try {
       players.singleWhere((element) => element.player_id == player_id);
       return true;
-    } catch (e) { 
-    }
+    } catch (e) {}
     return false;
   }
 
-
   Future<void> removePlayer({
     required String player_id,
-  }) async{
+  }) async {
     try {
-
       players.removeWhere((element) => element.player_id == player_id);
     } catch (e) {}
     return;
   }
-
 }

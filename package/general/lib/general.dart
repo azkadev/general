@@ -27,7 +27,7 @@ export "app_background/app_background.dart";
 export "speech_to_text/speech_to_text.dart";
 export "sim_card/sim_card.dart";
 export "sms/sms.dart";
-export"player/player.dart";
+export "player/player.dart";
 export "local_auth/local_auth.dart";
 export "app/app.dart";
 export "location/location.dart";

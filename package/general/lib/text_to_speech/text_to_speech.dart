@@ -18,4 +18,4 @@ Misal anda beli Beli source code di Slebew CORPORATION anda lapor dahulu di sleb
 
 
 <!-- END LICENSE --> */
-export 'text_to_speech_core.dart'; 
+export 'text_to_speech_core.dart';

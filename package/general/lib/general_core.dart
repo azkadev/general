@@ -30,7 +30,7 @@ import 'package:general/notification/notification_core.dart';
 
 class GeneralLibraryBase {
   GeneralLibraryBase();
-  
+
   GeneralLibraryAppBase get app {
     return GeneralLibraryAppBase();
   }
@@ -75,11 +75,9 @@ class GeneralLibraryBase {
     return GeneralLibrarySmsBase();
   }
 
-
   GeneralLibraryPlayerBase get player {
     return GeneralLibraryPlayerBase();
   }
-
 
   // GeneralLibraryLocationBase get location {
   //   return GeneralLibraryLocationBase();
@@ -88,8 +86,6 @@ class GeneralLibraryBase {
   GeneralLibraryLocalAuthBase get local_auth {
     return GeneralLibraryLocalAuthBase();
   }
-
-
 
   void test() {
     print("oke");

@@ -39,7 +39,8 @@ class GeneralLibraryTextToSpeechBase {
   }) async {
     if (isWaithFinishedSpeakBefore) {
       durationWaitFinishedSpeakBefore ??= Duration(minutes: 1);
-      DateTime dateTime_expire = DateTime.now().add(durationWaitFinishedSpeakBefore);
+      DateTime dateTime_expire =
+          DateTime.now().add(durationWaitFinishedSpeakBefore);
       while (true) {
         await Future.delayed(Duration(milliseconds: 1));
         if (dateTime_expire.isBefore(DateTime.now())) {
@@ -180,6 +181,5 @@ class GeneralLibraryTextToSpeechBase {
         increase: increase,
       );
     }
-  
   }
 }

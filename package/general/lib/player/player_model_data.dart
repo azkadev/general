@@ -34,7 +34,8 @@ class GeneralLibraryPlayerMediaBase extends GeneralLibraryPlayerPlayableBase {
   });
 }
 
-class GeneralLibraryPlayerPlayListBase extends GeneralLibraryPlayerPlayableBase {
+class GeneralLibraryPlayerPlayListBase
+    extends GeneralLibraryPlayerPlayableBase {
   /// Currently opened [List] of [Media]s.
   final List<GeneralLibraryPlayerMediaBase> medias;
 

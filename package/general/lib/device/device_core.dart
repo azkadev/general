@@ -30,7 +30,7 @@ class GeneralLibraryDeviceBase {
   Future<bool> get is_real_device async {
     return false;
   }
-  
+
   Future<bool> get android_is_on_external_storage async {
     return false;
   }
@@ -43,19 +43,42 @@ class GeneralLibraryDeviceBase {
     return false;
   }
 
-
-  
-
-
-  
   Future<bool> get usb_debug_check async {
     return false;
   }
 
-  
-  Future<bool> get is_mock_location async { 
+  Future<bool> get is_mock_location async {
     return false;
   }
 
+  static Future<void> wake_lock_initizialized_static() async {
+    // await WakelockPlus.enable();
+  }
 
+  Future<void> wake_lock_initizialized() async {
+    await wake_lock_initizialized_static();
+  }
+
+  static Future<void> wake_lock_toggle_static({
+    required bool isEnable,
+  }) async {
+    // await WakelockPlus.toggle(enable: isEnable);
+  }
+
+  Future<void> wake_lock_toggle({
+    required bool isEnable,
+  }) async {
+    await wake_lock_toggle_static(
+      isEnable: isEnable,
+    );
+  }
+
+  static Future<bool> wake_lock_is_enable_static() async {
+    return false;
+    // return await WakelockPlus.enabled;
+  }
+
+  Future<bool> wake_lock_is_enable() async {
+    return await wake_lock_is_enable_static();
+  }
 }

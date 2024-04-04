@@ -33,10 +33,10 @@ class GeneralLibraryPlayerControllerBase {
 
   Future<void> test() async {}
 
-  
-  Future<void> open(GeneralLibraryPlayerPlayableBase playable, {bool play= true,
+  Future<void> open(
+    GeneralLibraryPlayerPlayableBase playable, {
+    bool play = true,
     bool isLoop = false,
-  
   }) async {
     return;
   }
@@ -49,22 +49,22 @@ class GeneralLibraryPlayerControllerBase {
 
   Future<void> dispose() async {}
 
-  Future<int> get handle async{
+  Future<int> get handle async {
     return 0;
   }
 
-  Future<void> jump(int index) async{
-  //   throw UnimplementedError();
+  Future<void> jump(int index) async {
+    //   throw UnimplementedError();
   }
 
-  Future<void> move(int from, int to) async{
-  //   throw UnimplementedError();
+  Future<void> move(int from, int to) async {
+    //   throw UnimplementedError();
   }
 
-  Future<void> next() async{
-  //   throw UnimplementedError();
+  Future<void> next() async {
+    //   throw UnimplementedError();
   }
- 
+
   Future<void> pause() async {
     // throw UnimplementedError();
   }

@@ -20,7 +20,6 @@ Misal anda beli Beli source code di Slebew CORPORATION anda lapor dahulu di sleb
 <!-- END LICENSE --> */
 // ignore_for_file: non_constant_identifier_names
 
-
 import 'package:general/utils.dart';
 
 class SimCardInfoData {

@@ -18,4 +18,3 @@ Misal anda beli Beli source code di Slebew CORPORATION anda lapor dahulu di sleb
 
 
 <!-- END LICENSE --> */
- 

@@ -21,7 +21,6 @@ Misal anda beli Beli source code di Slebew CORPORATION anda lapor dahulu di sleb
 // ignore_for_file: non_constant_identifier_names
 
 import 'dart:async';
- 
 
 class GamePadControllerData {
   String id;
@@ -33,7 +32,7 @@ class GamePadControllerData {
 }
 
 // class GamePadControllerEventData {
-  // GamePadControllerEventData();
+// GamePadControllerEventData();
 // }
 
 /// What type of input is being pressed.
@@ -89,7 +88,8 @@ class GamePadControllerEventData {
   factory GamePadControllerEventData.parse(Map<dynamic, dynamic> map) {
     final gamepadId = map['gamepadId'] as String;
     final timestamp = map['time'] as int;
-    final type = GamePadControllerEventKeyType.values.byName(map['type'] as String);
+    final type =
+        GamePadControllerEventKeyType.values.byName(map['type'] as String);
     final key = map['key'] as String;
     final value = map['value'] as double;
 
@@ -102,9 +102,7 @@ class GamePadControllerEventData {
     );
   }
 
-
-  factory GamePadControllerEventData.empty() { 
-
+  factory GamePadControllerEventData.empty() {
     return GamePadControllerEventData(
       gamepadId: "",
       timestamp: DateTime.now().millisecondsSinceEpoch,
@@ -114,7 +112,6 @@ class GamePadControllerEventData {
     );
   }
 }
-
 
 class GeneralLibraryGamePadBase {
   GeneralLibraryGamePadBase();

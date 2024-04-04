@@ -27,15 +27,11 @@ import 'package:general/general.dart';
 class GeneralLibrarySmsBase {
   GeneralLibrarySmsBase();
 
-
- 
   Future<List<SmsMessageInfoData>> querySms() async {
-    
     return [];
   }
- 
+
   Future<List<SmsThreadInfoData>> queryThreads() async {
-    
     return [];
   }
 

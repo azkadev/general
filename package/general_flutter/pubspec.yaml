@@ -1,6 +1,6 @@
 name: general_flutter
 description: A Library Full Package Template
-version: 0.0.17
+version: 0.0.18
 homepage: https://github.com/azkadev/general
 repository: https://github.com/azkadev/general
 issue_tracker: https://github.com/azkadev/general/issues 
@@ -27,28 +27,29 @@ environment:
   flutter: ">=1.17.0"
 
 dependencies:
-  awesome_notifications: ^0.9.2
-  file_picker: ^6.1.1
+  awesome_notifications: ^0.9.3+1
+  file_picker: ^8.0.0+1
   flutter:
     sdk: flutter
   flutter_background: ^1.2.0
   flutter_tts: ^3.8.5
-  general: ^0.0.17
-  general_dart: ^0.0.17
-  general_lib: ^0.0.27
+  general: ^0.0.18
+  general_dart: ^0.0.18
+  general_lib: ^0.0.29
   path: ^1.8.3
-  permission_handler: ^11.3.0
+  permission_handler: ^11.3.1
   safe_device: ^1.1.6
   speech_to_text: ^6.6.0
   universal_io: ^2.2.2
 
   sim_card_info: ^1.0.1
   sms_flutter: ^0.0.0
-  general_lib_flutter: ^0.0.15
+  general_lib_flutter: ^0.0.18
 
   media_kit: ^1.1.10+1
   media_kit_video: ^1.2.4 
   local_auth: ^2.2.0
+  wakelock_plus: ^1.1.4
 
 dev_dependencies:
   flutter_test:

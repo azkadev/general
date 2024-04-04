@@ -27,7 +27,7 @@ import 'package:general/sim_card/sim_card_info_data.dart';
 class GeneralLibrarySimCardBase {
   GeneralLibrarySimCardBase();
 
-  Future<List<SimCardInfoData>> getSimcards() async{
+  Future<List<SimCardInfoData>> getSimcards() async {
     return [];
   }
 }

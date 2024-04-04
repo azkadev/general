@@ -19,7 +19,7 @@ Misal anda beli Beli source code di Slebew CORPORATION anda lapor dahulu di sleb
 
 <!-- END LICENSE --> */
 /// Indicates the current battery state.
-enum PermissionType { 
+enum PermissionType {
   calendar,
   camera,
   contacts,

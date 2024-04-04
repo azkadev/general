@@ -19,17 +19,16 @@ Misal anda beli Beli source code di Slebew CORPORATION anda lapor dahulu di sleb
 
 <!-- END LICENSE --> */
 // ignore_for_file: non_constant_identifier_names
- 
+
 import 'dart:typed_data';
 
 import 'package:general/utils.dart';
 
-class SmsPhotoInfoData { 
+class SmsPhotoInfoData {
   Uint8List? bytes;
-  SmsPhotoInfoData({ 
+  SmsPhotoInfoData({
     required this.bytes,
   });
-  
 }
 
 class SmsContactInfoData {
@@ -74,7 +73,6 @@ class SmsThreadInfoData {
 }
 
 class SmsMessageInfoData {
-
   int id;
   int thread_id;
   int sim;
@@ -86,7 +84,7 @@ class SmsMessageInfoData {
   // SmsMessageKind kind;
   // SmsMessageState state = SmsMessageState.None;
   // final StreamController<SmsMessageState> _stateStreamController =
-      // StreamController<SmsMessageState>();
+  // StreamController<SmsMessageState>();
   SmsMessageInfoData({
     required this.id,
     required this.thread_id,

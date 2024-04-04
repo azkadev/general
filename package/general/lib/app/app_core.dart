@@ -36,23 +36,18 @@ class GeneralLibraryAppBase {
   }
 
   Future<void> setFullScreen(bool isFullScreen) async {
-    return ;
+    return;
   }
 
-  
-  static Future<void> static_setFullScreen(bool isFullScreen) async { 
-  }
+  static Future<void> static_setFullScreen(bool isFullScreen) async {}
 
-   Future<void> setPreferredOrientations({
+  Future<void> setPreferredOrientations({
     required List<GeneralLibraryAppDeviceOrientationType> orientations,
   }) async {
     static_setPreferredOrientations(orientations: orientations);
   }
+
   static Future<void> static_setPreferredOrientations({
     required List<GeneralLibraryAppDeviceOrientationType> orientations,
-  }) async {
-    
-  }
-
+  }) async {}
 }
-

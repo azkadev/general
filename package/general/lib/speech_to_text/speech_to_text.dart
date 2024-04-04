@@ -18,7 +18,8 @@ Misal anda beli Beli source code di Slebew CORPORATION anda lapor dahulu di sleb
 
 
 <!-- END LICENSE --> */
-export 'speech_to_text_core.dart'; 
+export 'speech_to_text_core.dart';
+
 /// Describes the goal of your speech recognition to the system.
 ///
 /// Currently only supported on **iOS**.
