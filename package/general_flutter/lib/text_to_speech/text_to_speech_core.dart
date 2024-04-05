@@ -29,15 +29,15 @@ class GeneralLibraryTextToSpeechBaseFlutter implements GeneralLibraryTextToSpeec
   FlutterTts flutterTts = FlutterTts();
 
   static bool is_text_to_speech_on_speak = false;
-  bool get isIOS => !dart.isWeb && dart.isIOS;
-  bool get isAndroid => !dart.isWeb && dart.isAndroid;
-  bool get isWindows => !dart.isWeb && dart.isWindows;
+  bool get isIOS => !Dart.isWeb && Dart.isIOS;
+  bool get isAndroid => !Dart.isWeb && Dart.isAndroid;
+  bool get isWindows => !Dart.isWeb && Dart.isWindows;
 
-  bool get isWeb => dart.isWeb;
+  bool get isWeb => Dart.isWeb;
 
   bool get flutter_is_support_flutter_tts {
-    if (dart.isLinux) {
-      if (dart.isWeb == false) {
+    if (Dart.isLinux) {
+      if (Dart.isWeb == false) {
         return false;
       }
     }
@@ -166,7 +166,7 @@ class GeneralLibraryTextToSpeechBaseFlutter implements GeneralLibraryTextToSpeec
     }
     for (double i = from; i <= to; (i += increase)) {
       await Future.delayed(const Duration(milliseconds: 10));
- 
+
       await player.setVolume(i);
     }
   }
@@ -238,6 +238,5 @@ class GeneralLibraryTextToSpeechBaseFlutter implements GeneralLibraryTextToSpeec
         increase: increase,
       );
     }
-  
   }
 }

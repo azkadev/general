@@ -31,8 +31,8 @@ Misal anda beli Beli source code di Slebew CORPORATION anda lapor dahulu di sleb
 
 //   @override
 //   bool get is_support_geolocator {
-//     if (dart.isLinux) {
-//       if (dart.isWeb == false) {
+//     if (Dart.isLinux) {
+//       if (Dart.isWeb == false) {
 //         return false;
 //       }
 //     }

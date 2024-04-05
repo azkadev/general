@@ -30,10 +30,10 @@ class GeneralLibraryNotificationBaseFlutter implements GeneralLibraryNotificatio
 
   @override
   bool get is_support_awesome_notification {
-    if (dart.isWeb) {
+    if (Dart.isWeb) {
       return false;
     }
-    if (dart.isMobile) {
+    if (Dart.isMobile) {
       return true;
     }
     return false;
@@ -43,7 +43,6 @@ class GeneralLibraryNotificationBaseFlutter implements GeneralLibraryNotificatio
   Future<bool> initialize({
     required String notificationTitle,
     required String notificationMessage,
-    
   }) async {
     if (is_support_awesome_notification) {
       return await AwesomeNotifications().initialize(

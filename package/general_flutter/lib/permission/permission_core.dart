@@ -40,11 +40,11 @@ class GeneralLibraryPermissionBaseFlutter implements GeneralLibraryPermissionBas
     required List<Permission> permissions,
   }) async {
     try {
-      if (dart.isWeb) {
+      if (Dart.isWeb) {
         return;
       }
 
-      if (dart.isAndroid || dart.isIOS || dart.isWindows) {
+      if (Dart.isAndroid || Dart.isIOS || Dart.isWindows) {
         // await Permission.manageExternalStorage.isGranted;
         List<Permission> permission_datas = permissions;
 

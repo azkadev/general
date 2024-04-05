@@ -27,10 +27,10 @@ import "package:general_lib/general_lib.dart";
 class GeneralLibraryAppBackgroundBaseFlutter implements GeneralLibraryAppBackgroundBase {
   @override
   Future<bool> get disable_background async {
-    if (dart.isWeb) {
+    if (Dart.isWeb) {
       return false;
     }
-    if (dart.isAndroid) {
+    if (Dart.isAndroid) {
       return await FlutterBackground.disableBackgroundExecution();
     }
 
@@ -39,11 +39,10 @@ class GeneralLibraryAppBackgroundBaseFlutter implements GeneralLibraryAppBackgro
 
   @override
   Future<bool> get enable_background async {
-    if (dart.isWeb) {
+    if (Dart.isWeb) {
       return false;
     }
-    if (dart.isAndroid) {
-      
+    if (Dart.isAndroid) {
       return await FlutterBackground.enableBackgroundExecution();
     }
 
@@ -52,10 +51,10 @@ class GeneralLibraryAppBackgroundBaseFlutter implements GeneralLibraryAppBackgro
 
   @override
   Future<bool> get has_permissions async {
-    if (dart.isWeb) {
+    if (Dart.isWeb) {
       return false;
     }
-    if (dart.isAndroid) {
+    if (Dart.isAndroid) {
       return await FlutterBackground.hasPermissions;
     }
 
@@ -64,10 +63,10 @@ class GeneralLibraryAppBackgroundBaseFlutter implements GeneralLibraryAppBackgro
 
   @override
   bool get is_background {
-    if (dart.isWeb) {
+    if (Dart.isWeb) {
       return false;
     }
-    if (dart.isAndroid) {
+    if (Dart.isAndroid) {
       return FlutterBackground.isBackgroundExecutionEnabled;
     }
 
@@ -79,10 +78,10 @@ class GeneralLibraryAppBackgroundBaseFlutter implements GeneralLibraryAppBackgro
     required String notificationTitle,
     required String notificationMessage,
   }) async {
-    if (dart.isWeb) {
+    if (Dart.isWeb) {
       return false;
     }
-    if (dart.isAndroid) {
+    if (Dart.isAndroid) {
       return await FlutterBackground.initialize(
         androidConfig: FlutterBackgroundAndroidConfig(
           notificationTitle: notificationTitle,

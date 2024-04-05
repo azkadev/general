@@ -30,8 +30,8 @@ class GeneralLibraryLocalAuthBaseFlutter implements GeneralLibraryLocalAuthBase 
 
   @override
   bool get is_support_local_auth {
-    if (dart.isAndroid || dart.isIOS || dart.isWindows) {
-      if (dart.isWeb == false) {
+    if (Dart.isAndroid || Dart.isIOS || Dart.isWindows) {
+      if (Dart.isWeb == false) {
         return true;
       }
     }

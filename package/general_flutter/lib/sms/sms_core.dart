@@ -32,15 +32,15 @@ import 'package:sms_flutter/sms_flutter.dart';
 class GeneralLibrarySmsBaseFlutter implements GeneralLibrarySmsBase {
   // Future<void> test() async {
 
-  bool get isIOS => !dart.isWeb && dart.isIOS;
-  bool get isAndroid => !dart.isWeb && dart.isAndroid;
-  bool get isWindows => !dart.isWeb && dart.isWindows;
+  bool get isIOS => !Dart.isWeb && Dart.isIOS;
+  bool get isAndroid => !Dart.isWeb && Dart.isAndroid;
+  bool get isWindows => !Dart.isWeb && Dart.isWindows;
 
-  bool get isWeb => dart.isWeb;
+  bool get isWeb => Dart.isWeb;
 
   bool get flutter_is_support_flutter_sms {
-    if (dart.isLinux || dart.isWindows || dart.isMacOS) {
-      if (dart.isWeb == false) {
+    if (Dart.isLinux || Dart.isWindows || Dart.isMacOS) {
+      if (Dart.isWeb == false) {
         return false;
       }
     }
@@ -67,7 +67,7 @@ class GeneralLibrarySmsBaseFlutter implements GeneralLibrarySmsBase {
     if (flutter_is_support_flutter_sms) {
       try {
         ContactQuery();
-        return(await SmsQuery().queryThreads([])).toSmsThreadInfoDatas();
+        return (await SmsQuery().queryThreads([])).toSmsThreadInfoDatas();
       } catch (e) {
         if (kDebugMode) {
           print(e);
@@ -83,7 +83,6 @@ class GeneralLibrarySmsBaseFlutter implements GeneralLibrarySmsBase {
     if (flutter_is_support_flutter_sms) {
       try {
         return (await SmsQuery().getAllSms).toSmsMessageInfoDatas();
-        
       } catch (e) {
         if (kDebugMode) {
           print(e);
@@ -97,7 +96,7 @@ class GeneralLibrarySmsBaseFlutter implements GeneralLibrarySmsBase {
   @override
   Future<List<SmsThreadInfoData>> getAllThreads() async {
     if (flutter_is_support_flutter_sms) {
-      try { 
+      try {
         return (await SmsQuery().getAllThreads).toSmsThreadInfoDatas();
       } catch (e) {
         if (kDebugMode) {
@@ -111,7 +110,7 @@ class GeneralLibrarySmsBaseFlutter implements GeneralLibrarySmsBase {
   Future<List<SmsThread>> get_threads() async {
     if (flutter_is_support_flutter_sms) {
       try {
-        List<SmsThread> sms_threads = await SmsQuery().getAllThreads; 
+        List<SmsThread> sms_threads = await SmsQuery().getAllThreads;
         return sms_threads;
       } catch (e) {
         if (kDebugMode) {

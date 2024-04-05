@@ -230,29 +230,28 @@ packages:
       path: "../../general"
       relative: true
     source: path
-    version: "0.0.18"
+    version: "0.0.19"
   general_dart:
     dependency: "direct overridden"
     description:
       path: "../../general_dart"
       relative: true
     source: path
-    version: "0.0.18"
+    version: "0.0.19"
   general_flutter:
     dependency: "direct main"
     description:
       path: ".."
       relative: true
     source: path
-    version: "0.0.18"
+    version: "0.0.19"
   general_lib:
     dependency: transitive
     description:
       name: general_lib
-      sha256: "9e80024b75dcf574a6adfbef00b1c7ac6740e069555391e1fb6d4b4580c252dd"
       url: "https://pub.dev"
     source: hosted
-    version: "0.0.29"
+    version: "0.0.30"
   general_lib_flutter:
     dependency: transitive
     description:

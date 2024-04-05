@@ -27,20 +27,20 @@ import 'package:wakelock_plus/wakelock_plus.dart';
 
 class GeneralLibraryDeviceBaseFlutter implements GeneralLibraryDeviceBase {
   bool get is_desktop {
-    if (dart.isWeb) {
+    if (Dart.isWeb) {
       return false;
     }
-    if (dart.isDesktop) {
+    if (Dart.isDesktop) {
       return true;
     }
     return false;
   }
 
   bool get is_mobile {
-    if (dart.isWeb) {
+    if (Dart.isWeb) {
       return false;
     }
-    if (dart.isMobile) {
+    if (Dart.isMobile) {
       return true;
     }
     return false;

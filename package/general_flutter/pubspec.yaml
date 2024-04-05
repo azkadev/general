@@ -27,15 +27,15 @@ environment:
   flutter: ">=1.17.0"
 
 dependencies:
-  awesome_notifications: ^0.9.3+1
-  file_picker: ^8.0.0+1
   flutter:
     sdk: flutter
+  awesome_notifications: ^0.9.3+1
+  file_picker: ^8.0.0+1
   flutter_background: ^1.2.0
   flutter_tts: ^3.8.5
   general: ^0.0.19
   general_dart: ^0.0.19
-  general_lib: ^0.0.29
+  general_lib: ^0.0.30
   path: ^1.8.3
   permission_handler: ^11.3.1
   safe_device: ^1.1.6
