@@ -1,60 +1,48 @@
-name: general_flutter
-description: A Library Full Package Template
-version: 0.0.19
-homepage: https://github.com/azkadev/general
-repository: https://github.com/azkadev/general
-issue_tracker: https://github.com/azkadev/general/issues 
-documentation: https://youtube.com/@azkadev
-funding:
-  - https://github.com/sponsors/azkadev
-
-
-platforms:
- android:
- ios:
- linux:
- macos:
- web:
- windows:
-
-# topics:
-#   - general
-#   - general_flutter
-#   - general_dart
-
-environment:
+name: 'general_flutter'
+description: 'A sample command-line application.'
+version: '0.0.20'
+homepage: 'https://github.com/azkadev/general'
+repository: 'https://github.com/azkadev/general'
+issue_tracker: 'https://github.com/azkadev/general/issues '
+documentation: 'https://youtube.com/@azkadev'
+funding: 
+  - 'https://github.com/sponsors/globalcorporation'
+  - 'https://github.com/sponsors/generalfoss'
+  - 'https://github.com/sponsors/azkadev'
+platforms: 
+  android: null
+  ios: null
+  linux: null
+  macos: null
+  web: null
+  windows: null
+environment: 
   sdk: '>=3.2.3 <4.0.0'
-  flutter: ">=1.17.0"
-
-dependencies:
-  flutter:
-    sdk: flutter
-  awesome_notifications: ^0.9.3+1
-  file_picker: ^8.0.0+1
-  flutter_background: ^1.2.0
-  flutter_tts: ^3.8.5
-  general: ^0.0.19
-  general_dart: ^0.0.19
-  general_lib: ^0.0.30
-  path: ^1.8.3
-  permission_handler: ^11.3.1
-  safe_device: ^1.1.6
-  speech_to_text: ^6.6.0
-  universal_io: ^2.2.2
-
-  sim_card_info: ^1.0.1
-  sms_flutter: ^0.0.0
-  general_lib_flutter: ^0.0.18
-
-  media_kit: ^1.1.10+1
-  media_kit_video: ^1.2.4 
-  local_auth: ^2.2.0
-  wakelock_plus: ^1.1.4
-
-dev_dependencies:
-  flutter_test:
-    sdk: flutter
-  flutter_lints: ^2.0.0
- 
-flutter:
- 
+  flutter: '>=1.17.0'
+dependencies: 
+  flutter: 
+    sdk: 'flutter'
+  awesome_notifications: '^0.9.3+1'
+  file_picker: '^8.0.0+1'
+  flutter_background: '^1.2.0'
+  flutter_tts: '^3.8.5'
+  general: '^0.0.20'
+  general_dart: '^0.0.20'
+  general_lib: '^0.0.30'
+  path: '^1.8.3'
+  permission_handler: '^11.3.1'
+  safe_device: '^1.1.6'
+  speech_to_text: '^6.6.0'
+  universal_io: '^2.2.2'
+  sim_card_info: '^1.0.1'
+  sms_flutter: '^0.0.0'
+  general_lib_flutter: '^0.0.18'
+  media_kit: '^1.1.10+1'
+  media_kit_video: '^1.2.4'
+  local_auth: '^2.2.0'
+  wakelock_plus: '^1.1.4'
+dev_dependencies: 
+  flutter_test: 
+    sdk: 'flutter'
+  flutter_lints: '^2.0.0'
+flutter: null
