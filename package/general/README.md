@@ -1,17 +1,17 @@
 # General
 
-General Adalah library DART & Flutter yang memungkinkan kamu bisa mengakses banyak hal dengan instant
+General is a DART & Flutter library that allows you to access many things instantly
 
 [![Pub Version](https://img.shields.io/pub/v/general?label=pub.dev&labelColor=333940&logo=dart)](https://pub.dev/packages/general)
 
-## Pembuat & Kenapa Library ini di buat
+## Creator and why this library was created
 
-[AZKADEV](https://github.com/azkadev) **adalah pembuat asli library ini**, **library** ini di buat agar dia bisa **mempercepat development** di **berbagai platform & cli** sekaligus dengan mudah, pasalnya saya Terkadang membuat **bot / userbot / server** yang memungkinkan **deploy di LOCAL DEVICE / HP** Sehingga **library** ini di buat agar bisa **mengakses fitur** yang ada di masing **device** seperti **(camera, fingerprint, sms, mms)**
+[AZKADEV](https://github.com/azkadev) **is the original creator of this library**, **library** This was made so he could **speed up development** on **various platform & cli** all at once easily, because I sometimes make it **bot / userbot / server** which allow **deploy on LOCAL DEVICE / HP** So that **library** This is made so that you can **access features** which is in each **device** such as **(camera, fingerprint, sms, mms)**
 
 <!-- global first -->
 
 <h3 align="center">
-  Pencipta Library
+  Creator Library
   <img src="https://media.giphy.com/media/hvRJCLFzcasrR4ia7z/giphy.gif" width="28">
 </h3>
 
@@ -61,20 +61,20 @@ General Adalah library DART & Flutter yang memungkinkan kamu bisa mengakses bany
 
 <!-- global finished -->
 
-## 🌟️ Hal Yang Menarik
+## 🌟️ Interesting thing
 
-1. Cross Platform Notifikasi
-2. Cross Platform Putar / Main Media (Video & Audio)
-3. Cross Platform Menggunakan Fitur SMS / MMS / CONTACTS
+1. Cross Platform Notification
+2. Cross Platform Playing / Main Media (Video & Audio)
+3. Cross Platform Use Feature SMS / MMS / CONTACTS
 4. Cross Platform Camera
 5. Cross Platform Security (Fingerprint, Face Id)
 
-## Cara Penggunaan
+## How to use
 
-Library ini hanya di buat untuk bahasa dart, bahasa code lain saya belum ada rencanamungkin jika saya sudah ada tenaga / waktu / uang lebih saya akan membuat bahasa code sendiri jadi lebih efficient
+This library is only made for the dart language, I don't have any plans yet, maybe if I have more energy/time/money I will make my own code language to be more efficient
 
 - Dart
-  untuk menggunakan di dart kamu perlu typing
+  to use in darts you need typing
   - CLI
     ```bash
     dart pub add general_dart
@@ -94,7 +94,7 @@ Library ini hanya di buat untuk bahasa dart, bahasa code lain saya belum ada ren
     ```
 
 - Flutter
-  untuk menggunakan di flutter kamu perlu typing
+  to use in Flutter you need typing
   - CLI
     ```bash
     flutter pub add general_flutter
@@ -122,11 +122,11 @@ flutter pub add general_flutter
 
 ## ⚠️ Penting
 
--  Walaupun kebanyakan contoh menggunakan flutter / GeneralFlutter sebagai class, library ini bisa di timpa / di pakai di manapun (cli, web, app) jadi misal anda membuat program cli namun mencoba deploy di lokal app anda bisa menggunakan yang ada di flutter
-- Tolong bantu library ini terus berkembang dengan cara stars / follow akun social media saya  / Donate / Sponsor (ini yang paling ngaruh)
+- Even though most examples use Flutter / GeneralFlutter as a class, this library can be overwritten / used anywhere (CLI, web, app) so for example, if you create a CLI program but are trying to deploy it in a local app, you can use the one in Flutter.
+- Please help this library continue to grow by starring / following my social media accounts / Donating / Sponsoring (this is the most influential)
 
 
-## Contoh Cepat Awal
+## Example Quickstart
 
 ```dart
 // ignore_for_file: non_constant_identifier_names, unnecessary_brace_in_string_interps
@@ -159,21 +159,21 @@ void main(List<String> args) async {
 
 ## ❔️ FAQS
 
-- **Q:** Kenapa Harus pakai library ini?
-- **A:** Kami tidak memaksa anda memakai libary ini namun jika library ini dipakai anda akan mudah dalam development karena selain library ini gampang di baca dan di atur anda bisa mengcustom sesuka hati
+- **Q:** Why should you use this library?
+- **A:** We do not force you to use this library, but if you use this library it will be easy for you to develop because besides this library it is easy to read and manage, you can customize it as you wish.
   
-- **Q:** Apa ada contoh penting yang wajib memakai library ini
-- **A:** Jika anda membuat server / program bot ini wajib karena anda anda deploy di app maka anda akan kesulitan membuat log, dengan library ini kamu bisa mengakses berbagai fitur yang ada di app, contoh program kamu ada error kamu bisa memanfatkan fitur text to speech, / contoh kamu ingin mengakses kamera jarak jauh anda bisa mengcustom sendiri namun perlu skills coding sedikit mumpuni tapi anda tidak perlu belajar native hanya belajar dart di library ini
+- **Q:** Are there any important examples that require using this library?
+- **A:** If you create a server / bot program, this is mandatory because you are deploying it in an app, you will have difficulty creating logs, with this library you can access various features in the app, for example your program has an error, you can use the text to speech feature, / example If you want to access the camera remotely, you can customize it yourself, but you need a little advanced coding skills, but you don't need to learn native, just learn Dart in this library.
 
-- **Q:** Saya membuat pogram generator image namun saat ini saya tidak tahu deploy flutter di server bisakah menggunakan ini di hp?
-- **A:** Tentu kamu bisa melakukan banyak hal menggunakan library ini dengan cukup simple
+- **Q:** I made an image generator program but currently I don't know how to deploy flutter on a server, can I use this on a cellphone?
+- **A:** Of course you can do many things using this library quite simply
 
-- **Q:** Saya ingin mendapatkan pesan sms di hp namun wajib di kirim setiap saat di telegram apakah bisa?
-- **A:** Ya anda bisa menggunakan library ini
+- **Q:** I want to get SMS messages on my cellphone but they have to be sent every time on Telegram. Is that possible?
+- **A:** Yes you can use this library
   
 
 ## 📑️ Features
- Saya bisa membuat fitur lebih dari bawah, anda hanya perlu donate / sponsor di github saya
+ I can make more features from below, you just need to donate / sponsor on my github
 
 | NO  | Nama           | Deskripsi                                                       | ANDROID | IOS | LINUX | MACOS | WINDOWS | CLI | WEB | FUCHSIA |
 |-----|----------------|-----------------------------------------------------------------|---------|-----|-------|-------|---------|-----|-----|---------|
