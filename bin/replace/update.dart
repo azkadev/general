@@ -40,7 +40,7 @@ Future<void> pubspecUpdate({
     String version_slebew = "0.0.20";
 
     yaml_code_clone.addAll({
-      "description": "A sample command-line application.",
+      "description": "General library For Make Your Coding or Project More Easy",
       "version": version_slebew,
       "repository": "https://github.com/azkadev/general",
       "homepage": "https://github.com/azkadev/general",
