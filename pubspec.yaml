@@ -1,6 +1,6 @@
 name: 'general_project'
 description: 'General library For Make Your Coding or Project More Easy'
-version: '0.0.20'
+version: '0.0.21'
 repository: 'https://github.com/azkadev/general'
 environment: 
   sdk: '^3.2.3'
