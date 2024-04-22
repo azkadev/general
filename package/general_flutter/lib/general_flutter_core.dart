@@ -48,6 +48,7 @@ import 'package:general_flutter/sms/sms.dart';
 import 'package:general_flutter/speech_to_text/speech_to_text.dart';
 import 'package:general_flutter/text_to_speech/text_to_speech_core.dart';
 
+/// GeneralFlutter
 class GeneralFlutter extends GeneralDart {
   GeneralFlutter();
 
