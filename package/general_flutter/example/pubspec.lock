@@ -249,18 +249,18 @@ packages:
     dependency: transitive
     description:
       name: general_lib
-      sha256: "97e67e9379cfdeb362dc727ecc2790f33baa125ec0468e9a2d69d317ef0cb998"
+      sha256: "417b758435d0027578891dd6a8acc0a33cf1582e96964d89615d4af935c9da7f"
       url: "https://pub.dev"
     source: hosted
-    version: "0.0.32"
+    version: "0.0.35"
   general_lib_flutter:
     dependency: transitive
     description:
       name: general_lib_flutter
-      sha256: b7e4550192b06d5a9972036824c79d6d076894284c0a78f604a6a83f0f55c843
+      sha256: cb13a20649a7ed5fdf73ce2bc08301203bb4b9154dc0238ac461c488027e1e0d
       url: "https://pub.dev"
     source: hosted
-    version: "0.0.18"
+    version: "0.0.19"
   geolocator:
     dependency: "direct main"
     description:

@@ -85,6 +85,9 @@ Future<void> pubspecUpdate({
         if (key == "general_lib") {
           yaml_code_clone["dependencies"][key] = "^0.0.35";
         }
+        if (key == "general_lib_flutter") {
+          yaml_code_clone["dependencies"][key] = "^0.0.19";
+        }
       });
     }
     var yamlDoc = YamlWriter().write(yaml_code_clone);

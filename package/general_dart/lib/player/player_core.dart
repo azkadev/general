@@ -91,11 +91,19 @@ class GeneralLibraryPlayerBaseDart implements GeneralLibraryPlayerBase {
   }
 
   @override
-  GeneralLibraryPlayerControllerBase? getPlayer({required String player_id}) {
+  GeneralLibraryPlayerControllerBaseDart? getPlayer({required String player_id}) {
     try {
       return players.singleWhere((element) => element.player_id == player_id);
     } catch (e) {}
     return null;
+  }
+
+  @override
+  GeneralLibraryPlayerControllerBaseDart? getPlayerForce({required String player_id}) {
+    try {
+      return players.singleWhere((element) => element.player_id == player_id);
+    } catch (e) {}
+    return createPlayer(player_id: player_id);
   }
 
   @override

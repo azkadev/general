@@ -50,8 +50,7 @@ class GeneralLibraryPlayerBase {
   GeneralLibraryPlayerControllerBase createPlayer({
     required String player_id,
   }) {
-    GeneralLibraryPlayerControllerBase generalLibraryPlayerControllerBase =
-        GeneralLibraryPlayerControllerBase(
+    GeneralLibraryPlayerControllerBase generalLibraryPlayerControllerBase = GeneralLibraryPlayerControllerBase(
       player_id: player_id,
     );
     players.add(generalLibraryPlayerControllerBase);
@@ -62,8 +61,7 @@ class GeneralLibraryPlayerBase {
   GeneralLibraryPlayerControllerBase createPlayerWithoutAdd({
     required String player_id,
   }) {
-    GeneralLibraryPlayerControllerBase generalLibraryPlayerControllerBase =
-        GeneralLibraryPlayerControllerBase(
+    GeneralLibraryPlayerControllerBase generalLibraryPlayerControllerBase = GeneralLibraryPlayerControllerBase(
       player_id: player_id,
     );
     return generalLibraryPlayerControllerBase;
@@ -80,6 +78,20 @@ class GeneralLibraryPlayerBase {
       );
     } catch (e) {
       return null;
+    }
+  }
+
+  GeneralLibraryPlayerControllerBase? getPlayerForce({
+    required String player_id,
+  }) {
+    try {
+      return players.singleWhere(
+        (element) {
+          return element.player_id == player_id;
+        },
+      );
+    } catch (e) { 
+      return createPlayer(player_id: player_id);
     }
   }
 

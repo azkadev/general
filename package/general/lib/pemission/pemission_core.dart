@@ -39,6 +39,5 @@ import 'package:general/pemission/pemission_type.dart';
 class GeneralLibraryPermissionBase {
   GeneralLibraryPermissionBase();
 
-  Future<void> auto_request(
-      {required List<PermissionType> permissionTypes}) async {}
+  Future<void> auto_request({required List<PermissionType> permissionTypes}) async {}
 }
