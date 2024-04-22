@@ -5,7 +5,7 @@ repository: 'https://github.com/azkadev/general'
 environment: 
   sdk: '^3.2.3'
 dependencies: 
-  general_lib: '^0.0.27'
+  general_lib: '^0.0.35'
   http: '^1.2.1'
   mason_logger: '^0.2.11'
   path: '^1.9.0'

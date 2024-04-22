@@ -81,6 +81,11 @@ Future<void> pubspecUpdate({
           yaml_code_clone["dependencies"][key] = "^${version_slebew}";
         }
       });
+      (yaml_code_clone["dependencies"] as Map).forEach((key, value) { 
+        if (key == "general_lib") {
+          yaml_code_clone["dependencies"][key] = "^0.0.35";
+        }
+      });
     }
     var yamlDoc = YamlWriter().write(yaml_code_clone);
 
