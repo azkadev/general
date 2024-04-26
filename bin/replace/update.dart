@@ -49,7 +49,7 @@ Future<void> pubspecUpdate({
   if (filePubspec.existsSync()) {
     Map yaml_code = (yaml.loadYaml(filePubspec.readAsStringSync(), recover: true) as Map);
     Map yaml_code_clone = yaml_code.clone();
-    String version_slebew = "0.0.21";
+    String version_slebew = "0.0.22";
 
     yaml_code_clone.addAll({
       "description": "General library For Make Your Coding or Project More Easy",
@@ -83,7 +83,7 @@ Future<void> pubspecUpdate({
       });
       (yaml_code_clone["dependencies"] as Map).forEach((key, value) { 
         if (key == "general_lib") {
-          yaml_code_clone["dependencies"][key] = "^0.0.35";
+          yaml_code_clone["dependencies"][key] = "^0.0.36";
         }
         if (key == "general_lib_flutter") {
           yaml_code_clone["dependencies"][key] = "^0.0.19";

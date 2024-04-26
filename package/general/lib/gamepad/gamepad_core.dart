@@ -100,8 +100,7 @@ class GamePadControllerEventData {
   factory GamePadControllerEventData.parse(Map<dynamic, dynamic> map) {
     final gamepadId = map['gamepadId'] as String;
     final timestamp = map['time'] as int;
-    final type =
-        GamePadControllerEventKeyType.values.byName(map['type'] as String);
+    final type = GamePadControllerEventKeyType.values.byName(map['type'] as String);
     final key = map['key'] as String;
     final value = map['value'] as double;
 

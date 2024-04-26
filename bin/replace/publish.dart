@@ -51,17 +51,17 @@ void main(List<String> args) async {
 
 """
       .trim();
-
+ 
   for (var i = 0; i < file_system_entity_packages.length; i++) {
     String fileSystemEntity = file_system_entity_packages[i];
     // if (fileSystemEntity is Directory) {
-      contents += "\n";
-      contents += """
+    contents += "\n";
+    contents += """
 cd ${fileSystemEntity}
 dart pub publish -f
 """
-          .trim();
-      contents += "\n";
+        .trim();
+    contents += "\n";
     // }
   }
 
