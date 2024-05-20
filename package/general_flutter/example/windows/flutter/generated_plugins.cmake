@@ -4,6 +4,7 @@
 
 list(APPEND FLUTTER_PLUGIN_LIST
   awesome_notifications
+  battery_plus
   flutter_tts
   geolocator_windows
   local_auth_windows

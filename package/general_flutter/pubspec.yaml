@@ -23,12 +23,12 @@ dependencies:
   flutter: 
     sdk: 'flutter'
   awesome_notifications: '^0.9.3+1'
-  file_picker: '^8.0.0+1'
+  file_picker: '^8.0.3'
   flutter_background: '^1.2.0'
   flutter_tts: '^4.0.2'
   general: '^0.0.23'
   general_dart: '^0.0.23'
-  general_lib: '^0.0.37'
+  general_lib: '^0.0.40'
   path: '^1.8.3'
   permission_handler: '^11.3.1'
   safe_device: '^1.1.6'
@@ -40,7 +40,9 @@ dependencies:
   media_kit: '^1.1.10+1'
   media_kit_video: '^1.2.4'
   local_auth: '^2.2.0'
-  wakelock_plus: '^1.2.4'
+  wakelock_plus: '^1.2.5'
+  battery_plus: ^6.0.1
+  camera: ^0.11.0
 dev_dependencies: 
   flutter_test: 
     sdk: 'flutter'

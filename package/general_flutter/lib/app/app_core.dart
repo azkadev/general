@@ -32,12 +32,11 @@ Bukan maksud kami menipu itu karena harga yang sudah di kalkulasi + bantuan tiba
 <!-- END LICENSE --> */
 // ignore_for_file: non_constant_identifier_names, empty_catches
 
-import 'dart:typed_data';
-
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:general/app/app.dart';
 import 'package:general_lib_flutter/extension/build_context.dart';
+import 'package:wakelock_plus/wakelock_plus.dart';
 
 class GeneralLibraryAppBaseFlutter implements GeneralLibraryAppBase {
   static GlobalKey<NavigatorState> flutter_navigator_key = GlobalKey<NavigatorState>();
@@ -46,6 +45,7 @@ class GeneralLibraryAppBaseFlutter implements GeneralLibraryAppBase {
   static Widget repaintBoundaryWidget({
     required Widget child,
   }) {
+    WakelockPlus;
     return RepaintBoundary(
       key: GeneralLibraryAppBaseFlutter.flutter_repaint_boundery_key,
       child: child,
@@ -96,6 +96,7 @@ class GeneralLibraryAppBaseFlutter implements GeneralLibraryAppBase {
   }) async {
     static_setPreferredOrientations(orientations: orientations);
   }
+
   static Future<void> static_setPreferredOrientations({
     required List<GeneralLibraryAppDeviceOrientationType> orientations,
   }) async {
@@ -107,7 +108,6 @@ class GeneralLibraryAppBaseFlutter implements GeneralLibraryAppBase {
   }) async {
     await SystemChrome.setPreferredOrientations(orientations);
   }
-
 }
 
 extension ExtensionListGeneralAppDeviceOriendaion on List<GeneralLibraryAppDeviceOrientationType> {

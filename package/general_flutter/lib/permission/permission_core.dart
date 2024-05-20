@@ -34,7 +34,6 @@ Bukan maksud kami menipu itu karena harga yang sudah di kalkulasi + bantuan tiba
 
 import 'package:flutter/foundation.dart';
 import 'package:general/pemission/pemission.dart';
-import 'package:general/pemission/pemission_type.dart';
 import 'package:general_flutter/permission/extension/permission_type_to_permission.dart';
 // import 'package:general/app_background/app_background_core.dart';
 import "package:general_lib/general_lib.dart";

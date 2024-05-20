@@ -1,3 +1,5 @@
+// ignore_for_file: unnecessary_string_interpolations, unnecessary_brace_in_string_interps
+
 /* <!-- START LICENSE -->
 
 
@@ -32,11 +34,10 @@ Bukan maksud kami menipu itu karena harga yang sudah di kalkulasi + bantuan tiba
 <!-- END LICENSE --> */
 // /* <!-- START LICENSE -->
 
+// Program Ini Di buat Oleh DEVELOPER Dari PERUSAHAAN GLOBAL CORPORATION
+// Social Media:
 
-// Program Ini Di buat Oleh DEVELOPER Dari PERUSAHAAN GLOBAL CORPORATION 
-// Social Media: 
-
-// - Youtube: https://youtube.com/@Global_Corporation 
+// - Youtube: https://youtube.com/@Global_Corporation
 // - Github: https://github.com/globalcorporation
 // - TELEGRAM: https://t.me/GLOBAL_CORP_ORG_BOT
 
@@ -47,7 +48,6 @@ Bukan maksud kami menipu itu karena harga yang sudah di kalkulasi + bantuan tiba
 // Jika Program ini milik anda dari hasil beli jasa developer di (Global Corporation / apapun itu dari turunan itu jika ada kesalahan / bug / ingin update segera lapor ke sub)
 
 // Misal anda beli Beli source code di Slebew CORPORATION anda lapor dahulu di slebew jangan lapor di GLOBAL CORPORATION!
-
 
 // <!-- END LICENSE --> */
 // import 'dart:async';
@@ -525,3 +525,90 @@ Bukan maksud kami menipu itu karena harga yang sudah di kalkulasi + bantuan tiba
 // //     _joystickY = details.localPosition.dy.clamp(0.0, 100.0);
 // //   }
 // }
+
+import 'dart:async';
+
+import 'package:flutter/material.dart';
+import 'package:general_flutter/battery/battery.dart';
+
+void main(List<String> args) {
+  WidgetsFlutterBinding.ensureInitialized();
+
+  runApp(const MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return const MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: ScreenPage(),
+    );
+  }
+}
+
+class ScreenPage extends StatefulWidget {
+  const ScreenPage({super.key});
+
+  @override
+  State<ScreenPage> createState() => _ScreenPageState();
+}
+
+class _ScreenPageState extends State<ScreenPage> {
+  bool is_loading = true;
+  GeneralLibraryBatteryBaseFlutter generalLibraryBatteryBaseFlutter = GeneralLibraryBatteryBaseFlutter();
+  @override
+  void initState() {
+    super.initState();
+    WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
+      setState(() {});
+
+      unawaited(task());
+    });
+  }
+
+  Future<void> task() async {
+    setState(() {
+      is_loading = true;
+    });
+
+    await tasks();
+
+    setState(() {
+      is_loading = false;
+    });
+  }
+
+  String status = "";
+  Future<void> tasks() async {
+    generalLibraryBatteryBaseFlutter.status_realtime.listen((event) {
+      status = event.name;
+      print("slebew");
+      setState(() {});
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    if (is_loading) {
+      return const Scaffold(
+        body: Center(
+          child: CircularProgressIndicator(),
+        ),
+      );
+    }
+    return Scaffold(
+      body: Center(
+        child: Text("${status}"),
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () async {
+          print(await generalLibraryBatteryBaseFlutter.battery.batteryLevel);
+        },
+        child: const Icon(Icons.add),
+      ),
+    );
+  }
+}

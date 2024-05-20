@@ -53,12 +53,13 @@ class GeneralLibraryNotificationBaseFlutter implements GeneralLibraryNotificatio
 
   @override
   Future<bool> initialize({
-    required String notificationTitle,
-    required String notificationMessage,
+  String? defaultIcon,
+  bool debug = false,
+  String? languageCode,
   }) async {
     if (is_support_awesome_notification) {
       return await AwesomeNotifications().initialize(
-        null,
+        defaultIcon,
         [
           NotificationChannel(
             channelGroupKey: 'basic_channel_group',
@@ -76,7 +77,8 @@ class GeneralLibraryNotificationBaseFlutter implements GeneralLibraryNotificatio
             channelGroupName: 'Basic group',
           ),
         ],
-        debug: false,
+        debug: debug,
+        languageCode: languageCode
       );
     }
     return false;

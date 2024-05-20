@@ -39,9 +39,10 @@ class GeneralLibraryNotificationBase {
     return false;
   }
 
-  Future<bool> initialize({
-    required String notificationTitle,
-    required String notificationMessage,
+  Future<bool> initialize({ 
+  String? defaultIcon,
+  bool debug = false,
+  String? languageCode,
   }) async {
     return false;
   }
