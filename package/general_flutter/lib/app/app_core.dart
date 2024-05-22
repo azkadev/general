@@ -41,11 +41,31 @@ import 'package:wakelock_plus/wakelock_plus.dart';
 class GeneralLibraryAppBaseFlutter implements GeneralLibraryAppBase {
   static GlobalKey<NavigatorState> flutter_navigator_key = GlobalKey<NavigatorState>();
   static GlobalKey flutter_repaint_boundery_key = GlobalKey();
+  @override
+  Future<void> wake_lock_is_enabled() async {
+    await WakelockPlus.enabled;
+  }
+
+  @override
+  Future<void> wake_lock_toggle({
+    required bool enable,
+  }) async {
+    await WakelockPlus.toggle(enable: enable);
+  }
+
+  @override
+  Future<void> wake_lock_disable() async {
+    await WakelockPlus.disable();
+  }
+
+  @override
+  Future<void> wake_lock_enable() async {
+    await WakelockPlus.enable();
+  }
 
   static Widget repaintBoundaryWidget({
     required Widget child,
   }) {
-    WakelockPlus;
     return RepaintBoundary(
       key: GeneralLibraryAppBaseFlutter.flutter_repaint_boundery_key,
       child: child,

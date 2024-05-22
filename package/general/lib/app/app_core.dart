@@ -39,6 +39,26 @@ import 'package:general/app/app_model.dart';
 class GeneralLibraryAppBase {
   GeneralLibraryAppBase();
 
+
+  Future<void> wake_lock_is_enabled() async {
+    // await WakelockPlus.enabled;
+  }
+
+   Future<void> wake_lock_toggle({
+    required bool enable,
+  }) async {
+    // await WakelockPlus.toggle(enable: enable);
+  }
+
+   Future<void> wake_lock_disable() async {
+    // await WakelockPlus.disable();
+  }
+
+   Future<void> wake_lock_enable() async {
+    // await WakelockPlus.enable();
+  }
+
+
   void showSnackBar({
     required String message,
   }) {}
