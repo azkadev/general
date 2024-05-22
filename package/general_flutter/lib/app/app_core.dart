@@ -42,8 +42,8 @@ class GeneralLibraryAppBaseFlutter implements GeneralLibraryAppBase {
   static GlobalKey<NavigatorState> flutter_navigator_key = GlobalKey<NavigatorState>();
   static GlobalKey flutter_repaint_boundery_key = GlobalKey();
   @override
-  Future<void> wake_lock_is_enabled() async {
-    await WakelockPlus.enabled;
+  Future<bool> wake_lock_is_enabled() async {
+   return await WakelockPlus.enabled;
   }
 
   @override

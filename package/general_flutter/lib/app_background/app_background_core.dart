@@ -92,7 +92,7 @@ class GeneralLibraryAppBackgroundBaseFlutter implements GeneralLibraryAppBackgro
   }) async {
     if (Dart.isWeb) {
       return false;
-    }
+    } 
     if (Dart.isAndroid) {
       return await FlutterBackground.initialize(
         androidConfig: FlutterBackgroundAndroidConfig(

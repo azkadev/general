@@ -52,7 +52,7 @@ class GeneralLibraryLocalAuthBaseFlutter implements GeneralLibraryLocalAuthBase 
 
   @override
   Future<bool> get is_device_support async {
-    if (is_support_local_auth) {
+    if (is_support_local_auth) { 
       return await localAuthentication.isDeviceSupported();
     }
     return false;

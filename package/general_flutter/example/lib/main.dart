@@ -530,10 +530,10 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:general_flutter/battery/battery.dart';
+import 'package:general_flutter/general_flutter.dart';
 
 void main(List<String> args) {
   WidgetsFlutterBinding.ensureInitialized();
-  
 
   runApp(const MyApp());
 }
@@ -560,6 +560,7 @@ class ScreenPage extends StatefulWidget {
 class _ScreenPageState extends State<ScreenPage> {
   bool is_loading = true;
   GeneralLibraryBatteryBaseFlutter generalLibraryBatteryBaseFlutter = GeneralLibraryBatteryBaseFlutter();
+  GeneralLibraryAppBaseFlutter generalLibraryAppBaseFlutter = GeneralLibraryAppBaseFlutter();
   @override
   void initState() {
     super.initState();
@@ -601,12 +602,28 @@ class _ScreenPageState extends State<ScreenPage> {
       );
     }
     return Scaffold(
-      body: Center(
-        child: Text("${status}"),
+      body: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          Text(
+            "Battery: ${status}",
+          ),
+          FutureBuilder(
+            future: generalLibraryAppBaseFlutter.wake_lock_is_enabled(),
+            builder: (context, snapshot) {
+              return Text(
+                "Wake Lock: ${snapshot.data}",
+              );
+            },
+          ),
+        ],
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () async {
-          print(await generalLibraryBatteryBaseFlutter.battery.batteryLevel);
+          await generalLibraryAppBaseFlutter.wake_lock_toggle(enable: true)
+;
+          setState(() {});
+          // print(await generalLibraryBatteryBaseFlutter.battery.batteryLevel);
         },
         child: const Icon(Icons.add),
       ),
