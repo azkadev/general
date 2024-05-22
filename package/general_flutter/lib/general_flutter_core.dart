@@ -38,6 +38,7 @@ import 'package:general/battery/battery_core.dart';
 import "package:general_dart/general_dart.dart";
 import 'package:general_flutter/app/app.dart';
 import 'package:general_flutter/app_background/app_background_core.dart';
+import 'package:general_flutter/camera/camera.dart';
 import 'package:general_flutter/device/device.dart';
 import 'package:general_flutter/local_auth/local_auth.dart';
 // import 'package:general_flutter/location/location.dart';
@@ -65,6 +66,11 @@ class GeneralFlutter extends GeneralDart {
   GeneralLibraryAppBackgroundBase get app_background {
     return GeneralLibraryAppBackgroundBaseFlutter();
   }
+  @override
+  GeneralLibraryCameraBaseFlutter get camera {
+    return GeneralLibraryCameraBaseFlutter();
+  }
+
 
   @override
   GeneralLibraryPermissionBaseFlutter get permission {

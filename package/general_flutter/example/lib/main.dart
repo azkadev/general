@@ -533,6 +533,7 @@ import 'package:general_flutter/battery/battery.dart';
 
 void main(List<String> args) {
   WidgetsFlutterBinding.ensureInitialized();
+  
 
   runApp(const MyApp());
 }

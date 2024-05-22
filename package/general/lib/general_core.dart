@@ -36,6 +36,7 @@ Bukan maksud kami menipu itu karena harga yang sudah di kalkulasi + bantuan tiba
 
 import 'package:general/app_background/app_background_core.dart';
 import 'package:general/battery/battery.dart';
+import 'package:general/camera/camera.dart';
 import 'package:general/device/device.dart';
 import 'package:general/general.dart';
 import 'package:general/notification/notification_core.dart';
@@ -53,6 +54,10 @@ class GeneralLibraryBase {
 
   GeneralLibraryBatteryBase get battery {
     return GeneralLibraryBatteryBase();
+  }
+
+  GeneralLibraryCameraBase get camera {
+    return GeneralLibraryCameraBase();
   }
 
   GeneralLibraryPermissionBase get permission {

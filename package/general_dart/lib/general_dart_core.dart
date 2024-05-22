@@ -36,6 +36,7 @@ import 'package:general/app/app.dart';
 
 import 'package:general/app_background/app_background_core.dart';
 import 'package:general/battery/battery_core.dart';
+import 'package:general/camera/camera_core.dart';
 import 'package:general/device/device_core.dart';
 import 'package:general/gamepad/gamepad_core.dart';
 import 'package:general/general_core.dart';
@@ -118,15 +119,12 @@ class GeneralDart implements GeneralLibraryBase {
     return GeneralLibraryPlayerBaseDart();
   }
 
-  @override
-  // TODO: implement local_auth
+  @override 
   GeneralLibraryLocalAuthBase get local_auth {
     return GeneralLibraryLocalAuthBase();
   }
 
-  // @override
-  // // TODO: implement location
-  // GeneralLibraryLocationBase get location {
-  //   return GeneralLibraryLocationBase();
-  // }
+  @override 
+  GeneralLibraryCameraBase get camera => GeneralLibraryCameraBase();
+ 
 }
