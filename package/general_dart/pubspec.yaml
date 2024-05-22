@@ -6,8 +6,6 @@ repository: 'https://github.com/azkadev/general'
 issue_tracker: 'https://github.com/azkadev/general/issues '
 documentation: 'https://youtube.com/@azkadev'
 funding: 
-  - 'https://github.com/sponsors/globalcorporation'
-  - 'https://github.com/sponsors/generalfoss'
   - 'https://github.com/sponsors/azkadev'
 platforms: 
   android: null
@@ -25,6 +23,4 @@ dependencies:
   desktop_notifications: '^0.6.3'
   general: '^0.0.23'
   media_kit: '^1.1.10+1'
-
   general_lib: '^0.0.40'
-

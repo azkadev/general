@@ -6,8 +6,6 @@ repository: 'https://github.com/azkadev/general'
 issue_tracker: 'https://github.com/azkadev/general/issues '
 documentation: 'https://youtube.com/@azkadev'
 funding: 
-  - 'https://github.com/sponsors/globalcorporation'
-  - 'https://github.com/sponsors/generalfoss'
   - 'https://github.com/sponsors/azkadev'
 platforms: 
   android: null

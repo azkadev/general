@@ -59,8 +59,6 @@ Future<void> pubspecUpdate({
       "issue_tracker": "https://github.com/azkadev/general/issues ",
       "documentation": "https://youtube.com/@azkadev",
       "funding": [
-        "https://github.com/sponsors/globalcorporation",
-        "https://github.com/sponsors/generalfoss",
         "https://github.com/sponsors/azkadev",
       ],
       "platforms": {
@@ -83,7 +81,7 @@ Future<void> pubspecUpdate({
       });
       (yaml_code_clone["dependencies"] as Map).forEach((key, value) { 
         if (key == "general_lib") {
-          yaml_code_clone["dependencies"][key] = "^0.0.37";
+          yaml_code_clone["dependencies"][key] = "^0.0.40";
         }
         if (key == "general_lib_flutter") {
           yaml_code_clone["dependencies"][key] = "^0.0.20";
