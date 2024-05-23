@@ -30,4 +30,4 @@ Bukan maksud kami menipu itu karena harga yang sudah di kalkulasi + bantuan tiba
 
 
 <!-- END LICENSE --> */
-export "player_widget.dart";
+export "widget/player_widget.dart";

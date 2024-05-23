@@ -91,7 +91,7 @@ class MyScreenState extends State<MyScreen> {
         child: Builder(
           builder: (context) {
             if (is_init) {
-              return GeneralLibraryPlayerWidget(
+              return PlayerWidget(
                 generalLibraryPlayerControllerBaseDart: generalLibraryPlayerControllerBaseDart,
               );
             }

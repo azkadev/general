@@ -36,18 +36,18 @@ import 'package:flutter/widgets.dart';
 import 'package:general_dart/general_dart.dart';
 import 'package:media_kit_video/media_kit_video.dart';
 
-class GeneralLibraryPlayerWidget extends StatefulWidget {
+class PlayerWidget extends StatefulWidget {
   final GeneralLibraryPlayerControllerBaseDart generalLibraryPlayerControllerBaseDart;
-  const GeneralLibraryPlayerWidget({
+  const PlayerWidget({
     super.key,
     required this.generalLibraryPlayerControllerBaseDart,
   });
 
   @override
-  State<GeneralLibraryPlayerWidget> createState() => _GeneralLibraryPlayerWidgetState();
+  State<PlayerWidget> createState() => _PlayerWidgetState();
 }
 
-class _GeneralLibraryPlayerWidgetState extends State<GeneralLibraryPlayerWidget> {
+class _PlayerWidgetState extends State<PlayerWidget> {
   late final VideoController videoController;
   bool is_init = false;
   @override
