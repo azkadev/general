@@ -531,7 +531,9 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:general_flutter/battery/battery.dart';
 import 'package:general_flutter/general_flutter.dart';
+import 'package:general_flutter/notification/notification_core.dart';
 
+GeneralLibraryNotificationBaseFlutter generalLibraryNotificationBaseFlutter = GeneralLibraryNotificationBaseFlutter();
 void main(List<String> args) {
   WidgetsFlutterBinding.ensureInitialized();
 
@@ -590,6 +592,8 @@ class _ScreenPageState extends State<ScreenPage> {
       print("slebew");
       setState(() {});
     });
+    await generalLibraryNotificationBaseFlutter.initialize();
+    setState(() {});
   }
 
   @override
@@ -620,9 +624,10 @@ class _ScreenPageState extends State<ScreenPage> {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () async {
-          await generalLibraryAppBaseFlutter.wake_lock_toggle(enable: true)
-;
-          setState(() {});
+          // await generalLibraryAppBaseFlutter.wake_lock_toggle(enable: true);
+          // setState(() {});
+          //
+          await generalLibraryNotificationBaseFlutter.createSimpleNotification(title: "hai", text: "sa");
           // print(await generalLibraryBatteryBaseFlutter.battery.batteryLevel);
         },
         child: const Icon(Icons.add),

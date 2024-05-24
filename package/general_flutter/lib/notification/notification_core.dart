@@ -34,10 +34,11 @@ Bukan maksud kami menipu itu karena harga yang sudah di kalkulasi + bantuan tiba
 
 import 'package:awesome_notifications/awesome_notifications.dart';
 import 'package:flutter/material.dart';
-import 'package:general/notification/notification_core.dart';
 import 'package:general_lib/general_lib.dart';
 
-class GeneralLibraryNotificationBaseFlutter implements GeneralLibraryNotificationBase {
+import "package:general_dart/notification/notification.dart";
+
+class GeneralLibraryNotificationBaseFlutter extends GeneralLibraryNotificationBaseDart {
   GeneralLibraryNotificationBaseFlutter();
 
   @override
@@ -53,11 +54,19 @@ class GeneralLibraryNotificationBaseFlutter implements GeneralLibraryNotificatio
 
   @override
   Future<bool> initialize({
-  String? defaultIcon,
-  bool debug = false,
-  String? languageCode,
+    String? defaultIcon,
+    bool debug = false,
+    String? languageCode,
   }) async {
     if (is_support_awesome_notification) {
+      print(NotificationChannel(
+        channelGroupKey: 'basic_channel_group',
+        channelKey: 'basic_channel',
+        channelName: 'Basic notifications',
+        channelDescription: 'Notification channel for basic tests',
+        defaultColor: const Color(0xFF9D50DD),
+        ledColor: Colors.white,
+      ).toMap().toStringifyPretty());
       return await AwesomeNotifications().initialize(
         defaultIcon,
         [
@@ -78,7 +87,7 @@ class GeneralLibraryNotificationBaseFlutter implements GeneralLibraryNotificatio
           ),
         ],
         debug: debug,
-        languageCode: languageCode
+        languageCode: languageCode,
       );
     }
     return false;
@@ -90,7 +99,7 @@ class GeneralLibraryNotificationBaseFlutter implements GeneralLibraryNotificatio
     required String text,
   }) async {
     if (is_support_awesome_notification) {
-      return AwesomeNotifications().createNotification(
+      return await AwesomeNotifications().createNotification(
         content: NotificationContent(
           id: 10,
           channelKey: "basic_channel",
@@ -99,6 +108,20 @@ class GeneralLibraryNotificationBaseFlutter implements GeneralLibraryNotificatio
           body: text,
         ),
       );
+    }
+    if (is_support_desktop_notification) {
+      return await super.createSimpleNotification(title: title, text: text);
+    }
+    return false;
+  }
+
+  @override
+  bool get is_support_desktop_notification {
+    if (Dart.isWeb) {
+      return false;
+    }
+    if (Dart.isLinux) {
+      return true;
     }
     return false;
   }

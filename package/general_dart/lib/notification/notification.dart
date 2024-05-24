@@ -30,33 +30,5 @@ Bukan maksud kami menipu itu karena harga yang sudah di kalkulasi + bantuan tiba
 
 
 <!-- END LICENSE --> */
-// ignore_for_file: non_constant_identifier_names
 
-class GeneralLibraryNotificationBase {
-  GeneralLibraryNotificationBase();
-
-  bool get is_support_awesome_notification {
-    return false;
-  }
-
-
-  bool get is_support_desktop_notification {
-    return false;
-  }
-
-
-  Future<bool> initialize({ 
-  String? defaultIcon,
-  bool debug = false,
-  String? languageCode,
-  }) async {
-    return false;
-  }
-
-  Future<bool> createSimpleNotification({
-    required String title,
-    required String text,
-  }) async {
-    return false;
-  }
-}
+export "notification_core.dart";

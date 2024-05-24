@@ -32,31 +32,60 @@ Bukan maksud kami menipu itu karena harga yang sudah di kalkulasi + bantuan tiba
 <!-- END LICENSE --> */
 // ignore_for_file: non_constant_identifier_names
 
-class GeneralLibraryNotificationBase {
-  GeneralLibraryNotificationBase();
+import 'package:general/notification/notification_core.dart';
+import 'package:general_lib/general_lib.dart';
+import "package:desktop_notifications/desktop_notifications.dart";
 
+class GeneralLibraryNotificationBaseDart implements GeneralLibraryNotificationBase {
+  GeneralLibraryNotificationBaseDart();
+
+  @override
   bool get is_support_awesome_notification {
+    if (Dart.isWeb) {
+      return false;
+    }
+    if (Dart.isMobile) {
+      return true;
+    }
     return false;
   }
 
-
+  @override
   bool get is_support_desktop_notification {
+    if (Dart.isWeb) {
+      return false;
+    }
+    if (Dart.isLinux) {
+      return true;
+    }
     return false;
   }
 
-
-  Future<bool> initialize({ 
-  String? defaultIcon,
-  bool debug = false,
-  String? languageCode,
+  @override
+  Future<bool> initialize({
+    String? defaultIcon,
+    bool debug = false,
+    String? languageCode,
   }) async {
+    if (is_support_desktop_notification) {}
+
     return false;
   }
 
+  NotificationsClient notifications_client_desktop = NotificationsClient();
+
+  @override
   Future<bool> createSimpleNotification({
     required String title,
     required String text,
   }) async {
+    if (is_support_desktop_notification) {
+      await notifications_client_desktop.notify(
+        title,
+        body: text,
+      );
+
+    }
     return false;
   }
 }
