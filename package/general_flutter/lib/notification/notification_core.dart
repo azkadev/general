@@ -59,14 +59,7 @@ class GeneralLibraryNotificationBaseFlutter extends GeneralLibraryNotificationBa
     String? languageCode,
   }) async {
     if (is_support_awesome_notification) {
-      print(NotificationChannel(
-        channelGroupKey: 'basic_channel_group',
-        channelKey: 'basic_channel',
-        channelName: 'Basic notifications',
-        channelDescription: 'Notification channel for basic tests',
-        defaultColor: const Color(0xFF9D50DD),
-        ledColor: Colors.white,
-      ).toMap().toStringifyPretty());
+      
       return await AwesomeNotifications().initialize(
         defaultIcon,
         [

@@ -17,7 +17,7 @@ platforms:
 environment: 
   sdk: '^3.2.3'
 dependencies: 
-  general_lib: '^0.0.40'
+  general_lib: '^0.0.41'
 dev_dependencies: 
   lints: '^2.1.0'
   test: '^1.24.0'
