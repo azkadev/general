@@ -1,6 +1,6 @@
 name: 'general_client'
 description: 'General library For Make Your Coding or Project More Easy'
-version: '0.0.23'
+version: '0.0.0'
 homepage: 'https://github.com/azkadev/general'
 repository: 'https://github.com/azkadev/general'
 issue_tracker: 'https://github.com/azkadev/general/issues '
@@ -15,7 +15,10 @@ platforms:
   web: null
   windows: null
 environment: 
-  sdk: '^3.2.3'
+  sdk: '>=3.3.3 <4.0.0'
 dev_dependencies: 
   lints: '^2.1.0'
   test: '^1.24.0'
+publish_to: 'none'
+dependency_overrides: 
+  pointycastle: '3.8.0'

@@ -1,6 +1,6 @@
 name: 'general_flutter'
 description: 'General library For Make Your Coding or Project More Easy'
-version: '0.0.23'
+version: '0.0.0'
 homepage: 'https://github.com/azkadev/general'
 repository: 'https://github.com/azkadev/general'
 issue_tracker: 'https://github.com/azkadev/general/issues '
@@ -15,7 +15,7 @@ platforms:
   web: null
   windows: null
 environment: 
-  sdk: '>=3.2.3 <4.0.0'
+  sdk: '>=3.3.3 <4.0.0'
   flutter: '>=1.17.0'
 dependencies: 
   flutter: 
@@ -26,7 +26,7 @@ dependencies:
   flutter_tts: '^4.0.2'
   general: '^0.0.23'
   general_dart: '^0.0.23'
-  general_lib: '^0.0.41'
+  general_lib: '^0.0.42'
   path: '^1.8.3'
   permission_handler: '^11.3.1'
   safe_device: '^1.1.6'
@@ -34,7 +34,7 @@ dependencies:
   universal_io: '^2.2.2'
   sim_card_info: '^1.0.1'
   sms_flutter: '^0.0.0'
-  general_lib_flutter: '^0.0.21'
+  general_lib_flutter: '^0.0.22'
   media_kit: '^1.1.10+1'
   media_kit_video: '^1.2.4'
   local_auth: '^2.2.0'
@@ -47,3 +47,6 @@ dev_dependencies:
     sdk: 'flutter'
   flutter_lints: '^2.0.0'
 flutter: null
+publish_to: 'none'
+dependency_overrides: 
+  pointycastle: '3.8.0'

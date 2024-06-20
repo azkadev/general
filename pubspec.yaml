@@ -1,6 +1,6 @@
 name: 'general_project'
 description: 'General library For Make Your Coding or Project More Easy'
-version: '0.0.23'
+version: '0.0.0'
 repository: 'https://github.com/azkadev/general'
 homepage: 'https://github.com/azkadev/general'
 issue_tracker: 'https://github.com/azkadev/general/issues '
@@ -8,9 +8,9 @@ documentation: 'https://youtube.com/@azkadev'
 funding: 
   - 'https://github.com/sponsors/azkadev'
 environment: 
-  sdk: '^3.2.3'
+  sdk: '>=3.3.3 <4.0.0'
 dependencies: 
-  general_lib: '^0.0.41'
+  general_lib: '^0.0.42'
   http: '^1.2.1'
   mason_logger: '^0.2.11'
   path: '^1.9.0'
@@ -27,3 +27,6 @@ platforms:
   macos: null
   web: null
   windows: null
+publish_to: 'none'
+dependency_overrides: 
+  pointycastle: '3.8.0'
