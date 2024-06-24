@@ -13,7 +13,7 @@ dependencies:
   local_auth: '^2.2.0'
   geolocator: '^11.0.0'
   baseflow_plugin_template: '^2.1.2'
-  telegram_client: '^0.8.19'
+  telegram_client: '^0.8.20'
 dev_dependencies: 
   flutter_test: 
     sdk: 'flutter'
@@ -22,3 +22,5 @@ flutter:
   uses-material-design: true
 dependency_overrides: 
   pointycastle: '3.8.0'
+funding: 
+  - 'https://github.com/sponsors/azkadev'
