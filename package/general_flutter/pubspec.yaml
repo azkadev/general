@@ -42,6 +42,7 @@ dependencies:
   battery_plus: '^6.0.1'
   camera: '^0.11.0'
   camera_windows: '^0.2.1+8'
+  # gamepads: any
 dev_dependencies: 
   flutter_test: 
     sdk: 'flutter'

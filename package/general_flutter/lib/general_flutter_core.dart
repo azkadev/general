@@ -40,6 +40,7 @@ import 'package:general_flutter/app/app.dart';
 import 'package:general_flutter/app_background/app_background_core.dart';
 import 'package:general_flutter/camera/camera.dart';
 import 'package:general_flutter/device/device.dart';
+import 'package:general_flutter/gamepad/gamepad_core.dart';
 import 'package:general_flutter/local_auth/local_auth.dart';
 // import 'package:general_flutter/location/location.dart';
 import 'package:general_flutter/notification/notification_core.dart';
@@ -98,8 +99,8 @@ class GeneralFlutter extends GeneralDart {
   }
 
   @override
-  GeneralLibraryGamePadBase get gamepad {
-    return GeneralLibraryGamePadBase();
+  GeneralLibraryGamePadBaseFlutter get gamepad {
+    return GeneralLibraryGamePadBaseFlutter();
   }
 
   @override
