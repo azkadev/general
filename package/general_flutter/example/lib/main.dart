@@ -532,6 +532,7 @@ import 'package:flutter/material.dart';
 import 'package:general_flutter/battery/battery.dart';
 import 'package:general_flutter/general_flutter.dart';
 import 'package:general_flutter/notification/notification_core.dart';
+import "package:general_lib_flutter/general_lib_flutter.dart";
 
 GeneralLibraryNotificationBaseFlutter generalLibraryNotificationBaseFlutter = GeneralLibraryNotificationBaseFlutter();
 void main(List<String> args) {
@@ -609,6 +610,9 @@ class _ScreenPageState extends State<ScreenPage> {
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
+          SizedBox(
+            height: context.mediaQueryData.padding.top,
+          ),
           Text(
             "Battery: ${status}",
           ),

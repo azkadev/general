@@ -7,7 +7,6 @@ list(APPEND FLUTTER_PLUGIN_LIST
   battery_plus
   camera_windows
   flutter_tts
-  geolocator_windows
   local_auth_windows
   media_kit_video
   permission_handler_windows

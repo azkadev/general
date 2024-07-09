@@ -34,7 +34,7 @@ Bukan maksud kami menipu itu karena harga yang sudah di kalkulasi + bantuan tiba
 
 import 'dart:async';
 
-import 'package:gamepads/gamepads.dart';
+// import 'package:gamepads/gamepads.dart';
 import 'package:general/gamepad/gamepad_core.dart';
 import 'package:general_lib/general_lib.dart';
 
@@ -47,9 +47,9 @@ class GeneralLibraryGamePadBaseFlutter implements GeneralLibraryGamePadBase {
       return [];
     }
     // if (Dart.isDesktop) {
-    return (await Gamepads.list()).map((e) {
-      return GamePadControllerData(id: e.id, name: e.name);
-    }).toList();
+    // return (await Gamepads.list()).map((e) {
+    //   return GamePadControllerData(id: e.id, name: e.name);
+    // }).toList();
     // }
     return [];
   }
@@ -62,21 +62,21 @@ class GeneralLibraryGamePadBaseFlutter implements GeneralLibraryGamePadBase {
     // if (Dart.isDesktop) {
       // Gamepads.events;
 
-      await for (GamepadEvent event in Gamepads.events) {
-        // Gamepads.events.listen((GamepadEvent event) {
-        GamePadControllerEventKeyType gamePadControllerEventKeyType = GamePadControllerEventKeyType.analog;
-        if (event.type == KeyType.button) {
-          gamePadControllerEventKeyType = GamePadControllerEventKeyType.button;
-        }
+      // await for (GamepadEvent event in Gamepads.events) {
+      //   // Gamepads.events.listen((GamepadEvent event) {
+      //   GamePadControllerEventKeyType gamePadControllerEventKeyType = GamePadControllerEventKeyType.analog;
+      //   if (event.type == KeyType.button) {
+      //     gamePadControllerEventKeyType = GamePadControllerEventKeyType.button;
+      //   }
 
-        yield GamePadControllerEventData(
-          gamepadId: event.gamepadId,
-          timestamp: event.timestamp,
-          type: gamePadControllerEventKeyType,
-          key: event.key,
-          value: event.value,
-        );
-      }
+      //   yield GamePadControllerEventData(
+      //     gamepadId: event.gamepadId,
+      //     timestamp: event.timestamp,
+      //     type: gamePadControllerEventKeyType,
+      //     key: event.key,
+      //     value: event.value,
+      //   );
+      // }
       // });
     // }
   }

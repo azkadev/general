@@ -57,14 +57,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "0.9.3+1"
-  baseflow_plugin_template:
-    dependency: "direct main"
-    description:
-      name: baseflow_plugin_template
-      sha256: f3483837bf8737db013e94af2277ffb9b26020c54e1dd2303c0925e1eceb9694
-      url: "https://pub.dev"
-    source: hosted
-    version: "2.1.2"
   battery_plus:
     dependency: transitive
     description:
@@ -366,86 +358,37 @@ packages:
       path: "../../general"
       relative: true
     source: path
-    version: "0.0.0"
+    version: "0.0.24"
   general_dart:
     dependency: "direct overridden"
     description:
       path: "../../general_dart"
       relative: true
     source: path
-    version: "0.0.0"
+    version: "0.0.24"
   general_flutter:
     dependency: "direct main"
     description:
-      name: general_flutter
-      sha256: b36a3a220365fd1efb7fe5f041cb75397390a1394b891857820a7dbc1822da97
+      path: ".."
+      relative: true
+    source: path
+    version: "0.0.24"
+  general_lib:
+    dependency: "direct main"
+    description:
+      name: general_lib
+      sha256: f968f3bee797cbdd3b3282b1842e3674f7a0e07cad6326996982d1b1bd56f5ac
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.0.43"
+  general_lib_flutter:
+    dependency: "direct main"
+    description:
+      name: general_lib_flutter
+      sha256: "5acc868b6edab12f847051f83a3350930bbcd4803adc700e7ef1c48b736db450"
       url: "https://pub.dev"
     source: hosted
     version: "0.0.23"
-  general_lib:
-    dependency: transitive
-    description:
-      name: general_lib
-      sha256: "31a7b5d3ddecf4f2cbec40f63343dac1394a6d66354ec95f82c6e2aa70a4237d"
-      url: "https://pub.dev"
-    source: hosted
-    version: "0.0.42"
-  general_lib_flutter:
-    dependency: transitive
-    description:
-      name: general_lib_flutter
-      sha256: "77db2260e6e7c6336442ce040e7f87b6175c945904b459dc864f63f5229bf791"
-      url: "https://pub.dev"
-    source: hosted
-    version: "0.0.22"
-  geolocator:
-    dependency: "direct main"
-    description:
-      name: geolocator
-      sha256: "694ec58afe97787b5b72b8a0ab78c1a9244811c3c10e72c4362ef3c0ceb005cd"
-      url: "https://pub.dev"
-    source: hosted
-    version: "11.0.0"
-  geolocator_android:
-    dependency: transitive
-    description:
-      name: geolocator_android
-      sha256: "136f1c97e1903366393bda514c5d9e98843418baea52899aa45edae9af8a5cd6"
-      url: "https://pub.dev"
-    source: hosted
-    version: "4.5.2"
-  geolocator_apple:
-    dependency: transitive
-    description:
-      name: geolocator_apple
-      sha256: "2f2d4ee16c4df269e93c0e382be075cc01d5db6703c3196e4af20a634fe49ef4"
-      url: "https://pub.dev"
-    source: hosted
-    version: "2.3.6"
-  geolocator_platform_interface:
-    dependency: transitive
-    description:
-      name: geolocator_platform_interface
-      sha256: "009a21c4bc2761e58dccf07c24f219adaebe0ff707abdfd40b0a763d4003fab9"
-      url: "https://pub.dev"
-    source: hosted
-    version: "4.2.2"
-  geolocator_web:
-    dependency: transitive
-    description:
-      name: geolocator_web
-      sha256: "49d8f846ebeb5e2b6641fe477a7e97e5dd73f03cbfef3fd5c42177b7300fb0ed"
-      url: "https://pub.dev"
-    source: hosted
-    version: "3.0.0"
-  geolocator_windows:
-    dependency: transitive
-    description:
-      name: geolocator_windows
-      sha256: a92fae29779d5c6dc60e8411302f5221ade464968fe80a36d330e80a71f087af
-      url: "https://pub.dev"
-    source: hosted
-    version: "0.2.2"
   glob:
     dependency: transitive
     description:
@@ -794,10 +737,10 @@ packages:
     dependency: transitive
     description:
       name: safe_device
-      sha256: "889ba192a7056b4cedf24cf464226217d8f26a5c007a7b8e50a31f6c44b4def4"
+      sha256: a85161353ae2b69b6473ba420228cac4363612b35266a7bc660a7fb8e5ed792d
       url: "https://pub.dev"
     source: hosted
-    version: "1.1.6"
+    version: "1.1.7"
   safe_local_storage:
     dependency: transitive
     description:
@@ -866,10 +809,10 @@ packages:
     dependency: transitive
     description:
       name: sim_card_info
-      sha256: "0029d886d161947d6fa3cd2a5193f4b89822eadff30ea9906d698ea379833669"
+      sha256: d22c1fc597a962d1feed75e9b6415c8db8040d3eb78ed2f3a0e7832afb024488
       url: "https://pub.dev"
     source: hosted
-    version: "1.0.1"
+    version: "1.0.2"
   sky_engine:
     dependency: transitive
     description: flutter
@@ -975,10 +918,10 @@ packages:
     dependency: "direct main"
     description:
       name: telegram_client
-      sha256: "80ed440be0a52bd2ad740961ecf7059bf0b8e9d2028232f4e86fd65c71470098"
+      sha256: b99c9f0a8479d7893f5db30b1f0a6c3712b07ae3ee3f7136ba7fd922c6919abd
       url: "https://pub.dev"
     source: hosted
-    version: "0.8.20"
+    version: "0.8.21"
   term_glyph:
     dependency: transitive
     description:

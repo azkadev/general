@@ -1,11 +1,10 @@
 name: 'general_flutter'
 description: 'General library For Make Your Coding or Project More Easy'
-version: '0.0.0'
+version: '0.0.24'
 homepage: 'https://github.com/azkadev/general'
 repository: 'https://github.com/azkadev/general'
 issue_tracker: 'https://github.com/azkadev/general/issues '
 documentation: 'https://youtube.com/@azkadev'
-publish_to: 'none'
 funding: 
   - 'https://github.com/sponsors/azkadev'
 platforms: 
@@ -30,10 +29,10 @@ dependencies:
   general_lib: '^0.0.43'
   path: '^1.8.3'
   permission_handler: '^11.3.1'
-  safe_device: '^1.1.6'
+  safe_device: '^1.1.7'
   speech_to_text: '^6.6.0'
   universal_io: '^2.2.2'
-  sim_card_info: '^1.0.1'
+  sim_card_info: '^1.0.2'
   sms_flutter: '^0.0.0'
   general_lib_flutter: '^0.0.23'
   media_kit: '^1.1.10+1'
@@ -43,10 +42,12 @@ dependencies:
   battery_plus: '^6.0.1'
   camera: '^0.11.0'
   camera_windows: '^0.2.1+8'
-  gamepads: 
-    git: 
-      url: 'https://github.com/flame-engine/gamepads.git'
-      path: 'packages/gamepads'
+  # gamepads: 
+  #   git: 
+  #     url: 'https://github.com/flame-engine/gamepads.git'
+  #     path: 'packages/gamepads'
+
+publish_to: 'none'
 dev_dependencies: 
   flutter_test: 
     sdk: 'flutter'
