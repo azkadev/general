@@ -34,7 +34,7 @@ Bukan maksud kami menipu itu karena harga yang sudah di kalkulasi + bantuan tiba
 
 import 'package:general/notification/notification_core.dart';
 import 'package:general_lib/general_lib.dart';
-import "package:desktop_notifications/desktop_notifications.dart";
+// import "package:desktop_notifications/desktop_notifications.dart";
 
 class GeneralLibraryNotificationBaseDart implements GeneralLibraryNotificationBase {
   GeneralLibraryNotificationBaseDart();
@@ -72,7 +72,7 @@ class GeneralLibraryNotificationBaseDart implements GeneralLibraryNotificationBa
     return false;
   }
 
-  NotificationsClient notifications_client_desktop = NotificationsClient();
+  // NotificationsClient notifications_client_desktop = NotificationsClient();
 
   @override
   Future<bool> createSimpleNotification({
@@ -80,10 +80,10 @@ class GeneralLibraryNotificationBaseDart implements GeneralLibraryNotificationBa
     required String text,
   }) async {
     if (is_support_desktop_notification) {
-      await notifications_client_desktop.notify(
-        title,
-        body: text,
-      );
+      // await notifications_client_desktop.notify(
+      //   title,
+      //   body: text,
+      // );
 
     }
     return false;

@@ -5,6 +5,7 @@ homepage: 'https://github.com/azkadev/general'
 repository: 'https://github.com/azkadev/general'
 issue_tracker: 'https://github.com/azkadev/general/issues '
 documentation: 'https://youtube.com/@azkadev'
+publish_to: 'none'
 funding: 
   - 'https://github.com/sponsors/azkadev'
 platforms: 
@@ -24,9 +25,9 @@ dependencies:
   file_picker: '^8.0.3'
   flutter_background: '^1.2.0'
   flutter_tts: '^4.0.2'
-  general: '^0.0.23'
-  general_dart: '^0.0.23'
-  general_lib: '^0.0.42'
+  general: '^0.0.24'
+  general_dart: '^0.0.24'
+  general_lib: '^0.0.43'
   path: '^1.8.3'
   permission_handler: '^11.3.1'
   safe_device: '^1.1.6'
@@ -34,7 +35,7 @@ dependencies:
   universal_io: '^2.2.2'
   sim_card_info: '^1.0.1'
   sms_flutter: '^0.0.0'
-  general_lib_flutter: '^0.0.22'
+  general_lib_flutter: '^0.0.23'
   media_kit: '^1.1.10+1'
   media_kit_video: '^1.2.4'
   local_auth: '^2.2.0'
@@ -42,12 +43,14 @@ dependencies:
   battery_plus: '^6.0.1'
   camera: '^0.11.0'
   camera_windows: '^0.2.1+8'
-  # gamepads: any
+  gamepads: 
+    git: 
+      url: 'https://github.com/flame-engine/gamepads.git'
+      path: 'packages/gamepads'
 dev_dependencies: 
   flutter_test: 
     sdk: 'flutter'
   flutter_lints: '^2.0.0'
 flutter: null
-publish_to: 'none'
 dependency_overrides: 
   pointycastle: '3.8.0'

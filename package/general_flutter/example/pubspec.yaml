@@ -8,12 +8,12 @@ dependencies:
   flutter: 
     sdk: 'flutter'
   cupertino_icons: '^1.0.2'
-  general_flutter: '^0.0.23'
+  general_flutter: '^0.0.24'
   media_kit_video: '^1.2.4'
   local_auth: '^2.2.0'
   geolocator: '^11.0.0'
   baseflow_plugin_template: '^2.1.2'
-  telegram_client: '^0.8.20'
+  telegram_client: '^0.8.21'
 dev_dependencies: 
   flutter_test: 
     sdk: 'flutter'
