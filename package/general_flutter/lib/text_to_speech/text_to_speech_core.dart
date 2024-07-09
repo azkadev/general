@@ -1,16 +1,18 @@
 /* <!-- START LICENSE -->
 
 
-Program Ini Di buat Oleh DEVELOPER Dari PERUSAHAAN GLOBAL CORPORATION 
-Social Media: 
+This Software / Program / Source Code Created By Developer From Company GLOBAL CORPORATION
+Social Media:
 
-- Youtube: https://youtube.com/@Global_Corporation 
-- Github: https://github.com/globalcorporation
-- TELEGRAM: https://t.me/GLOBAL_CORP_ORG_BOT
+   - Youtube: https://youtube.com/@Global_Corporation 
+   - Github: https://github.com/globalcorporation
+   - TELEGRAM: https://t.me/GLOBAL_CORP_ORG_BOT
 
-Seluruh kode disini di buat 100% murni tanpa jiplak / mencuri kode lain jika ada akan ada link komment di baris code
+All code script in here created 100% original without copy / steal from other code if we copy we add description source at from top code
 
-Jika anda mau mengedit pastikan kredit ini tidak di hapus / di ganti!
+If you wan't edit you must add credit me (don't change)
+
+If this Software / Program / Source Code has you
 
 Jika Program ini milik anda dari hasil beli jasa developer di (Global Corporation / apapun itu dari turunan itu jika ada kesalahan / bug / ingin update segera lapor ke sub)
 
@@ -37,7 +39,8 @@ import 'package:general/player/player_controller.dart';
 import 'package:general/text_to_speech/text_to_speech_core.dart';
 import 'package:general_lib/general_lib.dart';
 
-class GeneralLibraryTextToSpeechBaseFlutter implements GeneralLibraryTextToSpeechBase {
+class GeneralLibraryTextToSpeechBaseFlutter
+    implements GeneralLibraryTextToSpeechBase {
   FlutterTts flutterTts = FlutterTts();
 
   static bool is_text_to_speech_on_speak = false;
@@ -85,7 +88,8 @@ class GeneralLibraryTextToSpeechBaseFlutter implements GeneralLibraryTextToSpeec
       if (flutter_is_support_flutter_tts) {
         if (isWaithFinishedSpeakBefore) {
           durationWaitFinishedSpeakBefore ??= const Duration(minutes: 1);
-          DateTime dateTime_expire = DateTime.now().add(durationWaitFinishedSpeakBefore);
+          DateTime dateTime_expire =
+              DateTime.now().add(durationWaitFinishedSpeakBefore);
           while (true) {
             await Future.delayed(const Duration(milliseconds: 1));
             if (dateTime_expire.isBefore(DateTime.now())) {

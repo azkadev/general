@@ -1,16 +1,18 @@
 /* <!-- START LICENSE -->
 
 
-Program Ini Di buat Oleh DEVELOPER Dari PERUSAHAAN GLOBAL CORPORATION 
-Social Media: 
+This Software / Program / Source Code Created By Developer From Company GLOBAL CORPORATION
+Social Media:
 
-- Youtube: https://youtube.com/@Global_Corporation 
-- Github: https://github.com/globalcorporation
-- TELEGRAM: https://t.me/GLOBAL_CORP_ORG_BOT
+   - Youtube: https://youtube.com/@Global_Corporation 
+   - Github: https://github.com/globalcorporation
+   - TELEGRAM: https://t.me/GLOBAL_CORP_ORG_BOT
 
-Seluruh kode disini di buat 100% murni tanpa jiplak / mencuri kode lain jika ada akan ada link komment di baris code
+All code script in here created 100% original without copy / steal from other code if we copy we add description source at from top code
 
-Jika anda mau mengedit pastikan kredit ini tidak di hapus / di ganti!
+If you wan't edit you must add credit me (don't change)
+
+If this Software / Program / Source Code has you
 
 Jika Program ini milik anda dari hasil beli jasa developer di (Global Corporation / apapun itu dari turunan itu jika ada kesalahan / bug / ingin update segera lapor ke sub)
 
@@ -43,7 +45,6 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-
   // ini bisa pakai generaldart dan anda bebas mengatur di manapun
   GeneralFlutter general_library = GeneralFlutter();
 
@@ -55,7 +56,7 @@ class _HomePageState extends State<HomePage> {
     });
     // task();
   }
-  
+
   void task() {
     Future(() async {
       // check dahulu apakah di beri ijin
@@ -68,7 +69,7 @@ class _HomePageState extends State<HomePage> {
       // await general_library.app_background.disable_background;
     });
   }
-  
+
   // --- code
   @override
   Widget build(BuildContext context) {

@@ -47,7 +47,7 @@ dependencies:
   #     url: 'https://github.com/flame-engine/gamepads.git'
   #     path: 'packages/gamepads'
 
-publish_to: 'none'
+# publish_to: 'none'
 dev_dependencies: 
   flutter_test: 
     sdk: 'flutter'

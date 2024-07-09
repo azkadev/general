@@ -1,16 +1,18 @@
 /* <!-- START LICENSE -->
 
 
-Program Ini Di buat Oleh DEVELOPER Dari PERUSAHAAN GLOBAL CORPORATION 
-Social Media: 
+This Software / Program / Source Code Created By Developer From Company GLOBAL CORPORATION
+Social Media:
 
-- Youtube: https://youtube.com/@Global_Corporation 
-- Github: https://github.com/globalcorporation
-- TELEGRAM: https://t.me/GLOBAL_CORP_ORG_BOT
+   - Youtube: https://youtube.com/@Global_Corporation 
+   - Github: https://github.com/globalcorporation
+   - TELEGRAM: https://t.me/GLOBAL_CORP_ORG_BOT
 
-Seluruh kode disini di buat 100% murni tanpa jiplak / mencuri kode lain jika ada akan ada link komment di baris code
+All code script in here created 100% original without copy / steal from other code if we copy we add description source at from top code
 
-Jika anda mau mengedit pastikan kredit ini tidak di hapus / di ganti!
+If you wan't edit you must add credit me (don't change)
+
+If this Software / Program / Source Code has you
 
 Jika Program ini milik anda dari hasil beli jasa developer di (Global Corporation / apapun itu dari turunan itu jika ada kesalahan / bug / ingin update segera lapor ke sub)
 
@@ -63,7 +65,7 @@ enum ListenMode {
 }
 
 void main(List<String> args) async {
-  String script_dart = """ 
+  String script_dart = """
 // ignore_for_file: non_constant_identifier_names
 
 import 'dart:async';
@@ -96,7 +98,8 @@ extension ExtensionListListenModeTypeToListenMode on List<ListenModeType> {
   if (!directory.existsSync()) {
     await directory.create(recursive: true);
   }
-  File file = File(join(directory.path, "listen_mode_type_to_listen_mode_type.dart"));
+  File file =
+      File(join(directory.path, "listen_mode_type_to_listen_mode_type.dart"));
   String replace_data = "";
 
   for (var element in ListenMode.values) {
@@ -110,6 +113,7 @@ extension ExtensionListListenModeTypeToListenMode on List<ListenModeType> {
     replace_data += "\n";
   }
 
-  script_dart = script_dart.replaceAll(RegExp("{content_replace}"), replace_data);
+  script_dart =
+      script_dart.replaceAll(RegExp("{content_replace}"), replace_data);
   await file.writeAsString(script_dart);
 }

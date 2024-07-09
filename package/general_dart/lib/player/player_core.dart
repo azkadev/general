@@ -1,16 +1,18 @@
 /* <!-- START LICENSE -->
 
 
-Program Ini Di buat Oleh DEVELOPER Dari PERUSAHAAN GLOBAL CORPORATION 
-Social Media: 
+This Software / Program / Source Code Created By Developer From Company GLOBAL CORPORATION
+Social Media:
 
-- Youtube: https://youtube.com/@Global_Corporation 
-- Github: https://github.com/globalcorporation
-- TELEGRAM: https://t.me/GLOBAL_CORP_ORG_BOT
+   - Youtube: https://youtube.com/@Global_Corporation 
+   - Github: https://github.com/globalcorporation
+   - TELEGRAM: https://t.me/GLOBAL_CORP_ORG_BOT
 
-Seluruh kode disini di buat 100% murni tanpa jiplak / mencuri kode lain jika ada akan ada link komment di baris code
+All code script in here created 100% original without copy / steal from other code if we copy we add description source at from top code
 
-Jika anda mau mengedit pastikan kredit ini tidak di hapus / di ganti!
+If you wan't edit you must add credit me (don't change)
+
+If this Software / Program / Source Code has you
 
 Jika Program ini milik anda dari hasil beli jasa developer di (Global Corporation / apapun itu dari turunan itu jika ada kesalahan / bug / ingin update segera lapor ke sub)
 
@@ -63,7 +65,9 @@ class GeneralLibraryPlayerBaseDart implements GeneralLibraryPlayerBase {
   GeneralLibraryPlayerControllerBaseDart createPlayer({
     required String player_id,
   }) {
-    GeneralLibraryPlayerControllerBaseDart generalLibraryPlayerControllerBaseDart = GeneralLibraryPlayerControllerBaseDart(
+    GeneralLibraryPlayerControllerBaseDart
+        generalLibraryPlayerControllerBaseDart =
+        GeneralLibraryPlayerControllerBaseDart(
       player_id: player_id,
     );
     players.add(
@@ -73,8 +77,11 @@ class GeneralLibraryPlayerBaseDart implements GeneralLibraryPlayerBase {
   }
 
   @override
-  GeneralLibraryPlayerControllerBase createPlayerWithoutAdd({required String player_id}) {
-    GeneralLibraryPlayerControllerBaseDart generalLibraryPlayerControllerBaseDart = GeneralLibraryPlayerControllerBaseDart(
+  GeneralLibraryPlayerControllerBase createPlayerWithoutAdd(
+      {required String player_id}) {
+    GeneralLibraryPlayerControllerBaseDart
+        generalLibraryPlayerControllerBaseDart =
+        GeneralLibraryPlayerControllerBaseDart(
       player_id: player_id,
     );
 
@@ -91,7 +98,8 @@ class GeneralLibraryPlayerBaseDart implements GeneralLibraryPlayerBase {
   }
 
   @override
-  GeneralLibraryPlayerControllerBaseDart? getPlayer({required String player_id}) {
+  GeneralLibraryPlayerControllerBaseDart? getPlayer(
+      {required String player_id}) {
     try {
       return players.singleWhere((element) => element.player_id == player_id);
     } catch (e) {}
@@ -99,7 +107,8 @@ class GeneralLibraryPlayerBaseDart implements GeneralLibraryPlayerBase {
   }
 
   @override
-  GeneralLibraryPlayerControllerBaseDart? getPlayerForce({required String player_id}) {
+  GeneralLibraryPlayerControllerBaseDart? getPlayerForce(
+      {required String player_id}) {
     try {
       return players.singleWhere((element) => element.player_id == player_id);
     } catch (e) {}

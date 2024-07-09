@@ -1,16 +1,18 @@
 /* <!-- START LICENSE -->
 
 
-Program Ini Di buat Oleh DEVELOPER Dari PERUSAHAAN GLOBAL CORPORATION 
-Social Media: 
+This Software / Program / Source Code Created By Developer From Company GLOBAL CORPORATION
+Social Media:
 
-- Youtube: https://youtube.com/@Global_Corporation 
-- Github: https://github.com/globalcorporation
-- TELEGRAM: https://t.me/GLOBAL_CORP_ORG_BOT
+   - Youtube: https://youtube.com/@Global_Corporation 
+   - Github: https://github.com/globalcorporation
+   - TELEGRAM: https://t.me/GLOBAL_CORP_ORG_BOT
 
-Seluruh kode disini di buat 100% murni tanpa jiplak / mencuri kode lain jika ada akan ada link komment di baris code
+All code script in here created 100% original without copy / steal from other code if we copy we add description source at from top code
 
-Jika anda mau mengedit pastikan kredit ini tidak di hapus / di ganti!
+If you wan't edit you must add credit me (don't change)
+
+If this Software / Program / Source Code has you
 
 Jika Program ini milik anda dari hasil beli jasa developer di (Global Corporation / apapun itu dari turunan itu jika ada kesalahan / bug / ingin update segera lapor ke sub)
 
@@ -57,12 +59,13 @@ class _DevicePageState extends State<DevicePage> {
 
   void task() {
     Future(() async {
-      await general_library.device.android_is_development_mode_enable; // detek rom is debug
+      await general_library
+          .device.android_is_development_mode_enable; // detek rom is debug
       await general_library.device.android_is_on_external_storage;
-      await general_library.device.is_mock_location; 
+      await general_library.device.is_mock_location;
       await general_library.device.is_jailbroken; // detek root / or jailbreak
       await general_library.device.is_real_device; // detek emulator or not
-      await general_library.device.is_safe_device; // 
+      await general_library.device.is_safe_device; //
     });
   }
 

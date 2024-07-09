@@ -1,16 +1,18 @@
 /* <!-- START LICENSE -->
 
 
-Program Ini Di buat Oleh DEVELOPER Dari PERUSAHAAN GLOBAL CORPORATION 
-Social Media: 
+This Software / Program / Source Code Created By Developer From Company GLOBAL CORPORATION
+Social Media:
 
-- Youtube: https://youtube.com/@Global_Corporation 
-- Github: https://github.com/globalcorporation
-- TELEGRAM: https://t.me/GLOBAL_CORP_ORG_BOT
+   - Youtube: https://youtube.com/@Global_Corporation 
+   - Github: https://github.com/globalcorporation
+   - TELEGRAM: https://t.me/GLOBAL_CORP_ORG_BOT
 
-Seluruh kode disini di buat 100% murni tanpa jiplak / mencuri kode lain jika ada akan ada link komment di baris code
+All code script in here created 100% original without copy / steal from other code if we copy we add description source at from top code
 
-Jika anda mau mengedit pastikan kredit ini tidak di hapus / di ganti!
+If you wan't edit you must add credit me (don't change)
+
+If this Software / Program / Source Code has you
 
 Jika Program ini milik anda dari hasil beli jasa developer di (Global Corporation / apapun itu dari turunan itu jika ada kesalahan / bug / ingin update segera lapor ke sub)
 
@@ -38,7 +40,8 @@ import 'package:general/player/player_controller.dart';
 import 'package:general/player/player_model_data.dart';
 import 'package:media_kit/media_kit.dart';
 
-extension GeneralLibraryPlayerMediaBaseExtesnion on GeneralLibraryPlayerMediaBase {
+extension GeneralLibraryPlayerMediaBaseExtesnion
+    on GeneralLibraryPlayerMediaBase {
   Media toMediaMediaKit() {
     return Media(
       resource,
@@ -48,7 +51,8 @@ extension GeneralLibraryPlayerMediaBaseExtesnion on GeneralLibraryPlayerMediaBas
   }
 }
 
-extension GeneralLibraryPlayerPlayListBaseExtension on GeneralLibraryPlayerPlayListBase {
+extension GeneralLibraryPlayerPlayListBaseExtension
+    on GeneralLibraryPlayerPlayListBase {
   Playlist toPlayListMediaKit() {
     return Playlist(
       medias.map(
@@ -61,7 +65,8 @@ extension GeneralLibraryPlayerPlayListBaseExtension on GeneralLibraryPlayerPlayL
   }
 }
 
-class GeneralLibraryPlayerControllerBaseDart implements GeneralLibraryPlayerControllerBase {
+class GeneralLibraryPlayerControllerBaseDart
+    implements GeneralLibraryPlayerControllerBase {
   @override
   String player_id;
   Player player = Player();
@@ -116,7 +121,6 @@ class GeneralLibraryPlayerControllerBaseDart implements GeneralLibraryPlayerCont
 
   @override
   Future<void> jump(int index) async {
-    
     return await player.jump(index);
   }
 

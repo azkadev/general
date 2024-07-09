@@ -1,16 +1,18 @@
 /* <!-- START LICENSE -->
 
 
-Program Ini Di buat Oleh DEVELOPER Dari PERUSAHAAN GLOBAL CORPORATION 
-Social Media: 
+This Software / Program / Source Code Created By Developer From Company GLOBAL CORPORATION
+Social Media:
 
-- Youtube: https://youtube.com/@Global_Corporation 
-- Github: https://github.com/globalcorporation
-- TELEGRAM: https://t.me/GLOBAL_CORP_ORG_BOT
+   - Youtube: https://youtube.com/@Global_Corporation 
+   - Github: https://github.com/globalcorporation
+   - TELEGRAM: https://t.me/GLOBAL_CORP_ORG_BOT
 
-Seluruh kode disini di buat 100% murni tanpa jiplak / mencuri kode lain jika ada akan ada link komment di baris code
+All code script in here created 100% original without copy / steal from other code if we copy we add description source at from top code
 
-Jika anda mau mengedit pastikan kredit ini tidak di hapus / di ganti!
+If you wan't edit you must add credit me (don't change)
+
+If this Software / Program / Source Code has you
 
 Jika Program ini milik anda dari hasil beli jasa developer di (Global Corporation / apapun itu dari turunan itu jika ada kesalahan / bug / ingin update segera lapor ke sub)
 
@@ -39,11 +41,12 @@ import 'package:general_lib_flutter/extension/build_context.dart';
 import 'package:wakelock_plus/wakelock_plus.dart';
 
 class GeneralLibraryAppBaseFlutter implements GeneralLibraryAppBase {
-  static GlobalKey<NavigatorState> flutter_navigator_key = GlobalKey<NavigatorState>();
+  static GlobalKey<NavigatorState> flutter_navigator_key =
+      GlobalKey<NavigatorState>();
   static GlobalKey flutter_repaint_boundery_key = GlobalKey();
   @override
   Future<bool> wake_lock_is_enabled() async {
-   return await WakelockPlus.enabled;
+    return await WakelockPlus.enabled;
   }
 
   @override
@@ -75,7 +78,8 @@ class GeneralLibraryAppBaseFlutter implements GeneralLibraryAppBase {
   @override
   Future<Uint8List?> screenshot_current_widget() async {
     try {
-      BuildContext? context = GeneralLibraryAppBaseFlutter.flutter_repaint_boundery_key.currentContext;
+      BuildContext? context = GeneralLibraryAppBaseFlutter
+          .flutter_repaint_boundery_key.currentContext;
       if (context != null) {
         try {
           return await context.toImagePng();
@@ -90,7 +94,8 @@ class GeneralLibraryAppBaseFlutter implements GeneralLibraryAppBase {
     required String message,
   }) {
     try {
-      BuildContext? context = GeneralLibraryAppBaseFlutter.flutter_navigator_key.currentContext;
+      BuildContext? context =
+          GeneralLibraryAppBaseFlutter.flutter_navigator_key.currentContext;
       if (context != null) {
         context.showSnackBar(message);
       }
@@ -106,7 +111,8 @@ class GeneralLibraryAppBaseFlutter implements GeneralLibraryAppBase {
     if (isFullScreen) {
       await SystemChrome.setEnabledSystemUIMode(SystemUiMode.immersiveSticky);
     } else {
-      await SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual, overlays: SystemUiOverlay.values);
+      await SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual,
+          overlays: SystemUiOverlay.values);
     }
   }
 
@@ -120,7 +126,8 @@ class GeneralLibraryAppBaseFlutter implements GeneralLibraryAppBase {
   static Future<void> static_setPreferredOrientations({
     required List<GeneralLibraryAppDeviceOrientationType> orientations,
   }) async {
-    static_flutter_setPreferredOrientations(orientations: orientations.toFlutter());
+    static_flutter_setPreferredOrientations(
+        orientations: orientations.toFlutter());
   }
 
   static Future<void> static_flutter_setPreferredOrientations({
@@ -130,8 +137,12 @@ class GeneralLibraryAppBaseFlutter implements GeneralLibraryAppBase {
   }
 }
 
-extension ExtensionListGeneralAppDeviceOriendaion on List<GeneralLibraryAppDeviceOrientationType> {
+extension ExtensionListGeneralAppDeviceOriendaion
+    on List<GeneralLibraryAppDeviceOrientationType> {
   List<DeviceOrientation> toFlutter() {
-    return map((e) => DeviceOrientation.values.singleWhere((element) => element.name == e.name)).whereType<DeviceOrientation>().toList();
+    return map((e) => DeviceOrientation.values
+            .singleWhere((element) => element.name == e.name))
+        .whereType<DeviceOrientation>()
+        .toList();
   }
 }
