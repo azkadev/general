@@ -1,6 +1,6 @@
 name: 'general_fucshia'
 description: 'General library For Make Your Coding or Project More Easy'
-version: '0.0.0'
+version: '0.0.24'
 homepage: 'https://github.com/azkadev/general'
 repository: 'https://github.com/azkadev/general'
 issue_tracker: 'https://github.com/azkadev/general/issues '
@@ -25,6 +25,5 @@ dev_dependencies:
     sdk: 'flutter'
   flutter_lints: '^2.0.0'
 flutter: null
-publish_to: 'none'
 dependency_overrides: 
   pointycastle: '3.8.0'

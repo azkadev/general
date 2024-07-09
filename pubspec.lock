@@ -101,10 +101,10 @@ packages:
     dependency: transitive
     description:
       name: ffi
-      sha256: "7bf0adc28a23d395f19f3f1eb21dd7cfd1dd9f8e1c50051c069122e6853bc878"
+      sha256: "493f37e7df1804778ff3a53bd691d8692ddf69702cf4c1c1096a2e41b4779e21"
       url: "https://pub.dev"
     source: hosted
-    version: "2.1.0"
+    version: "2.1.2"
   file:
     dependency: transitive
     description:
@@ -125,10 +125,10 @@ packages:
     dependency: "direct main"
     description:
       name: general_lib
-      sha256: d82b6cc3b154fadca42b74139b5321f40820956e812071b4c8ac57a28951fc84
+      sha256: f968f3bee797cbdd3b3282b1842e3674f7a0e07cad6326996982d1b1bd56f5ac
       url: "https://pub.dev"
     source: hosted
-    version: "0.0.37"
+    version: "0.0.43"
   glob:
     dependency: transitive
     description:
@@ -197,10 +197,10 @@ packages:
     dependency: "direct main"
     description:
       name: mason_logger
-      sha256: "3e68a3548e7b30d3c6066ac0f94c3392cc2c778d60a0f6909741896b19ac9ae4"
+      sha256: "56c44e588e908ef0d1dbb593e1b4473b8ee5fb48fcc8d645c925ab6c8041ebdf"
       url: "https://pub.dev"
     source: hosted
-    version: "0.2.11"
+    version: "0.2.15"
   matcher:
     dependency: transitive
     description:
@@ -250,13 +250,13 @@ packages:
     source: hosted
     version: "1.9.0"
   pointycastle:
-    dependency: transitive
+    dependency: "direct overridden"
     description:
       name: pointycastle
-      sha256: "43ac87de6e10afabc85c445745a7b799e04de84cebaa4fd7bf55a5e1e9604d29"
+      sha256: "70fe966348fe08c34bf929582f1d8247d9d9408130723206472b4687227e4333"
       url: "https://pub.dev"
     source: hosted
-    version: "3.7.4"
+    version: "3.8.0"
   pool:
     dependency: transitive
     description:
@@ -445,10 +445,10 @@ packages:
     dependency: transitive
     description:
       name: win32
-      sha256: "464f5674532865248444b4c3daca12bd9bf2d7c47f759ce2617986e7229494a8"
+      sha256: "0eaf06e3446824099858367950a813472af675116bf63f008a4c2a75ae13e9cb"
       url: "https://pub.dev"
     source: hosted
-    version: "5.2.0"
+    version: "5.5.0"
   yaml:
     dependency: "direct main"
     description:
@@ -466,4 +466,4 @@ packages:
     source: hosted
     version: "2.0.0"
 sdks:
-  dart: ">=3.3.0 <4.0.0"
+  dart: ">=3.3.3 <4.0.0"

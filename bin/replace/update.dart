@@ -49,7 +49,7 @@ Future<void> pubspecUpdate({
   if (filePubspec.existsSync()) {
     Map yaml_code = (yaml.loadYaml(filePubspec.readAsStringSync(), recover: true) as Map);
     Map yaml_code_clone = yaml_code.clone();
-    String version_slebew = "0.0.23";
+    String version_slebew = "0.0.24";
 
     yaml_code_clone.addAll({
       "description": "General library For Make Your Coding or Project More Easy",
@@ -79,36 +79,36 @@ Future<void> pubspecUpdate({
           yaml_code_clone["dependencies"][key] = "^${version_slebew}";
         }
       });
-      (yaml_code_clone["dependencies"] as Map).forEach((key, value) {
-        if (key == "general_lib") {
-          yaml_code_clone["dependencies"][key] = "^0.0.40";
-        }
-        if (key == "general_lib_flutter") {
-          yaml_code_clone["dependencies"][key] = "^0.0.20";
-        }
-      });
+      // (yaml_code_clone["dependencies"] as Map).forEach((key, value) {
+      //   if (key == "general_lib") {
+      //     yaml_code_clone["dependencies"][key] = "^0.0.40";
+      //   }
+      //   if (key == "general_lib_flutter") {
+      //     yaml_code_clone["dependencies"][key] = "^0.0.20";
+      //   }
+      // });
 
-      if (yaml_code_clone["dependencies"]["general_lib"] is String) {
-        yaml_code_clone["dependencies"]["general_lib"] = "^0.0.41";
-      }
-      if (yaml_code_clone["dependencies"]["whatsapp_client"] is String) {
-        yaml_code_clone["dependencies"]["whatsapp_client"] = "^1.0.22";
-      }
-      if (yaml_code_clone["dependencies"]["telegram_client"] is String) {
-        yaml_code_clone["dependencies"]["telegram_client"] = "^0.8.19";
-      }
-      if (yaml_code_clone["dependencies"]["packagex"] is String) {
-        yaml_code_clone["dependencies"]["packagex"] = "^0.0.58";
-      }
-      if (yaml_code_clone["dependencies"]["general_lib_flutter"] is String) {
-        yaml_code_clone["dependencies"]["general_lib_flutter"] = "^0.0.21";
-      }
-      if (yaml_code_clone["dependencies"]["database_universe"] is String) {
-        yaml_code_clone["dependencies"]["database_universe"] = "^0.0.2";
-      }
-      if (yaml_code_clone["dependencies"]["system_info_fetch"] is String) {
-        yaml_code_clone["dependencies"]["system_info_fetch"] = "^0.0.20";
-      }
+      // if (yaml_code_clone["dependencies"]["general_lib"] is String) {
+      //   yaml_code_clone["dependencies"]["general_lib"] = "^0.0.41";
+      // }
+      // if (yaml_code_clone["dependencies"]["whatsapp_client"] is String) {
+      //   yaml_code_clone["dependencies"]["whatsapp_client"] = "^1.0.22";
+      // }
+      // if (yaml_code_clone["dependencies"]["telegram_client"] is String) {
+      //   yaml_code_clone["dependencies"]["telegram_client"] = "^0.8.19";
+      // }
+      // if (yaml_code_clone["dependencies"]["packagex"] is String) {
+      //   yaml_code_clone["dependencies"]["packagex"] = "^0.0.58";
+      // }
+      // if (yaml_code_clone["dependencies"]["general_lib_flutter"] is String) {
+      //   yaml_code_clone["dependencies"]["general_lib_flutter"] = "^0.0.21";
+      // }
+      // if (yaml_code_clone["dependencies"]["database_universe"] is String) {
+      //   yaml_code_clone["dependencies"]["database_universe"] = "^0.0.2";
+      // }
+      // if (yaml_code_clone["dependencies"]["system_info_fetch"] is String) {
+      //   yaml_code_clone["dependencies"]["system_info_fetch"] = "^0.0.20";
+      // }
     }
     var yamlDoc = YamlWriter().write(yaml_code_clone);
 
