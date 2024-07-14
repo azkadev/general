@@ -34,7 +34,7 @@ dependencies:
   universal_io: '^2.2.2'
   sim_card_info: '^1.0.2'
   sms_flutter: '^0.0.0'
-  general_lib_flutter: '^0.0.23'
+  general_lib_flutter: '^0.0.24'
   media_kit: '^1.1.10+1'
   media_kit_video: '^1.2.4'
   local_auth: '^2.2.0'
