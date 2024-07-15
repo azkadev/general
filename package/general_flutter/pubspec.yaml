@@ -1,6 +1,6 @@
 name: 'general_flutter'
 description: 'General library For Make Your Coding or Project More Easy'
-version: '0.0.24'
+version: '0.0.25'
 homepage: 'https://github.com/azkadev/general'
 repository: 'https://github.com/azkadev/general'
 issue_tracker: 'https://github.com/azkadev/general/issues '
@@ -24,8 +24,8 @@ dependencies:
   file_picker: '^8.0.3'
   flutter_background: '^1.2.0'
   flutter_tts: '^4.0.2'
-  general: '^0.0.24'
-  general_dart: '^0.0.24'
+  general: '^0.0.25'
+  general_dart: '^0.0.25'
   general_lib: '^0.0.43'
   path: '^1.8.3'
   permission_handler: '^11.3.1'
@@ -42,6 +42,7 @@ dependencies:
   battery_plus: '^6.0.1'
   camera: '^0.11.0'
   camera_windows: '^0.2.1+8'
+  gamepads: '^0.1.2'
 dev_dependencies: 
   flutter_test: 
     sdk: 'flutter'

@@ -352,6 +352,62 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.4.1"
+  gamepads:
+    dependency: transitive
+    description:
+      name: gamepads
+      sha256: a71b8ce0a71d5f0977f4ea761f320421679f5bd7a70d10362e2e6985f772c785
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.1.2"
+  gamepads_android:
+    dependency: transitive
+    description:
+      name: gamepads_android
+      sha256: d7b329d279fe230e5b255bc146c8b5c988bd139fc318d118586c1d1fdf7f52ee
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.1.2"
+  gamepads_darwin:
+    dependency: transitive
+    description:
+      name: gamepads_darwin
+      sha256: "6fc0395e8605bbdea8fc0887c1906602e9de0220275c9ca8cbbb085633194f18"
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.1.2"
+  gamepads_ios:
+    dependency: transitive
+    description:
+      name: gamepads_ios
+      sha256: "2e0e5e699d674f31eed53ae0cf6cb9cbf2c9e00042862794215fc1bd51c4006a"
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.1.2"
+  gamepads_linux:
+    dependency: transitive
+    description:
+      name: gamepads_linux
+      sha256: ade4c1a17f57cdf288201d1c70a360f76c446e0df6e5881cf4d3f8d79f63bd9a
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.1.1+1"
+  gamepads_platform_interface:
+    dependency: transitive
+    description:
+      name: gamepads_platform_interface
+      sha256: b659d9103ff2bfd2d5d6d0863bb63446f384c0c545cd989f89adc953b561c7e5
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.1.1"
+  gamepads_windows:
+    dependency: transitive
+    description:
+      name: gamepads_windows
+      sha256: ae2aa9436757cf8af3bb79fa0813e09ed92d9d93e3c0998619021f5d9ba591ad
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.1.1+1"
   general:
     dependency: "direct overridden"
     description:
@@ -385,10 +441,10 @@ packages:
     dependency: "direct main"
     description:
       name: general_lib_flutter
-      sha256: "5acc868b6edab12f847051f83a3350930bbcd4803adc700e7ef1c48b736db450"
+      sha256: "4d7c0eb58c127256f9a56fa42db9e949212d804bf7dbc88ddb6c8b98a7a47863"
       url: "https://pub.dev"
     source: hosted
-    version: "0.0.23"
+    version: "0.0.24"
   glob:
     dependency: transitive
     description:

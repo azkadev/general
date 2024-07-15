@@ -532,12 +532,13 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:general_flutter/battery/battery.dart';
+import 'package:general_flutter/gamepad/gamepad_core.dart';
 import 'package:general_flutter/general_flutter.dart';
 import 'package:general_flutter/notification/notification_core.dart';
 import "package:general_lib_flutter/general_lib_flutter.dart";
 
-GeneralLibraryNotificationBaseFlutter generalLibraryNotificationBaseFlutter =
-    GeneralLibraryNotificationBaseFlutter();
+GeneralFlutter generalFlutter = GeneralFlutter();
+GeneralLibraryNotificationBaseFlutter generalLibraryNotificationBaseFlutter = GeneralLibraryNotificationBaseFlutter();
 void main(List<String> args) {
   WidgetsFlutterBinding.ensureInitialized();
 
@@ -565,10 +566,8 @@ class ScreenPage extends StatefulWidget {
 
 class _ScreenPageState extends State<ScreenPage> {
   bool is_loading = true;
-  GeneralLibraryBatteryBaseFlutter generalLibraryBatteryBaseFlutter =
-      GeneralLibraryBatteryBaseFlutter();
-  GeneralLibraryAppBaseFlutter generalLibraryAppBaseFlutter =
-      GeneralLibraryAppBaseFlutter();
+  GeneralLibraryBatteryBaseFlutter generalLibraryBatteryBaseFlutter = GeneralLibraryBatteryBaseFlutter();
+  GeneralLibraryAppBaseFlutter generalLibraryAppBaseFlutter = GeneralLibraryAppBaseFlutter();
   @override
   void initState() {
     super.initState();
@@ -591,8 +590,13 @@ class _ScreenPageState extends State<ScreenPage> {
     });
   }
 
+  GeneralLibraryGamePadBaseFlutter gamePadBaseFlutter = generalFlutter.gamepad;
   String status = "";
   Future<void> tasks() async {
+    gamePadBaseFlutter.events.listen((event) {
+      print(event);
+      print(event);
+    });
     generalLibraryBatteryBaseFlutter.status_realtime.listen((event) {
       status = event.name;
       print("slebew");
@@ -636,8 +640,9 @@ class _ScreenPageState extends State<ScreenPage> {
           // await generalLibraryAppBaseFlutter.wake_lock_toggle(enable: true);
           // setState(() {});
           //
-          await generalLibraryNotificationBaseFlutter.createSimpleNotification(
-              title: "hai", text: "sa");
+          //
+          gamePadBaseFlutter.list().then((value) => print(value.first.name));
+          // await generalLibraryNotificationBaseFlutter.createSimpleNotification(title: "hai", text: "sa");
           // print(await generalLibraryBatteryBaseFlutter.battery.batteryLevel);
         },
         child: const Icon(Icons.add),
