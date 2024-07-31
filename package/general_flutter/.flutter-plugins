@@ -1,5 +1,4 @@
 # This is a generated file; do not edit or check into version control.
-awesome_notifications=/home/galaxeus/.pub-cache/hosted/pub.dev/awesome_notifications-0.9.3+1/
 battery_plus=/home/galaxeus/.pub-cache/hosted/pub.dev/battery_plus-6.0.1/
 camera=/home/galaxeus/.pub-cache/hosted/pub.dev/camera-0.11.0/
 camera_android_camerax=/home/galaxeus/.pub-cache/hosted/pub.dev/camera_android_camerax-0.6.5+1/
@@ -37,12 +36,12 @@ sim_card_info=/home/galaxeus/.pub-cache/hosted/pub.dev/sim_card_info-1.0.2/
 sms_flutter=/home/galaxeus/.pub-cache/hosted/pub.dev/sms_flutter-0.0.0/
 speech_to_text=/home/galaxeus/.pub-cache/hosted/pub.dev/speech_to_text-6.6.0/
 speech_to_text_macos=/home/galaxeus/.pub-cache/hosted/pub.dev/speech_to_text_macos-1.1.0/
-url_launcher=/home/galaxeus/.pub-cache/hosted/pub.dev/url_launcher-6.2.5/
-url_launcher_android=/home/galaxeus/.pub-cache/hosted/pub.dev/url_launcher_android-6.3.0/
-url_launcher_ios=/home/galaxeus/.pub-cache/hosted/pub.dev/url_launcher_ios-6.2.4/
+url_launcher=/home/galaxeus/.pub-cache/hosted/pub.dev/url_launcher-6.3.0/
+url_launcher_android=/home/galaxeus/.pub-cache/hosted/pub.dev/url_launcher_android-6.3.2/
+url_launcher_ios=/home/galaxeus/.pub-cache/hosted/pub.dev/url_launcher_ios-6.3.1/
 url_launcher_linux=/home/galaxeus/.pub-cache/hosted/pub.dev/url_launcher_linux-3.1.1/
-url_launcher_macos=/home/galaxeus/.pub-cache/hosted/pub.dev/url_launcher_macos-3.1.0/
-url_launcher_web=/home/galaxeus/.pub-cache/hosted/pub.dev/url_launcher_web-2.3.0/
+url_launcher_macos=/home/galaxeus/.pub-cache/hosted/pub.dev/url_launcher_macos-3.2.0/
+url_launcher_web=/home/galaxeus/.pub-cache/hosted/pub.dev/url_launcher_web-2.3.1/
 url_launcher_windows=/home/galaxeus/.pub-cache/hosted/pub.dev/url_launcher_windows-3.1.1/
 volume_controller=/home/galaxeus/.pub-cache/hosted/pub.dev/volume_controller-2.0.7/
 wakelock_plus=/home/galaxeus/.pub-cache/hosted/pub.dev/wakelock_plus-1.2.5/

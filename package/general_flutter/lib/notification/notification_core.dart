@@ -34,14 +34,13 @@ Bukan maksud kami menipu itu karena harga yang sudah di kalkulasi + bantuan tiba
 <!-- END LICENSE --> */
 // ignore_for_file: non_constant_identifier_names
 
-import 'package:awesome_notifications/awesome_notifications.dart';
-import 'package:flutter/material.dart';
+// import 'package:awesome_notifications/awesome_notifications.dart';
+// import 'package:flutter/material.dart';
 import 'package:general_lib/general_lib.dart';
 
 import "package:general_dart/notification/notification.dart";
 
-class GeneralLibraryNotificationBaseFlutter
-    extends GeneralLibraryNotificationBaseDart {
+class GeneralLibraryNotificationBaseFlutter extends GeneralLibraryNotificationBaseDart {
   GeneralLibraryNotificationBaseFlutter();
 
   @override
@@ -62,28 +61,28 @@ class GeneralLibraryNotificationBaseFlutter
     String? languageCode,
   }) async {
     if (is_support_awesome_notification) {
-      return await AwesomeNotifications().initialize(
-        defaultIcon,
-        [
-          NotificationChannel(
-            channelGroupKey: 'basic_channel_group',
-            channelKey: 'basic_channel',
-            channelName: 'Basic notifications',
-            channelDescription: 'Notification channel for basic tests',
-            defaultColor: const Color(0xFF9D50DD),
-            ledColor: Colors.white,
-          ),
-        ],
-        // Channel groups are only visual and are not required
-        channelGroups: [
-          NotificationChannelGroup(
-            channelGroupKey: 'basic_channel_group',
-            channelGroupName: 'Basic group',
-          ),
-        ],
-        debug: debug,
-        languageCode: languageCode,
-      );
+      // return await AwesomeNotifications().initialize(
+      //   defaultIcon,
+      //   [
+      //     NotificationChannel(
+      //       channelGroupKey: 'basic_channel_group',
+      //       channelKey: 'basic_channel',
+      //       channelName: 'Basic notifications',
+      //       channelDescription: 'Notification channel for basic tests',
+      //       defaultColor: const Color(0xFF9D50DD),
+      //       ledColor: Colors.white,
+      //     ),
+      //   ],
+      //   // Channel groups are only visual and are not required
+      //   channelGroups: [
+      //     NotificationChannelGroup(
+      //       channelGroupKey: 'basic_channel_group',
+      //       channelGroupName: 'Basic group',
+      //     ),
+      //   ],
+      //   debug: debug,
+      //   languageCode: languageCode,
+      // );
     }
     return false;
   }
@@ -94,15 +93,15 @@ class GeneralLibraryNotificationBaseFlutter
     required String text,
   }) async {
     if (is_support_awesome_notification) {
-      return await AwesomeNotifications().createNotification(
-        content: NotificationContent(
-          id: 10,
-          channelKey: "basic_channel",
-          actionType: ActionType.Default,
-          title: title,
-          body: text,
-        ),
-      );
+      // return await AwesomeNotifications().createNotification(
+      //   content: NotificationContent(
+      //     id: 10,
+      //     channelKey: "basic_channel",
+      //     actionType: ActionType.Default,
+      //     title: title,
+      //     body: text,
+      //   ),
+      // );
     }
     if (is_support_desktop_notification) {
       return await super.createSimpleNotification(title: title, text: text);

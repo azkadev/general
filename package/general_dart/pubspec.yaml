@@ -21,7 +21,7 @@ dev_dependencies:
   test: '^1.24.0'
 dependencies: 
   desktop_notifications: '^0.6.3'
-  general: '^0.0.25'
+  general: '^0.0.24'
   media_kit: '^1.1.10+1'
   general_lib: '^0.0.43'
 dependency_overrides: 

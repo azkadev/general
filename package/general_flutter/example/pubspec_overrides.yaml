@@ -3,3 +3,5 @@ dependency_overrides:
     path: ../../general
   general_dart:
     path: ../../general_dart
+  general_flutter:
+    path: ../../general_flutter

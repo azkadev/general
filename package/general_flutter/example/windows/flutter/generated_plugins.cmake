@@ -3,7 +3,6 @@
 #
 
 list(APPEND FLUTTER_PLUGIN_LIST
-  awesome_notifications
   battery_plus
   camera_windows
   flutter_tts

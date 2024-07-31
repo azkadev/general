@@ -20,12 +20,13 @@ environment:
 dependencies: 
   flutter: 
     sdk: 'flutter'
-  awesome_notifications: '^0.9.3+1'
+  # require internet
+  # awesome_notifications: '^0.9.3+1'
   file_picker: '^8.0.3'
   flutter_background: '^1.2.0'
   flutter_tts: '^4.0.2'
-  general: '^0.0.25'
-  general_dart: '^0.0.25'
+  general: '^0.0.24'
+  general_dart: '^0.0.24'
   general_lib: '^0.0.43'
   path: '^1.8.3'
   permission_handler: '^11.3.1'

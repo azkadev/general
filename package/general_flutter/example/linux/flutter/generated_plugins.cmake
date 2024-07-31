@@ -3,7 +3,6 @@
 #
 
 list(APPEND FLUTTER_PLUGIN_LIST
-  awesome_notifications
   gamepads_linux
   media_kit_video
   sim_card_info
