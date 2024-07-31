@@ -51,7 +51,7 @@ Future<void> pubspecUpdate({
   if (filePubspec.existsSync()) {
     Map yaml_code = (yaml.loadYaml(filePubspec.readAsStringSync(), recover: true) as Map);
     Map yaml_code_clone = yaml_code.clone();
-    String version_slebew = "0.0.25";
+    String version_slebew = "0.0.26";
 
     yaml_code_clone.addAll({
       "description": "General library For Make Your Coding or Project More Easy",
