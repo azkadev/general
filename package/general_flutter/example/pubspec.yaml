@@ -8,13 +8,12 @@ dependencies:
   flutter: 
     sdk: 'flutter'
   cupertino_icons: '^1.0.2'
-  general_flutter:
-    path: ../
+  general_flutter: '^0.0.26'
   media_kit_video: '^1.2.4'
   local_auth: '^2.2.0'
-  telegram_client: '^0.8.21'
-  general_lib: '^0.0.43'
-  general_lib_flutter: '^0.0.24'
+  telegram_client: '^0.8.22'
+  general_lib: '^0.0.44'
+  general_lib_flutter: '^0.0.25'
 dev_dependencies: 
   flutter_test: 
     sdk: 'flutter'

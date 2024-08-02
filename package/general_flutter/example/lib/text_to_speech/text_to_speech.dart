@@ -34,9 +34,12 @@ Bukan maksud kami menipu itu karena harga yang sudah di kalkulasi + bantuan tiba
 <!-- END LICENSE --> */
 // ignore_for_file: non_constant_identifier_names, empty_catches
 
+import 'package:example/main.dart';
 import 'package:flutter/material.dart';
 
-import 'package:general_flutter/general_flutter.dart';
+import 'package:general_flutter/text_to_speech/text_to_speech_core.dart';
+import 'package:general_lib_flutter/extension/build_context.dart';
+import 'package:general_lib_flutter/general_lib_flutter.dart';
 
 class TextToSpeechPage extends StatefulWidget {
   const TextToSpeechPage({super.key});
@@ -45,9 +48,8 @@ class TextToSpeechPage extends StatefulWidget {
 }
 
 class _TextToSpeechPageState extends State<TextToSpeechPage> {
-  // ini bisa pakai generaldart dan anda bebas mengatur di manapun
-  GeneralFlutter general_library = GeneralFlutter();
-
+  final GeneralLibraryTextToSpeechBaseFlutter text_to_speech = GeneralExampleMainApp.generalFlutter.text_to_speech;
+  final TextEditingController textEditingController = TextEditingController();
   @override
   void initState() {
     super.initState();
@@ -57,18 +59,69 @@ class _TextToSpeechPageState extends State<TextToSpeechPage> {
     // task();
   }
 
+  @override
+  void dispose() {
+    text_to_speech.dispose();
+    // TODO: implement dispose
+    super.dispose();
+  }
+
   void task() {
     Future(() async {
       // wajib di run 1 x aja
-      await general_library.text_to_speech.initialized();
+      await text_to_speech.initialized();
+      setState(() {});
       // bebas run dimanapun
-      await general_library.text_to_speech.speak(text: "Hello World Speak");
     });
+  }
+
+  void speak() {
+    handleFunction(
+      onFunction: (context, statefulWidget) async {
+        await text_to_speech.speak(text: textEditingController.text);
+        setState(() {
+          textEditingController.clear();
+        });
+      },
+    );
   }
 
   // --- code
   @override
   Widget build(BuildContext context) {
-    return const Scaffold();
+    return Scaffold(
+      body: SingleChildScrollView(
+        child: ConstrainedBox(
+          constraints: BoxConstraints(
+            minHeight: context.height,
+            minWidth: context.width,
+          ),
+          child: Column(
+            children: [
+              SizedBox(
+                height: context.mediaQueryData.padding.top,
+              ),
+              Padding(
+                padding: const EdgeInsets.all(10),
+                child: TextField(
+                  controller: textEditingController,
+                  decoration: const InputDecoration(
+                  labelText: "Text To Speech",
+                    hintText: "abcd",
+                  
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          speak();
+        },
+        child: const Icon(Icons.voice_chat),
+      ),
+    );
   }
 }
