@@ -36,6 +36,8 @@ Bukan maksud kami menipu itu karena harga yang sudah di kalkulasi + bantuan tiba
 
 import 'dart:async';
 
+import 'package:general/core/general_library.dart';
+
 class GamePadControllerData {
   String id;
   String name;
@@ -127,7 +129,7 @@ class GamePadControllerEventData {
   }
 }
 
-class GeneralLibraryGamePadBase {
+class GeneralLibraryGamePadBase  implements GeneralLibraryCore{
   GeneralLibraryGamePadBase();
 
   Future<List<GamePadControllerData>> list() async {
@@ -136,5 +138,11 @@ class GeneralLibraryGamePadBase {
 
   Stream<GamePadControllerEventData> get events async* {
     yield GamePadControllerEventData.empty();
+  }
+  
+  @override
+  bool isSupport() {
+    // TODO: implement isSupport
+    throw UnimplementedError();
   }
 }

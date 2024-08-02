@@ -61,7 +61,7 @@ class GeneralLibraryGamePadBaseFlutter implements GeneralLibraryGamePadBase {
     }
     // if (Dart.isDesktop) {
     // Gamepads.events;
-    
+
     await for (GamepadEvent event in Gamepads.events) {
       // Gamepads.events.listen((GamepadEvent event) {
       GamePadControllerEventKeyType gamePadControllerEventKeyType = GamePadControllerEventKeyType.analog;
@@ -79,5 +79,13 @@ class GeneralLibraryGamePadBaseFlutter implements GeneralLibraryGamePadBase {
     }
 
     // }
+  }
+
+  @override
+  bool isSupport() {
+    if (Dart.isWeb) {
+      return false;
+    }
+    return true;
   }
 }

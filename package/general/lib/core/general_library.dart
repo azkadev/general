@@ -1,5 +1,5 @@
 class GeneralLibraryCore {
-  GeneralLibraryCore();
+  const GeneralLibraryCore();
 
   /// check is support or not
   bool isSupport() {

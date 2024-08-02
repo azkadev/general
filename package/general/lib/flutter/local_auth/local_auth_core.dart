@@ -89,8 +89,14 @@ class GeneralLibraryLocalAuthBaseFlutter implements GeneralLibraryLocalAuthBase 
   @override
   Future<bool> stopAuthentication() async {
     if (is_support_local_auth) {
+    
       return await localAuthentication.stopAuthentication();
     }
     return false;
+  }
+
+  @override
+  bool isSupport() {
+    return is_support_local_auth;
   }
 }

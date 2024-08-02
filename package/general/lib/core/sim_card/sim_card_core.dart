@@ -36,12 +36,21 @@ Bukan maksud kami menipu itu karena harga yang sudah di kalkulasi + bantuan tiba
 
 import 'dart:async';
 
+import 'package:general/core/core.dart';
+import 'package:general/core/general_library.dart';
+
 import 'sim_card_info_data.dart';
 
-class GeneralLibrarySimCardBase {
+class GeneralLibrarySimCardBase implements GeneralLibraryCore {
   GeneralLibrarySimCardBase();
 
   Future<List<SimCardInfoData>> getSimcards() async {
     return [];
+  }
+  
+  @override
+  bool isSupport() {
+    // TODO: implement isSupport
+    throw UnimplementedError();
   }
 }

@@ -1,6 +1,11 @@
 import 'package:example/model/feature.dart';
 import 'package:example/page/battery/battery.dart';
 import 'package:example/page/camera/camera.dart';
+import 'package:example/page/device/device.dart';
+import 'package:example/page/gamepad/gamepad.dart';
+import 'package:example/page/local_auth/local_auth.dart';
+import 'package:example/page/permission/permission.dart';
+import 'package:example/page/sim_card/sim_card.dart';
 import 'package:example/page/text_to_speech/text_to_speech.dart';
 import 'package:flutter/material.dart';
 import 'package:general_lib_flutter/general_lib_flutter.dart';
@@ -72,17 +77,39 @@ class _HomePageGeneralAppState extends State<HomePageGeneralApp> {
         GeneralFeatureData(
           title: "Device",
           iconData: Icons.devices,
-          onTap: (BuildContext context) {},
+          onTap: (BuildContext context) {
+            context.navigator().push(MaterialPageRoute(
+              builder: (context) {
+                return const DevicePage();
+              },
+            ));
+          },
         ),
         GeneralFeatureData(
           title: "Gamepad / Joystick",
           iconData: Icons.gamepad,
-          onTap: (BuildContext context) {},
+          onTap: (BuildContext context) {
+
+
+            context.navigator().push(MaterialPageRoute(
+              builder: (context) {
+                return const GamePadPage();
+              },
+            ));
+          },
         ),
         GeneralFeatureData(
           title: "Local Auth",
           iconData: Icons.fingerprint,
-          onTap: (BuildContext context) {},
+          onTap: (BuildContext context) {
+
+            context.navigator().push(MaterialPageRoute(
+              builder: (context) {
+                return const LocalAuthPage();
+              },
+            ));
+
+          },
         ),
         GeneralFeatureData(
           title: "Location",
@@ -97,7 +124,15 @@ class _HomePageGeneralAppState extends State<HomePageGeneralApp> {
         GeneralFeatureData(
           title: "Permission",
           iconData: Icons.security,
-          onTap: (BuildContext context) {},
+          onTap: (BuildContext context) {
+            
+            context.navigator().push(MaterialPageRoute(
+              builder: (context) {
+                return const PermissionPage();
+              },
+            ));
+
+          },
         ),
         GeneralFeatureData(
           title: "Player",
@@ -107,7 +142,25 @@ class _HomePageGeneralAppState extends State<HomePageGeneralApp> {
         GeneralFeatureData(
           title: "Sim Card",
           iconData: Icons.sim_card,
-          onTap: (BuildContext context) {},
+          onTap: (BuildContext context) {
+
+
+
+            context.navigator().push(MaterialPageRoute(
+              builder: (context) {
+                return const SimCardPage();
+              },
+            ));
+
+
+
+
+
+
+
+
+            
+          },
         ),
         GeneralFeatureData(
           title: "Sms",

@@ -53,4 +53,9 @@ class GeneralLibrarySimCardBaseFlutter implements GeneralLibrarySimCardBase {
     } catch (e) {}
     return [];
   }
+
+  @override
+  bool isSupport() {
+    return true;
+  }
 }

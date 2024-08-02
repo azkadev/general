@@ -61,6 +61,11 @@ class GeneralLibraryDeviceBaseFlutter implements GeneralLibraryDeviceBase {
   }
 
   @override
+  bool isSupport() {
+    return true;
+  }
+
+  @override
   Future<bool> get android_is_development_mode_enable async {
     try {
       if (is_mobile) {

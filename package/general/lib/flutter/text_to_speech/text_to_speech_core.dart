@@ -101,10 +101,10 @@ class GeneralLibraryTextToSpeechBaseFlutter implements GeneralLibraryTextToSpeec
           }
         }
         isWaithFinishedSpeakBefore = true;
-
-        await flutterTts.setVolume(1.0);
+        await flutterTts.setVolume(volume);
         await flutterTts.setSpeechRate(rate);
         await flutterTts.setPitch(pitch);
+
         await flutterTts.speak(text.trim());
         isWaithFinishedSpeakBefore = false;
       }

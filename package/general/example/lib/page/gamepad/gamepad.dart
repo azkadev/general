@@ -34,23 +34,24 @@ Bukan maksud kami menipu itu karena harga yang sudah di kalkulasi + bantuan tiba
 <!-- END LICENSE --> */
 // ignore_for_file: non_constant_identifier_names, empty_catches
 
+import 'dart:async';
+
 import 'package:example/main.dart';
 import 'package:example/widget/support_feature_widget.dart';
-import 'package:example/widget/text_form_field.dart';
 import 'package:flutter/material.dart';
+import 'package:general/flutter/flutter.dart';
+import 'package:general/flutter/gamepad/gamepad_core.dart';
 
-import 'package:general/flutter/text_to_speech/text_to_speech_core.dart';
 import 'package:general_lib_flutter/general_lib_flutter.dart';
 
-class TextToSpeechPage extends StatefulWidget {
-  const TextToSpeechPage({super.key});
+class GamePadPage extends StatefulWidget {
+  const GamePadPage({super.key});
   @override
-  State<TextToSpeechPage> createState() => _TextToSpeechPageState();
+  State<GamePadPage> createState() => _GamePadPageState();
 }
 
-class _TextToSpeechPageState extends State<TextToSpeechPage> {
-  final GeneralLibraryTextToSpeechBaseFlutter text_to_speech = GeneralExampleMainApp.generalFlutter.text_to_speech;
-  final TextEditingController textEditingController = TextEditingController();
+class _GamePadPageState extends State<GamePadPage> {
+  final GeneralLibraryGamePadBaseFlutter gamepad = GeneralExampleMainApp.generalFlutter.gamepad;
   @override
   void initState() {
     super.initState();
@@ -60,9 +61,10 @@ class _TextToSpeechPageState extends State<TextToSpeechPage> {
     // task();
   }
 
+  late final StreamSubscription<GamePadControllerEventData> game_pad_listen;
   @override
   void dispose() {
-    text_to_speech.dispose();
+    game_pad_listen.cancel();
     // TODO: implement dispose
     super.dispose();
   }
@@ -70,41 +72,30 @@ class _TextToSpeechPageState extends State<TextToSpeechPage> {
   void task() {
     Future(() async {
       // wajib di run 1 x aja
-      await text_to_speech.initialized();
+      setState(() {});
+      game_pad_listen = gamepad.events.listen((GamePadControllerEventData gamePadControllerEventData) {
+        onGamePad(gamePadControllerEventData);
+      });
+ 
       setState(() {});
       // bebas run dimanapun
     });
   }
 
-  double volume = 1.0;
-  double pitch = 1.0;
-  double rate = 0.5;
-  bool is_loading = false;
-  void speak(
-  ) {
-    if (is_loading) {
-      return;
-    }
+  GamePadControllerEventData game_pad_data = GamePadControllerEventData(
+    gamepadId: "",
+    timestamp: 0,
+    type: GamePadControllerEventKeyType.button,
+    key: "",
+    value: 0,
+  );
+  void onGamePad(GamePadControllerEventData gamePadControllerEventData) {
     setState(() {
-      is_loading = true;
+      game_pad_data = gamePadControllerEventData;
     });
-    handleFunction(
-      onFunction: (context, statefulWidget) async {
-        if (textEditingController.text.trim().isNotEmpty) {
-          await text_to_speech.speak(
-            text: textEditingController.text.trim(),
-            volume: volume,
-            pitch: pitch,
-            rate: rate,
-          );
-        }
-        setState(() {
-          textEditingController.clear();
-          is_loading = false;
-        });
-      },
-    );
   }
+
+  bool is_loading = false;
 
   // --- code
   @override
@@ -112,7 +103,7 @@ class _TextToSpeechPageState extends State<TextToSpeechPage> {
     return Scaffold(
       appBar: AppBar(
         title: const Text(
-          "Text To Speech",
+          "GamePad / Joystick",
         ),
       ),
       body: SingleChildScrollView(
@@ -127,25 +118,15 @@ class _TextToSpeechPageState extends State<TextToSpeechPage> {
                 height: context.mediaQueryData.padding.top,
               ),
               SupportFeatureWidget(
-                isSupport: text_to_speech.isSupport(),
+                isSupport: gamepad.isSupport(),
                 reason_no_support: "Saat ini hanya tersedia di platform android",
               ),
               Padding(
                 padding: const EdgeInsets.all(10),
                 child: Row(
                   children: [
-                    const Text("Volume"),
-                    Expanded(
-                      child: Slider(
-                        value: volume,
-                        activeColor: context.theme.indicatorColor,
-                        onChanged: (value) {
-                          setState(() {
-                            volume = value;
-                          });
-                        },
-                      ),
-                    )
+                    const Text("gamepadId:"),
+                    Text("${game_pad_data.gamepadId}"),
                   ],
                 ),
               ),
@@ -153,18 +134,8 @@ class _TextToSpeechPageState extends State<TextToSpeechPage> {
                 padding: const EdgeInsets.all(10),
                 child: Row(
                   children: [
-                    const Text("Rate"),
-                    Expanded(
-                      child: Slider(
-                        value: rate,
-                        activeColor: context.theme.indicatorColor,
-                        onChanged: (value) {
-                          setState(() {
-                            rate = value;
-                          });
-                        },
-                      ),
-                    )
+                    const Text("key:"),
+                    Text("${game_pad_data.key}"),
                   ],
                 ),
               ),
@@ -172,48 +143,32 @@ class _TextToSpeechPageState extends State<TextToSpeechPage> {
                 padding: const EdgeInsets.all(10),
                 child: Row(
                   children: [
-                    const Text("Pitch"),
-                    Expanded(
-                      child: Slider(
-                        value: pitch,
-                        activeColor: context.theme.indicatorColor,
-                        max: 2.0,
-                        onChanged: (value) {
-                          setState(() {
-                            pitch = value;
-                          });
-                        },
-                      ),
-                    )
+                    const Text("timestamp:"),
+                    Text("${game_pad_data.timestamp}"),
                   ],
                 ),
               ),
               Padding(
                 padding: const EdgeInsets.all(10),
-                child: TextFormFieldWidget(
-                  controller: textEditingController,
-                  readOnly: is_loading,
-                  labelText: "Text To Speech",
-                  hintText: "Hello World",
-                  maxLines: null,
-                  prefixIconData: Icons.speaker,
-                  onChanged: (value) {},
+                child: Row(
+                  children: [
+                    const Text("type:"),
+                    Text("${game_pad_data.type.name}"),
+                  ],
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(10),
+                child: Row(
+                  children: [
+                    const Text("value:"),
+                    Text("${game_pad_data.value}"),
+                  ],
                 ),
               ),
             ],
           ),
         ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          speak();
-        },
-        child: () {
-          if (is_loading) {
-            return const CircularProgressIndicator();
-          }
-          return const Icon(Icons.voice_chat);
-        }(),
       ),
     );
   }

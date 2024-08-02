@@ -36,11 +36,19 @@ Bukan maksud kami menipu itu karena harga yang sudah di kalkulasi + bantuan tiba
 
 import 'dart:async';
 
+import 'package:general/core/general_library.dart';
+
 import 'pemission_type.dart';
 
-class GeneralLibraryPermissionBase {
+class GeneralLibraryPermissionBase implements GeneralLibraryCore{
   GeneralLibraryPermissionBase();
 
   Future<void> auto_request(
       {required List<PermissionType> permissionTypes}) async {}
+      
+        @override
+        bool isSupport() {
+          // TODO: implement isSupport
+          throw UnimplementedError();
+        }
 }
