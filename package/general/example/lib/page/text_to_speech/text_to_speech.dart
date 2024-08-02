@@ -40,7 +40,6 @@ import 'package:example/widget/text_form_field.dart';
 import 'package:flutter/material.dart';
 
 import 'package:general/flutter/text_to_speech/text_to_speech_core.dart';
-import 'package:general_lib_flutter/extension/build_context.dart';
 import 'package:general_lib_flutter/general_lib_flutter.dart';
 
 class TextToSpeechPage extends StatefulWidget {
@@ -77,6 +76,9 @@ class _TextToSpeechPageState extends State<TextToSpeechPage> {
     });
   }
 
+  double volume = 1.0;
+  double pitch = 1.0;
+  double rate = 0.5;
   bool is_loading = false;
   void speak() {
     if (is_loading) {
@@ -88,7 +90,12 @@ class _TextToSpeechPageState extends State<TextToSpeechPage> {
     handleFunction(
       onFunction: (context, statefulWidget) async {
         if (textEditingController.text.trim().isNotEmpty) {
-          await text_to_speech.speak(text: textEditingController.text.trim());
+          await text_to_speech.speak(
+            text: textEditingController.text.trim(),
+            volume: volume,
+            pitch: pitch,
+            rate: rate,
+          );
         }
         setState(() {
           textEditingController.clear();
@@ -121,6 +128,64 @@ class _TextToSpeechPageState extends State<TextToSpeechPage> {
               SupportFeatureWidget(
                 isSupport: text_to_speech.isSupport(),
                 reason_no_support: "Saat ini hanya tersedia di platform android",
+              ),
+              Padding(
+                padding: const EdgeInsets.all(10),
+                child: Row(
+                  children: [
+                    const Text("Volume"),
+                    Expanded(
+                      child: Slider(
+                        value: volume,
+                        activeColor: context.theme.indicatorColor,
+                        onChanged: (value) {
+                          setState(() {
+                            volume = value;
+                          });
+                        },
+                      ),
+                    )
+                  ],
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(10),
+                child: Row(
+                  children: [
+                    const Text("Rate"),
+                    Expanded(
+                      child: Slider(
+                        value: rate,
+                        activeColor: context.theme.indicatorColor,
+                        onChanged: (value) {
+                          setState(() {
+                            rate = value;
+                          });
+                        },
+                      ),
+                    )
+                  ],
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(10),
+                child: Row(
+                  children: [
+                    const Text("Pitch"),
+                    Expanded(
+                      child: Slider(
+                        value: pitch,
+                        activeColor: context.theme.indicatorColor,
+                        max: 2.0,
+                        onChanged: (value) {
+                          setState(() {
+                            pitch = value;
+                          });
+                        },
+                      ),
+                    )
+                  ],
+                ),
               ),
               Padding(
                 padding: const EdgeInsets.all(10),
