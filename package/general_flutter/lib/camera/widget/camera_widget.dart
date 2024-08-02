@@ -64,9 +64,7 @@ class CameraWidget extends StatefulWidget {
 class _CameraState extends State<CameraWidget> {
   @override
   Widget build(BuildContext context) {
-    if (!widget.generalLibraryCameraBase.is_camera_init ||
-        !widget.generalLibraryCameraBase.is_select_camera ||
-        !widget.generalLibraryCameraBase.is_camera_active) {
+    if (!widget.generalLibraryCameraBase.is_camera_init || !widget.generalLibraryCameraBase.is_select_camera || !widget.generalLibraryCameraBase.is_camera_active) {
       if (!widget.generalLibraryCameraBase.is_camera_init) {
         return widget.onCameraNotInit(context);
       }
@@ -92,8 +90,7 @@ class _CameraState extends State<CameraWidget> {
         ),
       );
       return Visibility(
-        visible: widget.generalLibraryCameraBase.camera_mobile_controller.value
-            .isInitialized,
+        visible: widget.generalLibraryCameraBase.camera_mobile_controller.value.isInitialized,
         replacement: const CircularProgressIndicator(),
         child: camera_package.CameraPreview(
           widget.generalLibraryCameraBase.camera_mobile_controller,

@@ -1,5 +1,6 @@
 import 'package:example/model/feature.dart';
 import 'package:example/page/battery/battery.dart';
+import 'package:example/page/camera/camera.dart';
 import 'package:example/page/text_to_speech/text_to_speech.dart';
 import 'package:flutter/material.dart';
 import 'package:general_lib_flutter/general_lib_flutter.dart';
@@ -36,18 +37,15 @@ class _HomePageGeneralAppState extends State<HomePageGeneralApp> {
   }
 
   List<GeneralFeatureData> get generalFeatureDatas => [
-
-       GeneralFeatureData(
+        GeneralFeatureData(
           title: "App",
           iconData: Icons.apps,
-          onTap: (BuildContext context) { 
-          },
+          onTap: (BuildContext context) {},
         ),
-       GeneralFeatureData(
+        GeneralFeatureData(
           title: "App Background",
           iconData: Icons.extension,
-          onTap: (BuildContext context) { 
-          },
+          onTap: (BuildContext context) {},
         ),
         GeneralFeatureData(
           title: "Battery",
@@ -60,71 +58,66 @@ class _HomePageGeneralAppState extends State<HomePageGeneralApp> {
             ));
           },
         ),
-       GeneralFeatureData(
+        GeneralFeatureData(
           title: "Camera",
           iconData: Icons.camera,
-          onTap: (BuildContext context) { 
+          onTap: (BuildContext context) {
+            context.navigator().push(MaterialPageRoute(
+              builder: (context) {
+                return const CameraPage();
+              },
+            ));
           },
         ),
-       GeneralFeatureData(
+        GeneralFeatureData(
           title: "Device",
           iconData: Icons.devices,
-          onTap: (BuildContext context) { 
-          },
+          onTap: (BuildContext context) {},
         ),
-       GeneralFeatureData(
+        GeneralFeatureData(
           title: "Gamepad / Joystick",
           iconData: Icons.gamepad,
-          onTap: (BuildContext context) { 
-          },
+          onTap: (BuildContext context) {},
         ),
-       GeneralFeatureData(
+        GeneralFeatureData(
           title: "Local Auth",
           iconData: Icons.fingerprint,
-          onTap: (BuildContext context) { 
-          },
+          onTap: (BuildContext context) {},
         ),
-       GeneralFeatureData(
+        GeneralFeatureData(
           title: "Location",
           iconData: Icons.location_pin,
-          onTap: (BuildContext context) { 
-          },
+          onTap: (BuildContext context) {},
         ),
-       GeneralFeatureData(
+        GeneralFeatureData(
           title: "Notification",
           iconData: Icons.notifications,
-          onTap: (BuildContext context) { 
-          },
+          onTap: (BuildContext context) {},
         ),
-       GeneralFeatureData(
+        GeneralFeatureData(
           title: "Permission",
           iconData: Icons.security,
-          onTap: (BuildContext context) { 
-          },
+          onTap: (BuildContext context) {},
         ),
-       GeneralFeatureData(
+        GeneralFeatureData(
           title: "Player",
           iconData: Icons.play_circle_rounded,
-          onTap: (BuildContext context) { 
-          },
+          onTap: (BuildContext context) {},
         ),
-       GeneralFeatureData(
+        GeneralFeatureData(
           title: "Sim Card",
           iconData: Icons.sim_card,
-          onTap: (BuildContext context) { 
-          },
+          onTap: (BuildContext context) {},
         ),
-       GeneralFeatureData(
+        GeneralFeatureData(
           title: "Sms",
           iconData: Icons.sms,
-          onTap: (BuildContext context) { 
-          },
+          onTap: (BuildContext context) {},
         ),
-       GeneralFeatureData(
+        GeneralFeatureData(
           title: "Speech To Text",
           iconData: Icons.text_format,
-          onTap: (BuildContext context) { 
-          },
+          onTap: (BuildContext context) {},
         ),
         GeneralFeatureData(
           title: "Text To Speech",

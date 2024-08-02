@@ -52,8 +52,7 @@ class GeneralLibraryCameraBaseFlutter implements GeneralLibraryCameraBase {
   bool is_select_camera = false;
   bool is_camera_active = false;
 
-  bool get isDesktop =>
-      Platform.isWindows || Platform.isLinux || Platform.isMacOS;
+  bool get isDesktop => Platform.isWindows || Platform.isLinux || Platform.isMacOS;
   bool get isMobile => Platform.isAndroid || Platform.isIOS || kIsWeb;
 
   Future<void> initializeCameras() async {
@@ -69,6 +68,17 @@ class GeneralLibraryCameraBaseFlutter implements GeneralLibraryCameraBase {
       }
     }
     return;
+  }
+
+  @override
+  bool isSupport() {
+    if (isMobile) {
+      return true;
+    }
+    if (isDesktop) {
+      return Platform.isWindows;
+    }
+    return false;
   }
 
   Future<void> initializeCamera({
@@ -88,8 +98,7 @@ class GeneralLibraryCameraBaseFlutter implements GeneralLibraryCameraBase {
 
     if (isDesktop) {
       if (Platform.isWindows) {
-        camera_id = await camera_windows.createCamera(
-            camera_mobile_datas.first, camera_package.ResolutionPreset.max);
+        camera_id = await camera_windows.createCamera(camera_mobile_datas.first, camera_package.ResolutionPreset.max);
         is_select_camera = true;
         setState(() {});
       }
@@ -107,8 +116,7 @@ class GeneralLibraryCameraBaseFlutter implements GeneralLibraryCameraBase {
     }
     if (isMobile) {
       for (var i = 0; i < camera_mobile_datas.length; i++) {
-        camera_package.CameraDescription camera_mobile_data =
-            camera_mobile_datas[i];
+        camera_package.CameraDescription camera_mobile_data = camera_mobile_datas[i];
         if (i == (camera_id - 1)) {
           camera_mobile_controller = camera_package.CameraController(
             camera_mobile_data,
@@ -123,8 +131,7 @@ class GeneralLibraryCameraBaseFlutter implements GeneralLibraryCameraBase {
     if (isDesktop) {
       if (Platform.isWindows) {
         for (var i = 0; i < camera_mobile_datas.length; i++) {
-          camera_package.CameraDescription camera_mobile_data =
-              camera_mobile_datas[i];
+          camera_package.CameraDescription camera_mobile_data = camera_mobile_datas[i];
           if (i == (camera_id - 1)) {
             camera_id = await camera_windows.createCamera(
               camera_mobile_data,
@@ -512,6 +519,5 @@ class CameraTakePictureData {
   String path;
   String name;
 
-  CameraTakePictureData(
-      {required this.mimeType, required this.path, required this.name});
+  CameraTakePictureData({required this.mimeType, required this.path, required this.name});
 }
