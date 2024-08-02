@@ -1,3 +1,3 @@
-## 0.0.26
+## 0.0.27
 
-- Update.
+- Change Style Library To Single For decrease time setup.

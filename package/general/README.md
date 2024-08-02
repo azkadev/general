@@ -81,12 +81,12 @@ This library is only made for the dart language, I don't have any plans yet, may
     ```
   - IMPORT LIBRARY
     ```dart
-    import "package:general_dart/general_dart.dart";
+    import "package:general/core/general.dart";
     ```
   - SCRIPT
     ```dart
     // ignore_for_file: non_constant_identifier_names
-    import "package:general_dart/general_dart.dart";
+    import "package:general/core/general.dart";
     void main(List<String> args) async {
       GeneralDart general_library = GeneralDart();
       general_library.app_background;
@@ -101,12 +101,12 @@ This library is only made for the dart language, I don't have any plans yet, may
     ```
   - IMPORT LIBRARY
     ```dart
-    import "package:general_flutter/general_flutter.dart";
+    import "package:general/flutter/general_flutter.dart";
     ```
   - SCRIPT
     ```dart
     // ignore_for_file: non_constant_identifier_names
-    import "package:general_flutter/general_flutter.dart";
+    import "package:general/flutter/general_flutter.dart";
     void main(List<String> args) async {
       GeneralFlutter general_library = GeneralFlutter();
       general_library.app_background;
@@ -130,7 +130,7 @@ flutter pub add general_flutter
 
 ```dart
 // ignore_for_file: non_constant_identifier_names, unnecessary_brace_in_string_interps
-import "package:general_dart/general_dart.dart";
+import "package:general/core/general.dart";
 
 void main(List<String> args) async {
   GeneralDart general_library = GeneralDart();
