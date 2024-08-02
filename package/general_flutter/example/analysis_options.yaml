@@ -7,6 +7,10 @@
 
 # The following line activates a set of recommended lints for Flutter apps,
 # packages, and plugins designed to encourage good coding practices.
+analyzer:
+  errors:
+    override_on_non_overriding_member: ignore
+    unnecessary_brace_in_string_interps: ignore ignore
 include: package:flutter_lints/flutter.yaml
 
 linter:

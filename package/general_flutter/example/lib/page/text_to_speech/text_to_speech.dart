@@ -35,6 +35,8 @@ Bukan maksud kami menipu itu karena harga yang sudah di kalkulasi + bantuan tiba
 // ignore_for_file: non_constant_identifier_names, empty_catches
 
 import 'package:example/main.dart';
+import 'package:example/widget/support_feature_widget.dart';
+import 'package:example/widget/text_form_field.dart';
 import 'package:flutter/material.dart';
 
 import 'package:general_flutter/text_to_speech/text_to_speech_core.dart';
@@ -75,12 +77,22 @@ class _TextToSpeechPageState extends State<TextToSpeechPage> {
     });
   }
 
+  bool is_loading = false;
   void speak() {
+    if (is_loading) {
+      return;
+    }
+    setState(() {
+      is_loading = true;
+    });
     handleFunction(
       onFunction: (context, statefulWidget) async {
-        await text_to_speech.speak(text: textEditingController.text);
+        if (textEditingController.text.trim().isNotEmpty) {
+          await text_to_speech.speak(text: textEditingController.text.trim());
+        }
         setState(() {
           textEditingController.clear();
+          is_loading = false;
         });
       },
     );
@@ -90,6 +102,11 @@ class _TextToSpeechPageState extends State<TextToSpeechPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: const Text(
+          "Text To Speech",
+        ),
+      ),
       body: SingleChildScrollView(
         child: ConstrainedBox(
           constraints: BoxConstraints(
@@ -101,15 +118,20 @@ class _TextToSpeechPageState extends State<TextToSpeechPage> {
               SizedBox(
                 height: context.mediaQueryData.padding.top,
               ),
+              SupportFeatureWidget(
+                isSupport: text_to_speech.isSupport(),
+                reason_no_support: "Saat ini hanya tersedia di platform android",
+              ),
               Padding(
                 padding: const EdgeInsets.all(10),
-                child: TextField(
+                child: TextFormFieldWidget(
                   controller: textEditingController,
-                  decoration: const InputDecoration(
+                  readOnly: is_loading,
                   labelText: "Text To Speech",
-                    hintText: "abcd",
-                  
-                  ),
+                  hintText: "Hello World",
+                  maxLines: null,
+                  prefixIconData: Icons.speaker,
+                  onChanged: (value) {},
                 ),
               ),
             ],
@@ -120,7 +142,12 @@ class _TextToSpeechPageState extends State<TextToSpeechPage> {
         onPressed: () {
           speak();
         },
-        child: const Icon(Icons.voice_chat),
+        child: () {
+          if (is_loading) {
+            return const CircularProgressIndicator();
+          }
+          return const Icon(Icons.voice_chat);
+        }(),
       ),
     );
   }

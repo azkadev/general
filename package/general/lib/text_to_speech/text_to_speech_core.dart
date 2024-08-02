@@ -40,6 +40,10 @@ class GeneralLibraryTextToSpeechBase {
   static bool is_text_to_speech_on_speak = false;
   GeneralLibraryTextToSpeechBase();
 
+  bool isSupport() {
+    return false;
+  }
+
   Future<void> dispose() async {}
   Future<void> initialized() async {}
 
@@ -53,8 +57,7 @@ class GeneralLibraryTextToSpeechBase {
   }) async {
     if (isWaithFinishedSpeakBefore) {
       durationWaitFinishedSpeakBefore ??= Duration(minutes: 1);
-      DateTime dateTime_expire =
-          DateTime.now().add(durationWaitFinishedSpeakBefore);
+      DateTime dateTime_expire = DateTime.now().add(durationWaitFinishedSpeakBefore);
       while (true) {
         await Future.delayed(Duration(milliseconds: 1));
         if (dateTime_expire.isBefore(DateTime.now())) {

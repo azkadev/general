@@ -39,8 +39,7 @@ import 'package:general/player/player_controller.dart';
 import 'package:general/text_to_speech/text_to_speech_core.dart';
 import 'package:general_lib/general_lib.dart';
 
-class GeneralLibraryTextToSpeechBaseFlutter
-    implements GeneralLibraryTextToSpeechBase {
+class GeneralLibraryTextToSpeechBaseFlutter implements GeneralLibraryTextToSpeechBase {
   FlutterTts flutterTts = FlutterTts();
 
   static bool is_text_to_speech_on_speak = false;
@@ -49,6 +48,10 @@ class GeneralLibraryTextToSpeechBaseFlutter
   bool get isWindows => !Dart.isWeb && Dart.isWindows;
 
   bool get isWeb => Dart.isWeb;
+  @override
+  bool isSupport() {
+    return flutter_is_support_flutter_tts;
+  }
 
   bool get flutter_is_support_flutter_tts {
     if (Dart.isLinux) {
@@ -88,8 +91,7 @@ class GeneralLibraryTextToSpeechBaseFlutter
       if (flutter_is_support_flutter_tts) {
         if (isWaithFinishedSpeakBefore) {
           durationWaitFinishedSpeakBefore ??= const Duration(minutes: 1);
-          DateTime dateTime_expire =
-              DateTime.now().add(durationWaitFinishedSpeakBefore);
+          DateTime dateTime_expire = DateTime.now().add(durationWaitFinishedSpeakBefore);
           while (true) {
             await Future.delayed(const Duration(milliseconds: 1));
             if (dateTime_expire.isBefore(DateTime.now())) {

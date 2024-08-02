@@ -1,4 +1,4 @@
-import 'package:example/text_to_speech/text_to_speech.dart';
+import 'package:example/page/home/home.dart';
 import 'package:flutter/material.dart';
 import 'package:general_flutter/general_flutter.dart';
 import 'package:general_lib_flutter/general_lib_flutter.dart';
@@ -59,9 +59,9 @@ class _GeneralExampleAppState extends State<GeneralExampleApp> {
           setState(() {});
         },
       );
-      context.navigator().push(MaterialPageRoute(
+      context.navigator().pushReplacement(MaterialPageRoute(
         builder: (context) {
-          return const TextToSpeechPage();
+          return const HomePageGeneralApp();
         },
       ));
     });
