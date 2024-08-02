@@ -36,6 +36,19 @@ class _HomePageGeneralAppState extends State<HomePageGeneralApp> {
   }
 
   List<GeneralFeatureData> get generalFeatureDatas => [
+
+       GeneralFeatureData(
+          title: "App",
+          iconData: Icons.apps,
+          onTap: (BuildContext context) { 
+          },
+        ),
+       GeneralFeatureData(
+          title: "App Background",
+          iconData: Icons.extension,
+          onTap: (BuildContext context) { 
+          },
+        ),
         GeneralFeatureData(
           title: "Battery",
           iconData: Icons.battery_full,
@@ -47,7 +60,72 @@ class _HomePageGeneralAppState extends State<HomePageGeneralApp> {
             ));
           },
         ),
-       
+       GeneralFeatureData(
+          title: "Camera",
+          iconData: Icons.camera,
+          onTap: (BuildContext context) { 
+          },
+        ),
+       GeneralFeatureData(
+          title: "Device",
+          iconData: Icons.devices,
+          onTap: (BuildContext context) { 
+          },
+        ),
+       GeneralFeatureData(
+          title: "Gamepad / Joystick",
+          iconData: Icons.gamepad,
+          onTap: (BuildContext context) { 
+          },
+        ),
+       GeneralFeatureData(
+          title: "Local Auth",
+          iconData: Icons.fingerprint,
+          onTap: (BuildContext context) { 
+          },
+        ),
+       GeneralFeatureData(
+          title: "Location",
+          iconData: Icons.location_pin,
+          onTap: (BuildContext context) { 
+          },
+        ),
+       GeneralFeatureData(
+          title: "Notification",
+          iconData: Icons.notifications,
+          onTap: (BuildContext context) { 
+          },
+        ),
+       GeneralFeatureData(
+          title: "Permission",
+          iconData: Icons.security,
+          onTap: (BuildContext context) { 
+          },
+        ),
+       GeneralFeatureData(
+          title: "Player",
+          iconData: Icons.play_circle_rounded,
+          onTap: (BuildContext context) { 
+          },
+        ),
+       GeneralFeatureData(
+          title: "Sim Card",
+          iconData: Icons.sim_card,
+          onTap: (BuildContext context) { 
+          },
+        ),
+       GeneralFeatureData(
+          title: "Sms",
+          iconData: Icons.sms,
+          onTap: (BuildContext context) { 
+          },
+        ),
+       GeneralFeatureData(
+          title: "Speech To Text",
+          iconData: Icons.text_format,
+          onTap: (BuildContext context) { 
+          },
+        ),
         GeneralFeatureData(
           title: "Text To Speech",
           iconData: Icons.voice_chat,

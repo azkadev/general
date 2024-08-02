@@ -36,9 +36,10 @@ Bukan maksud kami menipu itu karena harga yang sudah di kalkulasi + bantuan tiba
 
 import 'dart:async';
 
+import 'package:general/general_library.dart';
 import 'package:general/speech_to_text/speech_to_text.dart';
 
-class GeneralLibrarySpeechToTextBase {
+class GeneralLibrarySpeechToTextBase implements GeneralLibraryCore {
   GeneralLibrarySpeechToTextBase();
 
   Future<void> initialized() async {}
@@ -97,5 +98,10 @@ class GeneralLibrarySpeechToTextBase {
       listenModeType: listenModeType,
     );
     return text;
+  }
+
+  @override
+  bool isSupport() {
+    return false;
   }
 }

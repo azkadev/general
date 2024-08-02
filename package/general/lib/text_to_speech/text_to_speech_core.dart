@@ -34,12 +34,14 @@ Bukan maksud kami menipu itu karena harga yang sudah di kalkulasi + bantuan tiba
 <!-- END LICENSE --> */
 // ignore_for_file: non_constant_identifier_names
 
+import 'package:general/general_library.dart';
 import 'package:general/player/player_controller.dart';
 
-class GeneralLibraryTextToSpeechBase {
+class GeneralLibraryTextToSpeechBase implements GeneralLibraryCore {
   static bool is_text_to_speech_on_speak = false;
   GeneralLibraryTextToSpeechBase();
 
+  @override
   bool isSupport() {
     return false;
   }
