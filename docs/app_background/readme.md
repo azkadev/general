@@ -9,7 +9,7 @@ App Background Menjalankan Applikasi Di Background (hanya bekerja di general_flu
 
 import 'package:flutter/material.dart';
 
-import 'package:general_flutter/general_flutter.dart';
+import 'package:general/flutter/flutter.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});

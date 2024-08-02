@@ -9,7 +9,7 @@ Putar Suara Dari Text
 
 import 'package:flutter/material.dart';
 
-import 'package:general_flutter/general_flutter.dart';
+import 'package:general/flutter/flutter.dart';
 
 class TextToSpeechPage extends StatefulWidget {
   const TextToSpeechPage({super.key});

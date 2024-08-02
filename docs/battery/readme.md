@@ -9,7 +9,7 @@ Memungkinkan Anda Untuk mendapatkan detail informasi baterai
 
 import 'package:flutter/material.dart';
 
-import 'package:general_flutter/general_flutter.dart';
+import 'package:general/flutter/flutter.dart';
 
 class BatteryPage extends StatefulWidget {
   const BatteryPage({super.key});

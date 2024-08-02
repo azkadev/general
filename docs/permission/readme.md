@@ -9,7 +9,7 @@ Speech To Text
 
 import 'package:flutter/material.dart';
 
-import 'package:general_flutter/general_flutter.dart';
+import 'package:general/flutter/flutter.dart';
 
 class PermissionPage extends StatefulWidget {
   const PermissionPage({super.key});

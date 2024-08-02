@@ -64,7 +64,7 @@ App Background Menjalankan Applikasi Di Background (hanya bekerja di general_flu
 
 import 'package:flutter/material.dart';
 
-import 'package:general_flutter/general_flutter.dart';
+import 'package:general/flutter/flutter.dart';
 
 class AppPage extends StatefulWidget {
   const AppPage({super.key});
@@ -358,7 +358,7 @@ App Background Menjalankan Applikasi Di Background (hanya bekerja di general_flu
 
 import 'package:flutter/material.dart';
 
-import 'package:general_flutter/general_flutter.dart';
+import 'package:general/flutter/flutter.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -658,7 +658,7 @@ Memungkinkan Anda Untuk mendapatkan detail informasi baterai
 
 import 'package:flutter/material.dart';
 
-import 'package:general_flutter/general_flutter.dart';
+import 'package:general/flutter/flutter.dart';
 
 class BatteryPage extends StatefulWidget {
   const BatteryPage({super.key});
@@ -956,7 +956,7 @@ Speech To Text
 
 import 'package:flutter/material.dart';
 
-import 'package:general_flutter/general_flutter.dart';
+import 'package:general/flutter/flutter.dart';
 
 class DevicePage extends StatefulWidget {
   const DevicePage({super.key});
@@ -1253,7 +1253,7 @@ Speech To Text
 
 import 'package:flutter/material.dart';
 
-import 'package:general_flutter/general_flutter.dart';
+import 'package:general/flutter/flutter.dart';
 
 class GamePadPage extends StatefulWidget {
   const GamePadPage({super.key});
@@ -1551,7 +1551,7 @@ Speech To Text
 
 import 'package:flutter/material.dart';
 
-import 'package:general_flutter/general_flutter.dart';
+import 'package:general/flutter/flutter.dart';
 
 class PermissionPage extends StatefulWidget {
   const PermissionPage({super.key});
@@ -1842,7 +1842,7 @@ Speech To Text
 
 import 'package:flutter/material.dart';
 
-import 'package:general_flutter/general_flutter.dart';
+import 'package:general/flutter/flutter.dart';
 
 class SimcardPage extends StatefulWidget {
   const SimcardPage({super.key});
@@ -2134,7 +2134,7 @@ Speech To Text
 
 import 'package:flutter/material.dart';
 
-import 'package:general_flutter/general_flutter.dart';
+import 'package:general/flutter/flutter.dart';
 
 class SmsPage extends StatefulWidget {
   const SmsPage({super.key});
@@ -2428,7 +2428,7 @@ Speech To Text
 
 import 'package:flutter/material.dart';
 
-import 'package:general_flutter/general_flutter.dart';
+import 'package:general/flutter/flutter.dart';
 
 class SpeechToTextPage extends StatefulWidget {
   const SpeechToTextPage({super.key});
@@ -2729,7 +2729,7 @@ Putar Suara Dari Text
 
 import 'package:flutter/material.dart';
 
-import 'package:general_flutter/general_flutter.dart';
+import 'package:general/flutter/flutter.dart';
 
 class TextToSpeechPage extends StatefulWidget {
   const TextToSpeechPage({super.key});

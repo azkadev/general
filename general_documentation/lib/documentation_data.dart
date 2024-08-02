@@ -35,13 +35,13 @@ Bukan maksud kami menipu itu karena harga yang sudah di kalkulasi + bantuan tiba
 import 'package:documentation/scheme/scheme.dart';
 
 DocumentationData get documentationData => DocumentationData.create(
-  title: "General Documentation",
-  logo: "assets/logo/logo.png",
-  description: """
+      title: "General Documentation",
+      logo: "assets/logo/logo.png",
+      description: """
 General adalah library yang memanfaatkan api telegram untuk di implementasikan ke berbagai platform, library ini user friendly
 sehingga mudah di gunakan untuk membuat project seperti applikasi, bot, userbot, web dalam skala bisnis besar
 """,
-  content: """
+      content: """
 # General
 
 General is a DART & Flutter library that allows you to access many things instantly
@@ -125,14 +125,14 @@ This library is only made for the dart language, I don't have any plans yet, may
     ```
   - IMPORT LIBRARY
     ```dart
-    import "package:general_dart/general_dart.dart";
+    import "package:general/core/core.dart";
     ```
   - SCRIPT
     ```dart
     // ignore_for_file: non_constant_identifier_names
-    import "package:general_dart/general_dart.dart";
+    import "package:general/core/core.dart";
     void main(List<String> args) async {
-      GeneralDart general_library = GeneralDart();
+      GeneralLibrary general_library = GeneralLibrary();
       general_library.app_background;
     }
     ```
@@ -145,12 +145,12 @@ This library is only made for the dart language, I don't have any plans yet, may
     ```
   - IMPORT LIBRARY
     ```dart
-    import "package:general_flutter/general_flutter.dart";
+    import "package:general/flutter/flutter.dart";
     ```
   - SCRIPT
     ```dart
     // ignore_for_file: non_constant_identifier_names
-    import "package:general_flutter/general_flutter.dart";
+    import "package:general/flutter/flutter.dart";
     void main(List<String> args) async {
       GeneralFlutter general_library = GeneralFlutter();
       general_library.app_background;
@@ -174,10 +174,10 @@ flutter pub add general_flutter
 
 ```dart
 // ignore_for_file: non_constant_identifier_names, unnecessary_brace_in_string_interps
-import "package:general_dart/general_dart.dart";
+import "package:general/core/core.dart";
 
 void main(List<String> args) async {
-  GeneralDart general_library = GeneralDart();
+  GeneralLibrary general_library = GeneralLibrary();
   // app background initialized
   await general_library.app_background.has_permissions;
   await general_library.app_background.initialize(
@@ -449,62 +449,62 @@ Video Tutorial
 
     jika kamu ingin melihat product / jasa dengan full demo kamu bisa beli lewat app
 """
-      .trim(),
-  author_url_social_medias: {
-    "https://youtube.com/@azkadev",
-    "https://github.com/azkadev",
-    "https://t.me/azkadev",
-    "https://azkadev.netlify.app",
-    // "https://tiktok.com/azkadev",
-  }.toList(),
-  footer: DocumentationFooterData.create(
-    footers: [
-      FootersData.create(
-        title: "Other Information",
-        footer: [
-          FooterData.create(
-            title: "About",
+          .trim(),
+      author_url_social_medias: {
+        "https://youtube.com/@azkadev",
+        "https://github.com/azkadev",
+        "https://t.me/azkadev",
+        "https://azkadev.netlify.app",
+        // "https://tiktok.com/azkadev",
+      }.toList(),
+      footer: DocumentationFooterData.create(
+        footers: [
+          FootersData.create(
+            title: "Other Information",
+            footer: [
+              FooterData.create(
+                title: "About",
+              ),
+              FooterData.create(title: "Buy My Services On Telegram 🥺", url: "https://t.me/azkadevbot?start=ref_web_documentation"),
+              FooterData.create(title: "Donate Me 🥺", url: "https://github.com/sponsor/azkadev"),
+              FooterData.create(title: "Donate Me On Telegram 🥺", url: "https://t.me/azkadevbot?start=donate_web_documentation"),
+            ],
           ),
-          FooterData.create(title: "Buy My Services On Telegram 🥺", url: "https://t.me/azkadevbot?start=ref_web_documentation"),
-          FooterData.create(title: "Donate Me 🥺", url: "https://github.com/sponsor/azkadev"),
-          FooterData.create(title: "Donate Me On Telegram 🥺", url: "https://t.me/azkadevbot?start=donate_web_documentation"),
+          FootersData.create(
+            title: "Other Library",
+            footer: [
+              FooterData.create(title: "Discord Client", url: "https://t.me/azkadevbot?start=ref_web_documentation"),
+              FooterData.create(title: "DoodStream Client", url: "https://t.me/azkadevbot?start=ref_web_documentation"),
+              FooterData.create(title: "Github Client", url: "https://t.me/azkadevbot?start=ref_web_documentation"),
+              FooterData.create(title: "Google Client", url: "https://t.me/azkadevbot?start=ref_web_documentation"),
+              FooterData.create(title: "Whatsapp Client", url: "https://t.me/azkadevbot?start=ref_web_documentation"),
+            ],
+          ),
         ],
       ),
-      FootersData.create(
-        title: "Other Library",
-        footer: [
-          FooterData.create(title: "Discord Client", url: "https://t.me/azkadevbot?start=ref_web_documentation"),
-          FooterData.create(title: "DoodStream Client", url: "https://t.me/azkadevbot?start=ref_web_documentation"),
-          FooterData.create(title: "Github Client", url: "https://t.me/azkadevbot?start=ref_web_documentation"),
-          FooterData.create(title: "Google Client", url: "https://t.me/azkadevbot?start=ref_web_documentation"),
-          FooterData.create(title: "Whatsapp Client", url: "https://t.me/azkadevbot?start=ref_web_documentation"),
-        ],
-      ),
-    ],
-  ),
-  docs: [
-    DocsData.create(
-      doc_id: "mtproto",
-      title: "Mtproto",
-      description: """
+      docs: [
+        DocsData.create(
+          doc_id: "mtproto",
+          title: "Mtproto",
+          description: """
 Mtproto adalah library yang paling ringan cepat tidak memerlukan ffi namun jika menggunakan ini harap jangan flood / mencoba call api
 berkali kali karena api ini direct ke telegram langsung sehingga akan sangat mudah di banned jika menggunakan ini (api ini di gunakan jika anda sudah mahir coding + perhitungan limitasi api)
 """
-          .trim(),
-      sidebars: [
-        DocSideBar.create(
-          title: "Intro",
-          navigate_content_id: "intro",
-        ),
-        DocSideBar.create(
-          title: "Demo",
-          navigate_content_id: "intro",
-        ),
-      ],
-      contents: [
-        DocContents.create(
-          content_id: "intro",
-          content: """
+              .trim(),
+          sidebars: [
+            DocSideBar.create(
+              title: "Intro",
+              navigate_content_id: "intro",
+            ),
+            DocSideBar.create(
+              title: "Demo",
+              navigate_content_id: "intro",
+            ),
+          ],
+          contents: [
+            DocContents.create(
+              content_id: "intro",
+              content: """
 
 <h2 align="center">Ultra Fast, Enjoyable & Cross Platform General</h2>
 
@@ -570,33 +570,33 @@ void main(List<String> args) {
 **I really need funds so that this library can be easier to use. You can buy this library by subscribing/sponsoring me on GitHub:** [azkadev](https://github.com/azkadev)
 
 """
-              .trim(),
-        )
-      ],
-    ),
-    DocsData.create(
-      doc_id: "tdlib",
-      title: "Telegram Database Library (TDLIB)",
-      description: """
+                  .trim(),
+            )
+          ],
+        ),
+        DocsData.create(
+          doc_id: "tdlib",
+          title: "Telegram Database Library (TDLIB)",
+          description: """
 Tdlib adalah library cross platform cpp, kami menggunakan ffi agar bisa mengakses tdlib, tdlib sangat di rekomendasikan karena
 sangat mudah di gunakan, namun jika untuk skala bisnis lebih besar tidak cocok karena tdlib boros memory, cpu, walaupun nanti
 kode anda sudah efficient akan terjadi lag / bottleneck
 """
-          .trim(),
-      sidebars: [
-        DocSideBar.create(
-          title: "Intro",
-          navigate_content_id: "intro",
-        ),
-        DocSideBar.create(
-          title: "Demo",
-          navigate_content_id: "intro",
-        ),
-      ],
-      contents: [
-        DocContents.create(
-          content_id: "intro",
-          content: """
+              .trim(),
+          sidebars: [
+            DocSideBar.create(
+              title: "Intro",
+              navigate_content_id: "intro",
+            ),
+            DocSideBar.create(
+              title: "Demo",
+              navigate_content_id: "intro",
+            ),
+          ],
+          contents: [
+            DocContents.create(
+              content_id: "intro",
+              content: """
 
 <h2 align="center">Ultra Fast, Enjoyable & Cross Platform General</h2>
 
@@ -662,32 +662,32 @@ void main(List<String> args) {
 **I really need funds so that this library can be easier to use. You can buy this library by subscribing/sponsoring me on GitHub:** [azkadev](https://github.com/azkadev)
 
 """
-              .trim(),
-        )
-      ],
-    ),
-    DocsData.create(
-      doc_id: "telegram_bot_api",
-      title: "Telegram Bot Api",
-      description: """
+                  .trim(),
+            )
+          ],
+        ),
+        DocsData.create(
+          doc_id: "telegram_bot_api",
+          title: "Telegram Bot Api",
+          description: """
 Telegram Bot Api adalah library + api official dari telegram yang menggunakan tdlib sebagai dasar, api
 ini sangat mudah di gunakan jika anda punya public ip sangat di rekomendasikan menggunakan ini karena tidak boros memory, cpu
 """
-          .trim(),
-      sidebars: [
-        DocSideBar.create(
-          title: "Intro",
-          navigate_content_id: "intro",
-        ),
-        DocSideBar.create(
-          title: "Demo",
-          navigate_content_id: "intro",
-        ),
-      ],
-      contents: [
-        DocContents.create(
-          content_id: "intro",
-          content: """
+              .trim(),
+          sidebars: [
+            DocSideBar.create(
+              title: "Intro",
+              navigate_content_id: "intro",
+            ),
+            DocSideBar.create(
+              title: "Demo",
+              navigate_content_id: "intro",
+            ),
+          ],
+          contents: [
+            DocContents.create(
+              content_id: "intro",
+              content: """
 
 <h2 align="center">Ultra Fast, Enjoyable & Cross Platform General</h2>
 
@@ -753,34 +753,34 @@ void main(List<String> args) {
 **I really need funds so that this library can be easier to use. You can buy this library by subscribing/sponsoring me on GitHub:** [azkadev](https://github.com/azkadev)
 
 """
-              .trim(),
-        )
-      ],
-    ),
-    DocsData.create(
-      doc_id: "telegram_client",
-      title: "General",
-      description: """
+                  .trim(),
+            )
+          ],
+        ),
+        DocsData.create(
+          doc_id: "telegram_client",
+          title: "General",
+          description: """
 General merupakan library resmi yang saya buat, metode ini saya gunakan di semua project saya,
 metode ini sangat flexible dan customizable sehingga anda bisa mengintegrasikan (tdlib / mtproto / telegram bot api),
 metode ini tidak hanya untuk membuat bot melainkan userbot, saya menggunakan style code telegram bot api hal ini 
 di karenakan agar mudah di gunakan
 """
-          .trim(),
-      sidebars: [
-        DocSideBar.create(
-          title: "Intro",
-          navigate_content_id: "intro",
-        ),
-        DocSideBar.create(
-          title: "Demo",
-          navigate_content_id: "intro",
-        ),
-      ],
-      contents: [
-        DocContents.create(
-          content_id: "intro",
-          content: """
+              .trim(),
+          sidebars: [
+            DocSideBar.create(
+              title: "Intro",
+              navigate_content_id: "intro",
+            ),
+            DocSideBar.create(
+              title: "Demo",
+              navigate_content_id: "intro",
+            ),
+          ],
+          contents: [
+            DocContents.create(
+              content_id: "intro",
+              content: """
 
 <h2 align="center">Ultra Fast, Enjoyable & Cross Platform General</h2>
 
@@ -845,9 +845,9 @@ void main(List<String> args) {
 
 **I really need funds so that this library can be easier to use. You can buy this library by subscribing/sponsoring me on GitHub:** [azkadev](https://github.com/azkadev)
 """
-              .trim(),
+                  .trim(),
+            ),
+          ],
         ),
       ],
-    ),
-  ],
-);
+    );

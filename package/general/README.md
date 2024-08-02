@@ -88,7 +88,7 @@ This library is only made for the dart language, I don't have any plans yet, may
     // ignore_for_file: non_constant_identifier_names
     import "package:general/core/general.dart";
     void main(List<String> args) async {
-      GeneralDart general_library = GeneralDart();
+      GeneralLibrary general_library = GeneralLibrary();
       general_library.app_background;
     }
     ```
@@ -133,7 +133,7 @@ flutter pub add general_flutter
 import "package:general/core/general.dart";
 
 void main(List<String> args) async {
-  GeneralDart general_library = GeneralDart();
+  GeneralLibrary general_library = GeneralLibrary();
   // app background initialized
   await general_library.app_background.has_permissions;
   await general_library.app_background.initialize(
