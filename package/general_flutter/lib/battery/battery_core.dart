@@ -93,4 +93,9 @@ class GeneralLibraryBatteryBaseFlutter implements GeneralLibraryBatteryBase {
   Future<bool> get is_save_mode async {
     return await battery.isInBatterySaveMode;
   }
+
+  @override
+  bool isSupport() {
+    return true;
+  }
 }

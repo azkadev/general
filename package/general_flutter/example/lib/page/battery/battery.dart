@@ -37,20 +37,19 @@ Bukan maksud kami menipu itu karena harga yang sudah di kalkulasi + bantuan tiba
 import 'package:example/main.dart';
 import 'package:example/widget/support_feature_widget.dart';
 import 'package:flutter/material.dart';
-import 'package:general_flutter/app_background/app_background.dart';
+import 'package:general_flutter/battery/battery.dart';
 
 import 'package:general_lib_flutter/extension/build_context.dart';
 import 'package:general_lib_flutter/general_lib_flutter.dart';
 
-class AppBackgroundPage extends StatefulWidget {
-  const AppBackgroundPage({super.key});
+class BatteryPage extends StatefulWidget {
+  const BatteryPage({super.key});
   @override
-  State<AppBackgroundPage> createState() => _AppBackgroundPageState();
+  State<BatteryPage> createState() => _BatteryPageState();
 }
 
-class _AppBackgroundPageState extends State<AppBackgroundPage> {
-  final GeneralLibraryAppBackgroundBaseFlutter app_background = GeneralExampleMainApp.generalFlutter.app_background;
-
+class _BatteryPageState extends State<BatteryPage> {
+  final GeneralLibraryBatteryBaseFlutter battery = GeneralExampleMainApp.generalFlutter.battery;
   @override
   void initState() {
     super.initState();
@@ -68,7 +67,6 @@ class _AppBackgroundPageState extends State<AppBackgroundPage> {
 
   void task() {
     Future(() async {
-      await app_background.has_permissions;
       // wajib di run 1 x aja
       setState(() {});
       // bebas run dimanapun
@@ -83,7 +81,7 @@ class _AppBackgroundPageState extends State<AppBackgroundPage> {
     return Scaffold(
       appBar: AppBar(
         title: const Text(
-          "App Background",
+          "Battery",
         ),
       ),
       body: SingleChildScrollView(
@@ -97,14 +95,32 @@ class _AppBackgroundPageState extends State<AppBackgroundPage> {
               SizedBox(
                 height: context.mediaQueryData.padding.top,
               ),
-              const SupportFeatureWidget(
-                isSupport: false,
+              SupportFeatureWidget(
+                isSupport: battery.isSupport(),
                 reason_no_support: "Saat ini hanya tersedia di platform android",
-              ), 
+              ),
+              FutureBuilder(
+                future: battery.status_type,
+                builder: (context, snapshot) {
+                  if (snapshot.connectionState.isLoading) {
+                    return const CircularProgressIndicator();
+                  }
+                  return Text("Battery Status: ${snapshot.data ?? "unknown"}");
+                },
+              ),
+              FutureBuilder(
+                future: battery.level,
+                builder: (context, snapshot) {
+                  if (snapshot.connectionState.isLoading) {
+                    return const CircularProgressIndicator();
+                  }
+                  return Text("Battery Level: ${snapshot.data ?? 0}");
+                },
+              ),
             ],
           ),
         ),
-      ),
+      ), 
     );
   }
 }

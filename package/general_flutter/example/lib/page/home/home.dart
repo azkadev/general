@@ -1,4 +1,5 @@
 import 'package:example/model/feature.dart';
+import 'package:example/page/battery/battery.dart';
 import 'package:example/page/text_to_speech/text_to_speech.dart';
 import 'package:flutter/material.dart';
 import 'package:general_lib_flutter/general_lib_flutter.dart';
@@ -34,19 +35,31 @@ class _HomePageGeneralAppState extends State<HomePageGeneralApp> {
     Future(() async {});
   }
 
-  final List<GeneralFeatureData> generalFeatureDatas = [
-    GeneralFeatureData(
-      title: "Text To Speech",
-      iconData: Icons.voice_chat,
-      onTap: (BuildContext context) {
-        context.navigator().push(MaterialPageRoute(
-          builder: (context) {
-            return const TextToSpeechPage();
+  List<GeneralFeatureData> get generalFeatureDatas => [
+        GeneralFeatureData(
+          title: "Battery",
+          iconData: Icons.battery_full,
+          onTap: (BuildContext context) {
+            context.navigator().push(MaterialPageRoute(
+              builder: (context) {
+                return const BatteryPage();
+              },
+            ));
           },
-        ));
-      },
-    ),
-  ];
+        ),
+       
+        GeneralFeatureData(
+          title: "Text To Speech",
+          iconData: Icons.voice_chat,
+          onTap: (BuildContext context) {
+            context.navigator().push(MaterialPageRoute(
+              builder: (context) {
+                return const TextToSpeechPage();
+              },
+            ));
+          },
+        ),
+      ];
 
   @override
   Widget build(BuildContext context) {
@@ -71,8 +84,9 @@ class _HomePageGeneralAppState extends State<HomePageGeneralApp> {
                     height: context.mediaQueryData.padding.top,
                   ));
 
-                  for (var i = 0; i < generalFeatureDatas.length; i++) {
-                    final GeneralFeatureData generalFeatureData = generalFeatureDatas[i];
+                  final List<GeneralFeatureData> general_feature_datas = generalFeatureDatas;
+                  for (var i = 0; i < general_feature_datas.length; i++) {
+                    final GeneralFeatureData generalFeatureData = general_feature_datas[i];
                     final ListTile child = ListTile(
                       contentPadding: const EdgeInsets.all(10),
                       leading: Icon(generalFeatureData.iconData),

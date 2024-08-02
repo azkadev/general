@@ -40,6 +40,9 @@ import 'package:general/battery/battery_status.dart';
 
 class GeneralLibraryBatteryBase {
   GeneralLibraryBatteryBase();
+  bool isSupport() {
+    return false;
+  }
 
   Future<bool> get is_save_mode async {
     return false;

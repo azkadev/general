@@ -35,11 +35,10 @@ Bukan maksud kami menipu itu karena harga yang sudah di kalkulasi + bantuan tiba
 // ignore_for_file: non_constant_identifier_names
 
 import 'package:flutter/foundation.dart';
-import 'package:general/app_background/app_background_core.dart';
-import 'package:general/battery/battery_core.dart';
 import "package:general_dart/general_dart.dart";
 import 'package:general_flutter/app/app.dart';
 import 'package:general_flutter/app_background/app_background_core.dart';
+import 'package:general_flutter/battery/battery.dart';
 import 'package:general_flutter/camera/camera.dart';
 import 'package:general_flutter/device/device.dart';
 import 'package:general_flutter/gamepad/gamepad_core.dart';
@@ -64,7 +63,7 @@ class GeneralFlutter extends GeneralDart {
   }
 
   @override
-  GeneralLibraryAppBackgroundBase get app_background {
+  GeneralLibraryAppBackgroundBaseFlutter get app_background {
     return GeneralLibraryAppBackgroundBaseFlutter();
   }
 
@@ -84,8 +83,8 @@ class GeneralFlutter extends GeneralDart {
   }
 
   @override
-  GeneralLibraryBatteryBase get battery {
-    return GeneralLibraryBatteryBase();
+  GeneralLibraryBatteryBaseFlutter get battery {
+    return GeneralLibraryBatteryBaseFlutter();
   }
 
   @override
