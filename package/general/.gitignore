@@ -14,3 +14,9 @@ docs/canvaskit
 /build/
 generate_glx_*
 node_modules/
+
+*.mp3
+
+*.js
+*.js.dependencies
+*.js.map

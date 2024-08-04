@@ -34,3 +34,4 @@ Bukan maksud kami menipu itu karena harga yang sudah di kalkulasi + bantuan tiba
 <!-- END LICENSE --> */
 export "player_controller.dart";
 export "player_core.dart";
+export "player_model_data.dart";

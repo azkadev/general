@@ -70,6 +70,6 @@ class _PlayerWidgetState extends State<PlayerWidget> {
     if (is_init) {
       return Video(controller: videoController);
     }
-    return Container();
+    return SizedBox();
   }
 }

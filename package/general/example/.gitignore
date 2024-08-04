@@ -49,3 +49,4 @@ docs/canvaskit
 */canvaskit
 generate_glx_*
 node_modules/
+*.mp3
