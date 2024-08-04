@@ -92,6 +92,7 @@ code android/app/src/main/AndroidManifest.xml
     <uses-permission android:name="android.permission.BLUETOOTH"/>
     <uses-permission android:name="android.permission.BLUETOOTH_ADMIN"/>
     <uses-permission android:name="android.permission.BLUETOOTH_CONNECT"/>
+    
     <queries>
       <intent>
         <action android:name="android.speech.RecognitionService" />
