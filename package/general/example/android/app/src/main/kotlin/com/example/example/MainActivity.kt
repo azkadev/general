@@ -35,4 +35,3 @@ class MainActivity: FlutterFragmentActivity(), GamepadsCompatibleActivity {
         motionListener = handler
     }
 }
- 
