@@ -174,9 +174,9 @@ class GeneralLibraryApi {
         List<String> data_origins = file_settings_gradle.readAsStringSync().trim().split("\n");
         String new_gradle_version = "1.9.22";
         bool is_found_new_update_gradle_file = false;
+        RegExp regExp = RegExp("(([ ]+)?id([ ]+)\"org.jetbrains.kotlin.android\"([ ]+)version([ ]+)(.*)([ ]+)apply([ ]+)false)", caseSensitive: false);
         for (var i = 0; i < data_origins.length; i++) {
           String data_origin = data_origins[i];
-          RegExp regExp = RegExp("(([ ]+)?id([ ]+)\"org.jetbrains.kotlin.android\"([ ]+)version([ ]+)(.*)([ ]+)apply([ ]+)false)");
           if (regExp.hashData(data_origin.trim())) {
             RegExpMatch? regExpMatch = regExp.firstMatch(data_origin);
             if (regExpMatch == null) {
@@ -253,6 +253,84 @@ class MainActivity: FlutterFragmentActivity(), GamepadsCompatibleActivity {
         }
       }
 
+      File file_android_build_gradle = File(path.join(directory_android.uri.toFilePath(), "app/build.gradle"));
+      if (file_android_build_gradle.existsSync()) {
+        yield GeneralLibraryApiStatus(serverUniverseApiStatusType: GeneralLibraryApiStatusType.info, value: "Check File: app/build.gradle");
+        List<String> data_origins = file_android_build_gradle.readAsStringSync().trim().split("\n");
+        String new_compile_sdk = "34";
+        String new_min_sdk_version = "23";
+        String new_target_sdk_version = "34";
+
+        RegExp regExp_compile_sdk = RegExp("(([ ]+)?compileSdk([ ]+)(.*))", caseSensitive: false);
+        bool is_found_regex_compile_sdk = false;
+
+        RegExp regExp_min_sdk_version = RegExp("(([ ]+)?minSdkVersion([ ]+)(.*))", caseSensitive: false);
+        bool is_found_regex_min_sdk_version = false;
+
+        RegExp regExp_target_sdk_version = RegExp("(([ ]+)?targetSdkVersion([ ]+)(.*))", caseSensitive: false);
+        bool is_found_regex_target_sdk_version = false;
+
+        bool is_found_new_update_build_gradle_file = false;
+        for (var i = 0; i < data_origins.length; i++) {
+          String data_origin = data_origins[i];
+          if (is_found_regex_compile_sdk == false) {
+            if (regExp_compile_sdk.hashData(data_origin.trim())) {
+              is_found_regex_compile_sdk = true;
+              RegExpMatch? regExpMatch = regExp_compile_sdk.firstMatch(data_origin);
+              if (regExpMatch == null) {
+                continue;
+              }
+              String version_compile_sdk = (regExpMatch.group(4) ?? "").trim();
+
+              if (version_compile_sdk != new_compile_sdk) {
+                yield GeneralLibraryApiStatus(serverUniverseApiStatusType: GeneralLibraryApiStatusType.info, value: "Update Build Gradle Compile Sdk ${version_compile_sdk} To ${new_compile_sdk}");
+                data_origins[i] = data_origins[i].replaceAll(regExp_compile_sdk, "${(regExpMatch.group(2) ?? "")}compileSdk ${new_compile_sdk}");
+                is_found_new_update_build_gradle_file = true;
+              }
+            }
+            continue;
+          }
+          if (is_found_regex_min_sdk_version == false) {
+            if (regExp_min_sdk_version.hashData(data_origin.trim())) {
+              is_found_regex_min_sdk_version = true;
+              RegExpMatch? regExpMatch = regExp_min_sdk_version.firstMatch(data_origin);
+              if (regExpMatch == null) {
+                continue;
+              }
+              String version_min_sdk_version = (regExpMatch.group(4) ?? "").trim();
+
+              if (version_min_sdk_version != new_min_sdk_version) {
+                yield GeneralLibraryApiStatus(serverUniverseApiStatusType: GeneralLibraryApiStatusType.info, value: "Update Build Gradle Compile Sdk ${version_min_sdk_version} To ${new_min_sdk_version}");
+                data_origins[i] = data_origins[i].replaceAll(regExp_min_sdk_version, "${(regExpMatch.group(2) ?? "")}minSdkVersion ${new_min_sdk_version}");
+                is_found_new_update_build_gradle_file = true;
+              }
+            }
+            continue;
+          }
+
+          if (is_found_regex_target_sdk_version == false) {
+            if (regExp_target_sdk_version.hashData(data_origin.trim())) {
+              is_found_regex_target_sdk_version = true;
+              RegExpMatch? regExpMatch = regExp_target_sdk_version.firstMatch(data_origin);
+              if (regExpMatch == null) {
+                continue;
+              }
+              String version_target_sdk_version = (regExpMatch.group(4) ?? "").trim();
+
+              if (version_target_sdk_version != new_target_sdk_version) {
+                yield GeneralLibraryApiStatus(serverUniverseApiStatusType: GeneralLibraryApiStatusType.info, value: "Update Build Gradle Compile Sdk ${version_target_sdk_version} To ${new_target_sdk_version}");
+                data_origins[i] = data_origins[i].replaceAll(regExp_target_sdk_version, "${(regExpMatch.group(2) ?? "")}minSdkVersion ${new_target_sdk_version}");
+                is_found_new_update_build_gradle_file = true;
+              }
+            }
+            continue;
+          }
+        }
+        if (is_found_new_update_build_gradle_file) {
+          file_android_build_gradle.writeAsStringSync(data_origins.join("\n"));
+        }
+      }
+
       //
 
       // // implement not finished
@@ -284,6 +362,8 @@ class MainActivity: FlutterFragmentActivity(), GamepadsCompatibleActivity {
       //     file_settings_gradle.writeAsStringSync(data_origins.join("\n"));
       //   }
       // }
+      //
+      //
     }
   }
 }
