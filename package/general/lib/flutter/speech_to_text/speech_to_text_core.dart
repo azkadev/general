@@ -42,7 +42,7 @@ import "package:general_lib/general_lib.dart";
 import 'package:speech_to_text/speech_to_text.dart';
 
 class GeneralLibrarySpeechToTextBaseFlutter implements GeneralLibrarySpeechToTextBase {
-  // late SpeechToText speechToText;
+  final SpeechToText speechToText = SpeechToText();
   GeneralLibrarySpeechToTextBaseFlutter();
   bool get isIOS => !Dart.isWeb && Dart.isIOS;
   bool get isAndroid => !Dart.isWeb && Dart.isAndroid;
@@ -64,7 +64,7 @@ class GeneralLibrarySpeechToTextBaseFlutter implements GeneralLibrarySpeechToTex
     try {
       if (flutter_is_support_flutter_stt) {
         // speechToText = SpeechToText();
-        await SpeechToText().initialize();
+        await speechToText.initialize();
       }
       // ignore: empty_catches
     } catch (e) {}
@@ -74,15 +74,14 @@ class GeneralLibrarySpeechToTextBaseFlutter implements GeneralLibrarySpeechToTex
   @override
   Future<void> cancel() async {
     if (flutter_is_support_flutter_stt) {
-      await SpeechToText().cancel();
+      await speechToText.cancel();
     }
   }
 
   @override
   Future<void> stop() async {
     if (flutter_is_support_flutter_stt) {
-      // await SpeechToText().st();
-      await SpeechToText().stop();
+      await speechToText.stop();
     }
   }
 
@@ -99,7 +98,8 @@ class GeneralLibrarySpeechToTextBaseFlutter implements GeneralLibrarySpeechToTex
     // StreamController<String> streamController = StreamController<String>();
 
     if (flutter_is_support_flutter_stt) {
-      await SpeechToText().listen(
+      
+      await speechToText.listen(
         onResult: (result) {
           onResult(result.recognizedWords);
         },
@@ -119,7 +119,7 @@ class GeneralLibrarySpeechToTextBaseFlutter implements GeneralLibrarySpeechToTex
   @override
   Future<bool> get has_permission async {
     if (flutter_is_support_flutter_stt) {
-      return await SpeechToText().hasPermission;
+      return await speechToText.hasPermission;
     }
     return false;
   }
@@ -127,7 +127,7 @@ class GeneralLibrarySpeechToTextBaseFlutter implements GeneralLibrarySpeechToTex
   @override
   bool get has_recognized {
     if (flutter_is_support_flutter_stt) {
-      return SpeechToText().hasRecognized;
+      return speechToText.hasRecognized;
     }
     return false;
   }
@@ -135,7 +135,7 @@ class GeneralLibrarySpeechToTextBaseFlutter implements GeneralLibrarySpeechToTex
   @override
   bool get is_available {
     if (flutter_is_support_flutter_stt) {
-      return SpeechToText().isAvailable;
+      return speechToText.isAvailable;
     }
     return false;
   }
@@ -143,7 +143,7 @@ class GeneralLibrarySpeechToTextBaseFlutter implements GeneralLibrarySpeechToTex
   @override
   bool get is_listening {
     if (flutter_is_support_flutter_stt) {
-      return SpeechToText().isListening;
+      return speechToText.isListening;
     }
     return false;
   }
@@ -151,7 +151,7 @@ class GeneralLibrarySpeechToTextBaseFlutter implements GeneralLibrarySpeechToTex
   @override
   bool get is_not_listening {
     if (flutter_is_support_flutter_stt) {
-      return SpeechToText().isNotListening;
+      return speechToText.isNotListening;
     }
     return false;
   }

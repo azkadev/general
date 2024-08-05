@@ -6,6 +6,7 @@ import 'package:example/page/gamepad/gamepad.dart';
 import 'package:example/page/local_auth/local_auth.dart';
 import 'package:example/page/permission/permission.dart';
 import 'package:example/page/sim_card/sim_card.dart';
+import 'package:example/page/speech_to_text/speech_to_text.dart';
 import 'package:example/page/text_to_speech/text_to_speech.dart';
 import 'package:flutter/material.dart';
 import 'package:general_lib_flutter/general_lib_flutter.dart';
@@ -170,7 +171,15 @@ class _HomePageGeneralAppState extends State<HomePageGeneralApp> {
         GeneralFeatureData(
           title: "Speech To Text",
           iconData: Icons.text_format,
-          onTap: (BuildContext context) {},
+          onTap: (BuildContext context) {
+            context.navigator().push(MaterialPageRoute(
+              builder: (context) {
+                return const SpeechToTextPage();
+              },
+            ));
+
+          }
+          ,
         ),
         GeneralFeatureData(
           title: "Text To Speech",
