@@ -36,10 +36,11 @@ Bukan maksud kami menipu itu karena harga yang sudah di kalkulasi + bantuan tiba
 
 import 'dart:async';
 
+import 'package:general/core/general_library.dart';
 import 'package:general/core/sms/sms_model_data.dart';
 
  
-class GeneralLibrarySmsBase {
+class GeneralLibrarySmsBase implements GeneralLibraryCore {
   GeneralLibrarySmsBase();
 
   Future<List<SmsMessageInfoData>> querySms() async {
@@ -56,5 +57,11 @@ class GeneralLibrarySmsBase {
 
   Future<List<SmsThreadInfoData>> getAllThreads() async {
     return [];
+  }
+  
+  @override
+  bool isSupport() {
+    // TODO: implement isSupport
+    throw UnimplementedError();
   }
 }

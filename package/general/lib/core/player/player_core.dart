@@ -34,10 +34,12 @@ Bukan maksud kami menipu itu karena harga yang sudah di kalkulasi + bantuan tiba
 <!-- END LICENSE --> */
 // ignore_for_file: non_constant_identifier_names, empty_catches
 
+import 'package:general/core/general_library.dart';
+
 import 'player_controller.dart';
 import 'package:media_kit/media_kit.dart';
 
-class GeneralLibraryPlayerBase {
+class GeneralLibraryPlayerBase implements GeneralLibraryCore {
   static List<GeneralLibraryPlayerControllerBase> players = [];
 
   GeneralLibraryPlayerBase();
@@ -115,5 +117,10 @@ class GeneralLibraryPlayerBase {
       players.removeWhere((element) => element.player_id == player_id);
     } catch (e) {}
     return;
+  }
+
+  @override
+  bool isSupport() {
+    return true;
   }
 }

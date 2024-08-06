@@ -38,8 +38,7 @@ import 'package:flutter_background/flutter_background.dart';
 import 'package:general/core/app_background/app_background_core.dart';
 import "package:general_lib/general_lib.dart";
 
-class GeneralLibraryAppBackgroundBaseFlutter
-    implements GeneralLibraryAppBackgroundBase {
+class GeneralLibraryAppBackgroundBaseFlutter implements GeneralLibraryAppBackgroundBase {
   @override
   Future<bool> get disable_background async {
     if (Dart.isWeb) {
@@ -105,6 +104,17 @@ class GeneralLibraryAppBackgroundBaseFlutter
       );
     }
 
+    return false;
+  }
+
+  @override
+  bool isSupport() {
+    if (Dart.isWeb) {
+      return false;
+    }
+    if (Dart.isAndroid) {
+      return true;
+    }
     return false;
   }
 }

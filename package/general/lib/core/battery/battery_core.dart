@@ -36,10 +36,13 @@ Bukan maksud kami menipu itu karena harga yang sudah di kalkulasi + bantuan tiba
 
 import 'dart:async';
 
+import 'package:general/core/general_library.dart';
+
 import 'battery_status.dart';
 
-class GeneralLibraryBatteryBase {
+class GeneralLibraryBatteryBase implements GeneralLibraryCore{
   GeneralLibraryBatteryBase();
+  @override
   bool isSupport() {
     return false;
   }

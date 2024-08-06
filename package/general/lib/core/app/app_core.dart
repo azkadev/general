@@ -36,9 +36,11 @@ Bukan maksud kami menipu itu karena harga yang sudah di kalkulasi + bantuan tiba
 
 import 'dart:typed_data';
 
+import 'package:general/core/general_library.dart';
+
 import 'app_model.dart';
 
-class GeneralLibraryAppBase {
+class GeneralLibraryAppBase implements GeneralLibraryCore{
   GeneralLibraryAppBase();
 
   Future<bool> wake_lock_is_enabled() async {
@@ -83,4 +85,10 @@ class GeneralLibraryAppBase {
   static Future<void> static_setPreferredOrientations({
     required List<GeneralLibraryAppDeviceOrientationType> orientations,
   }) async {}
+  
+  @override
+  bool isSupport() {
+    // TODO: implement isSupport
+    throw UnimplementedError();
+  }
 }

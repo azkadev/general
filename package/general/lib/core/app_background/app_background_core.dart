@@ -34,7 +34,9 @@ Bukan maksud kami menipu itu karena harga yang sudah di kalkulasi + bantuan tiba
 <!-- END LICENSE --> */
 // ignore_for_file: non_constant_identifier_names
 
-class GeneralLibraryAppBackgroundBase {
+import 'package:general/core/general_library.dart';
+
+class GeneralLibraryAppBackgroundBase implements GeneralLibraryCore {
   GeneralLibraryAppBackgroundBase();
 
   Future<bool> initialize({
@@ -58,5 +60,11 @@ class GeneralLibraryAppBackgroundBase {
 
   Future<bool> get disable_background async {
     return false;
+  }
+  
+  @override
+  bool isSupport() {
+    // TODO: implement isSupport
+    throw UnimplementedError();
   }
 }

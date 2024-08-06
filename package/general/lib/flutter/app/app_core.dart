@@ -130,6 +130,11 @@ class GeneralLibraryAppBaseFlutter implements GeneralLibraryAppBase {
   }) async {
     await SystemChrome.setPreferredOrientations(orientations);
   }
+
+  @override
+  bool isSupport() {
+    return true;
+  }
 }
 
 extension ExtensionListGeneralAppDeviceOriendaion on List<GeneralLibraryAppDeviceOrientationType> {

@@ -62,6 +62,11 @@ class GeneralLibrarySmsBaseFlutter implements GeneralLibrarySmsBase {
   }
 
   @override
+  bool isSupport() {
+    return flutter_is_support_flutter_sms;
+  }
+
+  @override
   Future<List<SmsMessageInfoData>> querySms() async {
     if (flutter_is_support_flutter_sms) {
       try {
@@ -134,4 +139,5 @@ class GeneralLibrarySmsBaseFlutter implements GeneralLibrarySmsBase {
     }
     return [];
   }
+
 }

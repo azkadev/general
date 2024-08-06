@@ -40,15 +40,14 @@ import 'package:general/core/general_library.dart';
 
 import 'pemission_type.dart';
 
-class GeneralLibraryPermissionBase implements GeneralLibraryCore{
+class GeneralLibraryPermissionBase implements GeneralLibraryCore {
   GeneralLibraryPermissionBase();
 
-  Future<void> auto_request(
-      {required List<PermissionType> permissionTypes}) async {}
-      
-        @override
-        bool isSupport() {
-          // TODO: implement isSupport
-          throw UnimplementedError();
-        }
+  Future<void> auto_request({required List<PermissionType> permissionTypes}) async {}
+
+  @override
+  bool isSupport() {
+    // TODO: implement isSupport
+    throw UnimplementedError();
+  }
 }
