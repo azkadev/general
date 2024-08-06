@@ -37,6 +37,7 @@ Bukan maksud kami menipu itu karena harga yang sudah di kalkulasi + bantuan tiba
 import 'package:flutter/material.dart';
 import 'package:general/core/camera/camera.dart';
 import 'package:flutter/foundation.dart';
+import 'package:general/flutter/camera/widget/camera_widget.dart';
 import 'package:universal_io/io.dart';
 
 import 'package:camera/camera.dart' as camera_package;
@@ -511,6 +512,35 @@ class GeneralLibraryCameraBaseFlutter implements GeneralLibraryCameraBase {
       }
     }
     return null;
+  }
+
+  @override
+  Widget widget({
+    Key? key,
+    BuildContext? context,
+  }) {
+    if (context == null) {
+      return SizedBox.shrink();
+    }
+    
+    return CameraWidget(
+      key: key,
+      generalLibraryCameraBase: this,
+      onCameraNotInit: (context) {
+        return const Text("camera not init");
+      },
+      onCameraNotSelect: (context) {
+        return const Text(
+          "Camera Not Select",
+        );
+      },
+      onCameraNotActive: (context) {
+        return const Text("Camera not active");
+      },
+      onPlatformNotSupported: (context) {
+        return const Text("not support");
+      },
+    );
   }
 }
 

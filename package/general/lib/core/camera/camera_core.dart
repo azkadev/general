@@ -43,4 +43,9 @@ class GeneralLibraryCameraBase implements GeneralLibraryCore {
   bool isSupport() {
     return false;
   }
+
+  dynamic widget(
+  ) {
+
+  }
 }

@@ -44,65 +44,77 @@ import 'core.dart';
 import 'notification/notification_core.dart';
 
 class GeneralLibrary {
-  GeneralLibrary();
+  final bool is_use_static;
+  const GeneralLibrary({
+    this.is_use_static = false,
+  });
 
-  GeneralLibraryAppBase get app {
+  static GeneralLibraryAppBase app_static = GeneralLibraryAppBase();
+
+  bool isUseStatic({required bool? isStatic}) {
+    return isStatic ?? is_use_static;
+  }
+
+  GeneralLibraryAppBase app({bool? isStatic}) {
+    if (isUseStatic(isStatic: isStatic)) {
+      return app_static;
+    }
     return GeneralLibraryAppBase();
   }
 
-  GeneralLibraryAppBackgroundBase get app_background {
+  GeneralLibraryAppBackgroundBase app_background({bool? isStatic}) {
     return GeneralLibraryAppBackgroundBase();
   }
 
-  GeneralLibraryBatteryBase get battery {
+  GeneralLibraryBatteryBase battery({bool? isStatic}) {
     return GeneralLibraryBatteryBase();
   }
 
-  GeneralLibraryCameraBase get camera {
+  GeneralLibraryCameraBase camera({bool? isStatic}) {
     return GeneralLibraryCameraBase();
   }
 
-  GeneralLibraryPermissionBase get permission {
+  GeneralLibraryPermissionBase permission({bool? isStatic}) {
     return GeneralLibraryPermissionBase();
   }
 
-  GeneralLibraryNotificationBase get notification {
+  GeneralLibraryNotificationBase notification({bool? isStatic}) {
     return GeneralLibraryNotificationBase();
   }
 
-  GeneralLibraryGamePadBase get gamepad {
+  GeneralLibraryGamePadBase gamepad({bool? isStatic}) {
     return GeneralLibraryGamePadBase();
   }
 
-  GeneralLibraryTextToSpeechBase get text_to_speech {
+  GeneralLibraryTextToSpeechBase text_to_speech({bool? isStatic}) {
     return GeneralLibraryTextToSpeechBase();
   }
 
-  GeneralLibraryDeviceBase get device {
+  GeneralLibraryDeviceBase device({bool? isStatic}) {
     return GeneralLibraryDeviceBase();
   }
 
-  GeneralLibrarySpeechToTextBase get speech_to_text {
+  GeneralLibrarySpeechToTextBase speech_to_text({bool? isStatic}) {
     return GeneralLibrarySpeechToTextBase();
   }
 
-  GeneralLibrarySimCardBase get sim_card {
+  GeneralLibrarySimCardBase sim_card({bool? isStatic}) {
     return GeneralLibrarySimCardBase();
   }
 
-  GeneralLibrarySmsBase get sms {
+  GeneralLibrarySmsBase sms({bool? isStatic}) {
     return GeneralLibrarySmsBase();
   }
 
-  GeneralLibraryPlayerBase get player {
+  GeneralLibraryPlayerBase player({bool? isStatic}) {
     return GeneralLibraryPlayerBase();
   }
 
-  // GeneralLibraryLocationBase get location {
+  // GeneralLibraryLocationBase location {
   //   return GeneralLibraryLocationBase();
   // }
 
-  GeneralLibraryLocalAuthBase get local_auth {
+  GeneralLibraryLocalAuthBase local_auth({bool? isStatic}) {
     return GeneralLibraryLocalAuthBase();
   }
 

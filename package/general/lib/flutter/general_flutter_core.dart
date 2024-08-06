@@ -53,7 +53,18 @@ import 'package:general/flutter/text_to_speech/text_to_speech_core.dart';
 
 /// GeneralFlutter
 class GeneralFlutter extends GeneralLibrary {
-  GeneralFlutter();
+  GeneralFlutter({
+    super.is_use_static,
+  });
+
+  @override
+  bool isUseStatic({required bool? isStatic}) {
+    return super.is_use_static;
+  }
+
+  // @override
+  // // TODO: implement is_use_static
+  // bool get is_use_static => super.is_use_static;
 
   @override
   void test() {
@@ -62,78 +73,152 @@ class GeneralFlutter extends GeneralLibrary {
     }
   }
 
-  @override
-  GeneralLibraryAppBackgroundBaseFlutter get app_background {
-    return GeneralLibraryAppBackgroundBaseFlutter();
-  }
+  static GeneralLibraryAppBaseFlutter app_static = GeneralLibraryAppBaseFlutter();
 
   @override
-  GeneralLibraryCameraBaseFlutter get camera {
-    return GeneralLibraryCameraBaseFlutter();
-  }
-
-  @override
-  GeneralLibraryPermissionBaseFlutter get permission {
-    return GeneralLibraryPermissionBaseFlutter();
-  }
-
-  @override
-  GeneralLibraryNotificationBaseFlutter get notification {
-    return GeneralLibraryNotificationBaseFlutter();
-  }
-
-  @override
-  GeneralLibraryBatteryBaseFlutter get battery {
-    return GeneralLibraryBatteryBaseFlutter();
-  }
-
-  @override
-  GeneralLibraryTextToSpeechBaseFlutter get text_to_speech {
-    return GeneralLibraryTextToSpeechBaseFlutter();
-  }
-
-  @override
-  GeneralLibraryDeviceBaseFlutter get device {
-    return GeneralLibraryDeviceBaseFlutter();
-  }
-
-  @override
-  GeneralLibraryGamePadBaseFlutter get gamepad {
-    return GeneralLibraryGamePadBaseFlutter();
-  }
-
-  @override
-  GeneralLibrarySpeechToTextBaseFlutter get speech_to_text {
-    return GeneralLibrarySpeechToTextBaseFlutter();
-  }
-
-  @override
-  GeneralLibrarySimCardBaseFlutter get sim_card {
-    return GeneralLibrarySimCardBaseFlutter();
-  }
-
-  @override
-  GeneralLibrarySmsBaseFlutter get sms {
-    return GeneralLibrarySmsBaseFlutter();
-  }
-
-  @override
-  GeneralLibraryAppBaseFlutter get app {
+  GeneralLibraryAppBaseFlutter app({bool? isStatic}) {
+    if (isUseStatic(isStatic: isStatic)) {
+      return app_static;
+    }
     return GeneralLibraryAppBaseFlutter();
   }
 
+  static GeneralLibraryAppBackgroundBaseFlutter app_background_static = GeneralLibraryAppBackgroundBaseFlutter();
+
   @override
-  GeneralLibraryLocalAuthBaseFlutter get local_auth {
+  GeneralLibraryAppBackgroundBaseFlutter app_background({bool? isStatic}) {
+    if (isUseStatic(isStatic: isStatic)) {
+      return app_background_static;
+    }
+    return GeneralLibraryAppBackgroundBaseFlutter();
+  }
+
+  static GeneralLibraryCameraBaseFlutter camera_static = GeneralLibraryCameraBaseFlutter();
+
+  @override
+  GeneralLibraryCameraBaseFlutter camera({bool? isStatic}) {
+    if (isUseStatic(isStatic: isStatic)) {
+      return camera_static;
+    }
+    return GeneralLibraryCameraBaseFlutter();
+  }
+
+  static GeneralLibraryPermissionBaseFlutter permission_static = GeneralLibraryPermissionBaseFlutter();
+
+  @override
+  GeneralLibraryPermissionBaseFlutter permission({bool? isStatic}) {
+    if (isUseStatic(isStatic: isStatic)) {
+      return permission_static;
+    }
+    return GeneralLibraryPermissionBaseFlutter();
+  }
+
+  static GeneralLibraryNotificationBaseFlutter notification_static = GeneralLibraryNotificationBaseFlutter();
+
+  @override
+  GeneralLibraryNotificationBaseFlutter notification({bool? isStatic}) {
+    if (isUseStatic(isStatic: isStatic)) {
+      return notification_static;
+    }
+
+    return GeneralLibraryNotificationBaseFlutter();
+  }
+
+  static GeneralLibraryBatteryBaseFlutter battery_static = GeneralLibraryBatteryBaseFlutter();
+
+  @override
+  GeneralLibraryBatteryBaseFlutter battery({bool? isStatic}) {
+    if (isUseStatic(isStatic: isStatic)) {
+      return battery_static;
+    }
+    return GeneralLibraryBatteryBaseFlutter();
+  }
+
+  static GeneralLibraryTextToSpeechBaseFlutter text_to_speech_static = GeneralLibraryTextToSpeechBaseFlutter();
+
+  @override
+  GeneralLibraryTextToSpeechBaseFlutter text_to_speech({bool? isStatic}) {
+    if (isUseStatic(isStatic: isStatic)) {
+      return text_to_speech_static;
+    }
+    return GeneralLibraryTextToSpeechBaseFlutter();
+  }
+
+  static GeneralLibraryDeviceBaseFlutter device_static = GeneralLibraryDeviceBaseFlutter();
+
+  @override
+  GeneralLibraryDeviceBaseFlutter device({
+    bool? isStatic,
+  }) {
+    if (isUseStatic(isStatic: isStatic)) {
+      return device_static;
+    }
+
+    return GeneralLibraryDeviceBaseFlutter();
+  }
+
+  static GeneralLibraryGamePadBaseFlutter gamepad_static = GeneralLibraryGamePadBaseFlutter();
+
+  @override
+  GeneralLibraryGamePadBaseFlutter gamepad({bool? isStatic}) {
+    if (isUseStatic(isStatic: isStatic)) {
+      return gamepad_static;
+    }
+    return GeneralLibraryGamePadBaseFlutter();
+  }
+
+  static GeneralLibrarySpeechToTextBaseFlutter speech_to_text_static = GeneralLibrarySpeechToTextBaseFlutter();
+
+  @override
+  GeneralLibrarySpeechToTextBaseFlutter speech_to_text({bool? isStatic}) {
+    if (isUseStatic(isStatic: isStatic)) {
+      return speech_to_text_static;
+    }
+    return GeneralLibrarySpeechToTextBaseFlutter();
+  }
+
+  static GeneralLibrarySimCardBaseFlutter sim_card_static = GeneralLibrarySimCardBaseFlutter();
+
+  @override
+  GeneralLibrarySimCardBaseFlutter sim_card({bool? isStatic}) {
+    if (isUseStatic(isStatic: isStatic)) {
+      return sim_card_static;
+    }
+    return GeneralLibrarySimCardBaseFlutter();
+  }
+
+  static GeneralLibrarySmsBaseFlutter sms_static = GeneralLibrarySmsBaseFlutter();
+  @override
+  GeneralLibrarySmsBaseFlutter sms({bool? isStatic}) {
+    if (isUseStatic(isStatic: isStatic)) {
+      return sms_static;
+    }
+    return GeneralLibrarySmsBaseFlutter();
+  }
+
+  static GeneralLibraryLocalAuthBaseFlutter local_auth_static = GeneralLibraryLocalAuthBaseFlutter();
+
+  @override
+  GeneralLibraryLocalAuthBaseFlutter local_auth({bool? isStatic}) {
+    if (isUseStatic(isStatic: isStatic)) {
+      return local_auth_static;
+    }
     return GeneralLibraryLocalAuthBaseFlutter();
   }
 
   // @override
-  // GeneralLibraryLocationBaseFlutter get location {
+  // GeneralLibraryLocationBaseFlutter  location {
   //   return GeneralLibraryLocationBaseFlutter();
   // }
 
+  static GeneralLibraryPlayerBase player_static = GeneralLibraryPlayerBase();
+
   @override
-  GeneralLibraryPlayerBase get player {
+  GeneralLibraryPlayerBase player({bool? isStatic}) {
+    if (isUseStatic(isStatic: isStatic)) {
+      return player_static;
+    }
+
     return GeneralLibraryPlayerBase();
   }
 }
