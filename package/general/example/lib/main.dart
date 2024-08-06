@@ -11,7 +11,8 @@ void main(List<String> args) {
 
 class GeneralExampleMainApp extends StatelessWidget {
   static GeneralLibFlutterApp generalLibFlutterApp = GeneralLibFlutterApp();
-  static GeneralFlutter generalFlutter = GeneralFlutter();
+  static GeneralFlutter generalFlutter = GeneralFlutter(
+  );
   const GeneralExampleMainApp({super.key});
 
   @override
