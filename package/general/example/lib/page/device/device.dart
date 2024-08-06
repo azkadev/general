@@ -48,7 +48,7 @@ class DevicePage extends StatefulWidget {
 }
 
 class _DevicePageState extends State<DevicePage> {
-  final GeneralLibraryDeviceBaseFlutter device = GeneralExampleMainApp.generalFlutter.device;
+  final GeneralLibraryDeviceBaseFlutter device = GeneralExampleMainApp.generalFlutter.device();
   @override
   void initState() {
     super.initState();

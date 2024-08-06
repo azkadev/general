@@ -51,7 +51,7 @@ class GamePadPage extends StatefulWidget {
 }
 
 class _GamePadPageState extends State<GamePadPage> {
-  final GeneralLibraryGamePadBaseFlutter gamepad = GeneralExampleMainApp.generalFlutter.gamepad;
+  final GeneralLibraryGamePadBaseFlutter gamepad = GeneralExampleMainApp.generalFlutter.gamepad();
   @override
   void initState() {
     super.initState();

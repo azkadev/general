@@ -48,7 +48,7 @@ class LocalAuthPage extends StatefulWidget {
 }
 
 class _LocalAuthPageState extends State<LocalAuthPage> {
-  final GeneralLibraryLocalAuthBaseFlutter local_auth = GeneralExampleMainApp.generalFlutter.local_auth;
+  final GeneralLibraryLocalAuthBaseFlutter local_auth = GeneralExampleMainApp.generalFlutter.local_auth();
   @override
   void initState() {
     super.initState();

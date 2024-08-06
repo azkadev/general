@@ -49,7 +49,7 @@ class SimCardPage extends StatefulWidget {
 }
 
 class _SimCardPageState extends State<SimCardPage> {
-  final GeneralLibrarySimCardBaseFlutter sim_card = GeneralExampleMainApp.generalFlutter.sim_card;
+  final GeneralLibrarySimCardBaseFlutter sim_card = GeneralExampleMainApp.generalFlutter.sim_card();
   @override
   void initState() {
     super.initState();

@@ -49,7 +49,7 @@ class BatteryPage extends StatefulWidget {
 }
 
 class _BatteryPageState extends State<BatteryPage> {
-  final GeneralLibraryBatteryBaseFlutter battery = GeneralExampleMainApp.generalFlutter.battery;
+  final GeneralLibraryBatteryBaseFlutter battery = GeneralExampleMainApp.generalFlutter.battery();
   @override
   void initState() {
     super.initState();

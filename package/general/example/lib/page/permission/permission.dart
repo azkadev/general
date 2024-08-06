@@ -49,7 +49,7 @@ class PermissionPage extends StatefulWidget {
 }
 
 class _PermissionPageState extends State<PermissionPage> {
-  final GeneralLibraryPermissionBaseFlutter permission = GeneralExampleMainApp.generalFlutter.permission;
+  final GeneralLibraryPermissionBaseFlutter permission = GeneralExampleMainApp.generalFlutter.permission();
   @override
   void initState() {
     super.initState();

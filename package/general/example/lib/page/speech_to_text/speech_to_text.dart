@@ -49,7 +49,7 @@ class SpeechToTextPage extends StatefulWidget {
 }
 
 class _SpeechToTextPageState extends State<SpeechToTextPage> {
-  final GeneralLibrarySpeechToTextBaseFlutter speech_to_text = GeneralExampleMainApp.generalFlutter.speech_to_text;
+  final GeneralLibrarySpeechToTextBaseFlutter speech_to_text = GeneralExampleMainApp.generalFlutter.speech_to_text();
   final TextEditingController textEditingController = TextEditingController();
   @override
   void initState() {

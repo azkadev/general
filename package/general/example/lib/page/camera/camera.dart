@@ -48,7 +48,7 @@ class CameraPage extends StatefulWidget {
 }
 
 class _CameraPageState extends State<CameraPage> {
-  final GeneralLibraryCameraBaseFlutter camera = GeneralExampleMainApp.generalFlutter.camera;
+  final GeneralLibraryCameraBaseFlutter camera = GeneralExampleMainApp.generalFlutter.camera();
   @override
   void initState() {
     super.initState();
@@ -97,6 +97,7 @@ class _CameraPageState extends State<CameraPage> {
   // --- code
   @override
   Widget build(BuildContext context) {
+    
     return Scaffold(
       appBar: AppBar(
         title: const Text(
@@ -121,21 +122,8 @@ class _CameraPageState extends State<CameraPage> {
               SizedBox(
                 height: context.height - 10,
                 width: context.width - 10,
-                child: CameraWidget(
-                  generalLibraryCameraBase: camera,
-                  onCameraNotInit: (context) {
-                    return const Text("camera not init");
-                  },
-                  onCameraNotSelect: (context) {
-                    return const Text("Camera Not Select");
-                  },
-                  onCameraNotActive: (context) {
-                    return const Text("Camera not active");
-                  },
-                  onPlatformNotSupported: (context) {
-                    return const Text("not support");
-                  },
-                ),
+                child:   camera.widget(),
+                
               ),
             ],
           ),
