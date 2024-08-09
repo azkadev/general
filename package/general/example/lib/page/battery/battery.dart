@@ -39,7 +39,6 @@ import 'package:example/widget/support_feature_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:general/flutter/battery/battery.dart';
 
-import 'package:general_lib_flutter/extension/build_context.dart';
 import 'package:general_lib_flutter/general_lib_flutter.dart';
 
 class BatteryPage extends StatefulWidget {
@@ -49,7 +48,8 @@ class BatteryPage extends StatefulWidget {
 }
 
 class _BatteryPageState extends State<BatteryPage> {
-  final GeneralLibraryBatteryBaseFlutter battery = GeneralExampleMainApp.generalFlutter.battery();
+  final GeneralLibraryBatteryBaseFlutter battery =
+      GeneralExampleMainApp.generalFlutter.battery();
   @override
   void initState() {
     super.initState();
@@ -97,7 +97,8 @@ class _BatteryPageState extends State<BatteryPage> {
               ),
               SupportFeatureWidget(
                 isSupport: battery.isSupport(),
-                reason_no_support: "Saat ini hanya tersedia di platform android",
+                reason_no_support:
+                    "Saat ini hanya tersedia di platform android",
               ),
               FutureBuilder(
                 future: battery.status_type,
@@ -120,7 +121,7 @@ class _BatteryPageState extends State<BatteryPage> {
             ],
           ),
         ),
-      ), 
+      ),
     );
   }
 }

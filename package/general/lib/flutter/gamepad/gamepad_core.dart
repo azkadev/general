@@ -64,7 +64,8 @@ class GeneralLibraryGamePadBaseFlutter implements GeneralLibraryGamePadBase {
 
     await for (GamepadEvent event in Gamepads.events) {
       // Gamepads.events.listen((GamepadEvent event) {
-      GamePadControllerEventKeyType gamePadControllerEventKeyType = GamePadControllerEventKeyType.analog;
+      GamePadControllerEventKeyType gamePadControllerEventKeyType =
+          GamePadControllerEventKeyType.analog;
       if (event.type == KeyType.button) {
         gamePadControllerEventKeyType = GamePadControllerEventKeyType.button;
       }

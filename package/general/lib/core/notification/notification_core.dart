@@ -61,7 +61,7 @@ class GeneralLibraryNotificationBase implements GeneralLibraryCore {
   }) async {
     return false;
   }
-  
+
   @override
   bool isSupport() {
     // TODO: implement isSupport

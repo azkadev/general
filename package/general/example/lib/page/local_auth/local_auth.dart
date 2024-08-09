@@ -48,7 +48,8 @@ class LocalAuthPage extends StatefulWidget {
 }
 
 class _LocalAuthPageState extends State<LocalAuthPage> {
-  final GeneralLibraryLocalAuthBaseFlutter local_auth = GeneralExampleMainApp.generalFlutter.local_auth();
+  final GeneralLibraryLocalAuthBaseFlutter local_auth =
+      GeneralExampleMainApp.generalFlutter.local_auth();
   @override
   void initState() {
     super.initState();
@@ -96,7 +97,8 @@ class _LocalAuthPageState extends State<LocalAuthPage> {
               ),
               SupportFeatureWidget(
                 isSupport: local_auth.isSupport(),
-                reason_no_support: "Saat ini hanya tersedia di platform android",
+                reason_no_support:
+                    "Saat ini hanya tersedia di platform android",
               ),
               FutureBuilder(
                 future: local_auth.can_check_biometrics,
@@ -104,7 +106,8 @@ class _LocalAuthPageState extends State<LocalAuthPage> {
                   if (snapshot.connectionState.isLoading) {
                     return const CircularProgressIndicator();
                   }
-                  return Text("can_check_biometrics: ${snapshot.data ?? "unknown"}");
+                  return Text(
+                      "can_check_biometrics: ${snapshot.data ?? "unknown"}");
                 },
               ),
               FutureBuilder(
@@ -113,7 +116,8 @@ class _LocalAuthPageState extends State<LocalAuthPage> {
                   if (snapshot.connectionState.isLoading) {
                     return const CircularProgressIndicator();
                   }
-                  return Text("is_device_support: ${snapshot.data ?? "unknown"}");
+                  return Text(
+                      "is_device_support: ${snapshot.data ?? "unknown"}");
                 },
               ),
               // Container(

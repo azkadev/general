@@ -41,7 +41,8 @@ import 'package:general/flutter/speech_to_text/extension/listen_mode_type_to_lis
 import "package:general_lib/general_lib.dart";
 import 'package:speech_to_text/speech_to_text.dart';
 
-class GeneralLibrarySpeechToTextBaseFlutter implements GeneralLibrarySpeechToTextBase {
+class GeneralLibrarySpeechToTextBaseFlutter
+    implements GeneralLibrarySpeechToTextBase {
   final SpeechToText speechToText = SpeechToText();
   GeneralLibrarySpeechToTextBaseFlutter();
   bool get isIOS => !Dart.isWeb && Dart.isIOS;
@@ -98,7 +99,6 @@ class GeneralLibrarySpeechToTextBaseFlutter implements GeneralLibrarySpeechToTex
     // StreamController<String> streamController = StreamController<String>();
 
     if (flutter_is_support_flutter_stt) {
-      
       await speechToText.listen(
         onResult: (result) {
           onResult(result.recognizedWords);

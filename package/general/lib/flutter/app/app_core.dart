@@ -41,7 +41,8 @@ import 'package:general_lib_flutter/extension/build_context.dart';
 import 'package:wakelock_plus/wakelock_plus.dart';
 
 class GeneralLibraryAppBaseFlutter implements GeneralLibraryAppBase {
-  static GlobalKey<NavigatorState> flutter_navigator_key = GlobalKey<NavigatorState>();
+  static GlobalKey<NavigatorState> flutter_navigator_key =
+      GlobalKey<NavigatorState>();
   static GlobalKey flutter_repaint_boundery_key = GlobalKey();
   @override
   Future<bool> wake_lock_is_enabled() async {
@@ -77,7 +78,8 @@ class GeneralLibraryAppBaseFlutter implements GeneralLibraryAppBase {
   @override
   Future<Uint8List?> screenshot_current_widget() async {
     try {
-      BuildContext? context = GeneralLibraryAppBaseFlutter.flutter_repaint_boundery_key.currentContext;
+      BuildContext? context = GeneralLibraryAppBaseFlutter
+          .flutter_repaint_boundery_key.currentContext;
       if (context != null) {
         try {
           return await context.toImagePng();
@@ -92,7 +94,8 @@ class GeneralLibraryAppBaseFlutter implements GeneralLibraryAppBase {
     required String message,
   }) {
     try {
-      BuildContext? context = GeneralLibraryAppBaseFlutter.flutter_navigator_key.currentContext;
+      BuildContext? context =
+          GeneralLibraryAppBaseFlutter.flutter_navigator_key.currentContext;
       if (context != null) {
         context.showSnackBar(message);
       }
@@ -108,7 +111,8 @@ class GeneralLibraryAppBaseFlutter implements GeneralLibraryAppBase {
     if (isFullScreen) {
       await SystemChrome.setEnabledSystemUIMode(SystemUiMode.immersiveSticky);
     } else {
-      await SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual, overlays: SystemUiOverlay.values);
+      await SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual,
+          overlays: SystemUiOverlay.values);
     }
   }
 
@@ -122,7 +126,8 @@ class GeneralLibraryAppBaseFlutter implements GeneralLibraryAppBase {
   static Future<void> static_setPreferredOrientations({
     required List<GeneralLibraryAppDeviceOrientationType> orientations,
   }) async {
-    static_flutter_setPreferredOrientations(orientations: orientations.toFlutter());
+    static_flutter_setPreferredOrientations(
+        orientations: orientations.toFlutter());
   }
 
   static Future<void> static_flutter_setPreferredOrientations({
@@ -137,8 +142,12 @@ class GeneralLibraryAppBaseFlutter implements GeneralLibraryAppBase {
   }
 }
 
-extension ExtensionListGeneralAppDeviceOriendaion on List<GeneralLibraryAppDeviceOrientationType> {
+extension ExtensionListGeneralAppDeviceOriendaion
+    on List<GeneralLibraryAppDeviceOrientationType> {
   List<DeviceOrientation> toFlutter() {
-    return map((e) => DeviceOrientation.values.singleWhere((element) => element.name == e.name)).whereType<DeviceOrientation>().toList();
+    return map((e) => DeviceOrientation.values
+            .singleWhere((element) => element.name == e.name))
+        .whereType<DeviceOrientation>()
+        .toList();
   }
 }

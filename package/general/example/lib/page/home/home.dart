@@ -19,7 +19,8 @@ class HomePageGeneralApp extends StatefulWidget {
 }
 
 class _HomePageGeneralAppState extends State<HomePageGeneralApp> {
-  final ScrollControllerAutoKeepStateData scrollControllerAutoKeepStateData = ScrollControllerAutoKeepStateData(
+  final ScrollControllerAutoKeepStateData scrollControllerAutoKeepStateData =
+      ScrollControllerAutoKeepStateData(
     keyId: "home_page_general_app",
   );
   @override
@@ -90,8 +91,6 @@ class _HomePageGeneralAppState extends State<HomePageGeneralApp> {
           title: "Gamepad / Joystick",
           iconData: Icons.gamepad,
           onTap: (BuildContext context) {
-
-
             context.navigator().push(MaterialPageRoute(
               builder: (context) {
                 return const GamePadPage();
@@ -103,13 +102,11 @@ class _HomePageGeneralAppState extends State<HomePageGeneralApp> {
           title: "Local Auth",
           iconData: Icons.fingerprint,
           onTap: (BuildContext context) {
-
             context.navigator().push(MaterialPageRoute(
               builder: (context) {
                 return const LocalAuthPage();
               },
             ));
-
           },
         ),
         GeneralFeatureData(
@@ -126,13 +123,11 @@ class _HomePageGeneralAppState extends State<HomePageGeneralApp> {
           title: "Permission",
           iconData: Icons.security,
           onTap: (BuildContext context) {
-            
             context.navigator().push(MaterialPageRoute(
               builder: (context) {
                 return const PermissionPage();
               },
             ));
-
           },
         ),
         GeneralFeatureData(
@@ -144,23 +139,11 @@ class _HomePageGeneralAppState extends State<HomePageGeneralApp> {
           title: "Sim Card",
           iconData: Icons.sim_card,
           onTap: (BuildContext context) {
-
-
-
             context.navigator().push(MaterialPageRoute(
               builder: (context) {
                 return const SimCardPage();
               },
             ));
-
-
-
-
-
-
-
-
-            
           },
         ),
         GeneralFeatureData(
@@ -177,9 +160,7 @@ class _HomePageGeneralAppState extends State<HomePageGeneralApp> {
                 return const SpeechToTextPage();
               },
             ));
-
-          }
-          ,
+          },
         ),
         GeneralFeatureData(
           title: "Text To Speech",
@@ -204,7 +185,8 @@ class _HomePageGeneralAppState extends State<HomePageGeneralApp> {
         builder: (context, pageStorageBucket) {
           return SingleChildScrollView(
             controller: scrollControllerAutoKeepStateData.scroll_controller,
-            physics: const AlwaysScrollableScrollPhysics(parent: BouncingScrollPhysics()),
+            physics: const AlwaysScrollableScrollPhysics(
+                parent: BouncingScrollPhysics()),
             child: ConstrainedBox(
               constraints: BoxConstraints(
                 minHeight: context.height,
@@ -217,9 +199,11 @@ class _HomePageGeneralAppState extends State<HomePageGeneralApp> {
                     height: context.mediaQueryData.padding.top,
                   ));
 
-                  final List<GeneralFeatureData> general_feature_datas = generalFeatureDatas;
+                  final List<GeneralFeatureData> general_feature_datas =
+                      generalFeatureDatas;
                   for (var i = 0; i < general_feature_datas.length; i++) {
-                    final GeneralFeatureData generalFeatureData = general_feature_datas[i];
+                    final GeneralFeatureData generalFeatureData =
+                        general_feature_datas[i];
                     final ListTile child = ListTile(
                       contentPadding: const EdgeInsets.all(10),
                       leading: Icon(generalFeatureData.iconData),

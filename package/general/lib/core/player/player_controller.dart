@@ -39,7 +39,8 @@ import 'dart:typed_data';
 import 'package:general/core/player/player_model_data.dart';
 import 'package:media_kit/media_kit.dart';
 
-extension GeneralLibraryPlayerMediaBaseExtesnion on GeneralLibraryPlayerMediaBase {
+extension GeneralLibraryPlayerMediaBaseExtesnion
+    on GeneralLibraryPlayerMediaBase {
   Media toMediaMediaKit() {
     return Media(
       resource,
@@ -49,7 +50,8 @@ extension GeneralLibraryPlayerMediaBaseExtesnion on GeneralLibraryPlayerMediaBas
   }
 }
 
-extension GeneralLibraryPlayerPlayListBaseExtension on GeneralLibraryPlayerPlayListBase {
+extension GeneralLibraryPlayerPlayListBaseExtension
+    on GeneralLibraryPlayerPlayListBase {
   Playlist toPlayListMediaKit() {
     return Playlist(
       medias.map(
@@ -62,7 +64,7 @@ extension GeneralLibraryPlayerPlayListBaseExtension on GeneralLibraryPlayerPlayL
   }
 }
 
-class GeneralLibraryPlayerControllerBase  {
+class GeneralLibraryPlayerControllerBase {
   String player_id;
   Player player = Player();
   GeneralLibraryPlayerControllerBase({

@@ -41,7 +41,8 @@ import 'package:general/flutter/permission/extension/permission_type_to_permissi
 import "package:general_lib/general_lib.dart";
 import 'package:permission_handler/permission_handler.dart';
 
-class GeneralLibraryPermissionBaseFlutter implements GeneralLibraryPermissionBase {
+class GeneralLibraryPermissionBaseFlutter
+    implements GeneralLibraryPermissionBase {
   @override
   Future<void> auto_request({
     required List<PermissionType> permissionTypes,

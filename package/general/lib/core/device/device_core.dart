@@ -36,7 +36,7 @@ Bukan maksud kami menipu itu karena harga yang sudah di kalkulasi + bantuan tiba
 
 import 'package:general/core/general_library.dart';
 
-class GeneralLibraryDeviceBase implements GeneralLibraryCore{
+class GeneralLibraryDeviceBase implements GeneralLibraryCore {
   GeneralLibraryDeviceBase();
 
   Future<bool> get is_jailbroken async {
@@ -97,7 +97,7 @@ class GeneralLibraryDeviceBase implements GeneralLibraryCore{
   Future<bool> wake_lock_is_enable() async {
     return await wake_lock_is_enable_static();
   }
-  
+
   @override
   bool isSupport() {
     // TODO: implement isSupport

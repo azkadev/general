@@ -40,7 +40,7 @@ import 'package:general/core/general_library.dart';
 
 import 'app_model.dart';
 
-class GeneralLibraryAppBase implements GeneralLibraryCore{
+class GeneralLibraryAppBase implements GeneralLibraryCore {
   GeneralLibraryAppBase();
 
   Future<bool> wake_lock_is_enabled() async {
@@ -85,7 +85,7 @@ class GeneralLibraryAppBase implements GeneralLibraryCore{
   static Future<void> static_setPreferredOrientations({
     required List<GeneralLibraryAppDeviceOrientationType> orientations,
   }) async {}
-  
+
   @override
   bool isSupport() {
     // TODO: implement isSupport

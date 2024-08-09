@@ -47,7 +47,7 @@ class GeneralLibrarySimCardBase implements GeneralLibraryCore {
   Future<List<SimCardInfoData>> getSimcards() async {
     return [];
   }
-  
+
   @override
   bool isSupport() {
     // TODO: implement isSupport

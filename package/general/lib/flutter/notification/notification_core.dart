@@ -40,7 +40,8 @@ import 'package:general_lib/general_lib.dart';
 
 import "package:general/core/notification/notification_core.dart";
 
-class GeneralLibraryNotificationBaseFlutter extends GeneralLibraryNotificationBase {
+class GeneralLibraryNotificationBaseFlutter
+    extends GeneralLibraryNotificationBase {
   GeneralLibraryNotificationBaseFlutter();
 
   @override

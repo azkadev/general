@@ -59,7 +59,8 @@ class GeneralLibraryBatteryBaseFlutter implements GeneralLibraryBatteryBase {
     return BatteryStatusType.unknown;
   }
 
-  BatteryStatusType autoChangeBatteryStatus({required BatteryState batteryState}) {
+  BatteryStatusType autoChangeBatteryStatus(
+      {required BatteryState batteryState}) {
     try {
       if (batteryState == BatteryState.charging) {
         return BatteryStatusType.charging;

@@ -38,7 +38,8 @@ import 'package:general/core/core.dart';
 import 'package:general_lib/general_lib.dart';
 import 'package:local_auth/local_auth.dart';
 
-class GeneralLibraryLocalAuthBaseFlutter implements GeneralLibraryLocalAuthBase {
+class GeneralLibraryLocalAuthBaseFlutter
+    implements GeneralLibraryLocalAuthBase {
   GeneralLibraryLocalAuthBaseFlutter();
   final LocalAuthentication localAuthentication = LocalAuthentication();
 
@@ -89,7 +90,6 @@ class GeneralLibraryLocalAuthBaseFlutter implements GeneralLibraryLocalAuthBase 
   @override
   Future<bool> stopAuthentication() async {
     if (is_support_local_auth) {
-    
       return await localAuthentication.stopAuthentication();
     }
     return false;

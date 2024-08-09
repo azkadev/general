@@ -39,7 +39,6 @@ import 'dart:async';
 import 'package:general/core/general_library.dart';
 import 'package:general/core/sms/sms_model_data.dart';
 
- 
 class GeneralLibrarySmsBase implements GeneralLibraryCore {
   GeneralLibrarySmsBase();
 
@@ -58,7 +57,7 @@ class GeneralLibrarySmsBase implements GeneralLibraryCore {
   Future<List<SmsThreadInfoData>> getAllThreads() async {
     return [];
   }
-  
+
   @override
   bool isSupport() {
     // TODO: implement isSupport

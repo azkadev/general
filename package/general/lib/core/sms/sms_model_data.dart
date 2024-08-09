@@ -38,7 +38,6 @@ import 'dart:typed_data';
 
 import 'package:general/core/utils.dart';
 
- 
 class SmsPhotoInfoData {
   Uint8List? bytes;
   SmsPhotoInfoData({

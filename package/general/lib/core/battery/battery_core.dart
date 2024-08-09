@@ -40,7 +40,7 @@ import 'package:general/core/general_library.dart';
 
 import 'battery_status.dart';
 
-class GeneralLibraryBatteryBase implements GeneralLibraryCore{
+class GeneralLibraryBatteryBase implements GeneralLibraryCore {
   GeneralLibraryBatteryBase();
   @override
   bool isSupport() {

@@ -73,7 +73,8 @@ class GeneralFlutter extends GeneralLibrary {
     }
   }
 
-  static GeneralLibraryAppBaseFlutter app_static = GeneralLibraryAppBaseFlutter();
+  static GeneralLibraryAppBaseFlutter app_static =
+      GeneralLibraryAppBaseFlutter();
 
   @override
   GeneralLibraryAppBaseFlutter app({bool? isStatic}) {
@@ -83,7 +84,8 @@ class GeneralFlutter extends GeneralLibrary {
     return GeneralLibraryAppBaseFlutter();
   }
 
-  static GeneralLibraryAppBackgroundBaseFlutter app_background_static = GeneralLibraryAppBackgroundBaseFlutter();
+  static GeneralLibraryAppBackgroundBaseFlutter app_background_static =
+      GeneralLibraryAppBackgroundBaseFlutter();
 
   @override
   GeneralLibraryAppBackgroundBaseFlutter app_background({bool? isStatic}) {
@@ -93,7 +95,8 @@ class GeneralFlutter extends GeneralLibrary {
     return GeneralLibraryAppBackgroundBaseFlutter();
   }
 
-  static GeneralLibraryCameraBaseFlutter camera_static = GeneralLibraryCameraBaseFlutter();
+  static GeneralLibraryCameraBaseFlutter camera_static =
+      GeneralLibraryCameraBaseFlutter();
 
   @override
   GeneralLibraryCameraBaseFlutter camera({bool? isStatic}) {
@@ -103,7 +106,8 @@ class GeneralFlutter extends GeneralLibrary {
     return GeneralLibraryCameraBaseFlutter();
   }
 
-  static GeneralLibraryPermissionBaseFlutter permission_static = GeneralLibraryPermissionBaseFlutter();
+  static GeneralLibraryPermissionBaseFlutter permission_static =
+      GeneralLibraryPermissionBaseFlutter();
 
   @override
   GeneralLibraryPermissionBaseFlutter permission({bool? isStatic}) {
@@ -113,7 +117,8 @@ class GeneralFlutter extends GeneralLibrary {
     return GeneralLibraryPermissionBaseFlutter();
   }
 
-  static GeneralLibraryNotificationBaseFlutter notification_static = GeneralLibraryNotificationBaseFlutter();
+  static GeneralLibraryNotificationBaseFlutter notification_static =
+      GeneralLibraryNotificationBaseFlutter();
 
   @override
   GeneralLibraryNotificationBaseFlutter notification({bool? isStatic}) {
@@ -124,7 +129,8 @@ class GeneralFlutter extends GeneralLibrary {
     return GeneralLibraryNotificationBaseFlutter();
   }
 
-  static GeneralLibraryBatteryBaseFlutter battery_static = GeneralLibraryBatteryBaseFlutter();
+  static GeneralLibraryBatteryBaseFlutter battery_static =
+      GeneralLibraryBatteryBaseFlutter();
 
   @override
   GeneralLibraryBatteryBaseFlutter battery({bool? isStatic}) {
@@ -134,7 +140,8 @@ class GeneralFlutter extends GeneralLibrary {
     return GeneralLibraryBatteryBaseFlutter();
   }
 
-  static GeneralLibraryTextToSpeechBaseFlutter text_to_speech_static = GeneralLibraryTextToSpeechBaseFlutter();
+  static GeneralLibraryTextToSpeechBaseFlutter text_to_speech_static =
+      GeneralLibraryTextToSpeechBaseFlutter();
 
   @override
   GeneralLibraryTextToSpeechBaseFlutter text_to_speech({bool? isStatic}) {
@@ -144,7 +151,8 @@ class GeneralFlutter extends GeneralLibrary {
     return GeneralLibraryTextToSpeechBaseFlutter();
   }
 
-  static GeneralLibraryDeviceBaseFlutter device_static = GeneralLibraryDeviceBaseFlutter();
+  static GeneralLibraryDeviceBaseFlutter device_static =
+      GeneralLibraryDeviceBaseFlutter();
 
   @override
   GeneralLibraryDeviceBaseFlutter device({
@@ -157,7 +165,8 @@ class GeneralFlutter extends GeneralLibrary {
     return GeneralLibraryDeviceBaseFlutter();
   }
 
-  static GeneralLibraryGamePadBaseFlutter gamepad_static = GeneralLibraryGamePadBaseFlutter();
+  static GeneralLibraryGamePadBaseFlutter gamepad_static =
+      GeneralLibraryGamePadBaseFlutter();
 
   @override
   GeneralLibraryGamePadBaseFlutter gamepad({bool? isStatic}) {
@@ -167,7 +176,8 @@ class GeneralFlutter extends GeneralLibrary {
     return GeneralLibraryGamePadBaseFlutter();
   }
 
-  static GeneralLibrarySpeechToTextBaseFlutter speech_to_text_static = GeneralLibrarySpeechToTextBaseFlutter();
+  static GeneralLibrarySpeechToTextBaseFlutter speech_to_text_static =
+      GeneralLibrarySpeechToTextBaseFlutter();
 
   @override
   GeneralLibrarySpeechToTextBaseFlutter speech_to_text({bool? isStatic}) {
@@ -177,7 +187,8 @@ class GeneralFlutter extends GeneralLibrary {
     return GeneralLibrarySpeechToTextBaseFlutter();
   }
 
-  static GeneralLibrarySimCardBaseFlutter sim_card_static = GeneralLibrarySimCardBaseFlutter();
+  static GeneralLibrarySimCardBaseFlutter sim_card_static =
+      GeneralLibrarySimCardBaseFlutter();
 
   @override
   GeneralLibrarySimCardBaseFlutter sim_card({bool? isStatic}) {
@@ -187,7 +198,8 @@ class GeneralFlutter extends GeneralLibrary {
     return GeneralLibrarySimCardBaseFlutter();
   }
 
-  static GeneralLibrarySmsBaseFlutter sms_static = GeneralLibrarySmsBaseFlutter();
+  static GeneralLibrarySmsBaseFlutter sms_static =
+      GeneralLibrarySmsBaseFlutter();
   @override
   GeneralLibrarySmsBaseFlutter sms({bool? isStatic}) {
     if (isUseStatic(isStatic: isStatic)) {
@@ -196,7 +208,8 @@ class GeneralFlutter extends GeneralLibrary {
     return GeneralLibrarySmsBaseFlutter();
   }
 
-  static GeneralLibraryLocalAuthBaseFlutter local_auth_static = GeneralLibraryLocalAuthBaseFlutter();
+  static GeneralLibraryLocalAuthBaseFlutter local_auth_static =
+      GeneralLibraryLocalAuthBaseFlutter();
 
   @override
   GeneralLibraryLocalAuthBaseFlutter local_auth({bool? isStatic}) {

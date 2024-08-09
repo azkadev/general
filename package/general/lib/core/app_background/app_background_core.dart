@@ -61,7 +61,7 @@ class GeneralLibraryAppBackgroundBase implements GeneralLibraryCore {
   Future<bool> get disable_background async {
     return false;
   }
-  
+
   @override
   bool isSupport() {
     // TODO: implement isSupport

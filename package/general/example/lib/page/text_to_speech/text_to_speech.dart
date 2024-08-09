@@ -49,7 +49,8 @@ class TextToSpeechPage extends StatefulWidget {
 }
 
 class _TextToSpeechPageState extends State<TextToSpeechPage> {
-  final GeneralLibraryTextToSpeechBaseFlutter text_to_speech = GeneralExampleMainApp.generalFlutter.text_to_speech();
+  final GeneralLibraryTextToSpeechBaseFlutter text_to_speech =
+      GeneralExampleMainApp.generalFlutter.text_to_speech();
   final TextEditingController textEditingController = TextEditingController();
   @override
   void initState() {
@@ -80,8 +81,7 @@ class _TextToSpeechPageState extends State<TextToSpeechPage> {
   double pitch = 1.0;
   double rate = 0.5;
   bool is_loading = false;
-  void speak(
-  ) {
+  void speak() {
     if (is_loading) {
       return;
     }
@@ -128,7 +128,8 @@ class _TextToSpeechPageState extends State<TextToSpeechPage> {
               ),
               SupportFeatureWidget(
                 isSupport: text_to_speech.isSupport(),
-                reason_no_support: "Saat ini hanya tersedia di platform android",
+                reason_no_support:
+                    "Saat ini hanya tersedia di platform android",
               ),
               Padding(
                 padding: const EdgeInsets.all(10),

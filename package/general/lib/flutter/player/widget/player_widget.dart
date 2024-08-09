@@ -39,7 +39,8 @@ import 'package:general/core/core.dart';
 import 'package:media_kit_video/media_kit_video.dart';
 
 class PlayerWidget extends StatefulWidget {
-  final GeneralLibraryPlayerControllerBase generalLibraryPlayerControllerBaseDart;
+  final GeneralLibraryPlayerControllerBase
+      generalLibraryPlayerControllerBaseDart;
   const PlayerWidget({
     super.key,
     required this.generalLibraryPlayerControllerBaseDart,

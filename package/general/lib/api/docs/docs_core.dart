@@ -1,5 +1,3 @@
 class GeneralLibraryDocs {
   const GeneralLibraryDocs();
-
-  
 }

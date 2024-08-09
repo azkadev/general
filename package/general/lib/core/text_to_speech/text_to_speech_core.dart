@@ -33,7 +33,7 @@ Bukan maksud kami menipu itu karena harga yang sudah di kalkulasi + bantuan tiba
 
 <!-- END LICENSE --> */
 // ignore_for_file: non_constant_identifier_names
- 
+
 import 'package:general/core/general_library.dart';
 import 'package:general/core/player/player_controller.dart';
 
@@ -59,7 +59,8 @@ class GeneralLibraryTextToSpeechBase implements GeneralLibraryCore {
   }) async {
     if (isWaithFinishedSpeakBefore) {
       durationWaitFinishedSpeakBefore ??= Duration(minutes: 1);
-      DateTime dateTime_expire = DateTime.now().add(durationWaitFinishedSpeakBefore);
+      DateTime dateTime_expire =
+          DateTime.now().add(durationWaitFinishedSpeakBefore);
       while (true) {
         await Future.delayed(Duration(milliseconds: 1));
         if (dateTime_expire.isBefore(DateTime.now())) {

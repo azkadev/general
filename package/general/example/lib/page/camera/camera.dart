@@ -48,7 +48,8 @@ class CameraPage extends StatefulWidget {
 }
 
 class _CameraPageState extends State<CameraPage> {
-  final GeneralLibraryCameraBaseFlutter camera = GeneralExampleMainApp.generalFlutter.camera();
+  final GeneralLibraryCameraBaseFlutter camera =
+      GeneralExampleMainApp.generalFlutter.camera();
   @override
   void initState() {
     super.initState();
@@ -97,7 +98,6 @@ class _CameraPageState extends State<CameraPage> {
   // --- code
   @override
   Widget build(BuildContext context) {
-    
     return Scaffold(
       appBar: AppBar(
         title: const Text(
@@ -117,13 +117,13 @@ class _CameraPageState extends State<CameraPage> {
               ),
               SupportFeatureWidget(
                 isSupport: camera.isSupport(),
-                reason_no_support: "Saat ini hanya tersedia di platform android",
+                reason_no_support:
+                    "Saat ini hanya tersedia di platform android",
               ),
               SizedBox(
                 height: context.height - 10,
                 width: context.width - 10,
-                child:   camera.widget(),
-                
+                child: camera.widget(),
               ),
             ],
           ),

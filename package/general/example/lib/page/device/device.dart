@@ -48,7 +48,8 @@ class DevicePage extends StatefulWidget {
 }
 
 class _DevicePageState extends State<DevicePage> {
-  final GeneralLibraryDeviceBaseFlutter device = GeneralExampleMainApp.generalFlutter.device();
+  final GeneralLibraryDeviceBaseFlutter device =
+      GeneralExampleMainApp.generalFlutter.device();
   @override
   void initState() {
     super.initState();
@@ -97,7 +98,8 @@ class _DevicePageState extends State<DevicePage> {
               ),
               SupportFeatureWidget(
                 isSupport: device.isSupport(),
-                reason_no_support: "Saat ini hanya tersedia di platform android",
+                reason_no_support:
+                    "Saat ini hanya tersedia di platform android",
               ),
               FutureBuilder(
                 future: device.android_is_development_mode_enable,
@@ -105,7 +107,8 @@ class _DevicePageState extends State<DevicePage> {
                   if (snapshot.connectionState.isLoading) {
                     return const CircularProgressIndicator();
                   }
-                  return Text("android_is_development_mode_enable: ${snapshot.data ?? "unknown"}");
+                  return Text(
+                      "android_is_development_mode_enable: ${snapshot.data ?? "unknown"}");
                 },
               ),
               FutureBuilder(
@@ -114,7 +117,8 @@ class _DevicePageState extends State<DevicePage> {
                   if (snapshot.connectionState.isLoading) {
                     return const CircularProgressIndicator();
                   }
-                  return Text("android_is_on_external_storage: ${snapshot.data ?? "unknown"}");
+                  return Text(
+                      "android_is_on_external_storage: ${snapshot.data ?? "unknown"}");
                 },
               ),
               FutureBuilder(
@@ -132,7 +136,8 @@ class _DevicePageState extends State<DevicePage> {
                   if (snapshot.connectionState.isLoading) {
                     return const CircularProgressIndicator();
                   }
-                  return Text("is_mock_location: ${snapshot.data ?? "unknown"}");
+                  return Text(
+                      "is_mock_location: ${snapshot.data ?? "unknown"}");
                 },
               ),
               FutureBuilder(
@@ -172,7 +177,8 @@ class _DevicePageState extends State<DevicePage> {
                     crossAxisAlignment: CrossAxisAlignment.center,
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Text("wake_lock_is_enable: ${snapshot.data ?? "unknown"}"),
+                      Text(
+                          "wake_lock_is_enable: ${snapshot.data ?? "unknown"}"),
                       Switch(
                         value: snapshot.data == true,
                         onChanged: (value) {

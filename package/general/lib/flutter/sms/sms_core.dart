@@ -139,5 +139,4 @@ class GeneralLibrarySmsBaseFlutter implements GeneralLibrarySmsBase {
     }
     return [];
   }
-
 }

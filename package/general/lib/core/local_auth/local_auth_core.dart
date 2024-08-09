@@ -64,7 +64,7 @@ class GeneralLibraryLocalAuthBase implements GeneralLibraryCore {
   Future<bool> stopAuthentication() async {
     return false;
   }
-  
+
   @override
   bool isSupport() {
     // TODO: implement isSupport

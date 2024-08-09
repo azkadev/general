@@ -129,7 +129,7 @@ class GamePadControllerEventData {
   }
 }
 
-class GeneralLibraryGamePadBase  implements GeneralLibraryCore{
+class GeneralLibraryGamePadBase implements GeneralLibraryCore {
   GeneralLibraryGamePadBase();
 
   Future<List<GamePadControllerData>> list() async {
@@ -139,7 +139,7 @@ class GeneralLibraryGamePadBase  implements GeneralLibraryCore{
   Stream<GamePadControllerEventData> get events async* {
     yield GamePadControllerEventData.empty();
   }
-  
+
   @override
   bool isSupport() {
     // TODO: implement isSupport

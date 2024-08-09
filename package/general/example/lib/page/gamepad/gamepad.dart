@@ -51,7 +51,8 @@ class GamePadPage extends StatefulWidget {
 }
 
 class _GamePadPageState extends State<GamePadPage> {
-  final GeneralLibraryGamePadBaseFlutter gamepad = GeneralExampleMainApp.generalFlutter.gamepad();
+  final GeneralLibraryGamePadBaseFlutter gamepad =
+      GeneralExampleMainApp.generalFlutter.gamepad();
   @override
   void initState() {
     super.initState();
@@ -73,10 +74,11 @@ class _GamePadPageState extends State<GamePadPage> {
     Future(() async {
       // wajib di run 1 x aja
       setState(() {});
-      game_pad_listen = gamepad.events.listen((GamePadControllerEventData gamePadControllerEventData) {
+      game_pad_listen = gamepad.events
+          .listen((GamePadControllerEventData gamePadControllerEventData) {
         onGamePad(gamePadControllerEventData);
       });
- 
+
       setState(() {});
       // bebas run dimanapun
     });
@@ -119,7 +121,8 @@ class _GamePadPageState extends State<GamePadPage> {
               ),
               SupportFeatureWidget(
                 isSupport: gamepad.isSupport(),
-                reason_no_support: "Saat ini hanya tersedia di platform android",
+                reason_no_support:
+                    "Saat ini hanya tersedia di platform android",
               ),
               Padding(
                 padding: const EdgeInsets.all(10),

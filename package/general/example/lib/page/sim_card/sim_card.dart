@@ -49,7 +49,8 @@ class SimCardPage extends StatefulWidget {
 }
 
 class _SimCardPageState extends State<SimCardPage> {
-  final GeneralLibrarySimCardBaseFlutter sim_card = GeneralExampleMainApp.generalFlutter.sim_card();
+  final GeneralLibrarySimCardBaseFlutter sim_card =
+      GeneralExampleMainApp.generalFlutter.sim_card();
   @override
   void initState() {
     super.initState();
@@ -97,7 +98,8 @@ class _SimCardPageState extends State<SimCardPage> {
               ),
               SupportFeatureWidget(
                 isSupport: sim_card.isSupport(),
-                reason_no_support: "Saat ini hanya tersedia di platform android",
+                reason_no_support:
+                    "Saat ini hanya tersedia di platform android",
               ),
               FutureBuilder<List<SimCardInfoData>>(
                 future: sim_card.getSimcards(),
@@ -119,7 +121,6 @@ class _SimCardPageState extends State<SimCardPage> {
                         ),
                         padding: const EdgeInsets.all(10),
                         margin: const EdgeInsets.all(10),
-
                         child: Column(
                           children: [
                             Row(
@@ -157,7 +158,7 @@ class _SimCardPageState extends State<SimCardPage> {
                                 const Text("slot_index:"),
                                 Text(simCardInfoData.slot_index),
                               ],
-                            ), 
+                            ),
                           ],
                         ),
                       );

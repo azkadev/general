@@ -51,9 +51,7 @@ class TextFormFieldWidget extends StatelessWidget {
       ),
       onChanged: onChanged,
       clipBehavior: Clip.antiAlias,
-      
       decoration: InputDecoration(
-      
         contentPadding: const EdgeInsets.all(0.0),
         hintText: hintText,
         labelText: labelText,
@@ -114,14 +112,12 @@ class TextFormFieldWidget extends StatelessWidget {
           ),
           borderRadius: BorderRadius.circular(15.0),
         ),
-      
         focusedBorder: OutlineInputBorder(
           borderSide: BorderSide(
             color: context.theme.indicatorColor,
             width: 1.5,
           ),
           borderRadius: BorderRadius.circular(15.0),
-          
         ),
       ),
     );

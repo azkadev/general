@@ -44,8 +44,5 @@ class GeneralLibraryCameraBase implements GeneralLibraryCore {
     return false;
   }
 
-  dynamic widget(
-  ) {
-
-  }
+  dynamic widget() {}
 }

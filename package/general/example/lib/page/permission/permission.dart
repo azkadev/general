@@ -49,7 +49,8 @@ class PermissionPage extends StatefulWidget {
 }
 
 class _PermissionPageState extends State<PermissionPage> {
-  final GeneralLibraryPermissionBaseFlutter permission = GeneralExampleMainApp.generalFlutter.permission();
+  final GeneralLibraryPermissionBaseFlutter permission =
+      GeneralExampleMainApp.generalFlutter.permission();
   @override
   void initState() {
     super.initState();
@@ -97,7 +98,8 @@ class _PermissionPageState extends State<PermissionPage> {
               ),
               SupportFeatureWidget(
                 isSupport: permission.isSupport(),
-                reason_no_support: "Saat ini hanya tersedia di platform android",
+                reason_no_support:
+                    "Saat ini hanya tersedia di platform android",
               ),
               Builder(
                 builder: (context) {
@@ -116,12 +118,12 @@ class _PermissionPageState extends State<PermissionPage> {
                         margin: const EdgeInsets.all(10),
                         clipBehavior: Clip.antiAlias,
                         child: MaterialButton(
-
-                        padding: const EdgeInsets.all(10),
+                          padding: const EdgeInsets.all(10),
                           onPressed: () {
                             handleFunction(
-                              onFunction: (context, statefulWidget)async {
-                                await permission.auto_request(permissionTypes: [permissionType]);
+                              onFunction: (context, statefulWidget) async {
+                                await permission.auto_request(
+                                    permissionTypes: [permissionType]);
                               },
                             );
                           },
