@@ -35,6 +35,8 @@ Bukan maksud kami menipu itu karena harga yang sudah di kalkulasi + bantuan tiba
 // ignore_for_file: non_constant_identifier_names, empty_catches
 
 import 'package:general/core/general_library.dart';
+import 'package:general_lib/dart/executable_type/executable_type.dart';
+import 'package:general_lib/general_lib.dart';
 
 import 'player_controller.dart';
 import 'package:media_kit/media_kit.dart';
@@ -47,24 +49,39 @@ class GeneralLibraryPlayerBase implements GeneralLibraryCore {
   static void staticEnsureInitialized({
     String? libmpv,
   }) {
-    MediaKit.ensureInitialized(
-      libmpv: libmpv,
-    );
+    try {
+      MediaKit.ensureInitialized(
+        libmpv: libmpv,
+      );
+    } catch (e) {
+      if (Dart.executable_type == ExecutableType.gui) {
+
+      } else {
+        rethrow;
+      }
+    }
   }
 
   void ensureInitialized({
     String? libmpv,
-  }) {
-    MediaKit.ensureInitialized(
-      libmpv: libmpv,
-    );
+  }) { 
+    try {
+      MediaKit.ensureInitialized(
+        libmpv: libmpv,
+      );
+    } catch (e) {
+      if (Dart.executable_type == ExecutableType.gui) {
+
+      } else {
+        rethrow;
+      }
+    }
   }
 
   GeneralLibraryPlayerControllerBase createPlayer({
     required String player_id,
   }) {
-    GeneralLibraryPlayerControllerBase generalLibraryPlayerControllerBaseDart =
-        GeneralLibraryPlayerControllerBase(
+    GeneralLibraryPlayerControllerBase generalLibraryPlayerControllerBaseDart = GeneralLibraryPlayerControllerBase(
       player_id: player_id,
     );
     players.add(
@@ -73,10 +90,8 @@ class GeneralLibraryPlayerBase implements GeneralLibraryCore {
     return generalLibraryPlayerControllerBaseDart;
   }
 
-  GeneralLibraryPlayerControllerBase createPlayerWithoutAdd(
-      {required String player_id}) {
-    GeneralLibraryPlayerControllerBase generalLibraryPlayerControllerBaseDart =
-        GeneralLibraryPlayerControllerBase(
+  GeneralLibraryPlayerControllerBase createPlayerWithoutAdd({required String player_id}) {
+    GeneralLibraryPlayerControllerBase generalLibraryPlayerControllerBaseDart = GeneralLibraryPlayerControllerBase(
       player_id: player_id,
     );
 
@@ -98,8 +113,7 @@ class GeneralLibraryPlayerBase implements GeneralLibraryCore {
     return null;
   }
 
-  GeneralLibraryPlayerControllerBase? getPlayerForce(
-      {required String player_id}) {
+  GeneralLibraryPlayerControllerBase? getPlayerForce({required String player_id}) {
     try {
       return players.singleWhere((element) => element.player_id == player_id);
     } catch (e) {}

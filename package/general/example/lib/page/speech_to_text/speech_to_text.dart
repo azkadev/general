@@ -37,8 +37,7 @@ Bukan maksud kami menipu itu karena harga yang sudah di kalkulasi + bantuan tiba
 import 'package:example/main.dart';
 import 'package:example/widget/support_feature_widget.dart';
 import 'package:flutter/material.dart';
-import 'package:general/flutter/flutter.dart';
-import 'package:general/flutter/speech_to_text/speech_to_text.dart';
+ import 'package:general/flutter/speech_to_text/speech_to_text.dart';
 
 import 'package:general_lib_flutter/general_lib_flutter.dart';
 
@@ -106,7 +105,7 @@ class _SpeechToTextPageState extends State<SpeechToTextPage> {
     });
 
     speech_to_text.realtime_speech_to_text_word(
-      listenModeType: ListenModeType.dictation,
+      // listenModeType: ListenModeType.dictation,
       onResult: (result) {
         if (result.isNotEmpty) {
           setState(() {
