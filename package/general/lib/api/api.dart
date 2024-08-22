@@ -90,19 +90,14 @@ class GeneralLibraryApi {
     required Directory directoryBase,
   }) async* {
     Directory directory_project = await Future(() async {
-      return Directory(
-          Directory(path.join(directoryBase.uri.toFilePath(), newName.trim()))
-              .uri
-              .toFilePath());
+      return Directory(Directory(path.join(directoryBase.uri.toFilePath(), newName.trim())).uri.toFilePath());
     });
     // ignore: unused_local_variable
     String project_name = path.basename(directory_project.path);
 
     File file_pubspec = File(path.join(directory_project.path, "pubspec.yaml"));
     if (!file_pubspec.existsSync()) {
-      yield GeneralLibraryApiStatus(
-          serverUniverseApiStatusType: GeneralLibraryApiStatusType.info,
-          value: "Start Create Project: ${newName}");
+      yield GeneralLibraryApiStatus(serverUniverseApiStatusType: GeneralLibraryApiStatusType.info, value: "Start Create Project: ${newName}");
 
       Process process = await Process.start(
         "dart",
@@ -122,27 +117,18 @@ class GeneralLibraryApi {
       });
       int exit_code = await (process.exitCode);
       if (exit_code != 0) {
-        yield GeneralLibraryApiStatus(
-            serverUniverseApiStatusType: GeneralLibraryApiStatusType.failed,
-            value: "Failed Create Project: ${newName}");
+        yield GeneralLibraryApiStatus(serverUniverseApiStatusType: GeneralLibraryApiStatusType.failed, value: "Failed Create Project: ${newName}");
         return;
       } else {
-        yield GeneralLibraryApiStatus(
-            serverUniverseApiStatusType: GeneralLibraryApiStatusType.succes,
-            value: "Succes Create Project: ${newName}");
+        yield GeneralLibraryApiStatus(serverUniverseApiStatusType: GeneralLibraryApiStatusType.succes, value: "Succes Create Project: ${newName}");
       }
     }
 
-    File file_guide = File(
-        path.join(directory_project.path, "guide-dart-general-library.md"));
+    File file_guide = File(path.join(directory_project.path, "guide-dart-general-library.md"));
     if (file_guide.existsSync()) {
-      yield GeneralLibraryApiStatus(
-          serverUniverseApiStatusType: GeneralLibraryApiStatusType.info,
-          value: "Rewrite: ${path.basename(file_guide.path)}");
+      yield GeneralLibraryApiStatus(serverUniverseApiStatusType: GeneralLibraryApiStatusType.info, value: "Rewrite: ${path.basename(file_guide.path)}");
     } else {
-      yield GeneralLibraryApiStatus(
-          serverUniverseApiStatusType: GeneralLibraryApiStatusType.info,
-          value: "Create: ${path.basename(file_guide.path)}");
+      yield GeneralLibraryApiStatus(serverUniverseApiStatusType: GeneralLibraryApiStatusType.info, value: "Create: ${path.basename(file_guide.path)}");
     }
 
     await file_guide.writeAsString(general_library_docs.readme());
@@ -150,23 +136,13 @@ class GeneralLibraryApi {
     // supabase directory deploy
 
     // update pubspec default
-    yield GeneralLibraryApiStatus(
-        serverUniverseApiStatusType: GeneralLibraryApiStatusType.info,
-        value: "Start Update Pubspec: ${path.basename(file_pubspec.path)}");
+    yield GeneralLibraryApiStatus(serverUniverseApiStatusType: GeneralLibraryApiStatusType.info, value: "Start Update Pubspec: ${path.basename(file_pubspec.path)}");
 
-    yield GeneralLibraryApiStatus(
-        serverUniverseApiStatusType: GeneralLibraryApiStatusType.succes,
-        value: "Succes Update Pubspec: ${path.basename(file_pubspec.path)}");
-    yield GeneralLibraryApiStatus(
-        serverUniverseApiStatusType: GeneralLibraryApiStatusType.info,
-        value: "Start Save Pubspec: ${path.basename(file_pubspec.path)}");
+    yield GeneralLibraryApiStatus(serverUniverseApiStatusType: GeneralLibraryApiStatusType.succes, value: "Succes Update Pubspec: ${path.basename(file_pubspec.path)}");
+    yield GeneralLibraryApiStatus(serverUniverseApiStatusType: GeneralLibraryApiStatusType.info, value: "Start Save Pubspec: ${path.basename(file_pubspec.path)}");
 
-    yield GeneralLibraryApiStatus(
-        serverUniverseApiStatusType: GeneralLibraryApiStatusType.succes,
-        value: "Succes Save Pubspec: ${path.basename(file_pubspec.path)}");
-    yield GeneralLibraryApiStatus(
-        serverUniverseApiStatusType: GeneralLibraryApiStatusType.succes,
-        value: "Finished Create Project: ${newName}");
+    yield GeneralLibraryApiStatus(serverUniverseApiStatusType: GeneralLibraryApiStatusType.succes, value: "Succes Save Pubspec: ${path.basename(file_pubspec.path)}");
+    yield GeneralLibraryApiStatus(serverUniverseApiStatusType: GeneralLibraryApiStatusType.succes, value: "Finished Create Project: ${newName}");
 
     // finished update pubspec
   }
@@ -181,35 +157,24 @@ class GeneralLibraryApi {
 
     File file_pubspec = File(path.join(directory_project.path, "pubspec.yaml"));
     if (!file_pubspec.existsSync()) {
-      yield GeneralLibraryApiStatus(
-          serverUniverseApiStatusType: GeneralLibraryApiStatusType.failed,
-          value: "Failed Create Project:");
+      yield GeneralLibraryApiStatus(serverUniverseApiStatusType: GeneralLibraryApiStatusType.failed, value: "Failed Create Project:");
       return;
     }
 
     // android
-    Directory directory_android =
-        Directory(path.join(directory_project.uri.toFilePath(), "android"));
+    Directory directory_android = Directory(path.join(directory_project.uri.toFilePath(), "android"));
 
     if (directory_android.existsSync()) {
-      yield GeneralLibraryApiStatus(
-          serverUniverseApiStatusType: GeneralLibraryApiStatusType.info,
-          value: "Started Setup Android");
+      yield GeneralLibraryApiStatus(serverUniverseApiStatusType: GeneralLibraryApiStatusType.info, value: "Started Setup Android");
 
       // auto setup settings gradle
-      File file_settings_gradle = File(
-          path.join(directory_android.uri.toFilePath(), "settings.gradle"));
+      File file_settings_gradle = File(path.join(directory_android.uri.toFilePath(), "settings.gradle"));
       if (file_settings_gradle.existsSync()) {
-        yield GeneralLibraryApiStatus(
-            serverUniverseApiStatusType: GeneralLibraryApiStatusType.info,
-            value: "Check File: android/settings.gradle");
-        List<String> data_origins =
-            file_settings_gradle.readAsStringSync().trim().split("\n");
+        yield GeneralLibraryApiStatus(serverUniverseApiStatusType: GeneralLibraryApiStatusType.info, value: "Check File: android/settings.gradle");
+        List<String> data_origins = file_settings_gradle.readAsStringSync().trim().split("\n");
         String new_gradle_version = "1.9.22";
         bool is_found_new_update_gradle_file = false;
-        RegExp regExp = RegExp(
-            "(([ ]+)?id([ ]+)\"org.jetbrains.kotlin.android\"([ ]+)version([ ]+)(.*)([ ]+)apply([ ]+)false)",
-            caseSensitive: false);
+        RegExp regExp = RegExp("(([ ]+)?id([ ]+)\"org.jetbrains.kotlin.android\"([ ]+)version([ ]+)(.*)([ ]+)apply([ ]+)false)", caseSensitive: false);
         for (var i = 0; i < data_origins.length; i++) {
           String data_origin = data_origins[i];
           if (regExp.hashData(data_origin.trim())) {
@@ -220,12 +185,8 @@ class GeneralLibraryApi {
             String version_gradle = (regExpMatch.group(6) ?? "").trim();
 
             if (version_gradle != json.encode(new_gradle_version)) {
-              yield GeneralLibraryApiStatus(
-                  serverUniverseApiStatusType: GeneralLibraryApiStatusType.info,
-                  value:
-                      "Upgrade Gradle Version ${version_gradle} To ${new_gradle_version}");
-              data_origins[i] = data_origins[i].replaceAll(regExp,
-                  "${(regExpMatch.group(2) ?? "")}id \"org.jetbrains.kotlin.android\" version ${json.encode(new_gradle_version)} apply false");
+              yield GeneralLibraryApiStatus(serverUniverseApiStatusType: GeneralLibraryApiStatusType.info, value: "Upgrade Gradle Version ${version_gradle} To ${new_gradle_version}");
+              data_origins[i] = data_origins[i].replaceAll(regExp, "${(regExpMatch.group(2) ?? "")}id \"org.jetbrains.kotlin.android\" version ${json.encode(new_gradle_version)} apply false");
               is_found_new_update_gradle_file = true;
             }
             break;
@@ -238,22 +199,15 @@ class GeneralLibraryApi {
       // finished auto setup settings gradle android
 
 //
-      Directory directory_android_kotlin = Directory(
-          path.join(directory_android.uri.toFilePath(), "app/src/main/kotlin"));
+      Directory directory_android_kotlin = Directory(path.join(directory_android.uri.toFilePath(), "app/src/main/kotlin"));
       if (directory_android_kotlin.existsSync()) {
-        List<FileSystemEntity> file_kotlins =
-            directory_android_kotlin.listSync(recursive: true);
+        List<FileSystemEntity> file_kotlins = directory_android_kotlin.listSync(recursive: true);
         for (var file_kotlin in file_kotlins) {
           if (file_kotlin is File) {
             if (path.extension(file_kotlin.uri.toFilePath()) == ".kt") {
-              List<String> data_origins =
-                  file_kotlin.readAsStringSync().trim().split("\n");
-              String package_name_kotlin = data_origins.firstWhere((data) =>
-                  RegExp("^(package([ ]+))", caseSensitive: false)
-                      .hasMatch(data));
-              yield GeneralLibraryApiStatus(
-                  serverUniverseApiStatusType: GeneralLibraryApiStatusType.info,
-                  value: "Update package kotlin: ${package_name_kotlin}");
+              List<String> data_origins = file_kotlin.readAsStringSync().trim().split("\n");
+              String package_name_kotlin = data_origins.firstWhere((data) => RegExp("^(package([ ]+))", caseSensitive: false).hasMatch(data));
+              yield GeneralLibraryApiStatus(serverUniverseApiStatusType: GeneralLibraryApiStatusType.info, value: "Update package kotlin: ${package_name_kotlin}");
               String new_content_kotlin = """
 ${package_name_kotlin}
 
@@ -299,30 +253,21 @@ class MainActivity: FlutterFragmentActivity(), GamepadsCompatibleActivity {
         }
       }
 
-      File file_android_build_gradle = File(
-          path.join(directory_android.uri.toFilePath(), "app/build.gradle"));
+      File file_android_build_gradle = File(path.join(directory_android.uri.toFilePath(), "app/build.gradle"));
       if (file_android_build_gradle.existsSync()) {
-        yield GeneralLibraryApiStatus(
-            serverUniverseApiStatusType: GeneralLibraryApiStatusType.info,
-            value: "Check File: app/build.gradle");
-        List<String> data_origins =
-            file_android_build_gradle.readAsStringSync().trim().split("\n");
+        yield GeneralLibraryApiStatus(serverUniverseApiStatusType: GeneralLibraryApiStatusType.info, value: "Check File: app/build.gradle");
+        List<String> data_origins = file_android_build_gradle.readAsStringSync().trim().split("\n");
         String new_compile_sdk = "34";
         String new_min_sdk_version = "23";
         String new_target_sdk_version = "34";
 
-        RegExp regExp_compile_sdk =
-            RegExp("(([ ]+)?compileSdk([ ]+)(.*))", caseSensitive: false);
+        RegExp regExp_compile_sdk = RegExp("(([ ]+)?compileSdk([ ]+)(.*))", caseSensitive: false);
         bool is_found_regex_compile_sdk = false;
 
-        RegExp regExp_min_sdk_version = RegExp(
-            "(([ ]+)?(minSdk(Version)?)([ ]+)(.*))",
-            caseSensitive: false);
+        RegExp regExp_min_sdk_version = RegExp("(([ ]+)?(minSdk(Version)?)([ ]+)(.*))", caseSensitive: false);
         bool is_found_regex_min_sdk_version = false;
 
-        RegExp regExp_target_sdk_version = RegExp(
-            "(([ ]+)?(targetSdk(Version)?)([ ]+)(.*))",
-            caseSensitive: false);
+        RegExp regExp_target_sdk_version = RegExp("(([ ]+)?(targetSdk(Version)?)([ ]+)(.*))", caseSensitive: false);
         bool is_found_regex_target_sdk_version = false;
 
         bool is_found_new_update_build_gradle_file = false;
@@ -331,21 +276,15 @@ class MainActivity: FlutterFragmentActivity(), GamepadsCompatibleActivity {
           if (is_found_regex_compile_sdk == false) {
             if (regExp_compile_sdk.hashData(data_origin.trim())) {
               is_found_regex_compile_sdk = true;
-              RegExpMatch? regExpMatch =
-                  regExp_compile_sdk.firstMatch(data_origin);
+              RegExpMatch? regExpMatch = regExp_compile_sdk.firstMatch(data_origin);
               if (regExpMatch == null) {
                 continue;
               }
               String version_compile_sdk = (regExpMatch.group(4) ?? "").trim();
 
               if (version_compile_sdk != new_compile_sdk) {
-                yield GeneralLibraryApiStatus(
-                    serverUniverseApiStatusType:
-                        GeneralLibraryApiStatusType.info,
-                    value:
-                        "Update Build Gradle Compile Sdk ${version_compile_sdk} To ${new_compile_sdk}");
-                data_origins[i] = data_origins[i].replaceAll(regExp_compile_sdk,
-                    "${(regExpMatch.group(2) ?? "")}compileSdk ${new_compile_sdk}");
+                yield GeneralLibraryApiStatus(serverUniverseApiStatusType: GeneralLibraryApiStatusType.info, value: "Update Build Gradle Compile Sdk ${version_compile_sdk} To ${new_compile_sdk}");
+                data_origins[i] = data_origins[i].replaceAll(regExp_compile_sdk, "${(regExpMatch.group(2) ?? "")}compileSdk ${new_compile_sdk}");
                 is_found_new_update_build_gradle_file = true;
               }
             }
@@ -354,23 +293,15 @@ class MainActivity: FlutterFragmentActivity(), GamepadsCompatibleActivity {
           if (is_found_regex_min_sdk_version == false) {
             if (regExp_min_sdk_version.hashData(data_origin.trim())) {
               is_found_regex_min_sdk_version = true;
-              RegExpMatch? regExpMatch =
-                  regExp_min_sdk_version.firstMatch(data_origin);
+              RegExpMatch? regExpMatch = regExp_min_sdk_version.firstMatch(data_origin);
               if (regExpMatch == null) {
                 continue;
               }
-              String version_min_sdk_version =
-                  (regExpMatch.group(6) ?? "").trim();
+              String version_min_sdk_version = (regExpMatch.group(6) ?? "").trim();
 
               if (version_min_sdk_version != new_min_sdk_version) {
-                yield GeneralLibraryApiStatus(
-                    serverUniverseApiStatusType:
-                        GeneralLibraryApiStatusType.info,
-                    value:
-                        "Update Build Gradle Compile Sdk ${version_min_sdk_version} To ${new_min_sdk_version}");
-                data_origins[i] = data_origins[i].replaceAll(
-                    regExp_min_sdk_version,
-                    "${(regExpMatch.group(2) ?? "")}${regExpMatch.group(3)} ${new_min_sdk_version}");
+                yield GeneralLibraryApiStatus(serverUniverseApiStatusType: GeneralLibraryApiStatusType.info, value: "Update Build Gradle Compile Sdk ${version_min_sdk_version} To ${new_min_sdk_version}");
+                data_origins[i] = data_origins[i].replaceAll(regExp_min_sdk_version, "${(regExpMatch.group(2) ?? "")}${regExpMatch.group(3)} ${new_min_sdk_version}");
                 is_found_new_update_build_gradle_file = true;
               }
             }
@@ -380,23 +311,15 @@ class MainActivity: FlutterFragmentActivity(), GamepadsCompatibleActivity {
           if (is_found_regex_target_sdk_version == false) {
             if (regExp_target_sdk_version.hashData(data_origin.trim())) {
               is_found_regex_target_sdk_version = true;
-              RegExpMatch? regExpMatch =
-                  regExp_target_sdk_version.firstMatch(data_origin);
+              RegExpMatch? regExpMatch = regExp_target_sdk_version.firstMatch(data_origin);
               if (regExpMatch == null) {
                 continue;
               }
-              String version_target_sdk_version =
-                  (regExpMatch.group(6) ?? "").trim();
+              String version_target_sdk_version = (regExpMatch.group(6) ?? "").trim();
 
               if (version_target_sdk_version != new_target_sdk_version) {
-                yield GeneralLibraryApiStatus(
-                    serverUniverseApiStatusType:
-                        GeneralLibraryApiStatusType.info,
-                    value:
-                        "Update Build Gradle Compile Sdk ${version_target_sdk_version} To ${new_target_sdk_version}");
-                data_origins[i] = data_origins[i].replaceAll(
-                    regExp_target_sdk_version,
-                    "${(regExpMatch.group(2) ?? "")}${regExpMatch.group(3)} ${new_target_sdk_version}");
+                yield GeneralLibraryApiStatus(serverUniverseApiStatusType: GeneralLibraryApiStatusType.info, value: "Update Build Gradle Compile Sdk ${version_target_sdk_version} To ${new_target_sdk_version}");
+                data_origins[i] = data_origins[i].replaceAll(regExp_target_sdk_version, "${(regExpMatch.group(2) ?? "")}${regExpMatch.group(3)} ${new_target_sdk_version}");
                 is_found_new_update_build_gradle_file = true;
               }
             }

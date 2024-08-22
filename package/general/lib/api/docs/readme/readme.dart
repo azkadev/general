@@ -83,8 +83,13 @@ code android/app/src/main/AndroidManifest.xml
 
 ```xml
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
-
+  
      <!-- copy from this -->
+
+     
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_DATA_SYNC" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_SPECIAL_USE" />
+
     <uses-permission android:name="android.permission.USE_BIOMETRIC"/>
     <uses-permission android:name="android.permission.READ_SMS"/>
     <uses-permission android:name="android.permission.SEND_SMS"/>
@@ -250,7 +255,12 @@ code android/app/src/main/AndroidManifest.xml
         <meta-data
             android:name="flutterEmbedding"
             android:value="2" />
-          <service android:name="de.julianassmann.flutter_background.IsolateHolderService" android:exported="true" /> 
+            
+        <!-- Adapt to the foreground service type(s) desired, these are just examples -->
+        <service
+            android:name="de.julianassmann.flutter_background.IsolateHolderService"
+            android:exported="false"
+            android:foregroundServiceType="dataSync|specialUse|..." />
 
           <!-- finished copy -->
     </application>

@@ -55,7 +55,6 @@ class GeneralLibraryPlayerBase implements GeneralLibraryCore {
       );
     } catch (e) {
       if (Dart.executable_type == ExecutableType.gui) {
-
       } else {
         rethrow;
       }
@@ -64,14 +63,13 @@ class GeneralLibraryPlayerBase implements GeneralLibraryCore {
 
   void ensureInitialized({
     String? libmpv,
-  }) { 
+  }) {
     try {
       MediaKit.ensureInitialized(
         libmpv: libmpv,
       );
     } catch (e) {
       if (Dart.executable_type == ExecutableType.gui) {
-
       } else {
         rethrow;
       }
@@ -81,7 +79,8 @@ class GeneralLibraryPlayerBase implements GeneralLibraryCore {
   GeneralLibraryPlayerControllerBase createPlayer({
     required String player_id,
   }) {
-    GeneralLibraryPlayerControllerBase generalLibraryPlayerControllerBaseDart = GeneralLibraryPlayerControllerBase(
+    GeneralLibraryPlayerControllerBase generalLibraryPlayerControllerBaseDart =
+        GeneralLibraryPlayerControllerBase(
       player_id: player_id,
     );
     players.add(
@@ -90,8 +89,10 @@ class GeneralLibraryPlayerBase implements GeneralLibraryCore {
     return generalLibraryPlayerControllerBaseDart;
   }
 
-  GeneralLibraryPlayerControllerBase createPlayerWithoutAdd({required String player_id}) {
-    GeneralLibraryPlayerControllerBase generalLibraryPlayerControllerBaseDart = GeneralLibraryPlayerControllerBase(
+  GeneralLibraryPlayerControllerBase createPlayerWithoutAdd(
+      {required String player_id}) {
+    GeneralLibraryPlayerControllerBase generalLibraryPlayerControllerBaseDart =
+        GeneralLibraryPlayerControllerBase(
       player_id: player_id,
     );
 
@@ -113,7 +114,8 @@ class GeneralLibraryPlayerBase implements GeneralLibraryCore {
     return null;
   }
 
-  GeneralLibraryPlayerControllerBase? getPlayerForce({required String player_id}) {
+  GeneralLibraryPlayerControllerBase? getPlayerForce(
+      {required String player_id}) {
     try {
       return players.singleWhere((element) => element.player_id == player_id);
     } catch (e) {}
