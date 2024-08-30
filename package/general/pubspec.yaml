@@ -25,6 +25,8 @@ dependencies:
   path: '^1.9.0'
   universal_io: '^2.2.2'
   mason_logger: '^0.2.16'
+  html: any
+  collection: any
   yaml: '^3.1.2'
   yaml_writer: '^2.0.0'
   flutter: 

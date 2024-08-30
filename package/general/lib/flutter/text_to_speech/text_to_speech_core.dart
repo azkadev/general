@@ -39,11 +39,11 @@ import 'package:general/core/player/player_controller.dart';
 import 'package:general/core/text_to_speech/text_to_speech_core.dart';
 import 'package:general_lib/general_lib.dart';
 
-class GeneralLibraryTextToSpeechBaseFlutter
-    implements GeneralLibraryTextToSpeechBase {
+class GeneralLibraryTextToSpeechBaseFlutter implements GeneralLibraryTextToSpeechBase {
   FlutterTts flutterTts = FlutterTts();
 
   static bool is_text_to_speech_on_speak = false;
+
   bool get isIOS => !Dart.isWeb && Dart.isIOS;
   bool get isAndroid => !Dart.isWeb && Dart.isAndroid;
   bool get isWindows => !Dart.isWeb && Dart.isWindows;
@@ -92,8 +92,7 @@ class GeneralLibraryTextToSpeechBaseFlutter
       if (flutter_is_support_flutter_tts) {
         if (isWaithFinishedSpeakBefore) {
           durationWaitFinishedSpeakBefore ??= const Duration(minutes: 1);
-          DateTime dateTime_expire =
-              DateTime.now().add(durationWaitFinishedSpeakBefore);
+          DateTime dateTime_expire = DateTime.now().add(durationWaitFinishedSpeakBefore);
           while (true) {
             await Future.delayed(const Duration(milliseconds: 1));
             if (dateTime_expire.isBefore(DateTime.now())) {
@@ -258,5 +257,48 @@ class GeneralLibraryTextToSpeechBaseFlutter
         increase: increase,
       );
     }
+  }
+
+  @override
+  Future<void> cancelHandle() async {
+    if (flutter_is_support_flutter_tts) {
+      flutterTts.setCancelHandler(() {});
+    }
+  }
+
+  @override
+  Future<void> continueHandle() async {
+    if (flutter_is_support_flutter_tts) {}
+  }
+
+  @override
+  Future<void> pauseHandle() async {
+    if (flutter_is_support_flutter_tts) {
+      await flutterTts.pause();
+    }
+  }
+
+  @override
+  Future<void> stopHandle() async {
+    if (flutter_is_support_flutter_tts) {
+      await flutterTts.stop();
+    }
+  }
+
+  @override
+  void progress({required void Function(String text, int start, int end, String word) onProgress}) {
+    if (flutter_is_support_flutter_tts) {
+      flutterTts.progressHandler = onProgress;
+    }
+  }
+
+  @override
+  void utils_print({required String title, required String fromText, required String toText}) {
+    GeneralLibraryTextToSpeechBase().utils_print(title: title, fromText: fromText, toText: toText);
+  }
+
+  @override
+  String utils_removeHtmlOrMarkdown({required String text, bool isDebug = false, bool isExtraClean = true}) {
+    return GeneralLibraryTextToSpeechBase().utils_removeHtmlOrMarkdown(text: text, isDebug: isDebug, isExtraClean: isExtraClean);
   }
 }
