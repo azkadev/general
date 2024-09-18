@@ -35,17 +35,9 @@ class SmsMessage implements Comparable<SmsMessage> {
   DateTime? _dateSent;
   SmsMessageKind? _kind;
   SmsMessageState _state = SmsMessageState.None;
-  final StreamController<SmsMessageState> _stateStreamController =
-      StreamController<SmsMessageState>();
+  final StreamController<SmsMessageState> _stateStreamController = StreamController<SmsMessageState>();
 
-  SmsMessage(this._address, this._body,
-      {int? id,
-      int? threadId,
-      int? sim,
-      bool? read,
-      DateTime? date,
-      DateTime? dateSent,
-      SmsMessageKind? kind}) {
+  SmsMessage(this._address, this._body, {int? id, int? threadId, int? sim, bool? read, DateTime? date, DateTime? dateSent, SmsMessageKind? kind}) {
     _id = id;
     _threadId = threadId;
     _sim = sim;
@@ -267,8 +259,7 @@ class SmsReceiver {
 
   factory SmsReceiver() {
     if (_instance == null) {
-      const EventChannel eventChannel =
-          EventChannel("plugins.elyudde.com/recvSMS", JSONMethodCodec());
+      const EventChannel eventChannel = EventChannel("plugins.elyudde.com/recvSMS", JSONMethodCodec());
       _instance = SmsReceiver._private(eventChannel);
     }
     return _instance!;
@@ -294,15 +285,12 @@ class SmsSender {
   final EventChannel _stateChannel;
   late Map<int, SmsMessage> _sentMessages;
   int _sentId = 0;
-  final StreamController<SmsMessage?> _deliveredStreamController =
-      StreamController<SmsMessage?>();
+  final StreamController<SmsMessage?> _deliveredStreamController = StreamController<SmsMessage?>();
 
   factory SmsSender() {
     if (_instance == null) {
-      const MethodChannel methodChannel =
-          MethodChannel("plugins.elyudde.com/sendSMS", JSONMethodCodec());
-      const EventChannel stateChannel =
-          EventChannel("plugins.elyudde.com/statusSMS", JSONMethodCodec());
+      const MethodChannel methodChannel = MethodChannel("plugins.elyudde.com/sendSMS", JSONMethodCodec());
+      const EventChannel stateChannel = EventChannel("plugins.elyudde.com/statusSMS", JSONMethodCodec());
 
       _instance = SmsSender._private(methodChannel, stateChannel);
     }
@@ -396,8 +384,7 @@ class SmsQuery {
 
   factory SmsQuery() {
     if (_instance == null) {
-      const MethodChannel methodChannel =
-          MethodChannel("plugins.elyudde.com/querySMS", JSONMethodCodec());
+      const MethodChannel methodChannel = MethodChannel("plugins.elyudde.com/querySMS", JSONMethodCodec());
       _instance = SmsQuery._private(methodChannel);
     }
     return _instance!;
@@ -406,12 +393,7 @@ class SmsQuery {
   SmsQuery._private(this._channel);
 
   /// Wrapper for query only one kind
-  Future<List<SmsMessage>> _querySmsWrapper(
-      {int? start,
-      int? count,
-      String? address,
-      int? threadId,
-      SmsQueryKind kind = SmsQueryKind.Inbox}) async {
+  Future<List<SmsMessage>> _querySmsWrapper({int? start, int? count, String? address, int? threadId, SmsQueryKind kind = SmsQueryKind.Inbox}) async {
     Map arguments = {};
     if (start != null && start >= 0) {
       arguments["start"] = start;
@@ -449,13 +431,7 @@ class SmsQuery {
   }
 
   /// Query a list of SMS
-  Future<List<SmsMessage>> querySms(
-      {int? start,
-      int? count,
-      String? address,
-      int? threadId,
-      List<SmsQueryKind> kinds = const [SmsQueryKind.Inbox],
-      bool sort = true}) async {
+  Future<List<SmsMessage>> querySms({int? start, int? count, String? address, int? threadId, List<SmsQueryKind> kinds = const [SmsQueryKind.Inbox], bool sort = true}) async {
     List<SmsMessage> result = [];
     for (var kind in kinds) {
       result.addAll(await _querySmsWrapper(
@@ -473,8 +449,7 @@ class SmsQuery {
   }
 
   /// Query multiple thread by id
-  Future<List<SmsThread>> queryThreads(List<int> threadsId,
-      {List<SmsQueryKind> kinds = const [SmsQueryKind.Inbox]}) async {
+  Future<List<SmsThread>> queryThreads(List<int> threadsId, {List<SmsQueryKind> kinds = const [SmsQueryKind.Inbox]}) async {
     List<SmsThread> threads = <SmsThread>[];
     for (var id in threadsId) {
       final messages = await querySms(threadId: id, kinds: kinds);
@@ -487,8 +462,7 @@ class SmsQuery {
 
   /// Get all SMS
   Future<List<SmsMessage>> get getAllSms async {
-    return querySms(
-        kinds: [SmsQueryKind.Sent, SmsQueryKind.Inbox, SmsQueryKind.Draft]);
+    return querySms(kinds: [SmsQueryKind.Sent, SmsQueryKind.Inbox, SmsQueryKind.Draft]);
   }
 
   /// Get all threads
@@ -526,10 +500,7 @@ class SimCard {
   String? imei;
   SimCardState? state;
 
-  SimCard(
-      {required int this.slot,
-      required String this.imei,
-      this.state = SimCardState.Unknown});
+  SimCard({required int this.slot, required String this.imei, this.state = SimCardState.Unknown});
 
   SimCard.fromJson(Map map) {
     if (map.containsKey('slot')) {
@@ -588,8 +559,7 @@ class SimCardsProvider {
 
   factory SimCardsProvider() {
     if (_instance == null) {
-      const MethodChannel methodChannel =
-          MethodChannel("plugins.elyudde.com/simCards", JSONMethodCodec());
+      const MethodChannel methodChannel = MethodChannel("plugins.elyudde.com/simCards", JSONMethodCodec());
       _instance = SimCardsProvider._private(methodChannel);
     }
     return _instance!;

@@ -54,7 +54,7 @@ class SmsFlutterPlugin extends PlatformInterface {
   String get separator => isCupertino() ? "&" : "?";
   Future sendSMS(String address, String body) async {
     final _body = Uri.encodeComponent(body);
-    return launch('sms:$address${separator}body=$_body');
+    return launchUrl(Uri.parse('sms:$address${separator}body=$_body'));
   }
 }
 
