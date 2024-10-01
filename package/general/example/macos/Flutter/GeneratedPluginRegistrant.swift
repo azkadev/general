@@ -14,7 +14,6 @@ import package_info_plus
 import screen_brightness_macos
 import sim_card_info
 import speech_to_text
-import url_launcher_macos
 import wakelock_plus
 
 func RegisterGeneratedPlugins(registry: FlutterPluginRegistry) {
@@ -27,6 +26,5 @@ func RegisterGeneratedPlugins(registry: FlutterPluginRegistry) {
   ScreenBrightnessMacosPlugin.register(with: registry.registrar(forPlugin: "ScreenBrightnessMacosPlugin"))
   SimCardInfoPlugin.register(with: registry.registrar(forPlugin: "SimCardInfoPlugin"))
   SpeechToTextPlugin.register(with: registry.registrar(forPlugin: "SpeechToTextPlugin"))
-  UrlLauncherPlugin.register(with: registry.registrar(forPlugin: "UrlLauncherPlugin"))
   WakelockPlusMacosPlugin.register(with: registry.registrar(forPlugin: "WakelockPlusMacosPlugin"))
 }

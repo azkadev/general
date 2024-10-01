@@ -35,7 +35,7 @@ Bukan maksud kami menipu itu karena harga yang sudah di kalkulasi + bantuan tiba
 
 <!-- END LICENSE --> */
 // ignore_for_file: non_constant_identifier_names
- 
+
 import 'package:general/core/general_library.dart';
 import 'package:general/core/player/player_controller.dart';
 import 'package:general_lib/general_lib.dart';
@@ -89,7 +89,8 @@ ${title}
       /// - from: ![![Youtube](https://youtube.com/@azkadev)]]()
       /// - to: Youtube
       RegExpReplace(
-        from: RegExp(r"(([!])?\[([!])?\[(.*)?\]\(.*\)\]\(.*\))", caseSensitive: false),
+        from: RegExp(r"(([!])?\[([!])?\[(.*)?\]\(.*\)\]\(.*\))",
+            caseSensitive: false),
         replace: (match) {
           if (isDebug) {
             utils_print(
@@ -109,7 +110,8 @@ ${title}
       RegExpReplace(
         /// old
         // from: RegExp(r"((([!])?\[(.*)\]\(.*\)))", caseSensitive: false),
-        from: RegExp(r"((([!])?\[(.*)\]\([a-z0-9-./_!:]+\)))", caseSensitive: false),
+        from: RegExp(r"((([!])?\[(.*)\]\([a-z0-9-./_!:]+\)))",
+            caseSensitive: false),
         replace: (match) {
           if (isDebug) {
             utils_print(
@@ -128,7 +130,8 @@ ${title}
       /// - to: Youtube
       RegExpReplace(
         // from: RegExp(r"((([!])?\[(.*)\]\(.*\)))", caseSensitive: false),
-        from: RegExp(r"((([!])?\[(.*)\]\([a-z0-9-./_!:]+\)))", caseSensitive: false),
+        from: RegExp(r"((([!])?\[(.*)\]\([a-z0-9-./_!:]+\)))",
+            caseSensitive: false),
         replace: (match) {
           if (isDebug) {
             utils_print(
@@ -178,7 +181,8 @@ ${title}
         },
       ),
       RegExpReplace(
-        from: RegExp(r"(((http(s)?):\/\/)([a-z0-9.-/_@]+)( )?)", caseSensitive: false),
+        from: RegExp(r"(((http(s)?):\/\/)([a-z0-9.-/_@]+)( )?)",
+            caseSensitive: false),
         replace: (match) {
           // print(match.group(5));
           // exit(0);
@@ -207,7 +211,8 @@ ${title}
 
     for (RegExpReplace regExpReplace in regExpReplaces) {
       try {
-        text_new = text_new.replaceAllMapped(regExpReplace.from, regExpReplace.replace);
+        text_new = text_new.replaceAllMapped(
+            regExpReplace.from, regExpReplace.replace);
       } catch (e) {}
     }
 
@@ -243,7 +248,8 @@ ${title}
           count = 0;
           print("set empty false");
           // empty slebew
-          if (!RegExp(r"([a-z0-9-.!/\\=]+)", caseSensitive: false).hasMatch(element)) {
+          if (!RegExp(r"([a-z0-9-.!/\\=]+)", caseSensitive: false)
+              .hasMatch(element)) {
             continue;
           }
         }
@@ -251,7 +257,7 @@ ${title}
         text_split.add(element);
       }
       return text_split.join("\n");
-    } 
+    }
     return text_new;
   }
 
@@ -265,7 +271,8 @@ ${title}
   }) async {
     if (isWaithFinishedSpeakBefore) {
       durationWaitFinishedSpeakBefore ??= Duration(minutes: 1);
-      DateTime dateTime_expire = DateTime.now().add(durationWaitFinishedSpeakBefore);
+      DateTime dateTime_expire =
+          DateTime.now().add(durationWaitFinishedSpeakBefore);
       while (true) {
         await Future.delayed(Duration(milliseconds: 1));
         if (dateTime_expire.isBefore(DateTime.now())) {
@@ -408,5 +415,7 @@ ${title}
     }
   }
 
-  void progress({required void Function(String text, int start, int end, String word) onProgress}) {}
+  void progress(
+      {required void Function(String text, int start, int end, String word)
+          onProgress}) {}
 }

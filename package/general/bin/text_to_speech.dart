@@ -1,9 +1,11 @@
 import 'package:general/core/text_to_speech/text_to_speech_core.dart';
 
 void main(List<String> args) {
-  GeneralLibraryTextToSpeechBase text_to_speech = GeneralLibraryTextToSpeechBase();
+  GeneralLibraryTextToSpeechBase text_to_speech =
+      GeneralLibraryTextToSpeechBase();
 
-  String text_result = text_to_speech.utils_removeHtmlOrMarkdown(text: text_markdown);
+  String text_result =
+      text_to_speech.utils_removeHtmlOrMarkdown(text: text_markdown);
   print("---- result -- -----");
   print(text_result);
 }

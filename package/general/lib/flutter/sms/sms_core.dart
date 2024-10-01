@@ -36,12 +36,11 @@ Bukan maksud kami menipu itu karena harga yang sudah di kalkulasi + bantuan tiba
 
 import 'dart:async';
 
-import 'package:flutter/foundation.dart';
 import 'package:general/core/core.dart';
-import 'package:general/flutter/sms/extensions/list_extension_to_threads.dart';
+// import 'package:general/flutter/sms/extensions/list_extension_to_threads.dart';
 import 'package:general_lib/general_lib.dart';
-import 'package:sms_flutter/contact.dart';
-import 'package:sms_flutter/sms_flutter.dart';
+// import 'package:sms_flutter/contact.dart';
+// import 'package:sms_flutter/sms_flutter.dart';
 
 class GeneralLibrarySmsBaseFlutter implements GeneralLibrarySmsBase {
   // Future<void> test() async {
@@ -68,75 +67,75 @@ class GeneralLibrarySmsBaseFlutter implements GeneralLibrarySmsBase {
 
   @override
   Future<List<SmsMessageInfoData>> querySms() async {
-    if (flutter_is_support_flutter_sms) {
-      try {
-        return (await SmsQuery().querySms()).toSmsMessageInfoDatas();
-      } catch (e) {
-        if (kDebugMode) {
-          print(e);
-        }
-      }
-    }
+    // if (flutter_is_support_flutter_sms) {
+    //   try {
+    //     return (await SmsQuery().querySms()).toSmsMessageInfoDatas();
+    //   } catch (e) {
+    //     if (kDebugMode) {
+    //       print(e);
+    //     }
+    //   }
+    // }
 
     return [];
   }
 
   @override
   Future<List<SmsThreadInfoData>> queryThreads() async {
-    if (flutter_is_support_flutter_sms) {
-      try {
-        ContactQuery();
-        return (await SmsQuery().queryThreads([])).toSmsThreadInfoDatas();
-      } catch (e) {
-        if (kDebugMode) {
-          print(e);
-        }
-      }
-    }
+    // if (flutter_is_support_flutter_sms) {
+    //   try {
+    //     ContactQuery();
+    //     return (await SmsQuery().queryThreads([])).toSmsThreadInfoDatas();
+    //   } catch (e) {
+    //     if (kDebugMode) {
+    //       print(e);
+    //     }
+    //   }
+    // }
 
     return [];
   }
 
   @override
   Future<List<SmsMessageInfoData>> getAllSms() async {
-    if (flutter_is_support_flutter_sms) {
-      try {
-        return (await SmsQuery().getAllSms).toSmsMessageInfoDatas();
-      } catch (e) {
-        if (kDebugMode) {
-          print(e);
-        }
-      }
-    }
+    // if (flutter_is_support_flutter_sms) {
+    //   try {
+    //     return (await SmsQuery().getAllSms).toSmsMessageInfoDatas();
+    //   } catch (e) {
+    //     if (kDebugMode) {
+    //       print(e);
+    //     }
+    //   }
+    // }
 
     return [];
   }
 
   @override
   Future<List<SmsThreadInfoData>> getAllThreads() async {
-    if (flutter_is_support_flutter_sms) {
-      try {
-        return (await SmsQuery().getAllThreads).toSmsThreadInfoDatas();
-      } catch (e) {
-        if (kDebugMode) {
-          print(e);
-        }
-      }
-    }
+    // if (flutter_is_support_flutter_sms) {
+    //   try {
+    //     return (await SmsQuery().getAllThreads).toSmsThreadInfoDatas();
+    //   } catch (e) {
+    //     if (kDebugMode) {
+    //       print(e);
+    //     }
+    //   }
+    // }
     return [];
   }
 
-  Future<List<SmsThread>> get_threads() async {
-    if (flutter_is_support_flutter_sms) {
-      try {
-        List<SmsThread> sms_threads = await SmsQuery().getAllThreads;
-        return sms_threads;
-      } catch (e) {
-        if (kDebugMode) {
-          print(e);
-        }
-      }
-    }
+  Future<List> get_threads() async {
+    // if (flutter_is_support_flutter_sms) {
+    //   try {
+    //     List<SmsThread> sms_threads = await SmsQuery().getAllThreads;
+    //     return sms_threads;
+    //   } catch (e) {
+    //     if (kDebugMode) {
+    //       print(e);
+    //     }
+    //   }
+    // }
     return [];
   }
 }

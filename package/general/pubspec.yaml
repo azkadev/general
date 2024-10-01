@@ -1,12 +1,13 @@
 name: 'general'
 description: 'General library For Make Your Coding or Project More Easy'
-version: '0.0.29'
+version: '0.0.30'
 homepage: 'https://github.com/azkadev/general'
 repository: 'https://github.com/azkadev/general'
 issue_tracker: 'https://github.com/azkadev/general/issues '
 documentation: 'https://youtube.com/@azkadev'
 funding: 
   - 'https://github.com/sponsors/azkadev'
+  - 'https://github.com/sponsors/generalfoss'
 platforms: 
   android: null
   ios: null
@@ -19,12 +20,12 @@ executables:
 environment: 
   sdk: '>=3.3.3 <4.0.0'
 dependencies: 
-  general_lib: '^0.0.44'
+  general_lib: '^0.0.46'
   desktop_notifications: '^0.6.3'
   media_kit: '^1.1.1'
   path: '^1.9.0'
   universal_io: '^2.2.2'
-  mason_logger: '^0.2.15'
+  mason_logger: '^0.3.1'
   html: 'any'
   collection: 'any'
   yaml: '^3.1.2'
@@ -38,8 +39,7 @@ dependencies:
   safe_device: '^1.1.8'
   speech_to_text: '^7.0.0'
   sim_card_info: '^1.0.2'
-  sms_flutter: '^0.0.0'
-  general_lib_flutter: '^0.0.25'
+  general_lib_flutter: '^0.0.27'
   media_kit_video: '^1.2.5'
   local_auth: '^2.3.0'
   wakelock_plus: '^1.2.8'
@@ -48,7 +48,7 @@ dependencies:
   camera_windows: '^0.2.5'
   gamepads: '^0.1.2'
 dev_dependencies: 
-  lints: '^2.1.0'
-  test: '^1.24.0'
+  lints: '^4.0.0'
+  test: 'any'
 dependency_overrides: 
   pointycastle: '3.8.0'
