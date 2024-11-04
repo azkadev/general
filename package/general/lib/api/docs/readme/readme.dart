@@ -84,25 +84,21 @@ code android/app/src/main/AndroidManifest.xml
 ```xml
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
   
-     <!-- copy from this -->
-
-     
-    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_DATA_SYNC" />
-    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_SPECIAL_USE" />
-
-    <uses-permission android:name="android.permission.USE_BIOMETRIC"/>
-    <uses-permission android:name="android.permission.READ_SMS"/>
-    <uses-permission android:name="android.permission.SEND_SMS"/>
-    <uses-permission android:name="android.permission.RECEIVE_SMS"/>
-    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
-    <uses-permission android:name="android.permission.READ_CONTACTS" />
-    <uses-permission android:name="android.permission.READ_PROFILE" />
-    <uses-permission android:name="android.permission.RECORD_AUDIO"/>
-    <uses-permission android:name="android.permission.INTERNET"/>
-    <uses-permission android:name="android.permission.BLUETOOTH"/>
-    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN"/>
-    <uses-permission android:name="android.permission.BLUETOOTH_CONNECT"/>
+    <!-- copy from this -->    
     
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_DATA_SYNC" />
+    <uses-permission android:name="android.permission.INTERNET" /> 
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+
+    <!-- Permissions options for the `ignoreBatteryOptimizations` group -->
+    <uses-permission android:name="android.permission.REQUEST_IGNORE_BATTERY_OPTIMIZATIONS" />
+
+    <!-- Permissions options for the `notification` group -->
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS"/>
+     
+    <!-- if you need more permission --> 
+
+
     <queries>
       <intent>
         <action android:name="android.speech.RecognitionService" />
@@ -114,42 +110,52 @@ code android/app/src/main/AndroidManifest.xml
        <action android:name="android.intent.action.TTS_SERVICE" />
      </intent>
     </queries>
+     
+
+    <!-- if you need permission basic social media --> 
+
+    <uses-permission android:name="android.permission.WAKE_LOCK" /> 
+    <uses-feature android:name="android.hardware.camera" android:required="false" />
+
+    <!-- if you need permission more social media --> 
+
+    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
+    <uses-permission android:name="android.permission.READ_MEDIA_VIDEO" />
+    <uses-permission android:name="android.permission.READ_MEDIA_AUDIO" />
+
+    <!-- if you need permission full social media --> 
     
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <!-- Permissions options for the `storage` group -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <!-- Read storage permission for Android 12 and lower -->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    
+    <!-- if you need more permission --> 
+
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_SPECIAL_USE" />
+
+    <uses-permission android:name="android.permission.USE_BIOMETRIC"/>
+    <uses-permission android:name="android.permission.READ_SMS"/>
+    <uses-permission android:name="android.permission.SEND_SMS"/>
+    <uses-permission android:name="android.permission.RECEIVE_SMS"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.READ_PROFILE" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO"/> 
+    <uses-permission android:name="android.permission.BLUETOOTH"/>
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN"/>
+    <uses-permission android:name="android.permission.BLUETOOTH_CONNECT"/>
+    
 
     <uses-feature
         android:name="android.hardware.telephony"
         android:required="false" />
-    <uses-feature
-        android:name="android.hardware.camera"
-        android:required="false" />
-
-    <!--
-    Internet permissions do not affect the `permission_handler` plugin, but are required if your app needs access to
-    the internet.
-    -->
-    <uses-permission android:name="android.permission.INTERNET"/>
+ 
 
     <!-- Permissions options for the `contacts` group -->
     <uses-permission android:name="android.permission.READ_CONTACTS"/>
     <uses-permission android:name="android.permission.WRITE_CONTACTS"/>
     <uses-permission android:name="android.permission.GET_ACCOUNTS"/>
-
-    <!-- Permissions options for the `storage` group -->
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
-    <!-- Read storage permission for Android 12 and lower -->
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
-    <!--
-      Granular media permissions for Android 13 and newer.
-      See https://developer.android.com/about/versions/13/behavior-changes-13#granular-media-permissions
-      for more information.
-    -->
-    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
-    <uses-permission android:name="android.permission.READ_MEDIA_VIDEO" />
-    <uses-permission android:name="android.permission.READ_MEDIA_AUDIO" />
-
-    <!-- Permissions options for the `camera` group -->
-    <uses-permission android:name="android.permission.CAMERA"/>
 
     <!-- Permissions options for the `sms` group -->
     <uses-permission android:name="android.permission.SEND_SMS"/>
@@ -166,10 +172,6 @@ code android/app/src/main/AndroidManifest.xml
     <uses-permission android:name="android.permission.READ_CALL_LOG"/>
     <uses-permission android:name="android.permission.WRITE_CALL_LOG"/>
     <uses-permission android:name="android.permission.BIND_CALL_REDIRECTION_SERVICE"/>
-    <uses-permission android:name="android.permission.WAKE_LOCK" />
-    <uses-permission android:name="android.permission.FOREGROUND_SERVICE"/>
-    <uses-permission android:name="android.permission.REQUEST_IGNORE_BATTERY_OPTIMIZATIONS" />
-
 
     <!-- Permissions options for the `calendar` group -->
     <uses-permission android:name="android.permission.READ_CALENDAR" />
@@ -192,9 +194,7 @@ code android/app/src/main/AndroidManifest.xml
 
     <!-- Permissions options for the `activityRecognition` group -->
     <uses-permission android:name="android.permission.ACTIVITY_RECOGNITION" />
-
-    <!-- Permissions options for the `ignoreBatteryOptimizations` group -->
-    <!-- <uses-permission android:name="android.permission.REQUEST_IGNORE_BATTERY_OPTIMIZATIONS" /> -->
+ 
 
     <!-- Permissions options for the `nearby devices` group -->
     <uses-permission android:name="android.permission.BLUETOOTH" />
@@ -214,9 +214,7 @@ code android/app/src/main/AndroidManifest.xml
 
     <!-- Permissions options for the `access notification policy` group -->
     <uses-permission android:name="android.permission.ACCESS_NOTIFICATION_POLICY"/>
-
-    <!-- Permissions options for the `notification` group -->
-    <uses-permission android:name="android.permission.POST_NOTIFICATIONS"/>
+ 
 
     <!-- Permissions options for the `alarm` group -->
     <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM" />

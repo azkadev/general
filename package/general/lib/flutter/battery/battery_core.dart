@@ -36,46 +36,46 @@ Bukan maksud kami menipu itu karena harga yang sudah di kalkulasi + bantuan tiba
 
 import 'dart:async';
 
-import 'package:battery_plus/battery_plus.dart';
+// import 'package:battery_plus/battery_plus.dart';
 import 'package:general/core/battery/battery.dart';
 import 'package:general/core/battery/battery_status.dart';
 
 class GeneralLibraryBatteryBaseFlutter implements GeneralLibraryBatteryBase {
-  Battery battery = Battery();
+  // Battery battery = Battery();
 
   @override
   Future<int> get level async {
-    return (await battery.batteryLevel);
+    return 0;
+    // return (await battery.batteryLevel);
   }
 
   @override
   Future<BatteryStatusType> get status_type async {
-    try {
-      BatteryState batteryState = await battery.batteryState;
+    // try {
+    //   BatteryState batteryState = await battery.batteryState;
 
-      return autoChangeBatteryStatus(batteryState: batteryState);
-    } catch (e) {}
+    //   return autoChangeBatteryStatus(batteryState: batteryState);
+    // } catch (e) {}
 
     return BatteryStatusType.unknown;
   }
 
-  BatteryStatusType autoChangeBatteryStatus(
-      {required BatteryState batteryState}) {
+  BatteryStatusType autoChangeBatteryStatus({required dynamic batteryState}) {
     try {
-      if (batteryState == BatteryState.charging) {
-        return BatteryStatusType.charging;
-      }
+      // if (batteryState == BatteryState.charging) {
+      //   return BatteryStatusType.charging;
+      // }
 
-      if (batteryState == BatteryState.connectedNotCharging) {
-        return BatteryStatusType.connectedNotCharging;
-      }
+      // if (batteryState == BatteryState.connectedNotCharging) {
+      //   return BatteryStatusType.connectedNotCharging;
+      // }
 
-      if (batteryState == BatteryState.discharging) {
-        return BatteryStatusType.discharging;
-      }
-      if (batteryState == BatteryState.full) {
-        return BatteryStatusType.full;
-      }
+      // if (batteryState == BatteryState.discharging) {
+      //   return BatteryStatusType.discharging;
+      // }
+      // if (batteryState == BatteryState.full) {
+      //   return BatteryStatusType.full;
+      // }
     } catch (e) {}
 
     return BatteryStatusType.unknown;
@@ -84,15 +84,16 @@ class GeneralLibraryBatteryBaseFlutter implements GeneralLibraryBatteryBase {
   @override
   Stream<BatteryStatusType> get status_realtime async* {
     try {
-      await for (BatteryState batteryState in battery.onBatteryStateChanged) {
-        yield autoChangeBatteryStatus(batteryState: batteryState);
-      }
+      // await for (BatteryState batteryState in battery.onBatteryStateChanged) {
+      // yield autoChangeBatteryStatus(batteryState: batteryState);
+      // }
     } catch (e) {}
   }
 
   @override
   Future<bool> get is_save_mode async {
-    return await battery.isInBatterySaveMode;
+    // return await battery.isInBatterySaveMode;
+    return false;
   }
 
   @override

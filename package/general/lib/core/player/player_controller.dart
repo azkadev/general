@@ -39,8 +39,7 @@ import 'dart:typed_data';
 import 'package:general/core/player/player_model_data.dart';
 import 'package:media_kit/media_kit.dart';
 
-extension GeneralLibraryPlayerMediaBaseExtesnion
-    on GeneralLibraryPlayerMediaBase {
+extension GeneralLibraryPlayerMediaBaseExtesnion on GeneralLibraryPlayerMediaBase {
   Media toMediaMediaKit() {
     return Media(
       resource,
@@ -50,8 +49,7 @@ extension GeneralLibraryPlayerMediaBaseExtesnion
   }
 }
 
-extension GeneralLibraryPlayerPlayListBaseExtension
-    on GeneralLibraryPlayerPlayListBase {
+extension GeneralLibraryPlayerPlayListBaseExtension on GeneralLibraryPlayerPlayListBase {
   Playlist toPlayListMediaKit() {
     return Playlist(
       medias.map(
@@ -65,19 +63,12 @@ extension GeneralLibraryPlayerPlayListBaseExtension
 }
 
 class GeneralLibraryPlayerControllerBase {
-  String player_id;
-  Player player = Player();
+  final String player_id;
+  final Player player = Player();
   GeneralLibraryPlayerControllerBase({
     required this.player_id,
   });
-
-  Future<void> test() async {
-    final playable = Media(
-      "/home/galaxeus/Documents/fork/general/package/general_dart/bin/mixkit-software-interface-start-2574.wav",
-    );
-    Playlist;
-    await player.open(playable);
-  }
+ 
 
   Future<void> open(
     GeneralLibraryPlayerPlayableBase playable, {

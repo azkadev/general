@@ -36,7 +36,7 @@ Bukan maksud kami menipu itu karena harga yang sudah di kalkulasi + bantuan tiba
 
 import 'package:general/core/device/device_core.dart';
 import 'package:general_lib/general_lib.dart';
-import 'package:safe_device/safe_device.dart';
+// import 'package:safe_device/safe_device.dart';
 import 'package:wakelock_plus/wakelock_plus.dart';
 
 class GeneralLibraryDeviceBaseFlutter implements GeneralLibraryDeviceBase {
@@ -69,7 +69,7 @@ class GeneralLibraryDeviceBaseFlutter implements GeneralLibraryDeviceBase {
   Future<bool> get android_is_development_mode_enable async {
     try {
       if (is_mobile) {
-        return await SafeDevice.isDevelopmentModeEnable;
+        // return await SafeDevice.isDevelopmentModeEnable;
       }
     } catch (e) {}
     return false;
@@ -79,7 +79,7 @@ class GeneralLibraryDeviceBaseFlutter implements GeneralLibraryDeviceBase {
   Future<bool> get android_is_on_external_storage async {
     try {
       if (is_mobile) {
-        return await SafeDevice.isOnExternalStorage;
+        // return await SafeDevice.isOnExternalStorage;
       }
     } catch (e) {}
     return false;
@@ -89,7 +89,7 @@ class GeneralLibraryDeviceBaseFlutter implements GeneralLibraryDeviceBase {
   Future<bool> get usb_debug_check async {
     try {
       if (is_mobile) {
-        return await SafeDevice.usbDebuggingCheck;
+        // return await SafeDevice.isUsbDebuggingEnabled;
       }
     } catch (e) {}
     return false;
@@ -99,7 +99,7 @@ class GeneralLibraryDeviceBaseFlutter implements GeneralLibraryDeviceBase {
   Future<bool> get is_mock_location async {
     try {
       if (is_mobile) {
-        return await SafeDevice.isMockLocation;
+        // return await SafeDevice.isMockLocation;
       }
     } catch (e) {}
     return false;
@@ -109,7 +109,7 @@ class GeneralLibraryDeviceBaseFlutter implements GeneralLibraryDeviceBase {
   Future<bool> get is_jailbroken async {
     try {
       if (is_mobile) {
-        return await SafeDevice.isJailBroken;
+        // return await SafeDevice.isJailBroken;
       }
     } catch (e) {}
     return false;
@@ -119,7 +119,7 @@ class GeneralLibraryDeviceBaseFlutter implements GeneralLibraryDeviceBase {
   Future<bool> get is_real_device async {
     try {
       if (is_mobile) {
-        return await SafeDevice.isRealDevice;
+        // return await SafeDevice.isRealDevice;
       }
     } catch (e) {}
     return false;
@@ -129,7 +129,7 @@ class GeneralLibraryDeviceBaseFlutter implements GeneralLibraryDeviceBase {
   Future<bool> get is_safe_device async {
     try {
       if (is_mobile) {
-        return await SafeDevice.isSafeDevice;
+        // return await SafeDevice.isSafeDevice;
       }
     } catch (e) {}
     return false;

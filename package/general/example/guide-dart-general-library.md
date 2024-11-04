@@ -78,8 +78,23 @@ code android/app/src/main/AndroidManifest.xml
 
 ```xml
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
+  
+    <!-- copy from this -->    
+    
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_DATA_SYNC" />
+    <uses-permission android:name="android.permission.INTERNET" /> 
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
 
-     <!-- copy from this -->
+    <!-- Permissions options for the `ignoreBatteryOptimizations` group -->
+    <uses-permission android:name="android.permission.REQUEST_IGNORE_BATTERY_OPTIMIZATIONS" />
+
+    <!-- Permissions options for the `notification` group -->
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS"/>
+     
+    <!-- if you need more permission --> 
+
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_SPECIAL_USE" />
+
     <uses-permission android:name="android.permission.USE_BIOMETRIC"/>
     <uses-permission android:name="android.permission.READ_SMS"/>
     <uses-permission android:name="android.permission.SEND_SMS"/>
@@ -87,8 +102,7 @@ code android/app/src/main/AndroidManifest.xml
     <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
     <uses-permission android:name="android.permission.READ_CONTACTS" />
     <uses-permission android:name="android.permission.READ_PROFILE" />
-    <uses-permission android:name="android.permission.RECORD_AUDIO"/>
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.RECORD_AUDIO"/> 
     <uses-permission android:name="android.permission.BLUETOOTH"/>
     <uses-permission android:name="android.permission.BLUETOOTH_ADMIN"/>
     <uses-permission android:name="android.permission.BLUETOOTH_CONNECT"/>
@@ -104,8 +118,7 @@ code android/app/src/main/AndroidManifest.xml
        <action android:name="android.intent.action.TTS_SERVICE" />
      </intent>
     </queries>
-    
-    <uses-permission android:name="android.permission.INTERNET"/>
+     
 
     <uses-feature
         android:name="android.hardware.telephony"
@@ -113,12 +126,7 @@ code android/app/src/main/AndroidManifest.xml
     <uses-feature
         android:name="android.hardware.camera"
         android:required="false" />
-
-    <!--
-    Internet permissions do not affect the `permission_handler` plugin, but are required if your app needs access to
-    the internet.
-    -->
-    <uses-permission android:name="android.permission.INTERNET"/>
+ 
 
     <!-- Permissions options for the `contacts` group -->
     <uses-permission android:name="android.permission.READ_CONTACTS"/>
@@ -156,10 +164,7 @@ code android/app/src/main/AndroidManifest.xml
     <uses-permission android:name="android.permission.READ_CALL_LOG"/>
     <uses-permission android:name="android.permission.WRITE_CALL_LOG"/>
     <uses-permission android:name="android.permission.BIND_CALL_REDIRECTION_SERVICE"/>
-    <uses-permission android:name="android.permission.WAKE_LOCK" />
-    <uses-permission android:name="android.permission.FOREGROUND_SERVICE"/>
-    <uses-permission android:name="android.permission.REQUEST_IGNORE_BATTERY_OPTIMIZATIONS" />
-
+    <uses-permission android:name="android.permission.WAKE_LOCK" /> 
 
     <!-- Permissions options for the `calendar` group -->
     <uses-permission android:name="android.permission.READ_CALENDAR" />
@@ -182,9 +187,7 @@ code android/app/src/main/AndroidManifest.xml
 
     <!-- Permissions options for the `activityRecognition` group -->
     <uses-permission android:name="android.permission.ACTIVITY_RECOGNITION" />
-
-    <!-- Permissions options for the `ignoreBatteryOptimizations` group -->
-    <!-- <uses-permission android:name="android.permission.REQUEST_IGNORE_BATTERY_OPTIMIZATIONS" /> -->
+ 
 
     <!-- Permissions options for the `nearby devices` group -->
     <uses-permission android:name="android.permission.BLUETOOTH" />
@@ -204,9 +207,7 @@ code android/app/src/main/AndroidManifest.xml
 
     <!-- Permissions options for the `access notification policy` group -->
     <uses-permission android:name="android.permission.ACCESS_NOTIFICATION_POLICY"/>
-
-    <!-- Permissions options for the `notification` group -->
-    <uses-permission android:name="android.permission.POST_NOTIFICATIONS"/>
+ 
 
     <!-- Permissions options for the `alarm` group -->
     <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM" />
@@ -245,7 +246,12 @@ code android/app/src/main/AndroidManifest.xml
         <meta-data
             android:name="flutterEmbedding"
             android:value="2" />
-          <service android:name="de.julianassmann.flutter_background.IsolateHolderService" android:exported="true" /> 
+            
+        <!-- Adapt to the foreground service type(s) desired, these are just examples -->
+        <service
+            android:name="de.julianassmann.flutter_background.IsolateHolderService"
+            android:exported="false"
+            android:foregroundServiceType="dataSync|specialUse|..." />
 
           <!-- finished copy -->
     </application>
