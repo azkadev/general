@@ -52,18 +52,7 @@ void main(List<String> args) async {
           ),
           size: element.size,
         );
-      }
-      {
-        await img.Command().rewriteAsync(
-          imageSourcePath: imageSource,
-          saveToSourcePath: path.join(
-            directory_android.path,
-            "${element.name}-v4",
-            "ic_launcher.png",
-          ),
-          size: element.size,
-        );
-      }
+      } 
     }
   }
 }

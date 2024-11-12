@@ -38,8 +38,7 @@ import 'package:general/core/core.dart';
 import 'package:general_lib/general_lib.dart';
 import 'package:local_auth/local_auth.dart';
 
-class GeneralLibraryLocalAuthBaseFlutter
-    implements GeneralLibraryLocalAuthBase {
+class GeneralLibraryLocalAuthBaseFlutter implements GeneralLibraryLocalAuthBase {
   GeneralLibraryLocalAuthBaseFlutter();
   final LocalAuthentication localAuthentication = LocalAuthentication();
 

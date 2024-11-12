@@ -43,80 +43,75 @@ import 'device/device.dart';
 import 'core.dart';
 import 'notification/notification_core.dart';
 
-class GeneralLibrary {
-  final bool is_use_static;
-  const GeneralLibrary({
-    this.is_use_static = false,
-  });
+abstract class GeneralLibraryBaseCore {
+  dynamic get system_app => throw UnimplementedError();
+  dynamic get app_background => throw UnimplementedError();
+  dynamic get system_battery => throw UnimplementedError();
+  dynamic get system_camera => throw UnimplementedError();
+  dynamic get system_permission => throw UnimplementedError();
+  dynamic get system_notification => throw UnimplementedError();
+  dynamic get controller_gamepad => throw UnimplementedError();
+  dynamic get text_to_speech => throw UnimplementedError();
+  dynamic get system_device => throw UnimplementedError();
+  dynamic get speech_to_text => throw UnimplementedError();
+  dynamic get sim_card => throw UnimplementedError();
+  dynamic get system_sms => throw UnimplementedError();
+  dynamic get media_player => throw UnimplementedError();
+  dynamic get local_auth => throw UnimplementedError();
+}
 
-  static GeneralLibraryAppBase app_static = GeneralLibraryAppBase();
+class GeneralLibrary implements GeneralLibraryBaseCore {
+  const GeneralLibrary();
 
-  bool isUseStatic({required bool? isStatic}) {
-    return isStatic ?? is_use_static;
-  }
+  static GeneralLibraryAppBase systemApp = GeneralLibraryAppBase();
+  static GeneralLibraryAppBackgroundBase appBackground = GeneralLibraryAppBackgroundBase();
+  static GeneralLibraryBatteryBase systemBattery = GeneralLibraryBatteryBase();
+  static GeneralLibraryCameraBase systemCamera = GeneralLibraryCameraBase();
+  static final GeneralLibraryNotificationBase systemNotification = GeneralLibraryNotificationBase();
 
-  GeneralLibraryAppBase app({bool? isStatic}) {
-    if (isUseStatic(isStatic: isStatic)) {
-      return app_static;
-    }
-    return GeneralLibraryAppBase();
-  }
+  ///
+  static final GeneralLibrarySimCardBase simCard = GeneralLibrarySimCardBase();
 
-  GeneralLibraryAppBackgroundBase app_background({bool? isStatic}) {
-    return GeneralLibraryAppBackgroundBase();
-  }
+  ///
+  static final GeneralLibraryPlayerBase mediaPlayer = GeneralLibraryPlayerBase();
 
-  GeneralLibraryBatteryBase battery({bool? isStatic}) {
-    return GeneralLibraryBatteryBase();
-  }
+  ///
 
-  GeneralLibraryCameraBase camera({bool? isStatic}) {
-    return GeneralLibraryCameraBase();
-  }
+  ///
+  static final GeneralLibraryDeviceBase systemDevice = GeneralLibraryDeviceBase();
 
-  GeneralLibraryPermissionBase permission({bool? isStatic}) {
-    return GeneralLibraryPermissionBase();
-  }
+  static final GeneralLibraryTextToSpeechBase textToSpeech = GeneralLibraryTextToSpeechBase();
 
-  GeneralLibraryNotificationBase notification({bool? isStatic}) {
-    return GeneralLibraryNotificationBase();
-  }
+  ///
+  static final GeneralLibraryGamePadBase controllerGamepad = GeneralLibraryGamePadBase();
 
-  GeneralLibraryGamePadBase gamepad({bool? isStatic}) {
-    return GeneralLibraryGamePadBase();
-  }
+  static GeneralLibraryPermissionBase systemPermission = GeneralLibraryPermissionBase();
 
-  GeneralLibraryTextToSpeechBase text_to_speech({bool? isStatic}) {
-    return GeneralLibraryTextToSpeechBase();
-  }
+  ///
+  static final GeneralLibrarySpeechToTextBase speechToText = GeneralLibrarySpeechToTextBase();
 
-  GeneralLibraryDeviceBase device({bool? isStatic}) {
-    return GeneralLibraryDeviceBase();
-  }
+  static final GeneralLibraryLocalAuthBase localAuth = GeneralLibraryLocalAuthBase();
 
-  GeneralLibrarySpeechToTextBase speech_to_text({bool? isStatic}) {
-    return GeneralLibrarySpeechToTextBase();
-  }
+  ///
+  static final GeneralLibrarySmsBase systemSms = GeneralLibrarySmsBase();
 
-  GeneralLibrarySimCardBase sim_card({bool? isStatic}) {
-    return GeneralLibrarySimCardBase();
-  }
+  Future<void> ensureInitialized() async {}
 
-  GeneralLibrarySmsBase sms({bool? isStatic}) {
-    return GeneralLibrarySmsBase();
-  }
-
-  GeneralLibraryPlayerBase player({bool? isStatic}) {
-    return GeneralLibraryPlayerBase();
-  }
-
-  // GeneralLibraryLocationBase location {
-  //   return GeneralLibraryLocationBase();
-  // }
-
-  GeneralLibraryLocalAuthBase local_auth({bool? isStatic}) {
-    return GeneralLibraryLocalAuthBase();
-  }
+  @override
+  GeneralLibraryAppBase get system_app => systemApp;
+  GeneralLibraryAppBackgroundBase get app_background => appBackground;
+  GeneralLibraryBatteryBase get system_battery => systemBattery;
+  GeneralLibraryCameraBase get system_camera => systemCamera;
+  GeneralLibraryPermissionBase get system_permission => systemPermission;
+  GeneralLibraryNotificationBase get system_notification => systemNotification;
+  GeneralLibraryGamePadBase get controller_gamepad => controllerGamepad;
+  GeneralLibraryTextToSpeechBase get text_to_speech => textToSpeech;
+  GeneralLibraryDeviceBase get system_device => systemDevice;
+  GeneralLibrarySpeechToTextBase get speech_to_text => speechToText;
+  GeneralLibrarySimCardBase get sim_card => simCard;
+  GeneralLibrarySmsBase get system_sms => systemSms;
+  GeneralLibraryPlayerBase get media_player => mediaPlayer;
+  GeneralLibraryLocalAuthBase get local_auth => localAuth;
 
   void test() {
     print("oke");

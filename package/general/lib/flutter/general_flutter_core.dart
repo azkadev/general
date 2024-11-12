@@ -33,17 +33,15 @@ Bukan maksud kami menipu itu karena harga yang sudah di kalkulasi + bantuan tiba
 
 <!-- END LICENSE --> */
 // ignore_for_file: non_constant_identifier_names
-
-import 'package:flutter/foundation.dart';
-import "package:general/core/core.dart";
+ 
+import "package:general/core/core.dart"; 
 import 'package:general/flutter/app/app.dart';
 import 'package:general/flutter/app_background/app_background_core.dart';
 import 'package:general/flutter/battery/battery.dart';
 import 'package:general/flutter/camera/camera.dart';
 import 'package:general/flutter/device/device.dart';
 import 'package:general/flutter/gamepad/gamepad_core.dart';
-import 'package:general/flutter/local_auth/local_auth.dart';
-// import 'package:general/flutter/location/location.dart';
+import 'package:general/flutter/local_auth/local_auth.dart'; 
 import 'package:general/flutter/notification/notification_core.dart';
 import 'package:general/flutter/permission/permission.dart';
 import 'package:general/flutter/sim_card/sim_card_core.dart';
@@ -53,185 +51,79 @@ import 'package:general/flutter/text_to_speech/text_to_speech_core.dart';
 
 /// GeneralFlutter
 class GeneralFlutter extends GeneralLibrary {
-  GeneralFlutter({
-    super.is_use_static,
-  });
+  const GeneralFlutter();
+
+  static GeneralLibraryLocalAuthBaseFlutter localAuth = GeneralLibraryLocalAuthBaseFlutter();
+
+  static GeneralLibraryAppBaseFlutter systemApp = GeneralLibraryAppBaseFlutter();
+
+  static GeneralLibraryAppBackgroundBaseFlutter appBackground = GeneralLibraryAppBackgroundBaseFlutter();
+
+  static GeneralLibraryCameraBaseFlutter systemCamera = GeneralLibraryCameraBaseFlutter();
+
+  static GeneralLibraryPermissionBaseFlutter systemPermission = GeneralLibraryPermissionBaseFlutter();
+
+  static GeneralLibraryNotificationBaseFlutter systemNotification = GeneralLibraryNotificationBaseFlutter();
+  static GeneralLibraryTextToSpeechBaseFlutter textToSpeech = GeneralLibraryTextToSpeechBaseFlutter();
+
+  static GeneralLibraryBatteryBaseFlutter systembattery = GeneralLibraryBatteryBaseFlutter();
+
+  static GeneralLibraryDeviceBaseFlutter systemDevice = GeneralLibraryDeviceBaseFlutter();
+
+  static GeneralLibraryGamePadBaseFlutter controllerGamepad = GeneralLibraryGamePadBaseFlutter();
+
+  static GeneralLibrarySpeechToTextBaseFlutter speechToText = GeneralLibrarySpeechToTextBaseFlutter();
+ 
+  static GeneralLibrarySimCardBaseFlutter simCard = GeneralLibrarySimCardBaseFlutter();
+
+  static GeneralLibrarySmsBaseFlutter systemSms = GeneralLibrarySmsBaseFlutter();
 
   @override
-  bool isUseStatic({required bool? isStatic}) {
-    return super.is_use_static;
-  }
+  GeneralLibraryAppBackgroundBaseFlutter get app_background => appBackground;
+
+  @override
+  GeneralLibraryGamePadBaseFlutter get controller_gamepad => controllerGamepad;
+
+  @override
+  GeneralLibraryLocalAuthBaseFlutter get local_auth => localAuth;
 
   // @override
-  // // TODO: implement is_use_static
-  // bool get is_use_static => super.is_use_static;
+  // GeneralLibraryPlayerBase get media_player => super.media_player;
 
   @override
-  void test() {
-    if (kDebugMode) {
-      print("test flutter");
-    }
-  }
-
-  static GeneralLibraryAppBaseFlutter app_static =
-      GeneralLibraryAppBaseFlutter();
+  GeneralLibrarySimCardBaseFlutter get sim_card => simCard;
 
   @override
-  GeneralLibraryAppBaseFlutter app({bool? isStatic}) {
-    if (isUseStatic(isStatic: isStatic)) {
-      return app_static;
-    }
-    return GeneralLibraryAppBaseFlutter();
-  }
-
-  static GeneralLibraryAppBackgroundBaseFlutter app_background_static =
-      GeneralLibraryAppBackgroundBaseFlutter();
+  // TODO: implement speech_to_text
+  GeneralLibrarySpeechToTextBaseFlutter get speech_to_text => speechToText;
 
   @override
-  GeneralLibraryAppBackgroundBaseFlutter app_background({bool? isStatic}) {
-    if (isUseStatic(isStatic: isStatic)) {
-      return app_background_static;
-    }
-    return GeneralLibraryAppBackgroundBaseFlutter();
-  }
-
-  static GeneralLibraryCameraBaseFlutter camera_static =
-      GeneralLibraryCameraBaseFlutter();
+  GeneralLibraryAppBaseFlutter get system_app => systemApp;
 
   @override
-  GeneralLibraryCameraBaseFlutter camera({bool? isStatic}) {
-    if (isUseStatic(isStatic: isStatic)) {
-      return camera_static;
-    }
-    return GeneralLibraryCameraBaseFlutter();
-  }
-
-  static GeneralLibraryPermissionBaseFlutter permission_static =
-      GeneralLibraryPermissionBaseFlutter();
+  GeneralLibraryBatteryBaseFlutter get system_battery => systembattery;
 
   @override
-  GeneralLibraryPermissionBaseFlutter permission({bool? isStatic}) {
-    if (isUseStatic(isStatic: isStatic)) {
-      return permission_static;
-    }
-    return GeneralLibraryPermissionBaseFlutter();
-  }
-
-  static GeneralLibraryNotificationBaseFlutter notification_static =
-      GeneralLibraryNotificationBaseFlutter();
+  GeneralLibraryCameraBaseFlutter get system_camera => systemCamera;
 
   @override
-  GeneralLibraryNotificationBaseFlutter notification({bool? isStatic}) {
-    if (isUseStatic(isStatic: isStatic)) {
-      return notification_static;
-    }
-
-    return GeneralLibraryNotificationBaseFlutter();
-  }
-
-  static GeneralLibraryBatteryBaseFlutter battery_static =
-      GeneralLibraryBatteryBaseFlutter();
+  // TODO: implement system_device
+  GeneralLibraryDeviceBaseFlutter get system_device => systemDevice;
 
   @override
-  GeneralLibraryBatteryBaseFlutter battery({bool? isStatic}) {
-    if (isUseStatic(isStatic: isStatic)) {
-      return battery_static;
-    }
-    return GeneralLibraryBatteryBaseFlutter();
-  }
-
-  static GeneralLibraryTextToSpeechBaseFlutter text_to_speech_static =
-      GeneralLibraryTextToSpeechBaseFlutter();
+  // TODO: implement system_notification
+  GeneralLibraryNotificationBaseFlutter get system_notification => systemNotification;
 
   @override
-  GeneralLibraryTextToSpeechBaseFlutter text_to_speech({bool? isStatic}) {
-    if (isUseStatic(isStatic: isStatic)) {
-      return text_to_speech_static;
-    }
-    return GeneralLibraryTextToSpeechBaseFlutter();
-  }
-
-  static GeneralLibraryDeviceBaseFlutter device_static =
-      GeneralLibraryDeviceBaseFlutter();
+  // TODO: implement system_permission
+  GeneralLibraryPermissionBaseFlutter get system_permission => systemPermission;
 
   @override
-  GeneralLibraryDeviceBaseFlutter device({
-    bool? isStatic,
-  }) {
-    if (isUseStatic(isStatic: isStatic)) {
-      return device_static;
-    }
-
-    return GeneralLibraryDeviceBaseFlutter();
-  }
-
-  static GeneralLibraryGamePadBaseFlutter gamepad_static =
-      GeneralLibraryGamePadBaseFlutter();
+  // TODO: implement system_sms
+  GeneralLibrarySmsBaseFlutter get system_sms => systemSms;
 
   @override
-  GeneralLibraryGamePadBaseFlutter gamepad({bool? isStatic}) {
-    if (isUseStatic(isStatic: isStatic)) {
-      return gamepad_static;
-    }
-    return GeneralLibraryGamePadBaseFlutter();
-  }
-
-  static GeneralLibrarySpeechToTextBaseFlutter speech_to_text_static =
-      GeneralLibrarySpeechToTextBaseFlutter();
-
-  @override
-  GeneralLibrarySpeechToTextBaseFlutter speech_to_text({bool? isStatic}) {
-    if (isUseStatic(isStatic: isStatic)) {
-      return speech_to_text_static;
-    }
-    return GeneralLibrarySpeechToTextBaseFlutter();
-  }
-
-  static GeneralLibrarySimCardBaseFlutter sim_card_static =
-      GeneralLibrarySimCardBaseFlutter();
-
-  @override
-  GeneralLibrarySimCardBaseFlutter sim_card({bool? isStatic}) {
-    if (isUseStatic(isStatic: isStatic)) {
-      return sim_card_static;
-    }
-    return GeneralLibrarySimCardBaseFlutter();
-  }
-
-  static GeneralLibrarySmsBaseFlutter sms_static =
-      GeneralLibrarySmsBaseFlutter();
-  @override
-  GeneralLibrarySmsBaseFlutter sms({bool? isStatic}) {
-    if (isUseStatic(isStatic: isStatic)) {
-      return sms_static;
-    }
-    return GeneralLibrarySmsBaseFlutter();
-  }
-
-  static GeneralLibraryLocalAuthBaseFlutter local_auth_static =
-      GeneralLibraryLocalAuthBaseFlutter();
-
-  @override
-  GeneralLibraryLocalAuthBaseFlutter local_auth({bool? isStatic}) {
-    if (isUseStatic(isStatic: isStatic)) {
-      return local_auth_static;
-    }
-    return GeneralLibraryLocalAuthBaseFlutter();
-  }
-
-  // @override
-  // GeneralLibraryLocationBaseFlutter  location {
-  //   return GeneralLibraryLocationBaseFlutter();
-  // }
-
-  static GeneralLibraryPlayerBase player_static = GeneralLibraryPlayerBase();
-
-  @override
-  GeneralLibraryPlayerBase player({bool? isStatic}) {
-    if (isUseStatic(isStatic: isStatic)) {
-      return player_static;
-    }
-
-    return GeneralLibraryPlayerBase();
-  }
+  // TODO: implement text_to_speech
+  GeneralLibraryTextToSpeechBaseFlutter get text_to_speech => textToSpeech; 
+ 
 }
