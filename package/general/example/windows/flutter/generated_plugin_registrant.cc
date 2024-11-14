@@ -8,7 +8,6 @@
 
 #include <camera_windows/camera_windows.h>
 #include <flutter_tts/flutter_tts_plugin.h>
-#include <gamepads_windows/gamepads_windows_plugin_c_api.h>
 #include <local_auth_windows/local_auth_plugin.h>
 #include <media_kit_video/media_kit_video_plugin_c_api.h>
 #include <permission_handler_windows/permission_handler_windows_plugin.h>
@@ -20,8 +19,6 @@ void RegisterPlugins(flutter::PluginRegistry* registry) {
       registry->GetRegistrarForPlugin("CameraWindows"));
   FlutterTtsPluginRegisterWithRegistrar(
       registry->GetRegistrarForPlugin("FlutterTtsPlugin"));
-  GamepadsWindowsPluginCApiRegisterWithRegistrar(
-      registry->GetRegistrarForPlugin("GamepadsWindowsPluginCApi"));
   LocalAuthPluginRegisterWithRegistrar(
       registry->GetRegistrarForPlugin("LocalAuthPlugin"));
   MediaKitVideoPluginCApiRegisterWithRegistrar(
