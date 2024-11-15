@@ -26,7 +26,8 @@ class AndroidIconData {
 }
 
 void main(List<String> args) async {
-  final String imageSource = "/home/galaxeus/Documents/galaxeus/app/general_machine_system_services/library/general_assets_flutter/lib/assets/logo/nextgifto/nextgifto_telegram_userbot.jpeg";
+  // final String imageSource = "/home/galaxeus/Documents/galaxeus/app/general_machine_system_services/library/general_assets_flutter/lib/assets/logo/nextgifto/nextgifto_telegram_userbot.jpeg";
+  final String imageSource = "/home/galaxeus/Documents/galaxeus/app/general/package/general/Icon-512.png";
   // final path = args.isNotEmpty ? args[0] : 'test.png';
   final Directory directory = Directory(path.join(Directory.current.path, "build", "general", "icon"));
   if (directory.existsSync() == false) {

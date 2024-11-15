@@ -22,14 +22,25 @@ void main(List<String> args) async {
           height: 500,
         );
       }
+      { 
+        await img.Command().rewriteAsync(
+          imageSourcePath: element.path,
+          saveToSourcePath: path.join(
+            directory.path,
+            "portrait-${path.basename(element.path)}",
+          ),
+          width: 1080,
+          height: 1080,
+        );
+      }
       {
         await img.Command().rewriteAsync(
           imageSourcePath: element.path,
           saveToSourcePath: path.join(
             directory.path,
-            path.basename(element.path),
+            "landscape-${path.basename(element.path)}",
           ),
-          width: 1080,
+          width: 1920,
           height: 1080,
         );
       }
@@ -41,7 +52,6 @@ extension ASakoskao on img.Command {
   Future<void> rewriteAsync({
     required String imageSourcePath,
     required String saveToSourcePath,
-
     required int width,
     required int height,
   }) async {

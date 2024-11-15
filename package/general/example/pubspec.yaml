@@ -2,13 +2,13 @@ name: 'example'
 description: 'A new Flutter project.'
 publish_to: 'none'
 version: '0.0.0'
-environment: 
+environment:
   sdk: '>=3.3.3 <4.0.0'
-dependencies: 
-  flutter: 
+dependencies:
+  flutter:
     sdk: 'flutter'
   cupertino_icons: '^1.0.2'
-  general: 
+  general:
     path: '../'
   media_kit_video: '^1.2.5'
   local_auth: '^2.2.0'
@@ -16,15 +16,15 @@ dependencies:
   general_lib: '^0.0.46'
   general_lib_flutter: '^0.0.27'
   media_kit_lib_flutter: '^0.0.0'
-dev_dependencies: 
-  flutter_test: 
+dev_dependencies:
+  flutter_test:
     sdk: 'flutter'
   flutter_lints: '^4.0.0'
-flutter: 
+flutter:
   uses-material-design: true
-dependency_overrides: 
+dependency_overrides:
   pointycastle: '3.8.0'
-funding: 
+funding:
   - 'https://github.com/sponsors/azkadev'
   - 'https://github.com/sponsors/generalfoss'
 homepage: 'https://youtube.com/@azkadev'
