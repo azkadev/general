@@ -253,10 +253,11 @@ class GeneralLibraryApi {
               final String new_content_kotlin = """
 ${package_name_kotlin}
 
-import io.flutter.embedding.android.FlutterFragmentActivity
 
-class MainActivity: FlutterFragmentActivity() {
-}
+import io.flutter.embedding.android.FlutterActivity
+
+class MainActivity: FlutterActivity()
+
 """;
               file_kotlin.writeAsStringSync(new_content_kotlin);
 
