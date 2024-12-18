@@ -1,23 +1,24 @@
 name: 'example'
 description: 'Demonstrates how to use the sms_flutter plugin.'
 publish_to: 'none'
-environment: 
+environment:
   sdk: '>=3.3.3 <4.0.0'
-dependencies: 
-  flutter: 
+dependencies:
+  flutter:
     sdk: 'flutter'
-  sms_flutter: 
+  sms_flutter:
     path: '../'
   cupertino_icons: '^1.0.2'
-dev_dependencies: 
-  flutter_test: 
+dev_dependencies:
+  flutter_test:
     sdk: 'flutter'
   flutter_lints: '^4.0.0'
-flutter: 
+flutter:
   uses-material-design: true
-dependency_overrides: 
+dependency_overrides:
   pointycastle: '3.8.0'
-funding: 
+  mime: '^2.0.0'
+funding:
   - 'https://github.com/sponsors/azkadev'
   - 'https://github.com/sponsors/generalfoss'
 homepage: 'https://youtube.com/@azkadev'
