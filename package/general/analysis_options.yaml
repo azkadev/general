@@ -36,3 +36,4 @@ analyzer:
     - test/
     - example/
     - lib/flutter/device
+    - lib/api/file

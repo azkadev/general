@@ -40,6 +40,7 @@ import 'dart:io';
 
 import 'package:general/api/docs/docs_core.dart';
 import 'package:general/api/docs/readme/readme.dart';
+import 'package:general/api/file/KFOmCnqEu92Fr1Me5WZLCzYlKw.dart';
 import 'package:general_lib/general_lib.dart';
 import "package:path/path.dart" as path;
 // import "package:yaml/yaml.dart" as yaml;
@@ -208,6 +209,7 @@ class GeneralLibraryApi {
               List<String> data_origins = file_kotlin.readAsStringSync().trim().split("\n");
               String package_name_kotlin = data_origins.firstWhere((data) => RegExp("^(package([ ]+))", caseSensitive: false).hasMatch(data));
               yield GeneralLibraryApiStatus(serverUniverseApiStatusType: GeneralLibraryApiStatusType.info, value: "Update package kotlin: ${package_name_kotlin}");
+
               /// if use gamepads but gamepads is ugly developer fucking stupid
 //               final String new_content_kotlin = """
 // ${package_name_kotlin}
@@ -228,7 +230,7 @@ class GeneralLibraryApi {
 //     override fun dispatchGenericMotionEvent(motionEvent: MotionEvent): Boolean {
 //         return motionListener?.invoke(motionEvent) ?: false
 //     }
-    
+
 //     override fun dispatchKeyEvent(keyEvent: KeyEvent): Boolean {
 //         return keyListener?.invoke(keyEvent) ?: false
 //     }
@@ -260,7 +262,6 @@ class MainActivity: FlutterActivity()
 
 """;
               file_kotlin.writeAsStringSync(new_content_kotlin);
-
             }
           }
         }
@@ -274,6 +275,18 @@ class MainActivity: FlutterActivity()
         String new_min_sdk_version = "23";
         String new_target_sdk_version = "34";
 
+        String new_java_version = "17";
+        String new_java_compatibility_version = "JavaVersion.VERSION_${new_java_version}";
+
+        // compileOptions {
+        //     sourceCompatibility = JavaVersion.VERSION_1_8
+        //     targetCompatibility = JavaVersion.VERSION_1_8
+        // }
+
+        // kotlinOptions {
+        //     jvmTarget = JavaVersion.VERSION_1_8
+        // }
+
         RegExp regExp_compile_sdk = RegExp("(([ ]+)?compileSdk([ ]+)(.*))", caseSensitive: false);
         bool is_found_regex_compile_sdk = false;
 
@@ -282,6 +295,23 @@ class MainActivity: FlutterActivity()
 
         RegExp regExp_target_sdk_version = RegExp("(([ ]+)?(targetSdk(Version)?)([ ]+)(.*))", caseSensitive: false);
         bool is_found_regex_target_sdk_version = false;
+
+        ///
+        /// 3 = jvmTarget
+        /// 4 = space
+        /// 5 = value
+        final RegExp regExp_compile_options_compatibility = RegExp("(([ ]+)?((source|target)Compatibility)([ ]+[=][ ]+)(.*))", caseSensitive: false);
+        final List<String> compile_options_compatibility_types = [
+          "source",
+          "target",
+        ];
+
+        ///
+        /// 3 = jvmTarget
+        /// 4 = space
+        /// 5 = value
+        final RegExp regExp_jvm_target = RegExp("(([ ]+)?(jvmTarget)([ ]+[=][ ]+)(.*))", caseSensitive: false);
+        bool is_found_regex_jvm_target = false;
 
         bool is_found_new_update_build_gradle_file = false;
         for (var i = 0; i < data_origins.length; i++) {
@@ -297,12 +327,62 @@ class MainActivity: FlutterActivity()
 
               if (version_compile_sdk != new_compile_sdk) {
                 yield GeneralLibraryApiStatus(serverUniverseApiStatusType: GeneralLibraryApiStatusType.info, value: "Update Build Gradle Compile Sdk ${version_compile_sdk} To ${new_compile_sdk}");
-                data_origins[i] = data_origins[i].replaceAll(regExp_compile_sdk, "${(regExpMatch.group(2) ?? "")}compileSdk ${new_compile_sdk}");
+                data_origins[i] = data_origins[i].replaceAll(regExp_compile_sdk, "${(regExpMatch.group(2) ?? "")}compileSdk = ${new_compile_sdk}");
                 is_found_new_update_build_gradle_file = true;
               }
             }
             continue;
           }
+
+          if (compile_options_compatibility_types.isNotEmpty) {
+            if (regExp_compile_options_compatibility.hashData(data_origin.trim())) {
+              // is_found_regex_compile_options_compatibility = true;
+
+              RegExpMatch? regExpMatch = regExp_compile_options_compatibility.firstMatch(data_origin);
+              if (regExpMatch == null) {
+                continue;
+              }
+
+              final String typeCompileOptionCompability = (regExpMatch.group(4) ?? "").trim();
+              compile_options_compatibility_types.remove(typeCompileOptionCompability);
+              String version_java_version = (regExpMatch.group(6) ?? "").trim();
+
+              if (version_java_version != new_java_compatibility_version) {
+                yield GeneralLibraryApiStatus(
+                  serverUniverseApiStatusType: GeneralLibraryApiStatusType.info,
+                  value: "Update Build Gradle Compile Sdk ${version_java_version} To ${new_java_compatibility_version}",
+                );
+                data_origins[i] = data_origins[i].replaceAll(regExp_compile_options_compatibility, "${(regExpMatch.group(2) ?? "")}${regExpMatch.group(3)}${regExpMatch.group(5)}${new_java_compatibility_version}");
+                is_found_new_update_build_gradle_file = true;
+              }
+            }
+
+            // continue;
+          }
+
+          if (is_found_regex_jvm_target == false) {
+            if (regExp_jvm_target.hashData(data_origin.trim())) {
+              is_found_regex_jvm_target = true;
+
+              RegExpMatch? regExpMatch = regExp_jvm_target.firstMatch(data_origin);
+              if (regExpMatch == null) {
+                continue;
+              }
+              String version_java_version = (regExpMatch.group(5) ?? "").trim();
+
+              if (version_java_version != new_java_version) {
+                yield GeneralLibraryApiStatus(
+                  serverUniverseApiStatusType: GeneralLibraryApiStatusType.info,
+                  value: "Update Build Gradle Compile Sdk ${version_java_version} To ${new_java_version}",
+                );
+                data_origins[i] = data_origins[i].replaceAll(regExp_jvm_target, "${(regExpMatch.group(2) ?? "")}${regExpMatch.group(3)}${regExpMatch.group(4)}${new_java_version}");
+                is_found_new_update_build_gradle_file = true;
+              }
+            }
+
+            continue;
+          }
+
           if (is_found_regex_min_sdk_version == false) {
             if (regExp_min_sdk_version.hashData(data_origin.trim())) {
               is_found_regex_min_sdk_version = true;
@@ -314,7 +394,7 @@ class MainActivity: FlutterActivity()
 
               if (version_min_sdk_version != new_min_sdk_version) {
                 yield GeneralLibraryApiStatus(serverUniverseApiStatusType: GeneralLibraryApiStatusType.info, value: "Update Build Gradle Compile Sdk ${version_min_sdk_version} To ${new_min_sdk_version}");
-                data_origins[i] = data_origins[i].replaceAll(regExp_min_sdk_version, "${(regExpMatch.group(2) ?? "")}${regExpMatch.group(3)} ${new_min_sdk_version}");
+                data_origins[i] = data_origins[i].replaceAll(regExp_min_sdk_version, "${(regExpMatch.group(2) ?? "")}${regExpMatch.group(3)} = ${new_min_sdk_version}");
                 is_found_new_update_build_gradle_file = true;
               }
             }
@@ -332,7 +412,7 @@ class MainActivity: FlutterActivity()
 
               if (version_target_sdk_version != new_target_sdk_version) {
                 yield GeneralLibraryApiStatus(serverUniverseApiStatusType: GeneralLibraryApiStatusType.info, value: "Update Build Gradle Compile Sdk ${version_target_sdk_version} To ${new_target_sdk_version}");
-                data_origins[i] = data_origins[i].replaceAll(regExp_target_sdk_version, "${(regExpMatch.group(2) ?? "")}${regExpMatch.group(3)} ${new_target_sdk_version}");
+                data_origins[i] = data_origins[i].replaceAll(regExp_target_sdk_version, "${(regExpMatch.group(2) ?? "")}${regExpMatch.group(3)} = ${new_target_sdk_version}");
                 is_found_new_update_build_gradle_file = true;
               }
             }
@@ -377,6 +457,74 @@ class MainActivity: FlutterActivity()
       // }
       //
       //
+    }
+  }
+
+  /// Server Universe
+  Stream<GeneralLibraryApiStatus> patch({
+    required Directory directoryBase,
+  }) async* {
+    Directory directory_project = Directory(directoryBase.uri.toFilePath());
+    // ignore: unused_local_variable
+    String project_name = path.basename(directory_project.path);
+
+    File file_pubspec = File(path.join(directory_project.path, "pubspec.yaml"));
+    if (!file_pubspec.existsSync()) {
+      yield GeneralLibraryApiStatus(serverUniverseApiStatusType: GeneralLibraryApiStatusType.failed, value: "Failed Create Project:");
+      return;
+    }
+    // build/web/flutter_bootstrap.js
+
+    // android
+    Directory directory_build_web = Directory(path.join(directory_project.uri.toFilePath(), "build", "web"));
+
+    if (directory_build_web.existsSync()) {
+      yield GeneralLibraryApiStatus(serverUniverseApiStatusType: GeneralLibraryApiStatusType.info, value: "Started Patch Web");
+
+      // auto setup settings gradle
+      File file_flutter_bootstrap_js = File(path.join(directory_build_web.uri.toFilePath(), "flutter_bootstrap.js"));
+      if (file_flutter_bootstrap_js.existsSync()) {
+        yield GeneralLibraryApiStatus(serverUniverseApiStatusType: GeneralLibraryApiStatusType.info, value: "Check File: build/web/flutter_bootstrap.js");
+
+        String value = await file_flutter_bootstrap_js.readAsString();
+        final String canvasKitBaseUrlFrom = """
+return a.canvasKitBaseUrl?a.canvasKitBaseUrl:t.engineRevision&&!t.useLocalCanvasKit?_("https://www.gstatic.com/flutter-canvaskit",t.engineRevision):"canvaskit"
+"""
+            .trim();
+        value = value.replaceAll(canvasKitBaseUrlFrom, "return \"canvaskit\";");
+        await file_flutter_bootstrap_js.writeAsString(value);
+        print("Replace canvaskit on flutter_bootstrap.js");
+      }
+
+      // auto setup settings gradle
+      File file_main_dart_js = File(path.join(directory_build_web.uri.toFilePath(), "main.dart.js"));
+      if (file_main_dart_js.existsSync()) {
+        yield GeneralLibraryApiStatus(serverUniverseApiStatusType: GeneralLibraryApiStatusType.info, value: "Check File: build/web/main.dart.js");
+
+        String value = await file_main_dart_js.readAsString();
+        final String canvasKitBaseUrlFrom = """
+return s==null?"https://fonts.gstatic.com/s/":s
+"""
+            .trim();
+        value = value.replaceAll(canvasKitBaseUrlFrom, "return \"\";");
+        await file_main_dart_js.writeAsString(value);
+        print("Replace canvaskit on main.dart.js");
+      }
+
+      ///
+      /// add file
+      ///
+      ///
+
+      File file_roboto_v20_font_ttf = File(path.join(directory_build_web.uri.toFilePath(), "roboto", "v20", "KFOmCnqEu92Fr1Me5WZLCzYlKw.ttf"));
+      final String path_relative = path.relative(file_roboto_v20_font_ttf.path, from: directory_build_web.uri.toFilePath());
+      if (file_roboto_v20_font_ttf.parent.existsSync() == false) {
+        file_roboto_v20_font_ttf.parent.createSync(recursive: true);
+        print("create Directory: ${path_relative}");
+      }
+
+        await file_roboto_v20_font_ttf.writeAsBytes(file_KFOmCnqEu92Fr1Me5WZLCzYlKw);
+        print("create file: ${path_relative}");
     }
   }
 }

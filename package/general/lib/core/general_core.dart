@@ -99,18 +99,31 @@ class GeneralLibrary implements GeneralLibraryBaseCore {
 
   @override
   GeneralLibraryAppBase get system_app => systemApp;
+  @override
   GeneralLibraryAppBackgroundBase get app_background => appBackground;
+  @override
   GeneralLibraryBatteryBase get system_battery => systemBattery;
+  @override
   GeneralLibraryCameraBase get system_camera => systemCamera;
+  @override
   GeneralLibraryPermissionBase get system_permission => systemPermission;
+  @override
   GeneralLibraryNotificationBase get system_notification => systemNotification;
+  @override
   GeneralLibraryGamePadBase get controller_gamepad => controllerGamepad;
+  @override
   GeneralLibraryTextToSpeechBase get text_to_speech => textToSpeech;
+  @override
   GeneralLibraryDeviceBase get system_device => systemDevice;
+  @override
   GeneralLibrarySpeechToTextBase get speech_to_text => speechToText;
+  @override
   GeneralLibrarySimCardBase get sim_card => simCard;
+  @override
   GeneralLibrarySmsBase get system_sms => systemSms;
+  @override
   GeneralLibraryPlayerBase get media_player => mediaPlayer;
+  @override
   GeneralLibraryLocalAuthBase get local_auth => localAuth;
 
   void test() {
