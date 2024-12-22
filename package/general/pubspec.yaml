@@ -44,7 +44,7 @@ dependencies:
   camera_windows: '^0.2.6+1'
   image: '^4.3.0'
 dev_dependencies:
-  lints: '^4.0.0'
+  lints: '^5.0.0'
   test: 'any'
 dependency_overrides:
   pointycastle: '3.8.0'
