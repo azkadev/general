@@ -39,20 +39,26 @@ Future<void> generalLibraryCli({
   }
 
   if (command == "init") {
-    await generalLibraryApi.create(newName: ".", directoryBase: Directory.current).listen((event) {
+    await generalLibraryApi
+        .create(newName: ".", directoryBase: Directory.current)
+        .listen((event) {
       printed(event);
     }).asFuture();
     exit(0);
   }
 
   if (command == "setup") {
-    await generalLibraryApi.setup(directoryBase: Directory.current).listen((event) {
+    await generalLibraryApi
+        .setup(directoryBase: Directory.current)
+        .listen((event) {
       printed(event);
     }).asFuture();
     exit(0);
   }
   if (command == "patch") {
-    await generalLibraryApi.patch(directoryBase: Directory.current).listen((event) {
+    await generalLibraryApi
+        .patch(directoryBase: Directory.current)
+        .listen((event) {
       printed(event);
     }).asFuture();
     exit(0);
@@ -63,16 +69,19 @@ Future<void> generalLibraryCli({
 
 Progress progress = logger.progress("message");
 void printed(GeneralLibraryApiStatus event) {
-  if (event.serverUniverseApiStatusType == GeneralLibraryApiStatusType.progress_start) {
+  if (event.serverUniverseApiStatusType ==
+      GeneralLibraryApiStatusType.progress_start) {
     progress.cancel();
     progress = logger.progress(event.value);
     return;
   }
-  if (event.serverUniverseApiStatusType == GeneralLibraryApiStatusType.progress) {
+  if (event.serverUniverseApiStatusType ==
+      GeneralLibraryApiStatusType.progress) {
     progress.update(event.value);
     return;
   }
-  if (event.serverUniverseApiStatusType == GeneralLibraryApiStatusType.progress_complete) {
+  if (event.serverUniverseApiStatusType ==
+      GeneralLibraryApiStatusType.progress_complete) {
     progress.complete(event.value);
 
     // progress.cancel();

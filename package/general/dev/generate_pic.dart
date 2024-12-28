@@ -4,8 +4,10 @@ import 'package:image/image.dart' as img;
 import "package:path/path.dart" as path;
 
 void main(List<String> args) async {
-  final Directory directorySource = Directory("/home/galaxeus/Documents/galaxeus/app/general/package/general/pics");
-  final Directory directory = Directory(path.join(Directory.current.path, "build", "general", "pics"));
+  final Directory directorySource = Directory(
+      "/home/galaxeus/Documents/galaxeus/app/general/package/general/pics");
+  final Directory directory =
+      Directory(path.join(Directory.current.path, "build", "general", "pics"));
   if (directory.existsSync() == false) {
     directory.createSync(recursive: true);
   }
@@ -22,7 +24,7 @@ void main(List<String> args) async {
           height: 500,
         );
       }
-      { 
+      {
         await img.Command().rewriteAsync(
           imageSourcePath: element.path,
           saveToSourcePath: path.join(

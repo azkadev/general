@@ -32,45 +32,12 @@ Bukan maksud kami menipu itu karena harga yang sudah di kalkulasi + bantuan tiba
 
 
 <!-- END LICENSE --> */
-// ignore_for_file: non_constant_identifier_names
+import 'dart:io';
 
-import 'package:flutter/widgets.dart';
-import 'package:general/core/core.dart';
-import 'package:media_kit_video/media_kit_video.dart';
+import 'package:general_lib/general_lib.dart';
 
-class PlayerWidget extends StatefulWidget {
-  final GeneralLibraryPlayerControllerBase
-      generalLibraryPlayerControllerBaseDart;
-  const PlayerWidget({
-    super.key,
-    required this.generalLibraryPlayerControllerBaseDart,
-  });
-
-  @override
-  State<PlayerWidget> createState() => _PlayerWidgetState();
-}
-
-class _PlayerWidgetState extends State<PlayerWidget> {
-  late final VideoController videoController;
-  bool is_init = false;
-  @override
-  void initState() {
-    super.initState();
-    WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
-      videoController = VideoController(
-        widget.generalLibraryPlayerControllerBaseDart.player,
-      );
-      setState(() {
-        is_init = true;
-      });
-    });
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    if (is_init) {
-      return Video(controller: videoController);
-    }
-    return SizedBox();
-  }
+void main(List<String> args) {
+  Dart.pub
+      .installFromDirectoryFresh(directoryPackage: Directory.current)
+      .printPretty();
 }

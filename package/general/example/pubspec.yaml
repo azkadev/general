@@ -3,7 +3,7 @@ description: 'A new Flutter project.'
 publish_to: 'none'
 version: '0.0.0'
 environment:
-  sdk: '>=3.3.3 <4.0.0'
+  sdk: '>=3.6.0 <4.0.0'
 dependencies:
   flutter:
     sdk: 'flutter'
@@ -12,9 +12,9 @@ dependencies:
     path: '../'
   media_kit_video: '^1.2.5'
   local_auth: '^2.2.0'
-  telegram_client: '^0.8.28'
-  general_lib: '^0.0.50'
-  general_lib_flutter: '^0.0.31'
+  telegram_client: '^0.8.29'
+  general_lib: '^0.0.51'
+  general_lib_flutter: '^0.0.32'
 dev_dependencies:
   flutter_test:
     sdk: 'flutter'

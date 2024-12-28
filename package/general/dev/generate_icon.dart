@@ -27,9 +27,11 @@ class AndroidIconData {
 
 void main(List<String> args) async {
   // final String imageSource = "/home/galaxeus/Documents/galaxeus/app/general_machine_system_services/library/general_assets_flutter/lib/assets/logo/nextgifto/nextgifto_telegram_userbot.jpeg";
-  final String imageSource = "/home/galaxeus/Documents/galaxeus/app/general/package/general/Icon-512.png";
+  final String imageSource =
+      "/home/galaxeus/Documents/galaxeus/app/general/package/general/Icon-512.png";
   // final path = args.isNotEmpty ? args[0] : 'test.png';
-  final Directory directory = Directory(path.join(Directory.current.path, "build", "general", "icon"));
+  final Directory directory =
+      Directory(path.join(Directory.current.path, "build", "general", "icon"));
   if (directory.existsSync() == false) {
     directory.createSync(recursive: true);
   }
@@ -193,7 +195,8 @@ void main(List<String> args) async {
     ///
 
     {
-      File file = File(path.join(directory_android.path, "mipmap-anydpi-v26", "ic_launcher_round.xml"));
+      File file = File(path.join(directory_android.path, "mipmap-anydpi-v26",
+          "ic_launcher_round.xml"));
       if (file.parent.existsSync() == false) {
         file.parent.createSync(recursive: true);
       }
@@ -208,7 +211,8 @@ void main(List<String> args) async {
     }
 
     {
-      File file = File(path.join(directory_android.path, "mipmap-anydpi-v26", "ic_launcher.xml"));
+      File file = File(path.join(
+          directory_android.path, "mipmap-anydpi-v26", "ic_launcher.xml"));
       if (file.parent.existsSync() == false) {
         file.parent.createSync(recursive: true);
       }
@@ -222,7 +226,8 @@ void main(List<String> args) async {
           .trim());
     }
     {
-      File file = File(path.join(directory_android.path, "values", "ic_launcher_background.xml"));
+      File file = File(path.join(
+          directory_android.path, "values", "ic_launcher_background.xml"));
       if (file.parent.existsSync() == false) {
         file.parent.createSync(recursive: true);
       }

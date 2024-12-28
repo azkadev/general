@@ -33,15 +33,15 @@ Bukan maksud kami menipu itu karena harga yang sudah di kalkulasi + bantuan tiba
 
 <!-- END LICENSE --> */
 // ignore_for_file: non_constant_identifier_names
- 
-import "package:general/core/core.dart"; 
+
+import "package:general/core/core.dart";
 import 'package:general/flutter/app/app.dart';
 import 'package:general/flutter/app_background/app_background_core.dart';
 import 'package:general/flutter/battery/battery.dart';
 import 'package:general/flutter/camera/camera.dart';
 import 'package:general/flutter/device/device.dart';
 import 'package:general/flutter/gamepad/gamepad_core.dart';
-import 'package:general/flutter/local_auth/local_auth.dart'; 
+import 'package:general/flutter/local_auth/local_auth.dart';
 import 'package:general/flutter/notification/notification_core.dart';
 import 'package:general/flutter/permission/permission.dart';
 import 'package:general/flutter/sim_card/sim_card_core.dart';
@@ -53,30 +53,43 @@ import 'package:general/flutter/text_to_speech/text_to_speech_core.dart';
 class GeneralFlutter extends GeneralLibrary {
   const GeneralFlutter();
 
-  static GeneralLibraryLocalAuthBaseFlutter localAuth = GeneralLibraryLocalAuthBaseFlutter();
+  static GeneralLibraryLocalAuthBaseFlutter localAuth =
+      GeneralLibraryLocalAuthBaseFlutter();
 
-  static GeneralLibraryAppBaseFlutter systemApp = GeneralLibraryAppBaseFlutter();
+  static GeneralLibraryAppBaseFlutter systemApp =
+      GeneralLibraryAppBaseFlutter();
 
-  static GeneralLibraryAppBackgroundBaseFlutter appBackground = GeneralLibraryAppBackgroundBaseFlutter();
+  static GeneralLibraryAppBackgroundBaseFlutter appBackground =
+      GeneralLibraryAppBackgroundBaseFlutter();
 
-  static GeneralLibraryCameraBaseFlutter systemCamera = GeneralLibraryCameraBaseFlutter();
+  static GeneralLibraryCameraBaseFlutter systemCamera =
+      GeneralLibraryCameraBaseFlutter();
 
-  static GeneralLibraryPermissionBaseFlutter systemPermission = GeneralLibraryPermissionBaseFlutter();
+  static GeneralLibraryPermissionBaseFlutter systemPermission =
+      GeneralLibraryPermissionBaseFlutter();
 
-  static GeneralLibraryNotificationBaseFlutter systemNotification = GeneralLibraryNotificationBaseFlutter();
-  static GeneralLibraryTextToSpeechBaseFlutter textToSpeech = GeneralLibraryTextToSpeechBaseFlutter();
+  static GeneralLibraryNotificationBaseFlutter systemNotification =
+      GeneralLibraryNotificationBaseFlutter();
+  static GeneralLibraryTextToSpeechBaseFlutter textToSpeech =
+      GeneralLibraryTextToSpeechBaseFlutter();
 
-  static GeneralLibraryBatteryBaseFlutter systembattery = GeneralLibraryBatteryBaseFlutter();
+  static GeneralLibraryBatteryBaseFlutter systembattery =
+      GeneralLibraryBatteryBaseFlutter();
 
-  static GeneralLibraryDeviceBaseFlutter systemDevice = GeneralLibraryDeviceBaseFlutter();
+  static GeneralLibraryDeviceBaseFlutter systemDevice =
+      GeneralLibraryDeviceBaseFlutter();
 
-  static GeneralLibraryGamePadBaseFlutter controllerGamepad = GeneralLibraryGamePadBaseFlutter();
+  static GeneralLibraryGamePadBaseFlutter controllerGamepad =
+      GeneralLibraryGamePadBaseFlutter();
 
-  static GeneralLibrarySpeechToTextBaseFlutter speechToText = GeneralLibrarySpeechToTextBaseFlutter();
- 
-  static GeneralLibrarySimCardBaseFlutter simCard = GeneralLibrarySimCardBaseFlutter();
+  static GeneralLibrarySpeechToTextBaseFlutter speechToText =
+      GeneralLibrarySpeechToTextBaseFlutter();
 
-  static GeneralLibrarySmsBaseFlutter systemSms = GeneralLibrarySmsBaseFlutter();
+  static GeneralLibrarySimCardBaseFlutter simCard =
+      GeneralLibrarySimCardBaseFlutter();
+
+  static GeneralLibrarySmsBaseFlutter systemSms =
+      GeneralLibrarySmsBaseFlutter();
 
   @override
   GeneralLibraryAppBackgroundBaseFlutter get app_background => appBackground;
@@ -112,7 +125,8 @@ class GeneralFlutter extends GeneralLibrary {
 
   @override
   // TODO: implement system_notification
-  GeneralLibraryNotificationBaseFlutter get system_notification => systemNotification;
+  GeneralLibraryNotificationBaseFlutter get system_notification =>
+      systemNotification;
 
   @override
   // TODO: implement system_permission
@@ -124,6 +138,5 @@ class GeneralFlutter extends GeneralLibrary {
 
   @override
   // TODO: implement text_to_speech
-  GeneralLibraryTextToSpeechBaseFlutter get text_to_speech => textToSpeech; 
- 
+  GeneralLibraryTextToSpeechBaseFlutter get text_to_speech => textToSpeech;
 }

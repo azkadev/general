@@ -1,0 +1,29 @@
+name: Web Deploy To Netlify
+on: [workflow_dispatch]
+
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Set up Node js 
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+
+      - name: Deploy to Netlify
+        uses: nwtgck/actions-netlify@v1.2
+        with:
+          publish-dir: './'
+          production-branch: main
+          github-token: ${{github.token}}
+          deploy-message: "Deploy from GitHub Actions"
+          enable-pull-request-comment: false
+          enable-commit-comment: true
+          overwrites-pull-request-comment: true
+          production-deploy: true
+        env:
+          NETLIFY_AUTH_TOKEN: ""
+          NETLIFY_SITE_ID: ""
+        timeout-minutes: 1

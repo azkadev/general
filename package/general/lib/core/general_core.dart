@@ -64,33 +64,42 @@ class GeneralLibrary implements GeneralLibraryBaseCore {
   const GeneralLibrary();
 
   static GeneralLibraryAppBase systemApp = GeneralLibraryAppBase();
-  static GeneralLibraryAppBackgroundBase appBackground = GeneralLibraryAppBackgroundBase();
+  static GeneralLibraryAppBackgroundBase appBackground =
+      GeneralLibraryAppBackgroundBase();
   static GeneralLibraryBatteryBase systemBattery = GeneralLibraryBatteryBase();
   static GeneralLibraryCameraBase systemCamera = GeneralLibraryCameraBase();
-  static final GeneralLibraryNotificationBase systemNotification = GeneralLibraryNotificationBase();
+  static final GeneralLibraryNotificationBase systemNotification =
+      GeneralLibraryNotificationBase();
 
   ///
   static final GeneralLibrarySimCardBase simCard = GeneralLibrarySimCardBase();
 
   ///
-  static final GeneralLibraryPlayerBase mediaPlayer = GeneralLibraryPlayerBase();
+  static final GeneralLibraryPlayerBase mediaPlayer =
+      GeneralLibraryPlayerBase();
 
   ///
 
   ///
-  static final GeneralLibraryDeviceBase systemDevice = GeneralLibraryDeviceBase();
+  static final GeneralLibraryDeviceBase systemDevice =
+      GeneralLibraryDeviceBase();
 
-  static final GeneralLibraryTextToSpeechBase textToSpeech = GeneralLibraryTextToSpeechBase();
-
-  ///
-  static final GeneralLibraryGamePadBase controllerGamepad = GeneralLibraryGamePadBase();
-
-  static GeneralLibraryPermissionBase systemPermission = GeneralLibraryPermissionBase();
+  static final GeneralLibraryTextToSpeechBase textToSpeech =
+      GeneralLibraryTextToSpeechBase();
 
   ///
-  static final GeneralLibrarySpeechToTextBase speechToText = GeneralLibrarySpeechToTextBase();
+  static final GeneralLibraryGamePadBase controllerGamepad =
+      GeneralLibraryGamePadBase();
 
-  static final GeneralLibraryLocalAuthBase localAuth = GeneralLibraryLocalAuthBase();
+  static GeneralLibraryPermissionBase systemPermission =
+      GeneralLibraryPermissionBase();
+
+  ///
+  static final GeneralLibrarySpeechToTextBase speechToText =
+      GeneralLibrarySpeechToTextBase();
+
+  static final GeneralLibraryLocalAuthBase localAuth =
+      GeneralLibraryLocalAuthBase();
 
   ///
   static final GeneralLibrarySmsBase systemSms = GeneralLibrarySmsBase();

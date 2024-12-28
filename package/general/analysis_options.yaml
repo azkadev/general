@@ -31,7 +31,7 @@ include: package:lints/recommended.yaml
 
 analyzer:
   exclude:
-    - bin/
+    - dev/
     - template/
     - test/
     - example/
