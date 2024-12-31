@@ -36,7 +36,7 @@ Bukan maksud kami menipu itu karena harga yang sudah di kalkulasi + bantuan tiba
 
 import 'package:flutter/widgets.dart';
 import 'package:general/core/core.dart';
-import 'package:media_kit_video/media_kit_video.dart';
+import 'package:media_kit_video_fork/media_kit_video_fork.dart';
 
 class PlayerWidget extends StatefulWidget {
   final GeneralLibraryPlayerControllerBase

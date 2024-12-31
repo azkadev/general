@@ -2,7 +2,7 @@ name: 'general'
 description: |
   General is Library for help you integrate any package commong used like audio, video, permission, location
   gamepad, local auth fingerprint, biometric, camera, and many more only use one library
-version: '0.0.34'
+version: '0.0.35'
 homepage: 'https://github.com/azkadev/general'
 repository: 'https://github.com/azkadev/general'
 issue_tracker: 'https://t.me/DEVELOPER_GLOBAL_PUBLIC'
@@ -22,8 +22,8 @@ executables:
 environment:
   sdk: '>=3.6.0 <4.0.0'
 dependencies:
-  general_lib: '^0.0.51'
-  media_kit: '^1.1.1'
+  general_lib: '^0.0.52'
+  media_kit_fork: '^0.0.1'
   path: '^1.9.0'
   io_universe: '^0.0.2'
   mason_logger: '^0.3.1'
@@ -38,8 +38,8 @@ dependencies:
   flutter_tts: '^4.2.0'
   permission_handler: '^11.3.1'
   speech_to_text: '^7.0.0'
-  general_lib_flutter: '^0.0.32'
-  media_kit_video: '^1.2.5'
+  general_lib_flutter: '^0.0.33'
+  media_kit_video_fork: '^0.0.1'
   local_auth: '^2.3.0'
   wakelock_plus: '^1.2.8'
   camera: '^0.11.0+2'

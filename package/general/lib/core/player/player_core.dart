@@ -39,7 +39,7 @@ import 'package:general_lib/dart/executable_type/executable_type.dart';
 import 'package:general_lib/general_lib.dart';
 
 import 'player_controller.dart';
-import 'package:media_kit/media_kit.dart';
+import 'package:media_kit_fork/media_kit_fork.dart';
 
 class GeneralLibraryPlayerBase implements GeneralLibraryCore {
   static List<GeneralLibraryPlayerControllerBase> players = [];

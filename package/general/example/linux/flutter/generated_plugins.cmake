@@ -4,6 +4,7 @@
 
 list(APPEND FLUTTER_PLUGIN_LIST
   media_kit_video
+  media_kit_video_fork
 )
 
 list(APPEND FLUTTER_FFI_PLUGIN_LIST

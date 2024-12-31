@@ -7,6 +7,7 @@ list(APPEND FLUTTER_PLUGIN_LIST
   flutter_tts
   local_auth_windows
   media_kit_video
+  media_kit_video_fork
   permission_handler_windows
   screen_brightness_windows
 )

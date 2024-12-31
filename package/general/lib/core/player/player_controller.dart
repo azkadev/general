@@ -37,7 +37,7 @@ Bukan maksud kami menipu itu karena harga yang sudah di kalkulasi + bantuan tiba
 import 'dart:typed_data';
 
 import 'package:general/core/player/player_model_data.dart';
-import 'package:media_kit/media_kit.dart';
+import 'package:media_kit_fork/media_kit_fork.dart';
 
 extension GeneralLibraryPlayerMediaBaseExtesnion
     on GeneralLibraryPlayerMediaBase {
