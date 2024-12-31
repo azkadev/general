@@ -25,10 +25,10 @@ dependencies:
   general_lib: '^0.0.51'
   media_kit: '^1.1.1'
   path: '^1.9.0'
-  universal_io: '^2.2.2'
+  io_universe: '^0.0.2'
   mason_logger: '^0.3.1'
   html: 'any'
-  collection: '^1.18.0'
+  collection: '^1.19.0'
   yaml: '^3.1.2'
   yaml_writer: '^2.0.1'
   flutter:
