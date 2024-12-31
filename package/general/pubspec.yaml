@@ -2,7 +2,7 @@ name: 'general'
 description: |
   General is Library for help you integrate any package commong used like audio, video, permission, location
   gamepad, local auth fingerprint, biometric, camera, and many more only use one library
-version: '0.0.35'
+version: '0.0.36'
 homepage: 'https://github.com/azkadev/general'
 repository: 'https://github.com/azkadev/general'
 issue_tracker: 'https://t.me/DEVELOPER_GLOBAL_PUBLIC'
