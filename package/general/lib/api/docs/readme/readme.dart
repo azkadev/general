@@ -96,6 +96,7 @@ code android/app/src/main/AndroidManifest.xml
     <!-- Permissions options for the `notification` group -->
     <uses-permission android:name="android.permission.POST_NOTIFICATIONS"/>
      
+    <uses-permission android:name="android.permission.USE_BIOMETRIC"/>
     <!-- if you need more permission --> 
 
 
@@ -134,7 +135,6 @@ code android/app/src/main/AndroidManifest.xml
 
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE_SPECIAL_USE" />
 
-    <uses-permission android:name="android.permission.USE_BIOMETRIC"/>
     <uses-permission android:name="android.permission.READ_SMS"/>
     <uses-permission android:name="android.permission.SEND_SMS"/>
     <uses-permission android:name="android.permission.RECEIVE_SMS"/>
