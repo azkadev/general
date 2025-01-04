@@ -11,7 +11,7 @@ funding:
 environment:
   sdk: '>=3.6.0 <4.0.0'
 dependencies:
-  general_lib: '^0.0.53'
+  general_lib: '^0.0.54'
   http: '^1.2.2'
   mason_logger: '^0.3.1'
   path: '^1.9.0'
