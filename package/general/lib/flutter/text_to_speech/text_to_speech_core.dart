@@ -39,22 +39,32 @@ import 'package:general/core/player/player_controller.dart';
 import 'package:general/core/text_to_speech/text_to_speech_core.dart';
 import 'package:general_lib/general_lib.dart';
 
+/// UncompleteDocumentation
 class GeneralLibraryTextToSpeechBaseFlutter
     implements GeneralLibraryTextToSpeechBase {
+  /// UncompleteDocumentation
   FlutterTts flutterTts = FlutterTts();
 
+  /// UncompleteDocumentation
   static bool is_text_to_speech_on_speak = false;
 
+  /// UncompleteDocumentation
   bool get isIOS => !Dart.isWeb && Dart.isIOS;
+
+  /// UncompleteDocumentation
   bool get isAndroid => !Dart.isWeb && Dart.isAndroid;
+
+  /// UncompleteDocumentation
   bool get isWindows => !Dart.isWeb && Dart.isWindows;
 
+  /// UncompleteDocumentation
   bool get isWeb => Dart.isWeb;
   @override
   bool isSupport() {
     return flutter_is_support_flutter_tts;
   }
 
+  /// UncompleteDocumentation
   bool get flutter_is_support_flutter_tts {
     if (Dart.isLinux) {
       if (Dart.isWeb == false) {

@@ -36,7 +36,9 @@ Bukan maksud kami menipu itu karena harga yang sudah di kalkulasi + bantuan tiba
 
 import 'dart:convert';
 
+/// UncompleteDocumentation
 class GeneralUtils {
+  /// UncompleteDocumentation
   static String to_string_pretty({required dynamic data, int space = 4}) {
     if (data is Map || data is List) {
       return JsonEncoder.withIndent(" " * space).convert(data);

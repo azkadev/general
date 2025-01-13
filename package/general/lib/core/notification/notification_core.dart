@@ -36,17 +36,22 @@ Bukan maksud kami menipu itu karena harga yang sudah di kalkulasi + bantuan tiba
 
 import 'package:general/core/general_library.dart';
 
+/// UncompleteDocumentation
 class GeneralLibraryNotificationBase implements GeneralLibraryCore {
+  /// UncompleteDocumentation
   GeneralLibraryNotificationBase();
 
+  /// UncompleteDocumentation
   bool get is_support_awesome_notification {
     return false;
   }
 
+  /// UncompleteDocumentation
   bool get is_support_desktop_notification {
     return false;
   }
 
+  /// UncompleteDocumentation
   Future<bool> initialize({
     String? defaultIcon,
     bool debug = false,
@@ -54,6 +59,8 @@ class GeneralLibraryNotificationBase implements GeneralLibraryCore {
   }) async {
     return false;
   }
+
+  /// UncompleteDocumentation
 
   Future<bool> createSimpleNotification({
     required String title,

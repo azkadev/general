@@ -36,6 +36,7 @@ Bukan maksud kami menipu itu karena harga yang sudah di kalkulasi + bantuan tiba
 
 import 'package:general/core/utils.dart';
 
+/// UncompleteDocumentation
 class SimCardInfoData {
   /// [carrierName] : The name of the carrier.
   String carrier_name;
@@ -55,6 +56,7 @@ class SimCardInfoData {
   /// - [countryPhonePrefix] : The phone prefix for the country of the SIM card.
   String country_phone_prefix;
 
+  /// UncompleteDocumentation
   SimCardInfoData({
     required this.carrier_name,
     required this.display_name,
@@ -64,6 +66,7 @@ class SimCardInfoData {
     required this.country_phone_prefix,
   });
 
+  /// UncompleteDocumentation
   Map toJson() {
     return {
       "@type": "simCardInfoData",

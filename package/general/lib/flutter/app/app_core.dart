@@ -40,9 +40,13 @@ import 'package:general/core/app/app.dart';
 import 'package:general_lib_flutter/extension/build_context.dart';
 import 'package:wakelock_plus/wakelock_plus.dart';
 
+/// UncompleteDocumentation
 class GeneralLibraryAppBaseFlutter implements GeneralLibraryAppBase {
+  /// UncompleteDocumentation
   static GlobalKey<NavigatorState> flutter_navigator_key =
       GlobalKey<NavigatorState>();
+
+  /// UncompleteDocumentation
   static GlobalKey flutter_repaint_boundery_key = GlobalKey();
   @override
   Future<bool> wake_lock_is_enabled() async {
@@ -65,6 +69,8 @@ class GeneralLibraryAppBaseFlutter implements GeneralLibraryAppBase {
   Future<void> wake_lock_enable() async {
     await WakelockPlus.enable();
   }
+
+  /// UncompleteDocumentation
 
   static Widget repaintBoundaryWidget({
     required Widget child,
@@ -107,6 +113,7 @@ class GeneralLibraryAppBaseFlutter implements GeneralLibraryAppBase {
     await static_setFullScreen(isFullScreen);
   }
 
+  /// UncompleteDocumentation
   static Future<void> static_setFullScreen(bool isFullScreen) async {
     if (isFullScreen) {
       await SystemChrome.setEnabledSystemUIMode(SystemUiMode.immersiveSticky);
@@ -123,6 +130,7 @@ class GeneralLibraryAppBaseFlutter implements GeneralLibraryAppBase {
     static_setPreferredOrientations(orientations: orientations);
   }
 
+  /// UncompleteDocumentation
   static Future<void> static_setPreferredOrientations({
     required List<GeneralLibraryAppDeviceOrientationType> orientations,
   }) async {
@@ -130,6 +138,7 @@ class GeneralLibraryAppBaseFlutter implements GeneralLibraryAppBase {
         orientations: orientations.toFlutter());
   }
 
+  /// UncompleteDocumentation
   static Future<void> static_flutter_setPreferredOrientations({
     required List<DeviceOrientation> orientations,
   }) async {
@@ -142,8 +151,10 @@ class GeneralLibraryAppBaseFlutter implements GeneralLibraryAppBase {
   }
 }
 
+/// UncompleteDocumentation
 extension ExtensionListGeneralAppDeviceOriendaion
     on List<GeneralLibraryAppDeviceOrientationType> {
+  /// UncompleteDocumentation
   List<DeviceOrientation> toFlutter() {
     return map((e) => DeviceOrientation.values
             .singleWhere((element) => element.name == e.name))

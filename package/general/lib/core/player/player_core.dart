@@ -41,11 +41,16 @@ import 'package:general_lib/general_lib.dart';
 import 'player_controller.dart';
 import 'package:media_kit_fork/media_kit_fork.dart';
 
+/// UncompleteDocumentation
 class GeneralLibraryPlayerBase implements GeneralLibraryCore {
+  /// UncompleteDocumentation
   static List<GeneralLibraryPlayerControllerBase> players = [];
 
+  /// UncompleteDocumentation
   GeneralLibraryPlayerBase();
   static bool _staticEnsureInitialized = false;
+
+  /// UncompleteDocumentation
   static void staticEnsureInitialized({
     String? libmpv,
   }) {
@@ -66,12 +71,15 @@ class GeneralLibraryPlayerBase implements GeneralLibraryCore {
     }
   }
 
+  /// UncompleteDocumentation
+
   void ensureInitialized({
     String? libmpv,
   }) {
     staticEnsureInitialized(libmpv: libmpv);
   }
 
+  /// UncompleteDocumentation
   GeneralLibraryPlayerControllerBase createPlayer({
     required String player_id,
   }) {
@@ -85,6 +93,8 @@ class GeneralLibraryPlayerBase implements GeneralLibraryCore {
     return generalLibraryPlayerControllerBaseDart;
   }
 
+  /// UncompleteDocumentation
+
   GeneralLibraryPlayerControllerBase createPlayerWithoutAdd(
       {required String player_id}) {
     GeneralLibraryPlayerControllerBase generalLibraryPlayerControllerBaseDart =
@@ -95,6 +105,7 @@ class GeneralLibraryPlayerBase implements GeneralLibraryCore {
     return generalLibraryPlayerControllerBaseDart;
   }
 
+  /// UncompleteDocumentation
   bool containsPlayer({required String player_id}) {
     try {
       players.singleWhere((element) => element.player_id == player_id);
@@ -103,12 +114,15 @@ class GeneralLibraryPlayerBase implements GeneralLibraryCore {
     return false;
   }
 
+  /// UncompleteDocumentation
   GeneralLibraryPlayerControllerBase? getPlayer({required String player_id}) {
     try {
       return players.singleWhere((element) => element.player_id == player_id);
     } catch (e) {}
     return null;
   }
+
+  /// UncompleteDocumentation
 
   GeneralLibraryPlayerControllerBase? getPlayerForce(
       {required String player_id}) {
@@ -118,6 +132,7 @@ class GeneralLibraryPlayerBase implements GeneralLibraryCore {
     return createPlayer(player_id: player_id);
   }
 
+  /// UncompleteDocumentation
   Future<void> removePlayer({
     required String player_id,
   }) async {

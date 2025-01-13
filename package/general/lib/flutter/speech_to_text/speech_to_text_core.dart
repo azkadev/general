@@ -41,16 +41,28 @@ import 'package:general/flutter/speech_to_text/extension/listen_mode_type_to_lis
 import "package:general_lib/general_lib.dart";
 import 'package:speech_to_text/speech_to_text.dart';
 
+/// UncompleteDocumentation
 class GeneralLibrarySpeechToTextBaseFlutter
     implements GeneralLibrarySpeechToTextBase {
+  /// UncompleteDocumentation
   final SpeechToText speechToText = SpeechToText();
+
+  /// UncompleteDocumentation
   GeneralLibrarySpeechToTextBaseFlutter();
+
+  /// UncompleteDocumentation
   bool get isIOS => !Dart.isWeb && Dart.isIOS;
+
+  /// UncompleteDocumentation
   bool get isAndroid => !Dart.isWeb && Dart.isAndroid;
+
+  /// UncompleteDocumentation
   bool get isWindows => !Dart.isWeb && Dart.isWindows;
 
+  /// UncompleteDocumentation
   bool get isWeb => Dart.isWeb;
 
+  /// UncompleteDocumentation
   bool get flutter_is_support_flutter_stt {
     if (Dart.isLinux || Dart.isWindows) {
       if (Dart.isWeb == false) {

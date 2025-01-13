@@ -38,6 +38,7 @@ import 'package:flutter_background/flutter_background.dart';
 import 'package:general/core/app_background/app_background_core.dart';
 import "package:general_lib/general_lib.dart";
 
+/// UncompleteDocumentation
 class GeneralLibraryAppBackgroundBaseFlutter
     implements GeneralLibraryAppBackgroundBase {
   @override

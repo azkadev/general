@@ -40,7 +40,9 @@ import 'dart:async';
 import 'package:general/core/gamepad/gamepad_core.dart';
 import 'package:general_lib/general_lib.dart';
 
+/// UncompleteDocumentation
 class GeneralLibraryGamePadBaseFlutter implements GeneralLibraryGamePadBase {
+  /// UncompleteDocumentation
   GeneralLibraryGamePadBaseFlutter();
 
   @override

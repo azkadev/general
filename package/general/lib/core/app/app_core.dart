@@ -40,47 +40,61 @@ import 'package:general/core/general_library.dart';
 
 import 'app_model.dart';
 
+/// UncompleteDocumentation
 class GeneralLibraryAppBase implements GeneralLibraryCore {
+  /// UncompleteDocumentation
   GeneralLibraryAppBase();
 
+  /// UncompleteDocumentation
   Future<bool> wake_lock_is_enabled() async {
     return false;
     // await WakelockPlus.enabled;
   }
 
+  /// UncompleteDocumentation
   Future<void> wake_lock_toggle({
     required bool enable,
   }) async {
     // await WakelockPlus.toggle(enable: enable);
   }
 
+  /// UncompleteDocumentation
   Future<void> wake_lock_disable() async {
     // await WakelockPlus.disable();
   }
 
+  /// UncompleteDocumentation
   Future<void> wake_lock_enable() async {
     // await WakelockPlus.enable();
   }
 
+  /// UncompleteDocumentation
   void showSnackBar({
     required String message,
   }) {}
 
+  /// UncompleteDocumentation
   Future<Uint8List?> screenshot_current_widget() async {
     return null;
   }
+
+  /// UncompleteDocumentation
 
   Future<void> setFullScreen(bool isFullScreen) async {
     return;
   }
 
+  /// UncompleteDocumentation
   static Future<void> static_setFullScreen(bool isFullScreen) async {}
 
+  /// UncompleteDocumentation
   Future<void> setPreferredOrientations({
     required List<GeneralLibraryAppDeviceOrientationType> orientations,
   }) async {
     static_setPreferredOrientations(orientations: orientations);
   }
+
+  /// UncompleteDocumentation
 
   static Future<void> static_setPreferredOrientations({
     required List<GeneralLibraryAppDeviceOrientationType> orientations,

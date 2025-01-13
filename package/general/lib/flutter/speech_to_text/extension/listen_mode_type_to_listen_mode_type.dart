@@ -37,7 +37,9 @@ Bukan maksud kami menipu itu karena harga yang sudah di kalkulasi + bantuan tiba
 import 'package:general/core/speech_to_text/speech_to_text.dart';
 import 'package:speech_to_text/speech_to_text.dart';
 
+/// UncompleteDocumentation
 extension ExtensionListenModeTypeToListenMode on ListenModeType {
+  /// UncompleteDocumentation
   ListenMode get toListenMode {
     if (this == ListenModeType.deviceDefault) {
       return ListenMode.deviceDefault;
@@ -59,7 +61,9 @@ extension ExtensionListenModeTypeToListenMode on ListenModeType {
   }
 }
 
+/// UncompleteDocumentation
 extension ExtensionListListenModeTypeToListenMode on List<ListenModeType> {
+  /// UncompleteDocumentation
   List<ListenMode> get toListenModes {
     return map((e) => e.toListenMode).toList();
   }

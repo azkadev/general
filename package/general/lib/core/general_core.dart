@@ -43,31 +43,72 @@ import 'device/device.dart';
 import 'core.dart';
 import 'notification/notification_core.dart';
 
+/// UncompleteDocumentation
 abstract class GeneralLibraryBaseCore {
+  /// UncompleteDocumentation
   dynamic get system_app => throw UnimplementedError();
+
+  /// UncompleteDocumentation
   dynamic get app_background => throw UnimplementedError();
+
+  /// UncompleteDocumentation
   dynamic get system_battery => throw UnimplementedError();
+
+  /// UncompleteDocumentation
   dynamic get system_camera => throw UnimplementedError();
+
+  /// UncompleteDocumentation
   dynamic get system_permission => throw UnimplementedError();
+
+  /// UncompleteDocumentation
   dynamic get system_notification => throw UnimplementedError();
+
+  /// UncompleteDocumentation
   dynamic get controller_gamepad => throw UnimplementedError();
+
+  /// UncompleteDocumentation
   dynamic get text_to_speech => throw UnimplementedError();
+
+  /// UncompleteDocumentation
   dynamic get system_device => throw UnimplementedError();
+
+  /// UncompleteDocumentation
   dynamic get speech_to_text => throw UnimplementedError();
+
+  /// UncompleteDocumentation
   dynamic get sim_card => throw UnimplementedError();
+
+  /// UncompleteDocumentation
   dynamic get system_sms => throw UnimplementedError();
+
+  /// UncompleteDocumentation
   dynamic get media_player => throw UnimplementedError();
+
+  /// UncompleteDocumentation
   dynamic get local_auth => throw UnimplementedError();
+
+  /// UncompleteDocumentation
 }
 
+/// UncompleteDocumentation
 class GeneralLibrary implements GeneralLibraryBaseCore {
+  /// UncompleteDocumentation
   const GeneralLibrary();
 
+  /// UncompleteDocumentation
   static GeneralLibraryAppBase systemApp = GeneralLibraryAppBase();
+
+  /// UncompleteDocumentation
   static GeneralLibraryAppBackgroundBase appBackground =
       GeneralLibraryAppBackgroundBase();
+
+  /// UncompleteDocumentation
   static GeneralLibraryBatteryBase systemBattery = GeneralLibraryBatteryBase();
+
+  /// UncompleteDocumentation
   static GeneralLibraryCameraBase systemCamera = GeneralLibraryCameraBase();
+
+  /// UncompleteDocumentation
   static final GeneralLibraryNotificationBase systemNotification =
       GeneralLibraryNotificationBase();
 
@@ -84,6 +125,7 @@ class GeneralLibrary implements GeneralLibraryBaseCore {
   static final GeneralLibraryDeviceBase systemDevice =
       GeneralLibraryDeviceBase();
 
+  /// UncompleteDocumentation
   static final GeneralLibraryTextToSpeechBase textToSpeech =
       GeneralLibraryTextToSpeechBase();
 
@@ -91,6 +133,7 @@ class GeneralLibrary implements GeneralLibraryBaseCore {
   static final GeneralLibraryGamePadBase controllerGamepad =
       GeneralLibraryGamePadBase();
 
+  /// UncompleteDocumentation
   static GeneralLibraryPermissionBase systemPermission =
       GeneralLibraryPermissionBase();
 
@@ -98,12 +141,14 @@ class GeneralLibrary implements GeneralLibraryBaseCore {
   static final GeneralLibrarySpeechToTextBase speechToText =
       GeneralLibrarySpeechToTextBase();
 
+  /// UncompleteDocumentation
   static final GeneralLibraryLocalAuthBase localAuth =
       GeneralLibraryLocalAuthBase();
 
   ///
   static final GeneralLibrarySmsBase systemSms = GeneralLibrarySmsBase();
 
+  /// UncompleteDocumentation
   Future<void> ensureInitialized() async {}
 
   @override
@@ -135,6 +180,7 @@ class GeneralLibrary implements GeneralLibraryBaseCore {
   @override
   GeneralLibraryLocalAuthBase get local_auth => localAuth;
 
+  /// UncompleteDocumentation
   void test() {
     print("oke");
   }

@@ -40,6 +40,7 @@ import 'dart:async';
 import 'package:general/core/battery/battery.dart';
 import 'package:general/core/battery/battery_status.dart';
 
+/// UncompleteDocumentation
 class GeneralLibraryBatteryBaseFlutter implements GeneralLibraryBatteryBase {
   // Battery battery = Battery();
 
@@ -60,6 +61,7 @@ class GeneralLibraryBatteryBaseFlutter implements GeneralLibraryBatteryBase {
     return BatteryStatusType.unknown;
   }
 
+  /// UncompleteDocumentation
   BatteryStatusType autoChangeBatteryStatus({required dynamic batteryState}) {
     try {
       // if (batteryState == BatteryState.charging) {

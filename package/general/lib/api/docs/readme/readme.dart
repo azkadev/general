@@ -1,6 +1,8 @@
 import 'package:general/api/docs/docs_core.dart';
 
+/// UncompleteDocumentation
 extension GeneralLibraryDocsReadme on GeneralLibraryDocs {
+  /// UncompleteDocumentation
   String readme() {
     return """
 # General 

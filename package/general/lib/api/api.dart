@@ -48,30 +48,58 @@ import "package:path/path.dart" as path;
 
 /// build type server
 enum GeneralLibraryApiBuildType {
+  /// UncompleteDocumentation
   debug,
+
+  /// UncompleteDocumentation
   release,
 }
 
 /// build platfomr type
 enum GeneralLibraryApiPlatformType {
+  /// UncompleteDocumentation
   supabase,
+
+  /// UncompleteDocumentation
   vercel,
+
+  /// UncompleteDocumentation
   netlify,
 }
 
+/// UncompleteDocumentation
 enum GeneralLibraryApiStatusType {
+  /// UncompleteDocumentation
   succes,
+
+  /// UncompleteDocumentation
   failed,
+
+  /// UncompleteDocumentation
   info,
+
+  /// UncompleteDocumentation
   start,
+
+  /// UncompleteDocumentation
   progress_start,
+
+  /// UncompleteDocumentation
   progress,
+
+  /// UncompleteDocumentation
   progress_complete,
 }
 
+/// UncompleteDocumentation
 class GeneralLibraryApiStatus {
+  /// UncompleteDocumentation
   String value;
+
+  /// UncompleteDocumentation
   GeneralLibraryApiStatusType serverUniverseApiStatusType;
+
+  /// UncompleteDocumentation
   GeneralLibraryApiStatus({
     required this.serverUniverseApiStatusType,
     required this.value,
@@ -80,6 +108,7 @@ class GeneralLibraryApiStatus {
 
 /// Server Universe api
 class GeneralLibraryApi {
+  /// UncompleteDocumentation
   final GeneralLibraryDocs general_library_docs = GeneralLibraryDocs();
 
   /// Server Universe

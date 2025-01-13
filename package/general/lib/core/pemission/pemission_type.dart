@@ -34,44 +34,127 @@ Bukan maksud kami menipu itu karena harga yang sudah di kalkulasi + bantuan tiba
 <!-- END LICENSE --> */
 /// Indicates the current battery state.
 enum PermissionType {
+  /// UncompleteDocumentation
   calendar,
+
+  /// UncompleteDocumentation
   camera,
+
+  /// UncompleteDocumentation
   contacts,
+
+  /// UncompleteDocumentation
   location,
+
+  /// UncompleteDocumentation
   locationAlways,
+
+  /// UncompleteDocumentation
   locationWhenInUse,
+
+  /// UncompleteDocumentation
   mediaLibrary,
+
+  /// UncompleteDocumentation
   microphone,
+
+  /// UncompleteDocumentation
   phone,
+
+  /// UncompleteDocumentation
+
   photos,
+
+  /// UncompleteDocumentation
   photosAddOnly,
+
+  /// UncompleteDocumentation
   reminders,
+
+  /// UncompleteDocumentation
   sensors,
+
+  /// UncompleteDocumentation
   sms,
+
+  /// UncompleteDocumentation
   speech,
+
+  /// UncompleteDocumentation
+  /// UncompleteDocumentation
   storage,
+
+  /// UncompleteDocumentation
   ignoreBatteryOptimizations,
+
+  /// UncompleteDocumentation
   notification,
+
+  /// UncompleteDocumentation
   accessMediaLocation,
+
+  /// UncompleteDocumentation
   activityRecognition,
+
+  /// UncompleteDocumentation
   unknown,
+
+  /// UncompleteDocumentation
+
   bluetooth,
+
+  /// UncompleteDocumentation
+
   manageExternalStorage,
+
+  /// UncompleteDocumentation
   systemAlertWindow,
+
+  /// UncompleteDocumentation
   requestInstallPackages,
+
+  /// UncompleteDocumentation
   appTrackingTransparency,
+
+  /// UncompleteDocumentation
   criticalAlerts,
+
+  /// UncompleteDocumentation
   accessNotificationPolicy,
+
+  /// UncompleteDocumentation
   bluetoothScan,
+
+  /// UncompleteDocumentation
   bluetoothAdvertise,
+
+  /// UncompleteDocumentation
   bluetoothConnect,
+
+  /// UncompleteDocumentation
   nearbyWifiDevices,
+
+  /// UncompleteDocumentation
   videos,
+
+  /// UncompleteDocumentation
   audio,
+
+  /// UncompleteDocumentation
   scheduleExactAlarm,
+
+  /// UncompleteDocumentation
   sensorsAlways,
+
+  /// UncompleteDocumentation
   calendarWriteOnly,
+
+  /// UncompleteDocumentation
   calendarFullAccess,
+
+  /// UncompleteDocumentation
   assistant,
-  backgroundRefresh,
+
+  /// UncompleteDocumentation
+  backgroundRefresh;
 }

@@ -39,20 +39,28 @@ import 'dart:async';
 import 'package:general/core/general_library.dart';
 import 'package:general/core/sms/sms_model_data.dart';
 
+/// UncompleteDocumentation
 class GeneralLibrarySmsBase implements GeneralLibraryCore {
+  /// UncompleteDocumentation
   GeneralLibrarySmsBase();
 
+  /// UncompleteDocumentation
   Future<List<SmsMessageInfoData>> querySms() async {
     return [];
   }
 
+  /// UncompleteDocumentation
   Future<List<SmsThreadInfoData>> queryThreads() async {
     return [];
   }
 
+  /// UncompleteDocumentation
+
   Future<List<SmsMessageInfoData>> getAllSms() async {
     return [];
   }
+
+  /// UncompleteDocumentation
 
   Future<List<SmsThreadInfoData>> getAllThreads() async {
     return [];

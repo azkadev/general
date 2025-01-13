@@ -51,43 +51,59 @@ import 'package:general/flutter/text_to_speech/text_to_speech_core.dart';
 
 /// GeneralFlutter
 class GeneralFlutter extends GeneralLibrary {
+  /// UncompleteDocumentation
   const GeneralFlutter();
 
+  /// UncompleteDocumentation
   static GeneralLibraryLocalAuthBaseFlutter localAuth =
       GeneralLibraryLocalAuthBaseFlutter();
 
+  /// UncompleteDocumentation
   static GeneralLibraryAppBaseFlutter systemApp =
       GeneralLibraryAppBaseFlutter();
 
+  /// UncompleteDocumentation
   static GeneralLibraryAppBackgroundBaseFlutter appBackground =
       GeneralLibraryAppBackgroundBaseFlutter();
 
+  /// UncompleteDocumentation
   static GeneralLibraryCameraBaseFlutter systemCamera =
       GeneralLibraryCameraBaseFlutter();
 
+  /// UncompleteDocumentation
   static GeneralLibraryPermissionBaseFlutter systemPermission =
       GeneralLibraryPermissionBaseFlutter();
 
+  /// UncompleteDocumentation
   static GeneralLibraryNotificationBaseFlutter systemNotification =
       GeneralLibraryNotificationBaseFlutter();
+
+  /// UncompleteDocumentation
   static GeneralLibraryTextToSpeechBaseFlutter textToSpeech =
       GeneralLibraryTextToSpeechBaseFlutter();
+
+  /// UncompleteDocumentation
 
   static GeneralLibraryBatteryBaseFlutter systembattery =
       GeneralLibraryBatteryBaseFlutter();
 
+  /// UncompleteDocumentation
   static GeneralLibraryDeviceBaseFlutter systemDevice =
       GeneralLibraryDeviceBaseFlutter();
 
+  /// UncompleteDocumentation
   static GeneralLibraryGamePadBaseFlutter controllerGamepad =
       GeneralLibraryGamePadBaseFlutter();
 
+  /// UncompleteDocumentation
   static GeneralLibrarySpeechToTextBaseFlutter speechToText =
       GeneralLibrarySpeechToTextBaseFlutter();
 
+  /// UncompleteDocumentation
   static GeneralLibrarySimCardBaseFlutter simCard =
       GeneralLibrarySimCardBaseFlutter();
 
+  /// UncompleteDocumentation
   static GeneralLibrarySmsBaseFlutter systemSms =
       GeneralLibrarySmsBaseFlutter();
 

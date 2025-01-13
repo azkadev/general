@@ -40,25 +40,32 @@ import 'package:general/core/general_library.dart';
 
 import 'battery_status.dart';
 
+/// UncompleteDocumentation
 class GeneralLibraryBatteryBase implements GeneralLibraryCore {
+  /// UncompleteDocumentation
   GeneralLibraryBatteryBase();
   @override
   bool isSupport() {
     return false;
   }
 
+  /// UncompleteDocumentation
   Future<bool> get is_save_mode async {
     return false;
   }
 
+  /// UncompleteDocumentation
   Future<int> get level async {
     return 0;
   }
+
+  /// UncompleteDocumentation
 
   Future<BatteryStatusType> get status_type async {
     return BatteryStatusType.unknown;
   }
 
+  /// UncompleteDocumentation
   Stream<BatteryStatusType> get status_realtime async* {
     // BatteryStatusType battery_status_type = await statusType;
     yield* Stream.fromFuture(status_type);

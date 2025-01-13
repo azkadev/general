@@ -36,31 +36,40 @@ Bukan maksud kami menipu itu karena harga yang sudah di kalkulasi + bantuan tiba
 
 import 'package:general/core/general_library.dart';
 
+/// UncompleteDocumentation
 class GeneralLibraryLocalAuthBase implements GeneralLibraryCore {
+  /// UncompleteDocumentation
   GeneralLibraryLocalAuthBase();
 
+  /// UncompleteDocumentation
   bool get is_support_local_auth {
     return false;
   }
 
+  /// UncompleteDocumentation
   Future<bool> get is_device_support async {
     return false;
   }
+
+  /// UncompleteDocumentation
 
   Future<List> getAvailableBiometrics() async {
     return [];
   }
 
+  /// UncompleteDocumentation
   Future<bool> get can_check_biometrics async {
     return false;
   }
 
+  /// UncompleteDocumentation
   Future<bool> authenticate({
     required String message,
   }) async {
     return false;
   }
 
+  /// UncompleteDocumentation
   Future<bool> stopAuthentication() async {
     return false;
   }

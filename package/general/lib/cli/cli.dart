@@ -3,8 +3,10 @@ import 'package:general_lib/general_lib.dart';
 import 'package:mason_logger/mason_logger.dart';
 import 'package:io_universe/io_universe.dart';
 
+/// UncompleteDocumentation
 final Logger logger = Logger();
 
+/// UncompleteDocumentation
 Future<void> generalLibraryCli({
   required List<String> argsRaw,
 }) async {
@@ -67,7 +69,10 @@ Future<void> generalLibraryCli({
   exit(0);
 }
 
+/// UncompleteDocumentation
 Progress progress = logger.progress("message");
+
+/// UncompleteDocumentation
 void printed(GeneralLibraryApiStatus event) {
   if (event.serverUniverseApiStatusType ==
       GeneralLibraryApiStatusType.progress_start) {

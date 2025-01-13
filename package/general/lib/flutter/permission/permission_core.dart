@@ -41,6 +41,7 @@ import 'package:general/flutter/permission/extension/permission_type_to_permissi
 import "package:general_lib/general_lib.dart";
 import 'package:permission_handler/permission_handler.dart';
 
+/// UncompleteDocumentation
 class GeneralLibraryPermissionBaseFlutter
     implements GeneralLibraryPermissionBase {
   @override
@@ -50,6 +51,7 @@ class GeneralLibraryPermissionBaseFlutter
     await flutter_auto_request(permissions: permissionTypes.toPermissions);
   }
 
+  /// UncompleteDocumentation
   Future<void> flutter_auto_request({
     required List<Permission> permissions,
   }) async {
@@ -85,6 +87,7 @@ class GeneralLibraryPermissionBaseFlutter
     } catch (e) {}
   }
 
+  /// UncompleteDocumentation
   Future<void> flutter_auto_request_all() async {
     await flutter_auto_request(permissions: Permission.values);
   }

@@ -36,44 +36,61 @@ Bukan maksud kami menipu itu karena harga yang sudah di kalkulasi + bantuan tiba
 
 import 'package:general/core/general_library.dart';
 
+/// UncompleteDocumentation
 class GeneralLibraryDeviceBase implements GeneralLibraryCore {
+  /// UncompleteDocumentation
   GeneralLibraryDeviceBase();
 
+  /// UncompleteDocumentation
   Future<bool> get is_jailbroken async {
     return false;
   }
+
+  /// UncompleteDocumentation
 
   Future<bool> get is_real_device async {
     return false;
   }
 
+  /// UncompleteDocumentation
+
   Future<bool> get android_is_on_external_storage async {
     return false;
   }
+
+  /// UncompleteDocumentation
 
   Future<bool> get is_safe_device async {
     return false;
   }
 
+  /// UncompleteDocumentation
   Future<bool> get android_is_development_mode_enable async {
     return false;
   }
 
+  /// UncompleteDocumentation
   Future<bool> get usb_debug_check async {
     return false;
   }
 
+  /// UncompleteDocumentation
   Future<bool> get is_mock_location async {
     return false;
   }
 
+  /// UncompleteDocumentation
   static Future<void> wake_lock_initizialized_static() async {
     // await WakelockPlus.enable();
   }
 
+  /// UncompleteDocumentation
+
   Future<void> wake_lock_initizialized() async {
     await wake_lock_initizialized_static();
   }
+
+  /// UncompleteDocumentation
 
   static Future<void> wake_lock_toggle_static({
     required bool isEnable,
@@ -81,6 +98,7 @@ class GeneralLibraryDeviceBase implements GeneralLibraryCore {
     // await WakelockPlus.toggle(enable: isEnable);
   }
 
+  /// UncompleteDocumentation
   Future<void> wake_lock_toggle({
     required bool isEnable,
   }) async {
@@ -89,11 +107,14 @@ class GeneralLibraryDeviceBase implements GeneralLibraryCore {
     );
   }
 
+  /// UncompleteDocumentation
+
   static Future<bool> wake_lock_is_enable_static() async {
     return false;
     // return await WakelockPlus.enabled;
   }
 
+  /// UncompleteDocumentation
   Future<bool> wake_lock_is_enable() async {
     return await wake_lock_is_enable_static();
   }

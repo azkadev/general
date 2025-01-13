@@ -36,7 +36,9 @@ Bukan maksud kami menipu itu karena harga yang sudah di kalkulasi + bantuan tiba
 import 'package:general/core/pemission/pemission_type.dart';
 import 'package:permission_handler/permission_handler.dart';
 
+/// UncompleteDocumentation
 extension ExtensionPermissionTypeToPermission on PermissionType {
+  /// UncompleteDocumentation
   Permission get toPermission {
     if (this == PermissionType.calendar) {
       return Permission.calendar;
@@ -202,7 +204,9 @@ extension ExtensionPermissionTypeToPermission on PermissionType {
   }
 }
 
+/// UncompleteDocumentation
 extension ExtensionListPermissionTypeToPermission on List<PermissionType> {
+  /// UncompleteDocumentation
   List<Permission> get toPermissions {
     return map((e) => e.toPermission).toList();
   }

@@ -43,20 +43,39 @@ import 'package:io_universe/io_universe.dart';
 import 'package:camera/camera.dart' as camera_package;
 import 'package:camera_windows/camera_windows.dart' as camera_package_windows;
 
+/// UncompleteDocumentation
 class GeneralLibraryCameraBaseFlutter implements GeneralLibraryCameraBase {
+  /// UncompleteDocumentation
   late List<camera_package.CameraDescription> camera_mobile_datas = [];
+
+  /// UncompleteDocumentation
   late camera_package.CameraController camera_mobile_controller;
+
+  /// UncompleteDocumentation
   late camera_package_windows.CameraWindows camera_windows;
+
+  /// UncompleteDocumentation
   int camera_id = 0;
 
+  /// UncompleteDocumentation
+
   bool is_camera_init = false;
+
+  /// UncompleteDocumentation
   bool is_select_camera = false;
+
+  /// UncompleteDocumentation
   bool is_camera_active = false;
+
+  /// UncompleteDocumentation
 
   bool get isDesktop =>
       Platform.isWindows || Platform.isLinux || Platform.isMacOS;
+
+  /// UncompleteDocumentation
   bool get isMobile => Platform.isAndroid || Platform.isIOS || kIsWeb;
 
+  /// UncompleteDocumentation
   Future<void> initializeCameras() async {
     if (isMobile) {
       camera_mobile_datas = await camera_package.availableCameras();
@@ -83,6 +102,7 @@ class GeneralLibraryCameraBaseFlutter implements GeneralLibraryCameraBase {
     return false;
   }
 
+  /// UncompleteDocumentation
   Future<void> initializeCamera({
     required void Function(void Function() callback) setState,
   }) async {
@@ -108,6 +128,8 @@ class GeneralLibraryCameraBaseFlutter implements GeneralLibraryCameraBase {
     }
     return;
   }
+
+  /// UncompleteDocumentation
 
   Future<void> initializeCameraById({
     required int camera_id,
@@ -152,6 +174,7 @@ class GeneralLibraryCameraBaseFlutter implements GeneralLibraryCameraBase {
     return;
   }
 
+  /// UncompleteDocumentation
   Future<void> activateCamera({
     required void Function(void Function() callback) setState,
     required bool Function() mounted,
@@ -185,6 +208,7 @@ class GeneralLibraryCameraBaseFlutter implements GeneralLibraryCameraBase {
     }
   }
 
+  /// UncompleteDocumentation
   Future<void> dispose() async {
     if (!is_camera_init) {
       return;
@@ -204,6 +228,7 @@ class GeneralLibraryCameraBaseFlutter implements GeneralLibraryCameraBase {
     }
   }
 
+  /// UncompleteDocumentation
   Widget widget_build_preview({
     required void Function() onCameraNotInit,
     required void Function() onCameraNotSelect,
@@ -231,6 +256,7 @@ class GeneralLibraryCameraBaseFlutter implements GeneralLibraryCameraBase {
     return const SizedBox.shrink();
   }
 
+  /// UncompleteDocumentation
   bool util_check_camera({
     required void Function() onCameraNotInit,
     required void Function() onCameraNotSelect,
@@ -251,6 +277,7 @@ class GeneralLibraryCameraBaseFlutter implements GeneralLibraryCameraBase {
     return true;
   }
 
+  /// UncompleteDocumentation
   Future<void> action_template({
     required void Function() onCameraNotInit,
     required void Function() onCameraNotSelect,
@@ -269,6 +296,8 @@ class GeneralLibraryCameraBaseFlutter implements GeneralLibraryCameraBase {
     }
     return;
   }
+
+  /// UncompleteDocumentation
 
   Future<void> action_change_camera({
     required int cameraId,
@@ -307,6 +336,8 @@ class GeneralLibraryCameraBaseFlutter implements GeneralLibraryCameraBase {
     return;
   }
 
+  /// UncompleteDocumentation
+
   action_start_video_recording({
     required void Function() onCameraNotInit,
     required void Function() onCameraNotSelect,
@@ -329,6 +360,7 @@ class GeneralLibraryCameraBaseFlutter implements GeneralLibraryCameraBase {
     }
   }
 
+  /// UncompleteDocumentation
   action_pause_video_recording({
     required void Function() onCameraNotInit,
     required void Function() onCameraNotSelect,
@@ -351,6 +383,7 @@ class GeneralLibraryCameraBaseFlutter implements GeneralLibraryCameraBase {
     }
   }
 
+  /// UncompleteDocumentation
   int action_get_camera_count({
     required void Function() onCameraNotInit,
     required void Function() onCameraNotSelect,
@@ -374,6 +407,7 @@ class GeneralLibraryCameraBaseFlutter implements GeneralLibraryCameraBase {
     return 0;
   }
 
+  /// UncompleteDocumentation
   int action_get_camera_id({
     required void Function() onCameraNotInit,
     required void Function() onCameraNotSelect,
@@ -397,6 +431,7 @@ class GeneralLibraryCameraBaseFlutter implements GeneralLibraryCameraBase {
     return 0;
   }
 
+  /// UncompleteDocumentation
   bool action_enable_audio({
     required void Function() onCameraNotInit,
     required void Function() onCameraNotSelect,
@@ -418,6 +453,7 @@ class GeneralLibraryCameraBaseFlutter implements GeneralLibraryCameraBase {
     return false;
   }
 
+  /// UncompleteDocumentation
   action_pause_preview({
     required void Function() onCameraNotInit,
     required void Function() onCameraNotSelect,
@@ -439,6 +475,8 @@ class GeneralLibraryCameraBaseFlutter implements GeneralLibraryCameraBase {
       }
     }
   }
+
+  /// UncompleteDocumentation
 
   action_resume_preview({
     required void Function() onCameraNotInit,
@@ -462,6 +500,8 @@ class GeneralLibraryCameraBaseFlutter implements GeneralLibraryCameraBase {
     }
   }
 
+  /// UncompleteDocumentation
+
   action_stop_video_recording({
     required void Function() onCameraNotInit,
     required void Function() onCameraNotSelect,
@@ -483,6 +523,8 @@ class GeneralLibraryCameraBaseFlutter implements GeneralLibraryCameraBase {
       }
     }
   }
+
+  /// UncompleteDocumentation
 
   Future<CameraTakePictureData?> action_take_picture({
     required void Function() onCameraNotInit,
@@ -548,11 +590,18 @@ class GeneralLibraryCameraBaseFlutter implements GeneralLibraryCameraBase {
   }
 }
 
+/// UncompleteDocumentation
 class CameraTakePictureData {
+  /// UncompleteDocumentation
   String mimeType;
+
+  /// UncompleteDocumentation
   String path;
+
+  /// UncompleteDocumentation
   String name;
 
+  /// UncompleteDocumentation
   CameraTakePictureData(
       {required this.mimeType, required this.path, required this.name});
 }

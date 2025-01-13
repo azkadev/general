@@ -41,13 +41,24 @@ import 'package:general/flutter/camera/camera_core.dart';
 import 'package:io_universe/io_universe.dart';
 import 'package:camera/camera.dart' as camera_package;
 
+/// UncompleteDocumentation
 class CameraWidget extends StatefulWidget {
+  /// UncompleteDocumentation
   final GeneralLibraryCameraBaseFlutter generalLibraryCameraBase;
+
+  /// UncompleteDocumentation
   final Widget Function(BuildContext context) onCameraNotInit;
+
+  /// UncompleteDocumentation
   final Widget Function(BuildContext context) onCameraNotSelect;
+
+  /// UncompleteDocumentation
   final Widget Function(BuildContext context) onCameraNotActive;
 
+  /// UncompleteDocumentation
   final Widget Function(BuildContext context) onPlatformNotSupported;
+
+  /// UncompleteDocumentation
   const CameraWidget({
     super.key,
     required this.generalLibraryCameraBase,

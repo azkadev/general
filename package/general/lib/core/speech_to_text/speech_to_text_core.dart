@@ -39,35 +39,48 @@ import 'dart:async';
 import 'package:general/core/general_library.dart';
 import 'speech_to_text.dart';
 
+/// UncompleteDocumentation
 class GeneralLibrarySpeechToTextBase implements GeneralLibraryCore {
+  /// UncompleteDocumentation
   GeneralLibrarySpeechToTextBase();
 
+  /// UncompleteDocumentation
   Future<void> initialized() async {}
 
+  /// UncompleteDocumentation
   Future<bool> get has_permission async {
     return false;
   }
 
+  /// UncompleteDocumentation
   bool get has_recognized {
     return false;
   }
+
+  /// UncompleteDocumentation
 
   bool get is_available {
     return false;
   }
 
+  /// UncompleteDocumentation
   bool get is_listening {
     return false;
   }
+
+  /// UncompleteDocumentation
 
   bool get is_not_listening {
     return false;
   }
 
+  /// UncompleteDocumentation
   Future<void> cancel() async {}
 
+  /// UncompleteDocumentation
   Future<void> stop() async {}
 
+  /// UncompleteDocumentation
   Future<void> realtime_speech_to_text_word({
     required void Function(String result) onResult,
     String? localeId,
@@ -77,6 +90,8 @@ class GeneralLibrarySpeechToTextBase implements GeneralLibraryCore {
     dynamic onDevice = false,
     ListenModeType listenModeType = ListenModeType.confirmation,
   }) async {}
+
+  /// UncompleteDocumentation
 
   Future<String> speech_to_text_word({
     String? localeId,

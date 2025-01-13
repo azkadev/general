@@ -40,9 +40,12 @@ import 'package:general/core/general_library.dart';
 
 import 'pemission_type.dart';
 
+/// UncompleteDocumentation
 class GeneralLibraryPermissionBase implements GeneralLibraryCore {
+  /// UncompleteDocumentation
   GeneralLibraryPermissionBase();
 
+  /// UncompleteDocumentation
   Future<void> auto_request(
       {required List<PermissionType> permissionTypes}) async {}
 

@@ -32,15 +32,25 @@ Bukan maksud kami menipu itu karena harga yang sudah di kalkulasi + bantuan tiba
 
 
 <!-- END LICENSE --> */
+/// UncompleteDocumentation
 abstract class GeneralLibraryPlayerPlayableBase {
   /// {@macro playable}
   const GeneralLibraryPlayerPlayableBase();
 }
 
+/// UncompleteDocumentation
+
 class GeneralLibraryPlayerMediaBase extends GeneralLibraryPlayerPlayableBase {
+  /// UncompleteDocumentation
   String resource;
+
+  /// UncompleteDocumentation
   Map<String, dynamic>? extras;
+
+  /// UncompleteDocumentation
   Map<String, String>? httpHeaders;
+
+  /// UncompleteDocumentation
   GeneralLibraryPlayerMediaBase(
     this.resource, {
     this.extras,
@@ -48,6 +58,7 @@ class GeneralLibraryPlayerMediaBase extends GeneralLibraryPlayerPlayableBase {
   });
 }
 
+/// UncompleteDocumentation
 class GeneralLibraryPlayerPlayListBase
     extends GeneralLibraryPlayerPlayableBase {
   /// Currently opened [List] of [Media]s.

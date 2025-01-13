@@ -38,9 +38,13 @@ import 'package:general/core/core.dart';
 import 'package:general_lib/general_lib.dart';
 import 'package:local_auth/local_auth.dart';
 
+/// UncompleteDocumentation
 class GeneralLibraryLocalAuthBaseFlutter
     implements GeneralLibraryLocalAuthBase {
+  /// UncompleteDocumentation
   GeneralLibraryLocalAuthBaseFlutter();
+
+  /// UncompleteDocumentation
   final LocalAuthentication localAuthentication = LocalAuthentication();
 
   @override

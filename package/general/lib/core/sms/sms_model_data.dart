@@ -38,20 +38,39 @@ import 'dart:typed_data';
 
 import 'package:general/core/utils.dart';
 
+/// UncompleteDocumentation
 class SmsPhotoInfoData {
+  /// UncompleteDocumentation
   Uint8List? bytes;
+
+  /// UncompleteDocumentation
   SmsPhotoInfoData({
     required this.bytes,
   });
 }
 
+/// UncompleteDocumentation
 class SmsContactInfoData {
+  /// UncompleteDocumentation
   String full_name;
+
+  /// UncompleteDocumentation
   String first_name;
+
+  /// UncompleteDocumentation
+
   String last_name;
+
+  /// UncompleteDocumentation
   String address;
+
+  /// UncompleteDocumentation
   SmsPhotoInfoData thumbnail;
+
+  /// UncompleteDocumentation
   SmsPhotoInfoData photo;
+
+  /// UncompleteDocumentation
   SmsContactInfoData({
     required this.full_name,
     required this.first_name,
@@ -62,11 +81,21 @@ class SmsContactInfoData {
   });
 }
 
+/// UncompleteDocumentation
 class SmsThreadInfoData {
+  /// UncompleteDocumentation
   int id;
+
+  /// UncompleteDocumentation
   String address;
+
+  /// UncompleteDocumentation
   SmsContactInfoData contact;
+
+  /// UncompleteDocumentation
   List<SmsMessageInfoData> messages = [];
+
+  /// UncompleteDocumentation
   SmsThreadInfoData({
     required this.id,
     required this.address,
@@ -74,6 +103,7 @@ class SmsThreadInfoData {
     required this.messages,
   });
 
+  /// UncompleteDocumentation
   Map toJson() {
     return {
       "@type": "simCardInfoData",
@@ -86,19 +116,38 @@ class SmsThreadInfoData {
   }
 }
 
+/// UncompleteDocumentation
 class SmsMessageInfoData {
+  /// UncompleteDocumentation
   int id;
+
+  /// UncompleteDocumentation
   int thread_id;
+
+  /// UncompleteDocumentation
   int sim;
+
+  /// UncompleteDocumentation
   String address;
+
+  /// UncompleteDocumentation
   String body;
+
+  /// UncompleteDocumentation
+
   bool read;
+
+  /// UncompleteDocumentation
   DateTime date;
+
+  /// UncompleteDocumentation
   DateTime date_sent;
+
   // SmsMessageKind kind;
   // SmsMessageState state = SmsMessageState.None;
   // final StreamController<SmsMessageState> _stateStreamController =
   // StreamController<SmsMessageState>();
+  /// UncompleteDocumentation
   SmsMessageInfoData({
     required this.id,
     required this.thread_id,
@@ -109,6 +158,8 @@ class SmsMessageInfoData {
     required this.date,
     required this.date_sent,
   });
+
+  /// UncompleteDocumentation
 
   Map toJson() {
     return {

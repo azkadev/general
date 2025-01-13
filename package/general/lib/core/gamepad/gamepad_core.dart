@@ -38,9 +38,16 @@ import 'dart:async';
 
 import 'package:general/core/general_library.dart';
 
+/// UncompleteDocumentation
 class GamePadControllerData {
+  /// UncompleteDocumentation
+
   String id;
+
+  /// UncompleteDocumentation
   String name;
+
+  /// UncompleteDocumentation
   GamePadControllerData({
     required this.id,
     required this.name,
@@ -88,6 +95,7 @@ class GamePadControllerEventData {
   /// The current value of the key.
   final double value;
 
+  /// UncompleteDocumentation
   GamePadControllerEventData({
     required this.gamepadId,
     required this.timestamp,
@@ -101,6 +109,7 @@ class GamePadControllerEventData {
     return '[$gamepadId] $key: $value';
   }
 
+  /// UncompleteDocumentation
   factory GamePadControllerEventData.parse(Map<dynamic, dynamic> map) {
     final gamepadId = map['gamepadId'] as String;
     final timestamp = map['time'] as int;
@@ -118,6 +127,7 @@ class GamePadControllerEventData {
     );
   }
 
+  /// UncompleteDocumentation
   factory GamePadControllerEventData.empty() {
     return GamePadControllerEventData(
       gamepadId: "",
@@ -129,13 +139,17 @@ class GamePadControllerEventData {
   }
 }
 
+/// UncompleteDocumentation
 class GeneralLibraryGamePadBase implements GeneralLibraryCore {
+  /// UncompleteDocumentation
   GeneralLibraryGamePadBase();
 
+  /// UncompleteDocumentation
   Future<List<GamePadControllerData>> list() async {
     return [];
   }
 
+  /// UncompleteDocumentation
   Stream<GamePadControllerEventData> get events async* {
     yield GamePadControllerEventData.empty();
   }

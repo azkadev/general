@@ -38,9 +38,13 @@ import 'package:flutter/widgets.dart';
 import 'package:general/core/core.dart';
 import 'package:media_kit_video_fork/media_kit_video_fork.dart';
 
+/// UncompleteDocumentation
 class PlayerWidget extends StatefulWidget {
+  /// UncompleteDocumentation
   final GeneralLibraryPlayerControllerBase
       generalLibraryPlayerControllerBaseDart;
+
+  /// UncompleteDocumentation
   const PlayerWidget({
     super.key,
     required this.generalLibraryPlayerControllerBaseDart,

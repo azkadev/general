@@ -41,8 +41,12 @@ import 'package:general/core/player/player_controller.dart';
 import 'package:general_lib/general_lib.dart';
 import "package:html/parser.dart" as html;
 
+/// UncompleteDocumentation
 class GeneralLibraryTextToSpeechBase implements GeneralLibraryCore {
+  /// UncompleteDocumentation
   static bool is_text_to_speech_on_speak = false;
+
+  /// UncompleteDocumentation
   GeneralLibraryTextToSpeechBase();
 
   @override
@@ -50,17 +54,25 @@ class GeneralLibraryTextToSpeechBase implements GeneralLibraryCore {
     return false;
   }
 
+  /// UncompleteDocumentation
   Future<void> dispose() async {}
+
+  /// UncompleteDocumentation
   Future<void> initialized() async {}
 
+  /// UncompleteDocumentation
   Future<void> pauseHandle() async {}
 
+  /// UncompleteDocumentation
   Future<void> stopHandle() async {}
 
+  /// UncompleteDocumentation
   Future<void> cancelHandle() async {}
 
+  /// UncompleteDocumentation
   Future<void> continueHandle() async {}
 
+  /// UncompleteDocumentation
   void utils_print({
     required String title,
     required String fromText,
@@ -76,6 +88,8 @@ ${title}
 """
         .trim());
   }
+
+  /// UncompleteDocumentation
 
   String utils_removeHtmlOrMarkdown({
     required final String text,
@@ -261,6 +275,7 @@ ${title}
     return text_new;
   }
 
+  /// UncompleteDocumentation
   Future<void> speak({
     required String text,
     bool isWaithFinishedSpeakBefore = false,
@@ -283,6 +298,7 @@ ${title}
     }
   }
 
+  /// UncompleteDocumentation
   Future<void> speakWithAutoSetVolume({
     required String text,
     required GeneralLibraryPlayerControllerBase player,
@@ -317,6 +333,8 @@ ${title}
     );
   }
 
+  /// UncompleteDocumentation
+
   Future<void> setVolumeDown({
     required GeneralLibraryPlayerControllerBase player,
     double from = 100,
@@ -332,6 +350,7 @@ ${title}
     }
   }
 
+  /// UncompleteDocumentation
   Future<void> setVolumeUp({
     required GeneralLibraryPlayerControllerBase player,
     required double from,
@@ -348,6 +367,8 @@ ${title}
       // await player.setVolume(i);
     }
   }
+
+  /// UncompleteDocumentation
 
   Future<void> speakWithAutoSetVolumes({
     required String text,
@@ -383,6 +404,8 @@ ${title}
     );
   }
 
+  /// UncompleteDocumentation
+
   Future<void> setVolumeDowns({
     required List<GeneralLibraryPlayerControllerBase> players,
     double from = 100,
@@ -399,6 +422,7 @@ ${title}
     }
   }
 
+  /// UncompleteDocumentation
   Future<void> setVolumeUps({
     required List<GeneralLibraryPlayerControllerBase> players,
     required double from,
@@ -415,6 +439,7 @@ ${title}
     }
   }
 
+  /// UncompleteDocumentation
   void progress(
       {required void Function(String text, int start, int end, String word)
           onProgress}) {}

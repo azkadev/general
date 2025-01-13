@@ -12,9 +12,9 @@ dependencies:
     path: '../'
   media_kit_video: '^1.2.5'
   local_auth: '^2.2.0'
-  telegram_client: '^0.8.33'
-  general_lib: '^0.0.56'
-  general_lib_flutter: '^0.0.37'
+  telegram_client: '^0.8.34'
+  general_lib: '^0.0.59'
+  general_lib_flutter: '^0.0.40'
 dev_dependencies:
   flutter_test:
     sdk: 'flutter'

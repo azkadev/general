@@ -36,13 +36,17 @@ Bukan maksud kami menipu itu karena harga yang sudah di kalkulasi + bantuan tiba
 
 import 'package:general/core/general_library.dart';
 
+/// UncompleteDocumentation
 class GeneralLibraryCameraBase implements GeneralLibraryCore {
+  /// UncompleteDocumentation
   GeneralLibraryCameraBase();
 
   @override
   bool isSupport() {
     return false;
   }
+
+  /// UncompleteDocumentation
 
   dynamic widget() {}
 }

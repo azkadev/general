@@ -39,8 +39,10 @@ import 'dart:typed_data';
 import 'package:general/core/player/player_model_data.dart';
 import 'package:media_kit_fork/media_kit_fork.dart';
 
+/// UncompleteDocumentation
 extension GeneralLibraryPlayerMediaBaseExtesnion
     on GeneralLibraryPlayerMediaBase {
+  /// UncompleteDocumentation
   Media toMediaMediaKit() {
     return Media(
       resource,
@@ -50,8 +52,10 @@ extension GeneralLibraryPlayerMediaBaseExtesnion
   }
 }
 
+/// UncompleteDocumentation
 extension GeneralLibraryPlayerPlayListBaseExtension
     on GeneralLibraryPlayerPlayListBase {
+  /// UncompleteDocumentation
   Playlist toPlayListMediaKit() {
     return Playlist(
       medias.map(
@@ -64,13 +68,20 @@ extension GeneralLibraryPlayerPlayListBaseExtension
   }
 }
 
+/// UncompleteDocumentation
 class GeneralLibraryPlayerControllerBase {
+  /// UncompleteDocumentation
   final String player_id;
+
+  /// UncompleteDocumentation
   final Player player = Player();
+
+  /// UncompleteDocumentation
   GeneralLibraryPlayerControllerBase({
     required this.player_id,
   });
 
+  /// UncompleteDocumentation
   Future<void> open(
     GeneralLibraryPlayerPlayableBase playable, {
     bool play = true,
@@ -95,68 +106,87 @@ class GeneralLibraryPlayerControllerBase {
     return;
   }
 
+  /// UncompleteDocumentation
   Future<void> dispose() async {}
 
+  /// UncompleteDocumentation
   Future<void> stop() async {}
 
+  /// UncompleteDocumentation
   Future<int> get handle async {
     return await player.handle;
   }
 
+  /// UncompleteDocumentation
   Future<void> jump(int index) async {
     return await player.jump(index);
   }
 
+  /// UncompleteDocumentation
   Future<void> move(int from, int to) async {
     return await player.move(from, to);
   }
 
+  /// UncompleteDocumentation
   Future<void> next() async {
     return await player.next();
   }
 
+  /// UncompleteDocumentation
   Future<void> pause() async {
     return await player.pause();
   }
 
+  /// UncompleteDocumentation
   Future<void> play() async {
     return await player.play();
   }
 
+  /// UncompleteDocumentation
   Future<void> playOrPause() async {
     return await player.playOrPause();
   }
+
+  /// UncompleteDocumentation
 
   Future<void> previous() async {
     return await player.previous();
   }
 
+  /// UncompleteDocumentation
   Future<void> remove(int index) async {
     return await player.remove(index);
   }
 
+  /// UncompleteDocumentation
   Future<Uint8List?> screenshot({String? format = 'image/jpeg'}) async {
     return await player.screenshot(
       format: format,
     );
   }
 
+  /// UncompleteDocumentation
   Future<void> seek(Duration duration) async {
     return await player.seek(duration);
   }
+
+  /// UncompleteDocumentation
 
   Future<void> setPitch(double pitch) async {
     return await player.setPitch(pitch);
   }
 
+  /// UncompleteDocumentation
   Future<void> setRate(double rate) async {
     return await player.setRate(rate);
   }
 
+  /// UncompleteDocumentation
   Future<void> setShuffle(bool shuffle) async {
     return await player.setShuffle(shuffle);
   }
 
+  /// UncompleteDocumentation
   Future<void> setVolume(double volume) async {
     return await player.setVolume(volume);
   }

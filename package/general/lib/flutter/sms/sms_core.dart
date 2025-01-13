@@ -39,18 +39,26 @@ import 'dart:async';
 import 'package:general/core/core.dart';
 // import 'package:general/flutter/sms/extensions/list_extension_to_threads.dart';
 import 'package:general_lib/general_lib.dart';
+
 // import 'package:sms_flutter/contact.dart';
 // import 'package:sms_flutter/sms_flutter.dart';
-
+/// UncompleteDocumentation
 class GeneralLibrarySmsBaseFlutter implements GeneralLibrarySmsBase {
   // Future<void> test() async {
 
+  /// UncompleteDocumentation
   bool get isIOS => !Dart.isWeb && Dart.isIOS;
+
+  /// UncompleteDocumentation
   bool get isAndroid => !Dart.isWeb && Dart.isAndroid;
+
+  /// UncompleteDocumentation
   bool get isWindows => !Dart.isWeb && Dart.isWindows;
 
+  /// UncompleteDocumentation
   bool get isWeb => Dart.isWeb;
 
+  /// UncompleteDocumentation
   bool get flutter_is_support_flutter_sms {
     if (Dart.isLinux || Dart.isWindows || Dart.isMacOS) {
       if (Dart.isWeb == false) {
@@ -125,6 +133,7 @@ class GeneralLibrarySmsBaseFlutter implements GeneralLibrarySmsBase {
     return [];
   }
 
+  /// UncompleteDocumentation
   Future<List> get_threads() async {
     // if (flutter_is_support_flutter_sms) {
     //   try {

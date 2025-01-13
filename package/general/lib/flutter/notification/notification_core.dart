@@ -40,8 +40,10 @@ import 'package:general_lib/general_lib.dart';
 
 import "package:general/core/notification/notification_core.dart";
 
+/// UncompleteDocumentation
 class GeneralLibraryNotificationBaseFlutter
     extends GeneralLibraryNotificationBase {
+  /// UncompleteDocumentation
   GeneralLibraryNotificationBaseFlutter();
 
   @override
