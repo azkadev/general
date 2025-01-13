@@ -10,6 +10,7 @@ analyzer:
     - test
     - dev
     - templates
+    - lib/api/file/
 linter:
   rules:
     - public_member_api_docs
