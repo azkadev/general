@@ -12,8 +12,8 @@ dependencies:
     path: '../'
   media_kit_video: '^1.2.5'
   local_auth: '^2.2.0'
-  telegram_client: '^0.8.34'
-  general_lib: '^0.0.59'
+  telegram_client: '^0.8.35'
+  general_lib: '^0.0.60'
   general_lib_flutter: '^0.0.40'
 dev_dependencies:
   flutter_test:
