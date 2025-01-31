@@ -13,7 +13,7 @@ dependencies:
   media_kit_video: '^1.2.5'
   local_auth: '^2.2.0'
   telegram_client: '^0.8.37'
-  general_lib: '^0.0.62'
+  general_lib: '^0.0.63'
   general_lib_flutter: '^0.0.41'
 dev_dependencies:
   flutter_test:

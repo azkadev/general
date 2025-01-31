@@ -26,7 +26,7 @@ executables:
 environment:
   sdk: '>=3.6.0 <4.0.0'
 dependencies:
-  general_lib: '^0.0.62'
+  general_lib: '^0.0.63'
   media_kit_fork: '^0.0.3'
   path: '^1.9.0'
   io_universe: '^0.0.5'
