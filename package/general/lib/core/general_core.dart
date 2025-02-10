@@ -36,6 +36,8 @@ Bukan maksud kami menipu itu karena harga yang sudah di kalkulasi + bantuan tiba
 
 // import 'dart:html';
 
+import 'package:general/core/audio/audio_core.dart';
+ 
 import 'app_background/app_background_core.dart';
 import 'battery/battery.dart';
 import 'camera/camera.dart';
@@ -50,6 +52,9 @@ abstract class GeneralLibraryBaseCore {
 
   /// UncompleteDocumentation
   dynamic get app_background => throw UnimplementedError();
+
+  /// UncompleteDocumentation
+  dynamic get system_audio => throw UnimplementedError();
 
   /// UncompleteDocumentation
   dynamic get system_battery => throw UnimplementedError();
@@ -99,8 +104,9 @@ class GeneralLibrary implements GeneralLibraryBaseCore {
   static GeneralLibraryAppBase systemApp = GeneralLibraryAppBase();
 
   /// UncompleteDocumentation
-  static GeneralLibraryAppBackgroundBase appBackground =
-      GeneralLibraryAppBackgroundBase();
+  static GeneralLibraryAppBackgroundBase appBackground = GeneralLibraryAppBackgroundBase();
+
+  static GeneralLibraryAudioBase systemAudio = GeneralLibraryAudioBase();
 
   /// UncompleteDocumentation
   static GeneralLibraryBatteryBase systemBattery = GeneralLibraryBatteryBase();
@@ -109,41 +115,33 @@ class GeneralLibrary implements GeneralLibraryBaseCore {
   static GeneralLibraryCameraBase systemCamera = GeneralLibraryCameraBase();
 
   /// UncompleteDocumentation
-  static final GeneralLibraryNotificationBase systemNotification =
-      GeneralLibraryNotificationBase();
+  static final GeneralLibraryNotificationBase systemNotification = GeneralLibraryNotificationBase();
 
   ///
   static final GeneralLibrarySimCardBase simCard = GeneralLibrarySimCardBase();
 
   ///
-  static final GeneralLibraryPlayerBase mediaPlayer =
-      GeneralLibraryPlayerBase();
+  static final GeneralLibraryPlayerBase mediaPlayer = GeneralLibraryPlayerBase();
 
   ///
 
   ///
-  static final GeneralLibraryDeviceBase systemDevice =
-      GeneralLibraryDeviceBase();
+  static final GeneralLibraryDeviceBase systemDevice = GeneralLibraryDeviceBase();
 
   /// UncompleteDocumentation
-  static final GeneralLibraryTextToSpeechBase textToSpeech =
-      GeneralLibraryTextToSpeechBase();
+  static final GeneralLibraryTextToSpeechBase textToSpeech = GeneralLibraryTextToSpeechBase();
 
   ///
-  static final GeneralLibraryGamePadBase controllerGamepad =
-      GeneralLibraryGamePadBase();
+  static final GeneralLibraryGamePadBase controllerGamepad = GeneralLibraryGamePadBase();
 
   /// UncompleteDocumentation
-  static GeneralLibraryPermissionBase systemPermission =
-      GeneralLibraryPermissionBase();
+  static GeneralLibraryPermissionBase systemPermission = GeneralLibraryPermissionBase();
 
   ///
-  static final GeneralLibrarySpeechToTextBase speechToText =
-      GeneralLibrarySpeechToTextBase();
+  static final GeneralLibrarySpeechToTextBase speechToText = GeneralLibrarySpeechToTextBase();
 
   /// UncompleteDocumentation
-  static final GeneralLibraryLocalAuthBase localAuth =
-      GeneralLibraryLocalAuthBase();
+  static final GeneralLibraryLocalAuthBase localAuth = GeneralLibraryLocalAuthBase();
 
   ///
   static final GeneralLibrarySmsBase systemSms = GeneralLibrarySmsBase();
@@ -153,8 +151,10 @@ class GeneralLibrary implements GeneralLibraryBaseCore {
 
   @override
   GeneralLibraryAppBase get system_app => systemApp;
+
   @override
   GeneralLibraryAppBackgroundBase get app_background => appBackground;
+
   @override
   GeneralLibraryBatteryBase get system_battery => systemBattery;
   @override
@@ -184,4 +184,8 @@ class GeneralLibrary implements GeneralLibraryBaseCore {
   void test() {
     print("oke");
   }
+
+  @override
+  // TODO: implement audio
+  GeneralLibraryAudioBase get system_audio => systemAudio;
 }

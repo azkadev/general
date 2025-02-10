@@ -8,8 +8,6 @@ dependencies:
   flutter:
     sdk: 'flutter'
   cupertino_icons: '^1.0.2'
-  general:
-    path: '../'
   media_kit_video: '^1.2.5'
   local_auth: '^2.2.0'
   telegram_client: '^0.8.37'

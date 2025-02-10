@@ -55,57 +55,44 @@ class GeneralFlutter extends GeneralLibrary {
   const GeneralFlutter();
 
   /// UncompleteDocumentation
-  static GeneralLibraryLocalAuthBaseFlutter localAuth =
-      GeneralLibraryLocalAuthBaseFlutter();
+  static GeneralLibraryLocalAuthBaseFlutter localAuth = GeneralLibraryLocalAuthBaseFlutter();
 
   /// UncompleteDocumentation
-  static GeneralLibraryAppBaseFlutter systemApp =
-      GeneralLibraryAppBaseFlutter();
+  static GeneralLibraryAppBaseFlutter systemApp = GeneralLibraryAppBaseFlutter();
 
   /// UncompleteDocumentation
-  static GeneralLibraryAppBackgroundBaseFlutter appBackground =
-      GeneralLibraryAppBackgroundBaseFlutter();
+  static GeneralLibraryAppBackgroundBaseFlutter appBackground = GeneralLibraryAppBackgroundBaseFlutter();
 
   /// UncompleteDocumentation
-  static GeneralLibraryCameraBaseFlutter systemCamera =
-      GeneralLibraryCameraBaseFlutter();
+  static GeneralLibraryCameraBaseFlutter systemCamera = GeneralLibraryCameraBaseFlutter();
 
   /// UncompleteDocumentation
-  static GeneralLibraryPermissionBaseFlutter systemPermission =
-      GeneralLibraryPermissionBaseFlutter();
+  static GeneralLibraryPermissionBaseFlutter systemPermission = GeneralLibraryPermissionBaseFlutter();
 
   /// UncompleteDocumentation
-  static GeneralLibraryNotificationBaseFlutter systemNotification =
-      GeneralLibraryNotificationBaseFlutter();
+  static GeneralLibraryNotificationBaseFlutter systemNotification = GeneralLibraryNotificationBaseFlutter();
 
   /// UncompleteDocumentation
-  static GeneralLibraryTextToSpeechBaseFlutter textToSpeech =
-      GeneralLibraryTextToSpeechBaseFlutter();
+  static GeneralLibraryTextToSpeechBaseFlutter textToSpeech = GeneralLibraryTextToSpeechBaseFlutter();
 
   /// UncompleteDocumentation
 
-  static GeneralLibraryBatteryBaseFlutter systembattery =
-      GeneralLibraryBatteryBaseFlutter();
+  static GeneralLibraryBatteryBaseFlutter systembattery = GeneralLibraryBatteryBaseFlutter();
 
   /// UncompleteDocumentation
-  static GeneralLibraryDeviceBaseFlutter systemDevice =
-      GeneralLibraryDeviceBaseFlutter();
+  static GeneralLibraryDeviceBaseFlutter systemDevice = GeneralLibraryDeviceBaseFlutter();
 
   /// UncompleteDocumentation
-  static GeneralLibraryGamePadBaseFlutter controllerGamepad =
-      GeneralLibraryGamePadBaseFlutter();
+  static GeneralLibraryGamePadBaseFlutter controllerGamepad = GeneralLibraryGamePadBaseFlutter();
 
   /// UncompleteDocumentation
-  static GeneralLibrarySpeechToTextBaseFlutter speechToText =
-      GeneralLibrarySpeechToTextBaseFlutter();
+  static GeneralLibrarySpeechToTextBaseFlutter speechToText = GeneralLibrarySpeechToTextBaseFlutter();
 
   /// UncompleteDocumentation
-  static GeneralLibrarySimCardBaseFlutter simCard =
-      GeneralLibrarySimCardBaseFlutter();
+  static GeneralLibrarySimCardBaseFlutter simCard = GeneralLibrarySimCardBaseFlutter();
 
   /// UncompleteDocumentation
-  static GeneralLibrarySmsBaseFlutter systemSms =
-      GeneralLibrarySmsBaseFlutter();
+  static GeneralLibrarySmsBaseFlutter systemSms = GeneralLibrarySmsBaseFlutter();
 
   @override
   GeneralLibraryAppBackgroundBaseFlutter get app_background => appBackground;
@@ -141,8 +128,7 @@ class GeneralFlutter extends GeneralLibrary {
 
   @override
   // TODO: implement system_notification
-  GeneralLibraryNotificationBaseFlutter get system_notification =>
-      systemNotification;
+  GeneralLibraryNotificationBaseFlutter get system_notification => systemNotification;
 
   @override
   // TODO: implement system_permission
